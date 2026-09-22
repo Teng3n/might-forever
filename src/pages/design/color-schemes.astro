@@ -6,8 +6,12 @@ const schemes = [
     id: "mop-indigo",
     name: "MoP Gold · Might Indigo",
     detail: "The exact current Might Forever blue replacing jade—the closest bridge between both sites.",
-    colors: ["#0B0F0D", "#C89B3C", "#7C8CFF", "#F2F0E8"],
+    colors: ["#0B0D18", "#C89B3C", "#7C8CFF", "#F2F0E8"],
     family: "mop-blue",
+    background: "#0B0D18",
+    surface: "#121629",
+    surfaceStrong: "#19203A",
+    border: "#303B63",
     secondary: "#7C8CFF",
     emphasis: "#C89B3C",
   },
@@ -15,8 +19,12 @@ const schemes = [
     id: "mop-cobalt",
     name: "MoP Gold · Cobalt",
     detail: "A saturated mid-blue with more authority and less purple than the current Might accent.",
-    colors: ["#0B0F0D", "#C89B3C", "#5B7CFA", "#F2F0E8"],
+    colors: ["#090D18", "#C89B3C", "#5B7CFA", "#F2F0E8"],
     family: "mop-blue",
+    background: "#090D18",
+    surface: "#10172A",
+    surfaceStrong: "#17213D",
+    border: "#2C3C68",
     secondary: "#5B7CFA",
     emphasis: "#C89B3C",
   },
@@ -24,8 +32,12 @@ const schemes = [
     id: "mop-azure",
     name: "MoP Gold · Azure",
     detail: "A clean, bright blue that gives the dark MoP surfaces the clearest high-contrast lift.",
-    colors: ["#0B0F0D", "#C89B3C", "#3EA6FF", "#F2F0E8"],
+    colors: ["#081019", "#C89B3C", "#3EA6FF", "#F2F0E8"],
     family: "mop-blue",
+    background: "#081019",
+    surface: "#0E1A2A",
+    surfaceStrong: "#14263A",
+    border: "#294761",
     secondary: "#3EA6FF",
     emphasis: "#C89B3C",
   },
@@ -33,8 +45,12 @@ const schemes = [
     id: "mop-frost",
     name: "MoP Gold · Frost Blue",
     detail: "A lighter cyan-blue that feels crisp and luminous while the gold keeps it grounded.",
-    colors: ["#0B0F0D", "#C89B3C", "#68D8FF", "#F2F0E8"],
+    colors: ["#081218", "#C89B3C", "#68D8FF", "#F2F0E8"],
     family: "mop-blue",
+    background: "#081218",
+    surface: "#0E1C24",
+    surfaceStrong: "#142833",
+    border: "#2A4A58",
     secondary: "#68D8FF",
     emphasis: "#C89B3C",
   },
@@ -42,8 +58,12 @@ const schemes = [
     id: "mop-periwinkle",
     name: "MoP Gold · Periwinkle",
     detail: "A softer blue-violet that echoes Might Forever without overwhelming the warmer gold.",
-    colors: ["#0B0F0D", "#C89B3C", "#8EA0FF", "#F2F0E8"],
+    colors: ["#0C0F1A", "#C89B3C", "#8EA0FF", "#F2F0E8"],
     family: "mop-blue",
+    background: "#0C0F1A",
+    surface: "#14192B",
+    surfaceStrong: "#1C233E",
+    border: "#374266",
     secondary: "#8EA0FF",
     emphasis: "#C89B3C",
   },
@@ -51,8 +71,12 @@ const schemes = [
     id: "mop-electric",
     name: "MoP Gold · Electric Blue",
     detail: "A vivid cyan-leaning blue with the strongest glow and the most contemporary energy.",
-    colors: ["#0B0F0D", "#C89B3C", "#44C7FF", "#F2F0E8"],
+    colors: ["#081119", "#C89B3C", "#44C7FF", "#F2F0E8"],
     family: "mop-blue",
+    background: "#081119",
+    surface: "#0D1B29",
+    surfaceStrong: "#13283A",
+    border: "#294A62",
     secondary: "#44C7FF",
     emphasis: "#C89B3C",
   },
@@ -60,8 +84,12 @@ const schemes = [
     id: "mop-steel",
     name: "MoP Gold · Steel Blue",
     detail: "A restrained, desaturated blue for a mature treatment with less neon intensity.",
-    colors: ["#0B0F0D", "#C89B3C", "#5F93B8", "#F2F0E8"],
+    colors: ["#0A1116", "#C89B3C", "#5F93B8", "#F2F0E8"],
     family: "mop-blue",
+    background: "#0A1116",
+    surface: "#101A21",
+    surfaceStrong: "#182630",
+    border: "#324957",
     secondary: "#5F93B8",
     emphasis: "#C89B3C",
   },
@@ -69,8 +97,12 @@ const schemes = [
     id: "mop-royal",
     name: "MoP Gold · Royal Blue",
     detail: "A deeper blue-violet with stronger guild-banner character and a more dramatic mood.",
-    colors: ["#0B0F0D", "#C89B3C", "#6670E8", "#F2F0E8"],
+    colors: ["#0A0B18", "#C89B3C", "#6670E8", "#F2F0E8"],
     family: "mop-blue",
+    background: "#0A0B18",
+    surface: "#111329",
+    surfaceStrong: "#181B3A",
+    border: "#30345F",
     secondary: "#6670E8",
     emphasis: "#C89B3C",
   },
@@ -84,7 +116,7 @@ const initialScheme = schemes[0];
     class="color-lab"
     data-color-lab
     data-family={initialScheme.family}
-    style={`--preview-accent-two: ${initialScheme.secondary}; --preview-emphasis: ${initialScheme.emphasis}`}
+    style={`--preview-bg: ${initialScheme.background}; --preview-surface: ${initialScheme.surface}; --preview-surface-strong: ${initialScheme.surfaceStrong}; --preview-border: ${initialScheme.border}; --preview-accent-two: ${initialScheme.secondary}; --preview-emphasis: ${initialScheme.emphasis}`}
   >
     <header class="color-lab-heading">
       <p class="eyebrow">Might Forever design study</p>
@@ -99,6 +131,10 @@ const initialScheme = schemes[0];
             type="button"
             data-palette-button={scheme.id}
             data-family={scheme.family}
+            data-background={scheme.background}
+            data-surface={scheme.surface}
+            data-surface-strong={scheme.surfaceStrong}
+            data-border={scheme.border}
             data-secondary={scheme.secondary}
             data-emphasis={scheme.emphasis}
             aria-pressed={index === 0 ? "true" : "false"}
@@ -168,6 +204,10 @@ const initialScheme = schemes[0];
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         colorLab.dataset.family = button.dataset.family;
+        colorLab.style.setProperty("--preview-bg", button.dataset.background ?? "#0b0d18");
+        colorLab.style.setProperty("--preview-surface", button.dataset.surface ?? "#121629");
+        colorLab.style.setProperty("--preview-surface-strong", button.dataset.surfaceStrong ?? "#19203a");
+        colorLab.style.setProperty("--preview-border", button.dataset.border ?? "#303b63");
         colorLab.style.setProperty("--preview-accent-two", button.dataset.secondary ?? "#7c8cff");
         colorLab.style.setProperty("--preview-emphasis", button.dataset.emphasis ?? "#c89b3c");
         buttons.forEach((candidate) =>
@@ -180,10 +220,10 @@ const initialScheme = schemes[0];
 
 <style>
   .color-lab {
-    --preview-bg: #0b0f0d;
-    --preview-surface: #111714;
-    --preview-surface-strong: #17211b;
-    --preview-border: #2b3a31;
+    --preview-bg: #0b0d18;
+    --preview-surface: #121629;
+    --preview-surface-strong: #19203a;
+    --preview-border: #303b63;
     --preview-text: #f2f0e8;
     --preview-muted: #aeb8ad;
     --preview-accent: #c89b3c;
