@@ -29,32 +29,6 @@ const schemes = [
     emphasis: "#C89B3C",
   },
   {
-    id: "mop-azure",
-    name: "MoP Gold · Azure",
-    detail: "A clean, bright blue that gives the dark MoP surfaces the clearest high-contrast lift.",
-    colors: ["#081019", "#C89B3C", "#3EA6FF", "#F2F0E8"],
-    family: "mop-blue",
-    background: "#081019",
-    surface: "#0E1A2A",
-    surfaceStrong: "#14263A",
-    border: "#294761",
-    secondary: "#3EA6FF",
-    emphasis: "#C89B3C",
-  },
-  {
-    id: "mop-frost",
-    name: "MoP Gold · Frost Blue",
-    detail: "A lighter cyan-blue that feels crisp and luminous while the gold keeps it grounded.",
-    colors: ["#081218", "#C89B3C", "#68D8FF", "#F2F0E8"],
-    family: "mop-blue",
-    background: "#081218",
-    surface: "#0E1C24",
-    surfaceStrong: "#142833",
-    border: "#2A4A58",
-    secondary: "#68D8FF",
-    emphasis: "#C89B3C",
-  },
-  {
     id: "mop-periwinkle",
     name: "MoP Gold · Periwinkle",
     detail: "A softer blue-violet that echoes Might Forever without overwhelming the warmer gold.",
@@ -65,32 +39,6 @@ const schemes = [
     surfaceStrong: "#1C233E",
     border: "#374266",
     secondary: "#8EA0FF",
-    emphasis: "#C89B3C",
-  },
-  {
-    id: "mop-electric",
-    name: "MoP Gold · Electric Blue",
-    detail: "A vivid cyan-leaning blue with the strongest glow and the most contemporary energy.",
-    colors: ["#081119", "#C89B3C", "#44C7FF", "#F2F0E8"],
-    family: "mop-blue",
-    background: "#081119",
-    surface: "#0D1B29",
-    surfaceStrong: "#13283A",
-    border: "#294A62",
-    secondary: "#44C7FF",
-    emphasis: "#C89B3C",
-  },
-  {
-    id: "mop-steel",
-    name: "MoP Gold · Steel Blue",
-    detail: "A restrained, desaturated blue for a mature treatment with less neon intensity.",
-    colors: ["#0A1116", "#C89B3C", "#5F93B8", "#F2F0E8"],
-    family: "mop-blue",
-    background: "#0A1116",
-    surface: "#101A21",
-    surfaceStrong: "#182630",
-    border: "#324957",
-    secondary: "#5F93B8",
     emphasis: "#C89B3C",
   },
   {
@@ -121,7 +69,7 @@ const initialScheme = schemes[0];
     <header class="color-lab-heading">
       <p class="eyebrow">Might Forever design study</p>
       <h1>MoP gold, Might blue</h1>
-      <p>The exact Vitality MoP palette, with jade replaced by eight variations of Might Forever blue.</p>
+      <p>The exact Vitality MoP palette, with jade replaced by four finalist variations of Might Forever blue.</p>
     </header>
 
     <div class="palette-tabs" role="group" aria-label="Blue accent variation">
@@ -351,7 +299,8 @@ const initialScheme = schemes[0];
 
   .concept-nav nav small {
     padding-left: 18px;
-    color: var(--preview-accent-two);
+    color: var(--preview-accent);
+    font-weight: 850;
   }
 
   .concept-body {
