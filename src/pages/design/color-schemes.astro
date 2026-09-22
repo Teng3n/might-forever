@@ -16,21 +16,39 @@ const schemes = [
   },
   {
     id: "frost",
-    name: "Frostforged",
+    name: "Frostforge",
     detail: "Frost blue, bright silver, and deep slate. Crisp, controlled, and extremely clean.",
     colors: ["#08131B", "#68D8FF", "#BDEFFF", "#DDE8ED"],
   },
   {
-    id: "blood",
-    name: "Blood & Bone",
-    detail: "Crimson, aged bone, and oxblood. Grounded, aggressive, and unmistakably Warcraft.",
-    colors: ["#16090D", "#F05264", "#E8D5B8", "#F6EEE4"],
+    id: "frostfire",
+    name: "Frostfire",
+    detail: "Frostforge’s clean slate and ice, punctuated by a controlled ember-coral accent.",
+    colors: ["#08131B", "#68D8FF", "#FF6B57", "#F1F7FA"],
+  },
+  {
+    id: "prismatic",
+    name: "Prismatic Frost",
+    detail: "Glacier blue with arcane violet. Still crisp, but less monochromatic and more magical.",
+    colors: ["#0A101A", "#70D7FF", "#B58CFF", "#F2F6FF"],
+  },
+  {
+    id: "stormflare",
+    name: "Stormflare",
+    detail: "Electric cyan and hot magenta over blue-black. The highest-energy Frostforge hybrid.",
+    colors: ["#070D18", "#39D4FF", "#FF5FA2", "#F5F4FF"],
+  },
+  {
+    id: "arcane-ember",
+    name: "Arcane Ember",
+    detail: "Arcane violet and molten orange. A warmer blend of Arcane Storm and Forgefire.",
+    colors: ["#0D0917", "#A680FF", "#FF7A45", "#F4F0FF"],
   },
 ];
 ---
 
 <Layout title="Might Forever Color Lab">
-  <div class="color-lab" data-color-lab data-palette="forgefire">
+  <div class="color-lab" data-color-lab data-palette="frostfire">
     <header class="color-lab-heading">
       <p class="eyebrow">Might Forever design study</p>
       <h1>Choose a color direction</h1>
@@ -43,7 +61,7 @@ const schemes = [
           <button
             type="button"
             data-palette-button={scheme.id}
-            aria-pressed={index === 0 ? "true" : "false"}
+            aria-pressed={scheme.id === "frostfire" ? "true" : "false"}
           >
             <span>{String(index + 1).padStart(2, "0")}</span>
             <strong>{scheme.name}</strong>
@@ -154,15 +172,48 @@ const schemes = [
     --preview-accent-two: #bdefff;
   }
 
-  .color-lab[data-palette="blood"] {
-    --preview-bg: #16090d;
-    --preview-surface: #211016;
-    --preview-surface-strong: #251218;
-    --preview-border: #57303a;
-    --preview-text: #f6eee4;
-    --preview-muted: #cdbdb6;
-    --preview-accent: #f05264;
-    --preview-accent-two: #e8d5b8;
+  .color-lab[data-palette="frostfire"] {
+    --preview-bg: #08131b;
+    --preview-surface: #0d1c24;
+    --preview-surface-strong: #101f29;
+    --preview-border: #36515d;
+    --preview-text: #f1f7fa;
+    --preview-muted: #b5c6ce;
+    --preview-accent: #68d8ff;
+    --preview-accent-two: #ff6b57;
+  }
+
+  .color-lab[data-palette="prismatic"] {
+    --preview-bg: #0a101a;
+    --preview-surface: #101827;
+    --preview-surface-strong: #151d31;
+    --preview-border: #3a4562;
+    --preview-text: #f2f6ff;
+    --preview-muted: #b7c0d3;
+    --preview-accent: #70d7ff;
+    --preview-accent-two: #b58cff;
+  }
+
+  .color-lab[data-palette="stormflare"] {
+    --preview-bg: #070d18;
+    --preview-surface: #0d1626;
+    --preview-surface-strong: #111b2f;
+    --preview-border: #32455f;
+    --preview-text: #f5f4ff;
+    --preview-muted: #b4bed2;
+    --preview-accent: #39d4ff;
+    --preview-accent-two: #ff5fa2;
+  }
+
+  .color-lab[data-palette="arcane-ember"] {
+    --preview-bg: #0d0917;
+    --preview-surface: #151022;
+    --preview-surface-strong: #1c142c;
+    --preview-border: #4b3a60;
+    --preview-text: #f4f0ff;
+    --preview-muted: #c3b9d3;
+    --preview-accent: #a680ff;
+    --preview-accent-two: #ff7a45;
   }
 
   .color-lab-heading h1 {
