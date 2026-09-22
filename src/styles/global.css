@@ -3987,6 +3987,32 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   gap: 8px;
 }
 
+.survey-answer {
+  position: relative;
+}
+
+.survey-answer-trigger {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  appearance: none;
+  background: transparent;
+  cursor: help;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.survey-answer-trigger:hover,
+.survey-answer-trigger:focus-visible,
+.survey-answer[data-open="true"] .survey-answer-trigger {
+  border-color: rgba(124, 140, 255, 0.36);
+  outline: none;
+  background: rgba(124, 140, 255, 0.08);
+}
+
 .survey-bar-label {
   display: flex;
   align-items: baseline;
@@ -4024,6 +4050,66 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   height: 100%;
   border-radius: inherit;
   background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+}
+
+.survey-respondent-popover {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  left: 6px;
+  width: min(320px, calc(100vw - 64px));
+  max-height: 280px;
+  padding: 14px 16px;
+  overflow-y: auto;
+  border: 1px solid rgba(124, 140, 255, 0.38);
+  border-radius: 12px;
+  color: var(--text);
+  background: rgba(12, 16, 34, 0.98);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 140ms ease, transform 140ms ease, visibility 140ms ease;
+}
+
+.survey-answer:hover .survey-respondent-popover,
+.survey-answer:focus-within .survey-respondent-popover,
+.survey-answer[data-open="true"] .survey-respondent-popover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.survey-respondent-popover p {
+  margin: 0;
+}
+
+.survey-respondent-heading {
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(124, 140, 255, 0.2);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.survey-respondent-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px 14px;
+  margin: 11px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.survey-respondent-list li {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--text);
+  font-size: 0.86rem;
 }
 
 .survey-source-panel {

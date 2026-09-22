@@ -87,14 +87,31 @@ const sourceUrl = `https://docs.google.com/spreadsheets/d/${surveyInsights.sourc
                 const denominator = item.id === "professions" ? total : item.answers.reduce((sum, candidate) => sum + candidate.count, 0);
                 const answerPercent = percent(answer.count, denominator);
 
+                const tooltipId = `survey-respondents-${item.id}-${item.answers.indexOf(answer)}`;
+
                 return (
-                  <div class="survey-bar-row">
-                    <div class="survey-bar-label">
-                      <span>{answer.label}</span>
-                      <strong>{answer.count} <small>({answerPercent}%)</small></strong>
-                    </div>
-                    <div class="survey-bar-track" aria-hidden="true">
-                      <span style={`--survey-bar-width: ${answerPercent}%`}></span>
+                  <div
+                    class="survey-answer"
+                    data-survey-answer
+                    data-series-id={item.id}
+                    data-answer-label={answer.label}
+                  >
+                    <button
+                      class="survey-bar-row survey-answer-trigger"
+                      type="button"
+                      aria-expanded="false"
+                      aria-describedby={tooltipId}
+                    >
+                      <span class="survey-bar-label">
+                        <span>{answer.label}</span>
+                        <strong>{answer.count} <small>({answerPercent}%)</small></strong>
+                      </span>
+                      <span class="survey-bar-track" aria-hidden="true">
+                        <span style={`--survey-bar-width: ${answerPercent}%`}></span>
+                      </span>
+                    </button>
+                    <div class="survey-respondent-popover" id={tooltipId} role="tooltip" data-survey-respondents>
+                      <p>Loading respondents…</p>
                     </div>
                   </div>
                 );
@@ -108,9 +125,168 @@ const sourceUrl = `https://docs.google.com/spreadsheets/d/${surveyInsights.sourc
     <section class="panel survey-source-panel">
       <div>
         <p class="eyebrow">Source</p>
-        <p class="info-note">Last recorded response: {surveyInsights.lastResponseAt}. Usernames and free-text specialization answers are excluded from this dashboard data.</p>
+        <p class="info-note">Last recorded response: {surveyInsights.lastResponseAt}. Discord usernames are loaded only after Officer authentication and are excluded from the public page bundle. Free-text specialization answers remain excluded.</p>
       </div>
       <a class="filter-button is-subtle" href={sourceUrl} target="_blank" rel="noreferrer">Open response sheet</a>
     </section>
   </OfficerGate>
 </Layout>
+
+<script>
+  type RespondentLookup = Record<string, Record<string, string[]>>;
+  type RespondentResponse = {
+    ok?: boolean;
+    message?: string;
+    respondents?: RespondentLookup;
+  };
+
+  const surveyAnswers = Array.from(document.querySelectorAll<HTMLElement>("[data-survey-answer]"));
+  let respondentLookup: RespondentLookup | undefined;
+  let respondentRequest: Promise<void> | undefined;
+
+  const renderRespondents = (answer: HTMLElement, names: string[] | undefined, errorMessage?: string) => {
+    const popover = answer.querySelector<HTMLElement>("[data-survey-respondents]");
+
+    if (!popover) {
+      return;
+    }
+
+    popover.replaceChildren();
+
+    if (errorMessage) {
+      const message = document.createElement("p");
+      message.textContent = errorMessage;
+      popover.append(message);
+      return;
+    }
+
+    if (!names?.length) {
+      const message = document.createElement("p");
+      message.textContent = "No respondents recorded for this answer.";
+      popover.append(message);
+      return;
+    }
+
+    const heading = document.createElement("p");
+    heading.className = "survey-respondent-heading";
+    heading.textContent = `${names.length} ${names.length === 1 ? "respondent" : "respondents"}`;
+
+    const list = document.createElement("ul");
+    list.className = "survey-respondent-list";
+
+    for (const name of names) {
+      const item = document.createElement("li");
+      item.textContent = name;
+      list.append(item);
+    }
+
+    popover.append(heading, list);
+  };
+
+  const populateRespondents = () => {
+    for (const answer of surveyAnswers) {
+      const seriesId = answer.dataset.seriesId ?? "";
+      const answerLabel = answer.dataset.answerLabel ?? "";
+      renderRespondents(answer, respondentLookup?.[seriesId]?.[answerLabel]);
+    }
+  };
+
+  const showRespondentError = (message: string) => {
+    for (const answer of surveyAnswers) {
+      renderRespondents(answer, undefined, message);
+    }
+  };
+
+  const loadRespondents = () => {
+    if (respondentLookup || respondentRequest) {
+      return respondentRequest;
+    }
+
+    respondentRequest = (async () => {
+      try {
+        const response = await fetch("/api/survey-respondents", {
+          method: "GET",
+          headers: { Accept: "application/json" },
+        });
+        const result = (await response.json()) as RespondentResponse;
+
+        if (!response.ok || result.ok !== true || !result.respondents) {
+          throw new Error(result.message ?? "Respondent details are unavailable.");
+        }
+
+        respondentLookup = result.respondents;
+        populateRespondents();
+      } catch (error) {
+        showRespondentError(error instanceof Error ? error.message : "Respondent details are unavailable.");
+      } finally {
+        respondentRequest = undefined;
+      }
+    })();
+
+    return respondentRequest;
+  };
+
+  const setExpanded = (answer: HTMLElement, expanded: boolean) => {
+    answer.dataset.open = expanded ? "true" : "false";
+    answer.querySelector<HTMLButtonElement>(".survey-answer-trigger")?.setAttribute("aria-expanded", String(expanded));
+  };
+
+  for (const answer of surveyAnswers) {
+    const trigger = answer.querySelector<HTMLButtonElement>(".survey-answer-trigger");
+
+    answer.addEventListener("mouseenter", () => {
+      void loadRespondents();
+      setExpanded(answer, true);
+    });
+    answer.addEventListener("mouseleave", () => {
+      if (answer.dataset.pinned !== "true") {
+        setExpanded(answer, false);
+      }
+    });
+    trigger?.addEventListener("focus", () => {
+      void loadRespondents();
+      setExpanded(answer, true);
+    });
+    trigger?.addEventListener("blur", () => {
+      if (answer.dataset.pinned !== "true") {
+        setExpanded(answer, false);
+      }
+    });
+    trigger?.addEventListener("click", () => {
+      const nextPinned = answer.dataset.pinned !== "true";
+
+      for (const candidate of surveyAnswers) {
+        candidate.dataset.pinned = "false";
+        setExpanded(candidate, false);
+      }
+
+      answer.dataset.pinned = String(nextPinned);
+      setExpanded(answer, nextPinned);
+      void loadRespondents();
+    });
+    trigger?.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        answer.dataset.pinned = "false";
+        setExpanded(answer, false);
+        trigger.blur();
+      }
+    });
+  }
+
+  document.addEventListener("click", (event) => {
+    const eventTarget = event.target;
+
+    if (eventTarget instanceof Node && surveyAnswers.some((answer) => answer.contains(eventTarget))) {
+      return;
+    }
+
+    for (const answer of surveyAnswers) {
+      answer.dataset.pinned = "false";
+      setExpanded(answer, false);
+    }
+  });
+
+  window.addEventListener("might:officer-unlocked", () => {
+    void loadRespondents();
+  });
+</script>
