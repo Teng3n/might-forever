@@ -1,13 +1,13 @@
 :root {
   color-scheme: dark;
-  --bg: #080b16;
+  --bg: #090d18;
   --surface: #10172a;
-  --surface-strong: #18223d;
-  --border: #2d3a5d;
-  --text: #f5f7ff;
-  --muted: #a9b5d0;
-  --accent: #7c8cff;
-  --accent-secondary: #d47cff;
+  --surface-strong: #17213d;
+  --border: #2c3c68;
+  --text: #f2f0e8;
+  --muted: #aeb8ad;
+  --accent: #c89b3c;
+  --accent-secondary: #5b7cfa;
   --red: #d86c5c;
   --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
   font-family:
@@ -40,8 +40,8 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 72% 0%, rgba(212, 124, 255, 0.13), transparent 34rem),
-    linear-gradient(180deg, rgba(124, 140, 255, 0.12), transparent 360px),
+    radial-gradient(circle at 72% 0%, rgba(91, 124, 250, 0.13), transparent 34rem),
+    linear-gradient(180deg, rgba(200, 155, 60, 0.12), transparent 360px),
     var(--bg);
   color: var(--text);
 }
@@ -153,9 +153,9 @@ main {
 .side-nav nav a:hover,
 .side-nav nav a[aria-current="page"],
 .side-nav-group[data-active="true"] > .side-nav-parent {
-  border-color: rgba(124, 140, 255, 0.72);
-  color: #aeb8ff;
-  background: rgba(124, 140, 255, 0.1);
+  border-color: rgba(200, 155, 60, 0.72);
+  color: #e0c887;
+  background: rgba(200, 155, 60, 0.1);
 }
 
 .page-header {
@@ -240,7 +240,7 @@ main {
 .stat-card {
   border: 1px solid var(--border);
   border-radius: 8px;
-  background: rgba(17, 23, 20, 0.84);
+  background: rgba(16, 23, 42, 0.84);
   box-shadow: var(--shadow);
 }
 
@@ -260,7 +260,7 @@ main {
 }
 
 .accent-panel {
-  border-color: rgba(124, 140, 255, 0.4);
+  border-color: rgba(200, 155, 60, 0.4);
 }
 
 .officer-gate-shell {
@@ -394,7 +394,7 @@ main {
 }
 
 .stat-card:hover {
-  border-color: rgba(124, 140, 255, 0.68);
+  border-color: rgba(200, 155, 60, 0.68);
 }
 
 .section-heading {
@@ -430,9 +430,9 @@ p {
 
 .schedule-list li,
 .clean-list li {
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .schedule-list li {
@@ -501,7 +501,7 @@ p {
 }
 
 .addon-list a:hover {
-  color: #aeb8ff;
+  color: #e0c887;
 }
 
 .resource-list {
@@ -519,10 +519,10 @@ p {
   display: grid;
   gap: 3px;
   min-height: 74px;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 13px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
   color: var(--text);
   text-decoration: none;
   transition:
@@ -532,9 +532,9 @@ p {
 }
 
 .resource-link:hover {
-  border-color: rgba(124, 140, 255, 0.72);
-  background: rgba(124, 140, 255, 0.1);
-  color: #aeb8ff;
+  border-color: rgba(200, 155, 60, 0.72);
+  background: rgba(200, 155, 60, 0.1);
+  color: #e0c887;
 }
 
 .resource-link span {
@@ -584,18 +584,18 @@ p {
   display: grid;
   gap: 14px;
   min-width: 0;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 15px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .raid-week-card {
   min-width: 0;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 15px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .raid-week-days {
@@ -615,7 +615,7 @@ p {
   left: 50%;
   width: 1px;
   height: var(--raid-week-divider-height);
-  background: rgba(124, 140, 255, 0.34);
+  background: rgba(200, 155, 60, 0.34);
   pointer-events: none;
   transform: translateX(-50%);
 }
@@ -715,10 +715,10 @@ p {
 .action-metrics div {
   display: grid;
   gap: 6px;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 12px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .action-metrics span {
@@ -751,10 +751,10 @@ p {
 .next-raid-card {
   display: grid;
   gap: 18px;
-  border-color: rgba(124, 140, 255, 0.48);
+  border-color: rgba(200, 155, 60, 0.48);
   background:
-    linear-gradient(135deg, rgba(124, 140, 255, 0.1), transparent 58%),
-    rgba(17, 23, 20, 0.88);
+    linear-gradient(135deg, rgba(200, 155, 60, 0.1), transparent 58%),
+    rgba(16, 23, 42, 0.88);
 }
 
 .next-raid-heading {
@@ -798,10 +798,10 @@ p {
   display: grid;
   grid-template-columns: 84px 1fr;
   gap: 10px;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 11px 12px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .next-raid-meta dt {
@@ -837,10 +837,10 @@ p {
   grid-template-rows: auto 1fr;
   gap: 12px;
   min-height: 145px;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 12px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .next-raid-list[data-copy-card],
@@ -878,13 +878,13 @@ p {
 .next-raid-list[data-copy-card]:focus-visible,
 .readiness-card[data-copy-card]:hover,
 .readiness-card[data-copy-card]:focus-visible {
-  border-color: rgba(124, 140, 255, 0.46);
-  box-shadow: 0 0 0 1px rgba(124, 140, 255, 0.12);
+  border-color: rgba(200, 155, 60, 0.46);
+  box-shadow: 0 0 0 1px rgba(200, 155, 60, 0.12);
 }
 
 .next-raid-list[data-copy-card]:focus-visible,
 .readiness-card[data-copy-card]:focus-visible {
-  outline: 2px solid rgba(124, 140, 255, 0.42);
+  outline: 2px solid rgba(200, 155, 60, 0.42);
   outline-offset: 2px;
 }
 
@@ -980,7 +980,7 @@ p {
 
 .next-raid-list[data-status="short"] {
   border-color: rgba(238, 154, 142, 0.46);
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .next-raid-list[data-status="short"] > .available-raiders strong {
@@ -1015,10 +1015,10 @@ p {
   grid-template-rows: auto 1fr;
   gap: 12px;
   min-height: 150px;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 13px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .readiness-card-status {
@@ -1087,10 +1087,10 @@ p {
 .readiness-warning-count {
   min-width: 34px;
   min-height: 24px;
-  border: 1px solid rgba(124, 140, 255, 0.34);
+  border: 1px solid rgba(200, 155, 60, 0.34);
   border-radius: 6px;
   padding: 3px 8px;
-  background: rgba(124, 140, 255, 0.12);
+  background: rgba(200, 155, 60, 0.12);
   color: var(--accent);
   font-size: 0.9rem;
   font-variant-numeric: tabular-nums;
@@ -1131,7 +1131,7 @@ p {
   left: 0;
   width: max-content;
   max-width: min(360px, 72vw);
-  border: 1px solid rgba(124, 140, 255, 0.44);
+  border: 1px solid rgba(200, 155, 60, 0.44);
   border-radius: 8px;
   padding: 11px 12px;
   background: rgba(9, 14, 12, 0.98);
@@ -1224,7 +1224,7 @@ p {
   align-content: start;
   gap: 8px;
   min-height: 130px;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 13px;
 }
@@ -1352,10 +1352,10 @@ p {
   align-items: center;
   justify-content: center;
   min-height: 42px;
-  border: 1px solid rgba(43, 58, 49, 0.9);
+  border: 1px solid rgba(44, 60, 104, 0.9);
   border-radius: 6px;
   padding: 0 12px;
-  background: rgba(23, 33, 27, 0.86);
+  background: rgba(23, 33, 61, 0.86);
   color: var(--text);
   cursor: pointer;
   font: inherit;
@@ -1366,8 +1366,8 @@ p {
 
 .filter-button:hover,
 .filter-button:focus-visible {
-  border-color: rgba(124, 140, 255, 0.66);
-  color: #aeb8ff;
+  border-color: rgba(200, 155, 60, 0.66);
+  color: #e0c887;
 }
 
 .filter-button.is-subtle {
@@ -1381,10 +1381,10 @@ p {
 }
 
 .calendar-window-empty {
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 18px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .stack {
@@ -1394,7 +1394,7 @@ p {
 
 .table-shell {
   overflow-x: auto;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
 }
 
@@ -1413,7 +1413,7 @@ p {
 .data-table th,
 .data-table td {
   padding: 13px 14px;
-  border-bottom: 1px solid rgba(43, 58, 49, 0.65);
+  border-bottom: 1px solid rgba(44, 60, 104, 0.65);
   text-align: left;
   vertical-align: top;
 }
@@ -1422,7 +1422,7 @@ p {
   color: var(--accent);
   font-size: 0.78rem;
   text-transform: uppercase;
-  background: rgba(23, 33, 27, 0.86);
+  background: rgba(23, 33, 61, 0.86);
 }
 
 .sort-button {
@@ -1451,7 +1451,7 @@ p {
 }
 
 .sort-button:focus-visible {
-  outline: 2px solid rgba(212, 124, 255, 0.42);
+  outline: 2px solid rgba(91, 124, 250, 0.42);
   outline-offset: 3px;
 }
 
@@ -1485,7 +1485,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .data-table tbody tr:hover {
-  background: rgba(212, 124, 255, 0.06);
+  background: rgba(91, 124, 250, 0.06);
 }
 
 .roster-table.officer-roster-table {
@@ -1518,16 +1518,16 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .loot-summary-table tbody tr[data-active-roster="false"] {
-  background: rgba(124, 140, 255, 0.1);
-  color: #aeb8ff;
+  background: rgba(200, 155, 60, 0.1);
+  color: #e0c887;
 }
 
 .loot-summary-table tbody tr[data-active-roster="false"]:hover {
-  background: rgba(124, 140, 255, 0.16);
+  background: rgba(200, 155, 60, 0.16);
 }
 
 .loot-summary-table tbody tr[data-active-roster="false"] td:first-child {
-  border-left: 3px solid rgba(124, 140, 255, 0.72);
+  border-left: 3px solid rgba(200, 155, 60, 0.72);
 }
 
 .loot-history-table {
@@ -1579,7 +1579,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   max-width: 100%;
   max-height: 58vh;
   overflow: auto;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
 }
 
@@ -1603,15 +1603,15 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .calendar-table th,
 .calendar-table td {
   min-width: 74px;
-  border-right: 1px solid rgba(43, 58, 49, 0.58);
-  border-bottom: 1px solid rgba(43, 58, 49, 0.58);
+  border-right: 1px solid rgba(44, 60, 104, 0.58);
+  border-bottom: 1px solid rgba(44, 60, 104, 0.58);
   padding: 9px 10px;
   text-align: center;
   white-space: nowrap;
 }
 
 [data-calendar-mode="snapshot"] .calendar-table [data-week-boundary="true"]:not([data-window-start]) {
-  box-shadow: inset 4px 0 0 rgba(124, 140, 255, 0.78);
+  box-shadow: inset 4px 0 0 rgba(200, 155, 60, 0.78);
 }
 
 .calendar-table thead th {
@@ -1641,7 +1641,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .calendar-summary-row td {
   color: var(--muted);
   font-weight: 800;
-  background: rgba(23, 33, 27, 0.72);
+  background: rgba(23, 33, 61, 0.72);
 }
 
 .calendar-summary-row .calendar-player {
@@ -1654,8 +1654,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .status-bench {
-  background: rgba(124, 140, 255, 0.16);
-  color: #aeb8ff;
+  background: rgba(200, 155, 60, 0.16);
+  color: #e0c887;
 }
 
 .status-out {
@@ -1669,7 +1669,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .status-late {
-  background: rgba(212, 124, 255, 0.12);
+  background: rgba(91, 124, 250, 0.12);
   color: #9be0b7;
 }
 
@@ -1723,10 +1723,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   align-items: center;
   gap: 8px;
   min-height: 38px;
-  border: 1px solid rgba(43, 58, 49, 0.95);
+  border: 1px solid rgba(44, 60, 104, 0.95);
   border-radius: 6px;
   padding: 0 12px;
-  background: rgba(17, 23, 20, 0.78);
+  background: rgba(16, 23, 42, 0.78);
   color: var(--muted);
   font: inherit;
   font-size: 0.84rem;
@@ -1741,9 +1741,9 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .tier-tab-button:hover,
 .tier-tab-button:focus-visible,
 .tier-tab-button[aria-selected="true"] {
-  border-color: rgba(124, 140, 255, 0.72);
-  color: #aeb8ff;
-  background: rgba(124, 140, 255, 0.1);
+  border-color: rgba(200, 155, 60, 0.72);
+  color: #e0c887;
+  background: rgba(200, 155, 60, 0.1);
 }
 
 .tier-tabs small {
@@ -1789,7 +1789,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .field input:focus {
-  outline: 2px solid rgba(212, 124, 255, 0.42);
+  outline: 2px solid rgba(91, 124, 250, 0.42);
   outline-offset: 2px;
 }
 
@@ -1802,7 +1802,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   display: inline-flex;
   align-items: center;
   min-height: 28px;
-  border: 1px solid rgba(212, 124, 255, 0.5);
+  border: 1px solid rgba(91, 124, 250, 0.5);
   border-radius: 999px;
   padding: 0 10px;
   color: var(--accent-secondary);
@@ -1826,7 +1826,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .progress-track {
   height: 12px;
   overflow: hidden;
-  border: 1px solid rgba(43, 58, 49, 0.9);
+  border: 1px solid rgba(44, 60, 104, 0.9);
   border-radius: 999px;
   background: #090d0b;
 }
@@ -1851,15 +1851,15 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .progression-expansion-panel {
   display: grid;
   gap: 16px;
-  border-color: rgba(124, 140, 255, 0.28);
+  border-color: rgba(200, 155, 60, 0.28);
   background:
-    linear-gradient(135deg, rgba(124, 140, 255, 0.05), transparent 42%),
-    rgba(17, 23, 20, 0.84);
+    linear-gradient(135deg, rgba(200, 155, 60, 0.05), transparent 42%),
+    rgba(16, 23, 42, 0.84);
 }
 
 .progression-expansion-panel.is-placeholder {
-  border-color: rgba(43, 58, 49, 0.78);
-  background: rgba(17, 23, 20, 0.68);
+  border-color: rgba(44, 60, 104, 0.78);
+  background: rgba(16, 23, 42, 0.68);
 }
 
 .progression-expansion-header {
@@ -1895,10 +1895,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   gap: 14px;
   min-width: 0;
   min-height: 238px;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 16px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
   color: var(--text);
   text-decoration: none;
   transition:
@@ -1908,19 +1908,19 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .progression-tier-card:hover,
 .progression-tier-card:focus-visible {
-  border-color: rgba(124, 140, 255, 0.66);
-  background: rgba(124, 140, 255, 0.09);
+  border-color: rgba(200, 155, 60, 0.66);
+  background: rgba(200, 155, 60, 0.09);
 }
 
 .progression-tier-card.is-placeholder {
-  border-color: rgba(43, 58, 49, 0.58);
-  background: rgba(23, 33, 27, 0.42);
+  border-color: rgba(44, 60, 104, 0.58);
+  background: rgba(23, 33, 61, 0.42);
   cursor: default;
 }
 
 .progression-tier-card.is-placeholder:hover {
-  border-color: rgba(43, 58, 49, 0.58);
-  background: rgba(23, 33, 27, 0.42);
+  border-color: rgba(44, 60, 104, 0.58);
+  background: rgba(23, 33, 61, 0.42);
 }
 
 .progression-tier-card h3 {
@@ -1961,11 +1961,11 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .progression-tier-progress small {
   justify-self: start;
-  border: 1px solid rgba(124, 140, 255, 0.3);
+  border: 1px solid rgba(200, 155, 60, 0.3);
   border-radius: 6px;
   padding: 3px 8px;
-  background: rgba(124, 140, 255, 0.08);
-  color: #aeb8ff;
+  background: rgba(200, 155, 60, 0.08);
+  color: #e0c887;
   font-size: 0.78rem;
   font-weight: 900;
 }
@@ -2023,7 +2023,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .progression-back-link:hover,
 .progression-back-link:focus-visible {
-  color: #aeb8ff;
+  color: #e0c887;
 }
 
 .progression-raid-panel {
@@ -2065,10 +2065,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   align-content: start;
   gap: 14px;
   min-width: 0;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 14px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .progression-boss-card h3 {
@@ -2080,7 +2080,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .progression-difficulty {
   display: grid;
   gap: 10px;
-  border-top: 1px solid rgba(43, 58, 49, 0.62);
+  border-top: 1px solid rgba(44, 60, 104, 0.62);
   padding-top: 12px;
 }
 
@@ -2112,15 +2112,15 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .progression-status.is-killed {
-  border-color: rgba(212, 124, 255, 0.46);
-  background: rgba(212, 124, 255, 0.12);
+  border-color: rgba(91, 124, 250, 0.46);
+  background: rgba(91, 124, 250, 0.12);
   color: #9be0b7;
 }
 
 .progression-status.is-best-pull {
-  border-color: rgba(124, 140, 255, 0.46);
-  background: rgba(124, 140, 255, 0.13);
-  color: #aeb8ff;
+  border-color: rgba(200, 155, 60, 0.46);
+  background: rgba(200, 155, 60, 0.13);
+  color: #e0c887;
 }
 
 .progression-status.is-no-data {
@@ -2156,7 +2156,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .progression-log-link:hover {
-  color: #aeb8ff;
+  color: #e0c887;
   text-decoration: underline;
 }
 
@@ -2182,10 +2182,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   align-items: end;
   justify-content: space-between;
   gap: 18px;
-  border-color: rgba(124, 140, 255, 0.35);
+  border-color: rgba(200, 155, 60, 0.35);
   background:
-    linear-gradient(135deg, rgba(124, 140, 255, 0.08), transparent 58%),
-    rgba(17, 23, 20, 0.84);
+    linear-gradient(135deg, rgba(200, 155, 60, 0.08), transparent 58%),
+    rgba(16, 23, 42, 0.84);
 }
 
 .raid-guide-overview h2 {
@@ -2226,7 +2226,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   height: 3px;
   overflow: hidden;
   border-radius: 999px;
-  background: rgba(43, 58, 49, 0.72);
+  background: rgba(44, 60, 104, 0.72);
 }
 
 .raid-guide-scroll-progress span {
@@ -2293,9 +2293,9 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .raid-guide-boss-nav a:hover,
 .raid-guide-boss-nav a:focus-visible,
 .raid-guide-boss-nav a[aria-current] {
-  border-color: rgba(124, 140, 255, 0.72);
-  background: rgba(124, 140, 255, 0.1);
-  color: #aeb8ff;
+  border-color: rgba(200, 155, 60, 0.72);
+  background: rgba(200, 155, 60, 0.1);
+  color: #e0c887;
 }
 
 .raid-guide-boss-stack {
@@ -2307,7 +2307,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .raid-guide-boss-card {
   display: grid;
   gap: 16px;
-  border-color: rgba(124, 140, 255, 0.24);
+  border-color: rgba(200, 155, 60, 0.24);
   scroll-margin-top: 16px;
 }
 
@@ -2316,7 +2316,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   align-items: start;
   justify-content: space-between;
   gap: 12px;
-  border-bottom: 1px solid rgba(43, 58, 49, 0.7);
+  border-bottom: 1px solid rgba(44, 60, 104, 0.7);
   padding-bottom: 14px;
 }
 
@@ -2346,10 +2346,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .raid-guide-copy-button {
-  border: 1px solid rgba(212, 124, 255, 0.38);
+  border: 1px solid rgba(91, 124, 250, 0.38);
   border-radius: 6px;
   padding: 6px 10px;
-  background: rgba(212, 124, 255, 0.08);
+  background: rgba(91, 124, 250, 0.08);
   color: var(--muted);
   cursor: pointer;
   font-size: 0.78rem;
@@ -2360,7 +2360,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .raid-guide-top-link:focus-visible,
 .raid-guide-copy-button:hover,
 .raid-guide-copy-button:focus-visible {
-  color: #aeb8ff;
+  color: #e0c887;
 }
 
 .raid-guide-copy-button[data-state="success"] {
@@ -2382,16 +2382,16 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   align-content: start;
   gap: 10px;
   min-width: 0;
-  border: 1px solid rgba(43, 58, 49, 0.72);
+  border: 1px solid rgba(44, 60, 104, 0.72);
   border-radius: 8px;
   padding: 13px;
-  background: rgba(23, 33, 27, 0.62);
+  background: rgba(23, 33, 61, 0.62);
 }
 
 .raid-guide-role-card.is-heroic {
   grid-column: 1 / -1;
-  border-color: rgba(124, 140, 255, 0.45);
-  background: rgba(124, 140, 255, 0.08);
+  border-color: rgba(200, 155, 60, 0.45);
+  background: rgba(200, 155, 60, 0.08);
 }
 
 .raid-guide-role-card.is-quick {
@@ -2454,10 +2454,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  border: 1px solid rgba(212, 124, 255, 0.32);
+  border: 1px solid rgba(91, 124, 250, 0.32);
   border-radius: 8px;
   padding: 14px;
-  background: rgba(212, 124, 255, 0.08);
+  background: rgba(91, 124, 250, 0.08);
 }
 
 .raid-guide-pull-reminder p:last-child {
@@ -2469,10 +2469,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .raid-guide-pull-reminder button {
   flex: 0 0 auto;
-  border: 1px solid rgba(212, 124, 255, 0.42);
+  border: 1px solid rgba(91, 124, 250, 0.42);
   border-radius: 6px;
   padding: 8px 11px;
-  background: rgba(17, 23, 20, 0.72);
+  background: rgba(16, 23, 42, 0.72);
   color: #9be0b7;
   cursor: pointer;
   font: inherit;
@@ -2482,8 +2482,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .raid-guide-pull-reminder button:hover,
 .raid-guide-pull-reminder button:focus-visible {
-  border-color: rgba(124, 140, 255, 0.62);
-  color: #aeb8ff;
+  border-color: rgba(200, 155, 60, 0.62);
+  color: #e0c887;
 }
 
 .raid-guide-pull-reminder button[data-state="success"] {
@@ -2553,10 +2553,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .profile-meta div {
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 12px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .profile-meta dt,
@@ -2644,11 +2644,11 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .profile-loot-stat-list li {
   display: grid;
   gap: 4px;
-  border: 1px solid rgba(43, 58, 49, 0.78);
+  border: 1px solid rgba(44, 60, 104, 0.78);
   border-left: 3px solid var(--loot-color);
   border-radius: 8px;
   padding: 12px;
-  background: rgba(23, 33, 27, 0.68);
+  background: rgba(23, 33, 61, 0.68);
 }
 
 .profile-loot-stat-list span {
@@ -2670,7 +2670,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   display: grid;
   gap: 10px;
   overflow: visible;
-  border: 1px solid rgba(43, 58, 49, 0.78);
+  border: 1px solid rgba(44, 60, 104, 0.78);
   border-radius: 8px;
   padding: 18px 12px 12px;
   background: rgba(9, 13, 11, 0.46);
@@ -2730,7 +2730,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   z-index: 2;
   max-width: 190px;
   transform: translate(-50%, calc(-100% - 10px));
-  border: 1px solid rgba(212, 124, 255, 0.56);
+  border: 1px solid rgba(91, 124, 250, 0.56);
   border-radius: 6px;
   padding: 6px 9px;
   background: rgba(8, 12, 10, 0.95);
@@ -2757,10 +2757,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  border: 1px solid rgba(43, 58, 49, 0.9);
+  border: 1px solid rgba(44, 60, 104, 0.9);
   border-radius: 6px;
   padding: 7px 9px;
-  background: rgba(23, 33, 27, 0.68);
+  background: rgba(23, 33, 61, 0.68);
   color: var(--muted);
   font-size: 0.8rem;
   font-weight: 800;
@@ -2876,8 +2876,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .bench-week-card.is-empty {
-  border-color: rgba(43, 58, 49, 0.45);
-  background: rgba(17, 23, 20, 0.52);
+  border-color: rgba(44, 60, 104, 0.45);
+  background: rgba(16, 23, 42, 0.52);
   box-shadow: none;
 }
 
@@ -2931,7 +2931,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .bench-suggestion-date-field select {
   width: min(100%, 288px);
-  border: 1px solid rgba(43, 58, 49, 0.2);
+  border: 1px solid rgba(44, 60, 104, 0.2);
   border-radius: 8px;
   background: var(--panel);
   color: var(--text);
@@ -2964,9 +2964,9 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .boss-bench-summary span,
 .boss-bench-legend > span {
-  border: 1px solid rgba(124, 140, 255, 0.2);
+  border: 1px solid rgba(200, 155, 60, 0.2);
   border-radius: 8px;
-  background: rgba(17, 23, 20, 0.82);
+  background: rgba(16, 23, 42, 0.82);
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 700;
@@ -2987,7 +2987,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .boss-bench-table th,
 .boss-bench-table td {
-  border-bottom: 1px solid rgba(43, 58, 49, 0.12);
+  border-bottom: 1px solid rgba(44, 60, 104, 0.12);
   padding: 9px 8px;
   text-align: left;
   vertical-align: top;
@@ -3031,7 +3031,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   min-height: 20px;
   border: 1px solid rgba(242, 240, 232, 0.12);
   border-radius: 999px;
-  background: rgba(43, 58, 49, 0.32);
+  background: rgba(44, 60, 104, 0.32);
   color: var(--muted);
   font-size: 0.68rem;
   font-weight: 800;
@@ -3041,9 +3041,9 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .boss-bench-badge.is-safe {
-  border-color: rgba(212, 124, 255, 0.32);
-  background: rgba(212, 124, 255, 0.14);
-  color: #d47cff;
+  border-color: rgba(91, 124, 250, 0.32);
+  background: rgba(91, 124, 250, 0.14);
+  color: #5b7cfa;
 }
 
 .boss-bench-badge.is-complete {
@@ -3077,9 +3077,9 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .bench-suggestion-output {
-  border: 1px solid rgba(43, 58, 49, 0.74);
+  border: 1px solid rgba(44, 60, 104, 0.74);
   border-radius: 8px;
-  background: rgba(17, 23, 20, 0.7);
+  background: rgba(16, 23, 42, 0.7);
   overflow: auto;
 }
 
@@ -3120,10 +3120,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   display: grid;
   gap: 2px;
   min-width: 132px;
-  border: 1px solid rgba(43, 58, 49, 0.86);
+  border: 1px solid rgba(44, 60, 104, 0.86);
   border-radius: 8px;
   padding: 9px 11px;
-  background: rgba(17, 23, 20, 0.72);
+  background: rgba(16, 23, 42, 0.72);
   color: var(--muted);
   font: inherit;
   font-weight: 800;
@@ -3145,8 +3145,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .gear-needs-tab:hover,
 .gear-needs-tab:focus-visible,
 .gear-needs-tab[aria-selected="true"] {
-  border-color: rgba(124, 140, 255, 0.58);
-  background: rgba(124, 140, 255, 0.12);
+  border-color: rgba(200, 155, 60, 0.58);
+  background: rgba(200, 155, 60, 0.12);
   color: var(--text);
   outline: none;
 }
@@ -3159,10 +3159,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .gear-needs-boss {
   display: grid;
   gap: 12px;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 14px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .gear-needs-boss-heading {
@@ -3179,7 +3179,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .gear-needs-boss-count {
   flex: 0 0 auto;
-  border: 1px solid rgba(124, 140, 255, 0.34);
+  border: 1px solid rgba(200, 155, 60, 0.34);
   border-radius: 999px;
   padding: 5px 9px;
   color: var(--accent);
@@ -3196,7 +3196,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .gear-needs-boss-metrics span {
-  border: 1px solid rgba(43, 58, 49, 0.8);
+  border: 1px solid rgba(44, 60, 104, 0.8);
   border-radius: 999px;
   padding: 5px 9px;
   color: var(--muted);
@@ -3216,10 +3216,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   align-content: start;
   gap: 8px;
   min-height: 152px;
-  border: 1px solid rgba(43, 58, 49, 0.78);
+  border: 1px solid rgba(44, 60, 104, 0.78);
   border-radius: 8px;
   padding: 11px;
-  background: rgba(17, 23, 20, 0.72);
+  background: rgba(16, 23, 42, 0.72);
 }
 
 .gear-needs-raider-card[data-gear-status="needs"] {
@@ -3228,8 +3228,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .gear-needs-raider-card[data-gear-status="complete"] {
-  border-color: rgba(212, 124, 255, 0.48);
-  background: rgba(212, 124, 255, 0.1);
+  border-color: rgba(91, 124, 250, 0.48);
+  background: rgba(91, 124, 250, 0.1);
 }
 
 .gear-needs-raider-card[data-gear-status="no-tracked-need"] {
@@ -3249,7 +3249,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .gear-needs-player {
   display: grid;
   gap: 6px;
-  border-top: 1px solid rgba(43, 58, 49, 0.7);
+  border-top: 1px solid rgba(44, 60, 104, 0.7);
   padding-top: 10px;
 }
 
@@ -3309,14 +3309,14 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .gear-needs-acquired-list li {
   display: grid;
   gap: 1px;
-  border-top: 1px solid rgba(43, 58, 49, 0.58);
+  border-top: 1px solid rgba(44, 60, 104, 0.58);
   padding-top: 5px;
   color: var(--muted);
   font-size: 0.72rem;
 }
 
 .gear-needs-acquired-list li span:first-child {
-  color: #d47cff;
+  color: #5b7cfa;
   font-weight: 800;
 }
 
@@ -3340,10 +3340,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .bis-tab {
   flex: 0 0 auto;
-  border: 1px solid rgba(43, 58, 49, 0.86);
+  border: 1px solid rgba(44, 60, 104, 0.86);
   border-radius: 8px;
   padding: 8px 11px;
-  background: rgba(17, 23, 20, 0.72);
+  background: rgba(16, 23, 42, 0.72);
   color: var(--class-color, var(--muted));
   cursor: pointer;
   font: inherit;
@@ -3359,8 +3359,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .bis-tab:hover,
 .bis-tab:focus-visible,
 .bis-tab[aria-selected="true"] {
-  border-color: rgba(124, 140, 255, 0.58);
-  background: rgba(124, 140, 255, 0.12);
+  border-color: rgba(200, 155, 60, 0.58);
+  background: rgba(200, 155, 60, 0.12);
   color: var(--class-color, var(--text));
   outline: none;
 }
@@ -3383,7 +3383,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .bis-spec-heading span {
-  border: 1px solid rgba(43, 58, 49, 0.8);
+  border: 1px solid rgba(44, 60, 104, 0.8);
   border-radius: 999px;
   padding: 5px 9px;
   color: var(--muted);
@@ -3415,11 +3415,11 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   place-content: center;
   justify-items: center;
   min-height: 100%;
-  border: 1px solid rgba(43, 58, 49, 0.5);
+  border: 1px solid rgba(44, 60, 104, 0.5);
   border-radius: 8px;
   padding: 20px;
   background:
-    linear-gradient(180deg, rgba(212, 124, 255, 0.08), transparent),
+    linear-gradient(180deg, rgba(91, 124, 250, 0.08), transparent),
     rgba(9, 13, 11, 0.34);
   color: var(--muted);
   text-align: center;
@@ -3443,10 +3443,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   align-content: start;
   gap: 8px;
   min-height: 128px;
-  border: 1px solid rgba(43, 58, 49, 0.78);
+  border: 1px solid rgba(44, 60, 104, 0.78);
   border-radius: 8px;
   padding: 11px;
-  background: rgba(17, 23, 20, 0.72);
+  background: rgba(16, 23, 42, 0.72);
 }
 
 .bis-weapon-strip {
@@ -3517,10 +3517,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   display: grid;
   gap: 10px;
   min-width: 0;
-  border: 1px solid rgba(43, 58, 49, 0.7);
+  border: 1px solid rgba(44, 60, 104, 0.7);
   border-radius: 8px;
   padding: 14px;
-  background: rgba(23, 33, 27, 0.7);
+  background: rgba(23, 33, 61, 0.7);
 }
 
 .bench-week-section.compact {
@@ -3529,8 +3529,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .bench-week-card.is-empty .bench-week-section {
-  border-color: rgba(43, 58, 49, 0.48);
-  background: rgba(23, 33, 27, 0.42);
+  border-color: rgba(44, 60, 104, 0.48);
+  background: rgba(23, 33, 61, 0.42);
 }
 
 .bench-week-section h3 {
@@ -3559,8 +3559,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .bench-week-card .is-search-match a {
   border-radius: 6px;
   padding: 2px 4px;
-  background: rgba(124, 140, 255, 0.16);
-  box-shadow: 0 0 0 1px rgba(124, 140, 255, 0.22);
+  background: rgba(200, 155, 60, 0.16);
+  box-shadow: 0 0 0 1px rgba(200, 155, 60, 0.22);
 }
 
 .site-footer {
@@ -3588,10 +3588,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .sync-trigger-button {
-  border: 1px solid rgba(43, 58, 49, 0.9);
+  border: 1px solid rgba(44, 60, 104, 0.9);
   border-radius: 6px;
   padding: 5px 9px;
-  background: rgba(17, 23, 20, 0.6);
+  background: rgba(16, 23, 42, 0.6);
   color: var(--muted);
   cursor: pointer;
   font: inherit;
@@ -3600,8 +3600,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .sync-trigger-button:hover,
 .sync-trigger-button:focus-visible {
-  border-color: rgba(124, 140, 255, 0.56);
-  color: #aeb8ff;
+  border-color: rgba(200, 155, 60, 0.56);
+  color: #e0c887;
 }
 
 .sync-trigger-button:disabled {
@@ -3876,7 +3876,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   .raid-week-day + .raid-week-day {
     margin-top: 16px;
     margin-left: 0;
-    border-top: 1px solid rgba(124, 140, 255, 0.34);
+    border-top: 1px solid rgba(200, 155, 60, 0.34);
     padding-top: 16px;
     padding-left: 0;
   }
@@ -3946,8 +3946,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .hero-panel {
   background:
-    linear-gradient(135deg, rgba(124, 140, 255, 0.12), transparent 58%),
-    linear-gradient(315deg, rgba(212, 124, 255, 0.08), transparent 48%),
+    linear-gradient(135deg, rgba(200, 155, 60, 0.12), transparent 58%),
+    linear-gradient(315deg, rgba(91, 124, 250, 0.08), transparent 48%),
     var(--surface);
 }
 
@@ -4020,9 +4020,9 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .survey-answer-trigger:hover,
 .survey-answer-trigger:focus-visible,
 .survey-answer[data-open="true"] .survey-answer-trigger {
-  border-color: rgba(124, 140, 255, 0.36);
+  border-color: rgba(200, 155, 60, 0.36);
   outline: none;
-  background: rgba(124, 140, 255, 0.08);
+  background: rgba(200, 155, 60, 0.08);
 }
 
 .survey-bar-label {
@@ -4051,9 +4051,9 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .survey-bar-track {
   height: 8px;
   overflow: hidden;
-  border: 1px solid rgba(124, 140, 255, 0.22);
+  border: 1px solid rgba(200, 155, 60, 0.22);
   border-radius: 999px;
-  background: rgba(8, 11, 22, 0.72);
+  background: rgba(9, 13, 24, 0.72);
 }
 
 .survey-bar-track span {
@@ -4073,7 +4073,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   max-height: 280px;
   padding: 14px 16px;
   overflow-y: auto;
-  border: 1px solid rgba(124, 140, 255, 0.38);
+  border: 1px solid rgba(200, 155, 60, 0.38);
   border-radius: 12px;
   color: var(--text);
   background: rgba(12, 16, 34, 0.98);
@@ -4100,7 +4100,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .survey-respondent-heading {
   padding-bottom: 9px;
-  border-bottom: 1px solid rgba(124, 140, 255, 0.2);
+  border-bottom: 1px solid rgba(200, 155, 60, 0.2);
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 700;
