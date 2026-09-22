@@ -17,7 +17,12 @@ type NavItem = NavChild & {
 
 const navItems: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/roster", label: "Roster" },
+  {
+    href: "/roster",
+    label: "Roster",
+    matchPrefix: "/roster",
+    children: [{ href: "/roster/guild-archive", label: "Guild Archive" }],
+  },
   {
     href: "/officer",
     label: "Officer",

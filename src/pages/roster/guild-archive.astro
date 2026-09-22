@@ -1,0 +1,722 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import StatCard from "../../components/StatCard.astro";
+import historicalRaiders from "../../data/historicalRaiders.json";
+import { classColors } from "../../lib/playerStyles";
+
+type CharacterDetail = {
+  name: string;
+  className: string;
+  lastDate: string;
+};
+
+type HistoricalRaider = {
+  name: string;
+  characters: string[];
+  characterDetails: CharacterDetail[];
+  classes: string[];
+  primaryClass: string;
+  roles: string[];
+  lastDate: string;
+  lastSource: string;
+  lastCharacter: string;
+};
+
+const raiders = historicalRaiders as HistoricalRaider[];
+const roles = ["Tank", "Healer", "DPS"];
+const classes = [
+  "Death Knight",
+  "Druid",
+  "Hunter",
+  "Mage",
+  "Monk",
+  "Paladin",
+  "Priest",
+  "Rogue",
+  "Shaman",
+  "Warlock",
+  "Warrior",
+  "Unknown",
+].filter((className) => raiders.some((raider) => raider.classes.includes(className)));
+
+const characterCount = raiders.reduce((total, raider) => total + raider.characters.length, 0);
+const mergedCount = raiders.filter((raider) => raider.characters.length > 1).length;
+const classColor = (className: string) => classColors[className] ?? "#9aa6bd";
+const formatDate = (date: string) =>
+  new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${date}T12:00:00Z`));
+const searchValue = (raider: HistoricalRaider) =>
+  [raider.name, ...raider.characters, ...raider.classes, raider.lastSource].join(" ").toLocaleLowerCase();
+---
+
+<Layout title="Roster Guild Archive | Might Forever">
+  <div class="history-page" data-history-root>
+    <header class="history-hero">
+      <div>
+        <p class="eyebrow">Roster · Classic Vanilla to today</p>
+        <h1>Roster Guild Archive</h1>
+        <p class="history-intro">
+          A person-level history built from actual Warcraft Logs attendance. Every character here has
+          a present mark in at least one uploaded raid report—not merely a spot on a guild roster.
+        </p>
+      </div>
+    </header>
+
+    <section class="dashboard-grid history-stats" aria-label="Historical roster totals">
+      <StatCard label="Unique Raiders" value={raiders.length} detail="Conservative person groups" />
+      <StatCard label="Logged Characters" value={characterCount} detail="All had raid attendance" />
+      <StatCard label="Alt Groups" value={mergedCount} detail="Profiles with 2+ characters" />
+      <StatCard label="Years Covered" value="2020–2026" detail="Classic Vanilla through MoP" />
+    </section>
+
+    <section class="panel history-controls" aria-labelledby="history-filter-heading">
+      <div class="history-controls-heading">
+        <div>
+          <p class="eyebrow">Find a raider</p>
+          <h2 id="history-filter-heading">Filter the full archive</h2>
+        </div>
+        <button class="history-reset" type="button" data-reset-filters>Reset filters</button>
+      </div>
+
+      <div class="history-search-sort">
+        <label class="history-search">
+          <span>Search people or character names</span>
+          <input type="search" placeholder="Try Tengen, Karkonk, Stim…" autocomplete="off" data-history-search />
+        </label>
+        <label class="history-sort">
+          <span>Sort</span>
+          <select data-history-sort>
+            <option value="name">Name A–Z</option>
+            <option value="recent">Most recent raid</option>
+            <option value="oldest">Oldest last raid</option>
+          </select>
+        </label>
+      </div>
+
+      <fieldset class="history-filter-group">
+        <legend>Role capability</legend>
+        <div class="history-filter-row" role="group" aria-label="Filter by role capability">
+          <button type="button" aria-pressed="true" data-role-filter="All">
+            All <span>{raiders.length}</span>
+          </button>
+          {
+            roles.map((role) => (
+              <button type="button" aria-pressed="false" data-role-filter={role}>
+                {role} <span>{raiders.filter((raider) => raider.roles.includes(role)).length}</span>
+              </button>
+            ))
+          }
+        </div>
+        <p>Role filters reflect what each observed class can perform; historical specs are not recorded on attendance pages.</p>
+      </fieldset>
+
+      <fieldset class="history-filter-group">
+        <legend>Class</legend>
+        <div class="history-filter-row history-class-filters" role="group" aria-label="Filter by class">
+          <button type="button" aria-pressed="true" data-class-filter="All">
+            All <span>{raiders.length}</span>
+          </button>
+          {
+            classes.map((className) => (
+              <button
+                type="button"
+                aria-pressed="false"
+                data-class-filter={className}
+                style={`--class-color: ${classColor(className)}`}
+              >
+                {className} <span>{raiders.filter((raider) => raider.classes.includes(className)).length}</span>
+              </button>
+            ))
+          }
+        </div>
+      </fieldset>
+    </section>
+
+    <section class="history-results" aria-labelledby="history-results-heading">
+      <div class="history-results-heading">
+        <div>
+          <p class="eyebrow">Person-level roster</p>
+          <h2 id="history-results-heading">All historical raiders</h2>
+        </div>
+        <p class="history-result-count" aria-live="polite"><strong data-result-count>{raiders.length}</strong> people shown</p>
+      </div>
+
+      <div class="history-raider-list" data-raider-list>
+        {
+          raiders.map((raider) => (
+            <article
+              class="history-raider"
+              data-raider
+              data-name={raider.name}
+              data-date={raider.lastDate}
+              data-search={searchValue(raider)}
+              data-roles={raider.roles.join("|")}
+              data-classes={raider.classes.join("|")}
+              style={`--class-color: ${classColor(raider.primaryClass)}`}
+            >
+              <div class="history-raider-mark" aria-hidden="true">{raider.name.slice(0, 1)}</div>
+              <div class="history-raider-identity">
+                <h3>{raider.name}</h3>
+                <div class="history-class-list" aria-label={`Observed classes for ${raider.name}`}>
+                  {raider.classes.map((className) => (
+                    <span style={`--class-color: ${classColor(className)}`}>{className}</span>
+                  ))}
+                </div>
+                {
+                  raider.characters.length > 1 ? (
+                    <details class="history-aliases">
+                      <summary>{raider.characters.length} logged characters</summary>
+                      <ul>
+                        {raider.characterDetails.map((character) => (
+                          <li>
+                            <span style={`--class-color: ${classColor(character.className)}`}>{character.name}</span>
+                            <small>{character.className} · last seen {formatDate(character.lastDate)}</small>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  ) : (
+                    <p class="history-single-character">1 logged character</p>
+                  )
+                }
+              </div>
+              <div class="history-raider-last">
+                <span>Last logged raid</span>
+                <strong>{formatDate(raider.lastDate)}</strong>
+                <small>{raider.lastSource}</small>
+                {raider.lastCharacter !== raider.name && <small>as {raider.lastCharacter}</small>}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="panel history-empty" hidden data-history-empty>
+        <h3>No raiders match those filters</h3>
+        <p>Try another class or role, or clear the search.</p>
+      </div>
+    </section>
+
+    <aside class="history-methodology">
+      <strong>How to read this archive</strong>
+      <p>
+        Attendance, class, and last-raid dates come from Warcraft Logs. Person-level merges are deliberately conservative:
+        obvious spelling variants and known alts are grouped, while uncertain names remain separate. “Unknown” means the
+        attendance row did not expose a class, not that the raid appearance is unverified.
+      </p>
+    </aside>
+  </div>
+</Layout>
+
+<script>
+  const root = document.querySelector<HTMLElement>("[data-history-root]");
+
+  if (root) {
+    const list = root.querySelector<HTMLElement>("[data-raider-list]");
+    const search = root.querySelector<HTMLInputElement>("[data-history-search]");
+    const sort = root.querySelector<HTMLSelectElement>("[data-history-sort]");
+    const count = root.querySelector<HTMLElement>("[data-result-count]");
+    const empty = root.querySelector<HTMLElement>("[data-history-empty]");
+    const roleButtons = [...root.querySelectorAll<HTMLButtonElement>("[data-role-filter]")];
+    const classButtons = [...root.querySelectorAll<HTMLButtonElement>("[data-class-filter]")];
+    const rows = [...root.querySelectorAll<HTMLElement>("[data-raider]")];
+    let selectedRole = "All";
+    let selectedClass = "All";
+
+    const updatePressed = (buttons: HTMLButtonElement[], value: string, key: "roleFilter" | "classFilter") => {
+      buttons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset[key] === value)));
+    };
+
+    const apply = () => {
+      const query = search?.value.trim().toLocaleLowerCase() ?? "";
+      let visible = 0;
+
+      rows.forEach((row) => {
+        const roleMatch = selectedRole === "All" || (row.dataset.roles ?? "").split("|").includes(selectedRole);
+        const classMatch = selectedClass === "All" || (row.dataset.classes ?? "").split("|").includes(selectedClass);
+        const searchMatch = !query || (row.dataset.search ?? "").includes(query);
+        row.hidden = !(roleMatch && classMatch && searchMatch);
+        if (!row.hidden) visible += 1;
+      });
+
+      if (count) count.textContent = String(visible);
+      if (empty) empty.hidden = visible !== 0;
+    };
+
+    const sortRows = () => {
+      if (!list) return;
+      const mode = sort?.value ?? "name";
+      const ordered = [...rows].sort((left, right) => {
+        if (mode === "recent") return (right.dataset.date ?? "").localeCompare(left.dataset.date ?? "");
+        if (mode === "oldest") return (left.dataset.date ?? "").localeCompare(right.dataset.date ?? "");
+        return (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "", undefined, { sensitivity: "base" });
+      });
+      const fragment = document.createDocumentFragment();
+      ordered.forEach((row) => fragment.append(row));
+      list.append(fragment);
+    };
+
+    roleButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        selectedRole = button.dataset.roleFilter ?? "All";
+        updatePressed(roleButtons, selectedRole, "roleFilter");
+        apply();
+      });
+    });
+
+    classButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        selectedClass = button.dataset.classFilter ?? "All";
+        updatePressed(classButtons, selectedClass, "classFilter");
+        apply();
+      });
+    });
+
+    search?.addEventListener("input", apply);
+    sort?.addEventListener("change", sortRows);
+    root.querySelector<HTMLButtonElement>("[data-reset-filters]")?.addEventListener("click", () => {
+      selectedRole = "All";
+      selectedClass = "All";
+      if (search) search.value = "";
+      if (sort) sort.value = "name";
+      updatePressed(roleButtons, selectedRole, "roleFilter");
+      updatePressed(classButtons, selectedClass, "classFilter");
+      sortRows();
+      apply();
+    });
+  }
+</script>
+
+<style>
+  .history-page {
+    display: grid;
+    gap: 24px;
+  }
+
+  .history-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    align-items: end;
+    overflow: hidden;
+    min-height: 300px;
+    border: 1px solid rgba(124, 140, 255, 0.32);
+    border-radius: 14px;
+    padding: 46px;
+    background:
+      radial-gradient(circle at 88% 16%, rgba(212, 124, 255, 0.2), transparent 25rem),
+      linear-gradient(135deg, rgba(124, 140, 255, 0.16), transparent 56%),
+      rgba(16, 23, 42, 0.92);
+    box-shadow: var(--shadow);
+  }
+
+  .history-hero::after {
+    position: absolute;
+    right: -90px;
+    bottom: -150px;
+    width: 360px;
+    height: 360px;
+    border: 1px solid rgba(212, 124, 255, 0.2);
+    border-radius: 50%;
+    content: "";
+  }
+
+  .history-hero h1 {
+    max-width: 760px;
+    margin: 12px 0 18px;
+    font-size: clamp(3rem, 7vw, 4.75rem);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+  }
+
+  .history-intro {
+    max-width: 720px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  .history-stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .history-controls {
+    display: grid;
+    gap: 22px;
+    padding: 24px;
+  }
+
+  .history-controls-heading,
+  .history-results-heading,
+  .history-search-sort {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .history-controls-heading h2,
+  .history-results-heading h2,
+  .history-empty h3 {
+    margin: 5px 0 0;
+  }
+
+  .history-reset {
+    border: 0;
+    padding: 6px;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+  }
+
+  .history-reset:hover,
+  .history-reset:focus-visible {
+    color: var(--text);
+  }
+
+  .history-search,
+  .history-sort {
+    display: grid;
+    gap: 7px;
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .history-search {
+    flex: 1 1 auto;
+  }
+
+  .history-sort {
+    flex: 0 0 210px;
+  }
+
+  .history-search input,
+  .history-sort select {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0 13px;
+    background: rgba(8, 11, 22, 0.72);
+    color: var(--text);
+    font: inherit;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+
+  .history-search input:focus,
+  .history-sort select:focus {
+    border-color: var(--accent);
+    outline: 2px solid rgba(124, 140, 255, 0.18);
+  }
+
+  .history-filter-group {
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+    margin: 0;
+    border: 0;
+    padding: 0;
+  }
+
+  .history-filter-group legend {
+    margin-bottom: 9px;
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .history-filter-group p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.76rem;
+  }
+
+  .history-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .history-filter-row button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 38px;
+    border: 1px solid rgba(45, 58, 93, 0.9);
+    border-radius: 999px;
+    padding: 7px 12px;
+    background: rgba(8, 11, 22, 0.52);
+    color: var(--class-color, var(--muted));
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 850;
+    cursor: pointer;
+  }
+
+  .history-filter-row button span {
+    color: var(--muted);
+    font-size: 0.7rem;
+  }
+
+  .history-filter-row button:hover,
+  .history-filter-row button:focus-visible,
+  .history-filter-row button[aria-pressed="true"] {
+    border-color: var(--class-color, var(--accent));
+    background: color-mix(in srgb, var(--class-color, var(--accent)) 13%, transparent);
+    color: var(--class-color, var(--text));
+    outline: none;
+  }
+
+  .history-results {
+    display: grid;
+    gap: 16px;
+  }
+
+  .history-result-count {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  .history-result-count strong {
+    color: var(--text);
+    font-size: 1.2rem;
+  }
+
+  .history-raider-list {
+    display: grid;
+    gap: 8px;
+  }
+
+  .history-raider {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr) minmax(190px, auto);
+    gap: 14px;
+    align-items: start;
+    border: 1px solid rgba(45, 58, 93, 0.72);
+    border-radius: 10px;
+    padding: 15px 16px;
+    background: rgba(16, 23, 42, 0.66);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  }
+
+  .history-raider:hover {
+    border-color: color-mix(in srgb, var(--class-color) 50%, var(--border));
+    background: color-mix(in srgb, var(--class-color) 5%, rgba(16, 23, 42, 0.78));
+  }
+
+  .history-raider-mark {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid color-mix(in srgb, var(--class-color) 52%, transparent);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--class-color) 12%, rgba(8, 11, 22, 0.8));
+    color: var(--class-color);
+    font-size: 1.08rem;
+    font-weight: 950;
+  }
+
+  .history-raider-identity {
+    display: grid;
+    gap: 7px;
+    min-width: 0;
+  }
+
+  .history-raider h3 {
+    margin: 0;
+    overflow-wrap: anywhere;
+    color: var(--class-color);
+    font-size: 1.04rem;
+  }
+
+  .history-class-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .history-class-list > span {
+    border: 1px solid color-mix(in srgb, var(--class-color) 36%, transparent);
+    border-radius: 999px;
+    padding: 3px 7px;
+    background: color-mix(in srgb, var(--class-color) 9%, transparent);
+    color: var(--class-color);
+    font-size: 0.68rem;
+    font-weight: 850;
+  }
+
+  .history-single-character,
+  .history-aliases summary {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+  }
+
+  .history-aliases summary {
+    width: max-content;
+    cursor: pointer;
+    font-weight: 800;
+  }
+
+  .history-aliases[open] summary {
+    color: var(--text);
+  }
+
+  .history-aliases ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 7px;
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .history-aliases li {
+    display: grid;
+    gap: 1px;
+    border-left: 2px solid color-mix(in srgb, var(--class-color) 56%, transparent);
+    padding-left: 8px;
+  }
+
+  .history-aliases li span {
+    color: var(--class-color);
+    font-size: 0.8rem;
+    font-weight: 850;
+  }
+
+  .history-aliases li small {
+    color: var(--muted);
+    font-size: 0.67rem;
+  }
+
+  .history-raider-last {
+    display: grid;
+    gap: 2px;
+    justify-items: end;
+    text-align: right;
+  }
+
+  .history-raider-last span {
+    color: var(--muted);
+    font-size: 0.66rem;
+    font-weight: 850;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .history-raider-last strong {
+    font-size: 0.9rem;
+  }
+
+  .history-raider-last small {
+    max-width: 230px;
+    color: var(--muted);
+    font-size: 0.72rem;
+  }
+
+  .history-empty {
+    justify-items: center;
+    padding: 48px 22px;
+    text-align: center;
+  }
+
+  .history-empty p {
+    margin: 7px 0 0;
+    color: var(--muted);
+  }
+
+  .history-methodology {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 16px 24px;
+    align-items: start;
+    border-top: 1px solid var(--border);
+    padding: 22px 2px 0;
+  }
+
+  .history-methodology strong {
+    color: var(--accent);
+  }
+
+  .history-methodology p {
+    max-width: 850px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.84rem;
+  }
+
+  @media (max-width: 920px) {
+    .history-hero {
+      grid-template-columns: 1fr;
+      min-height: 0;
+      padding: 34px;
+    }
+
+    .history-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .history-hero {
+      padding: 26px 20px;
+    }
+
+    .history-hero h1 {
+      font-size: clamp(2.8rem, 15vw, 4rem);
+    }
+
+    .history-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .history-controls-heading,
+    .history-results-heading,
+    .history-search-sort,
+    .history-methodology {
+      align-items: stretch;
+      grid-template-columns: 1fr;
+      flex-direction: column;
+    }
+
+    .history-sort {
+      flex-basis: auto;
+    }
+
+    .history-raider {
+      grid-template-columns: 38px minmax(0, 1fr);
+      padding: 13px;
+    }
+
+    .history-raider-mark {
+      width: 38px;
+      height: 38px;
+    }
+
+    .history-raider-last {
+      grid-column: 2;
+      justify-items: start;
+      border-top: 1px solid rgba(45, 58, 93, 0.64);
+      padding-top: 9px;
+      text-align: left;
+    }
+  }
+</style>

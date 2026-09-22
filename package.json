@@ -12,6 +12,8 @@
     "audit:wcl-guild-history": "tsx scripts/audit-warcraft-logs-guild-history.ts",
     "debug:wcl-guild-progress": "tsx scripts/debug-wcl-guild-progress.ts",
     "debug:wcl-progression": "tsx scripts/debug-wcl-progression.ts",
+    "dedupe:wcl-raiders": "tsx scripts/dedupe-wcl-raiders.ts",
+    "build:historical-raiders": "tsx scripts/build-historical-raiders.ts",
     "sync:sheets": "tsx scripts/sync-google-sheets.ts",
     "sync:survey": "tsx scripts/sync-survey-insights.ts",
     "sync:data": "npm run sync:sheets",

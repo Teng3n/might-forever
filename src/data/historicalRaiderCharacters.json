@@ -1,0 +1,6050 @@
+[
+  {
+    "name": "Achenaton",
+    "className": "Rogue",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Achilles",
+    "className": "Warrior",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Acrylikx",
+    "className": "Paladin",
+    "lastDate": "2025-04-20",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Aestheticdad",
+    "className": "Warlock",
+    "lastDate": "2022-06-12",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Aestheticlol",
+    "className": "Mage",
+    "lastDate": "2022-09-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Aezik",
+    "className": "Priest",
+    "lastDate": "2023-05-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Afrodeeznuts",
+    "className": "DeathKnight",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Agalonie",
+    "className": "Warlock",
+    "lastDate": "2024-12-29",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Aggrened",
+    "className": "Monk",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Äimsir",
+    "className": "Priest",
+    "lastDate": "2025-08-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Akali",
+    "className": "Rogue",
+    "lastDate": "2020-12-01",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Alestus",
+    "className": "Paladin",
+    "lastDate": "2020-11-09",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Aliaah",
+    "className": "Druid",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Allenii",
+    "className": "Warlock",
+    "lastDate": "2026-02-15",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Allinclusive",
+    "className": "Mage",
+    "lastDate": "2021-11-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Almaero",
+    "className": "Unknown",
+    "lastDate": "2023-03-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Alphinn",
+    "className": "Shaman",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Alwaysjacked",
+    "className": "Paladin",
+    "lastDate": "2020-12-01",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Amazonprimè",
+    "className": "DeathKnight",
+    "lastDate": "2025-08-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Amberguyger",
+    "className": "Unknown",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Amidä",
+    "className": "Druid",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Anathia",
+    "className": "Warlock",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Andtold",
+    "className": "Druid",
+    "lastDate": "2025-08-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Andulath",
+    "className": "Paladin",
+    "lastDate": "2020-09-28",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Animality",
+    "className": "Druid",
+    "lastDate": "2020-03-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Animis",
+    "className": "Druid",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Aniriss",
+    "className": "Hunter",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Aquynas",
+    "className": "Priest",
+    "lastDate": "2022-12-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Areliux",
+    "className": "Warrior",
+    "lastDate": "2023-12-19",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Arrowqt",
+    "className": "Hunter",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Arrowtwo",
+    "className": "Hunter",
+    "lastDate": "2025-06-08",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Artax",
+    "className": "Warrior",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Artemissa",
+    "className": "Mage",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Arumai",
+    "className": "Shaman",
+    "lastDate": "2024-10-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Asharras",
+    "className": "Monk",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Ashyrah",
+    "className": "Druid",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Askot",
+    "className": "Shaman",
+    "lastDate": "2021-09-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Aspectwar",
+    "className": "Warrior",
+    "lastDate": "2026-07-27",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Astralavigne",
+    "className": "Shaman",
+    "lastDate": "2023-01-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Audem",
+    "className": "Hunter",
+    "lastDate": "2021-09-06",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Audïo",
+    "className": "Rogue",
+    "lastDate": "2023-09-30",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Audionova",
+    "className": "Druid",
+    "lastDate": "2023-12-30",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Audiorampage",
+    "className": "DeathKnight",
+    "lastDate": "2024-03-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Audiorekt",
+    "className": "Paladin",
+    "lastDate": "2024-04-07",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Audiorektd",
+    "className": "Paladin",
+    "lastDate": "2023-11-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Aurtimus",
+    "className": "DeathKnight",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Aurumai",
+    "className": "Shaman",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Autoshotafk",
+    "className": "Hunter",
+    "lastDate": "2021-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Aviaell",
+    "className": "Warlock",
+    "lastDate": "2025-08-03",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Avii",
+    "className": "Priest",
+    "lastDate": "2020-04-27",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Awsum",
+    "className": "Rogue",
+    "lastDate": "2021-09-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Azarielle",
+    "className": "Warlock",
+    "lastDate": "2026-06-15",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Azennath",
+    "className": "Priest",
+    "lastDate": "2023-09-30",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Azhaziel",
+    "className": "Druid",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Aznprincess",
+    "className": "Rogue",
+    "lastDate": "2024-06-28",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Badpaw",
+    "className": "Druid",
+    "lastDate": "2022-12-12",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Badpawsture",
+    "className": "Druid",
+    "lastDate": "2023-07-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Baeorn",
+    "className": "Druid",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Baezz",
+    "className": "Shaman",
+    "lastDate": "2025-08-03",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Baktumi",
+    "className": "Rogue",
+    "lastDate": "2020-08-16",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Balgrif",
+    "className": "Druid",
+    "lastDate": "2026-06-01",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Balsnack",
+    "className": "Druid",
+    "lastDate": "2026-06-15",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Bankbeard",
+    "className": "Mage",
+    "lastDate": "2020-11-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Bankofreva",
+    "className": "Priest",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bannedpex",
+    "className": "Druid",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Barbuchini",
+    "className": "Hunter",
+    "lastDate": "2025-08-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Barkbeard",
+    "className": "Druid",
+    "lastDate": "2023-02-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bayy",
+    "className": "Priest",
+    "lastDate": "2020-01-20",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Bearbéb",
+    "className": "Druid",
+    "lastDate": "2025-09-26",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Bearbobaggns",
+    "className": "Druid",
+    "lastDate": "2022-10-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bearyserious",
+    "className": "Druid",
+    "lastDate": "2024-12-15",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Beathoesdown",
+    "className": "Mage",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Beefbubble",
+    "className": "Paladin",
+    "lastDate": "2025-11-02",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Beezo",
+    "className": "Paladin",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Begoogling",
+    "className": "Rogue",
+    "lastDate": "2025-04-07",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Bellandra",
+    "className": "Warlock",
+    "lastDate": "2023-09-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Benafflöck",
+    "className": "Warlock",
+    "lastDate": "2021-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Benfolds",
+    "className": "Warlock",
+    "lastDate": "2020-12-01",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Berdugô",
+    "className": "Rogue",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Bestille",
+    "className": "Druid",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Beysik",
+    "className": "Warrior",
+    "lastDate": "2023-10-16",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bibo",
+    "className": "Paladin",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Bigdaddydk",
+    "className": "DeathKnight",
+    "lastDate": "2025-06-23",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Bigfingêr",
+    "className": "Warrior",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Bigfrisch",
+    "className": "Hunter",
+    "lastDate": "2020-02-09",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Bigjudgeboi",
+    "className": "Paladin",
+    "lastDate": "2022-02-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bigmsboi",
+    "className": "Warrior",
+    "lastDate": "2022-02-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Binah",
+    "className": "Paladin",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bishota",
+    "className": "Paladin",
+    "lastDate": "2025-04-13",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Blackpill",
+    "className": "Warrior",
+    "lastDate": "2023-08-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Blarrick",
+    "className": "Mage",
+    "lastDate": "2020-12-08",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Blessingofqt",
+    "className": "Paladin",
+    "lastDate": "2024-04-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Blightkin",
+    "className": "Druid",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bliss",
+    "className": "Warlock",
+    "lastDate": "2023-05-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bluefreddy",
+    "className": "Shaman",
+    "lastDate": "2022-04-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bluegiant",
+    "className": "Shaman",
+    "lastDate": "2022-12-12",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Blur",
+    "className": "Warrior",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Boâz",
+    "className": "Warrior",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Boáz",
+    "className": "Paladin",
+    "lastDate": "2024-01-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Boaz",
+    "className": "Warrior",
+    "lastDate": "2021-05-16",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Boazwar",
+    "className": "Warrior",
+    "lastDate": "2024-05-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Boazx",
+    "className": "Warrior",
+    "lastDate": "2024-09-16",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Bobbybigcrit",
+    "className": "Paladin",
+    "lastDate": "2021-09-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Boboloni",
+    "className": "Rogue",
+    "lastDate": "2023-10-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Boborino",
+    "className": "DeathKnight",
+    "lastDate": "2025-02-03",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Boboroni",
+    "className": "Paladin",
+    "lastDate": "2024-05-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bobthebob",
+    "className": "Paladin",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bobtherogue",
+    "className": "Paladin",
+    "lastDate": "2022-12-12",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Boltslinger",
+    "className": "Mage",
+    "lastDate": "2023-08-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Boltstein",
+    "className": "Warlock",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Boombaboom",
+    "className": "Mage",
+    "lastDate": "2022-09-12",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bootycheaks",
+    "className": "Shaman",
+    "lastDate": "2025-06-23",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Börp",
+    "className": "Mage",
+    "lastDate": "2022-11-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bowlcutbrad",
+    "className": "Paladin",
+    "lastDate": "2025-04-13",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bragn",
+    "className": "Hunter",
+    "lastDate": "2025-03-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Brainpicker",
+    "className": "Rogue",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bravelin",
+    "className": "Hunter",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bravohance",
+    "className": "Shaman",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Braybear",
+    "className": "Druid",
+    "lastDate": "2022-06-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Brewdaddy",
+    "className": "DeathKnight",
+    "lastDate": "2022-10-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Brisbino",
+    "className": "Hunter",
+    "lastDate": "2021-01-24",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Brisbon",
+    "className": "Rogue",
+    "lastDate": "2020-09-21",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Brodekaiser",
+    "className": "Druid",
+    "lastDate": "2022-10-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Brownbeard",
+    "className": "Paladin",
+    "lastDate": "2021-04-18",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Bsoe",
+    "className": "Mage",
+    "lastDate": "2020-08-23",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Bubblebird",
+    "className": "Priest",
+    "lastDate": "2025-03-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bubblyder",
+    "className": "Paladin",
+    "lastDate": "2022-10-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Buddhism",
+    "className": "Warrior",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Buffcyclone",
+    "className": "Druid",
+    "lastDate": "2023-03-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Bundos",
+    "className": "Paladin",
+    "lastDate": "2024-06-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Burandis",
+    "className": "Hunter",
+    "lastDate": "2022-09-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Burandruid",
+    "className": "Druid",
+    "lastDate": "2023-03-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Butterlock",
+    "className": "Warlock",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Cabbage",
+    "className": "Warlock",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Cabbdk",
+    "className": "DeathKnight",
+    "lastDate": "2024-09-23",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Cabbegh",
+    "className": "Warlock",
+    "lastDate": "2024-10-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Cabbm",
+    "className": "Mage",
+    "lastDate": "2025-10-06",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Cabboom",
+    "className": "Druid",
+    "lastDate": "2025-10-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Cabbwl",
+    "className": "Warlock",
+    "lastDate": "2025-09-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Caedas",
+    "className": "DeathKnight",
+    "lastDate": "2023-06-23",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Calicags",
+    "className": "Warrior",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Callukeeper",
+    "className": "Paladin",
+    "lastDate": "2021-06-07",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Cammycakes",
+    "className": "Paladin",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Cannabanana",
+    "className": "Priest",
+    "lastDate": "2021-09-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Cannamancer",
+    "className": "Druid",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Cantdielol",
+    "className": "Mage",
+    "lastDate": "2021-01-11",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Canttank",
+    "className": "Warrior",
+    "lastDate": "2021-05-30",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Captnstabbin",
+    "className": "Rogue",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Cardinalcrzy",
+    "className": "Priest",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Cardinlcrzy",
+    "className": "Priest",
+    "lastDate": "2024-10-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Carnax",
+    "className": "Mage",
+    "lastDate": "2020-08-16",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Cassibelle",
+    "className": "Priest",
+    "lastDate": "2023-05-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Catofdeath",
+    "className": "Druid",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Caxeer",
+    "className": "Monk",
+    "lastDate": "2026-07-26",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Celeaa",
+    "className": "Mage",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Chackle",
+    "className": "Unknown",
+    "lastDate": "2022-07-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Chad",
+    "className": "Rogue",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Chairmanjeff",
+    "className": "Shaman",
+    "lastDate": "2025-04-21",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Chakas",
+    "className": "Shaman",
+    "lastDate": "2021-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Chamchong",
+    "className": "Warrior",
+    "lastDate": "2020-04-16",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Chantzler",
+    "className": "Warlock",
+    "lastDate": "2022-10-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Chazknight",
+    "className": "DeathKnight",
+    "lastDate": "2023-10-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Chazwazer",
+    "className": "Rogue",
+    "lastDate": "2025-07-20",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Chérry",
+    "className": "Rogue",
+    "lastDate": "2025-09-26",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Cherrycolaa",
+    "className": "Warlock",
+    "lastDate": "2023-05-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Chérrytwo",
+    "className": "Rogue",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Chetsteele",
+    "className": "DeathKnight",
+    "lastDate": "2024-06-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Chickenmd",
+    "className": "Priest",
+    "lastDate": "2025-09-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Chickenphd",
+    "className": "Warlock",
+    "lastDate": "2024-11-25",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Chonkars",
+    "className": "Warrior",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Chordibee",
+    "className": "DeathKnight",
+    "lastDate": "2025-04-21",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Cjacks",
+    "className": "Rogue",
+    "lastDate": "2020-10-12",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Cjdj",
+    "className": "Priest",
+    "lastDate": "2021-03-08",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Clairesha",
+    "className": "Unknown",
+    "lastDate": "2023-03-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Clapathy",
+    "className": "Mage",
+    "lastDate": "2020-11-11",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Clearix",
+    "className": "Shaman",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Clinsey",
+    "className": "Priest",
+    "lastDate": "2024-05-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Clydesteele",
+    "className": "Priest",
+    "lastDate": "2024-04-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Commandër",
+    "className": "Druid",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Concerted",
+    "className": "Warrior",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Consecratist",
+    "className": "Unknown",
+    "lastDate": "2023-03-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Cooler",
+    "className": "Warrior",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Coppernicus",
+    "className": "Hunter",
+    "lastDate": "2022-09-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Coralisia",
+    "className": "Shaman",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Coreyfeldman",
+    "className": "Warlock",
+    "lastDate": "2021-09-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Corñholio",
+    "className": "Priest",
+    "lastDate": "2021-05-09",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Costcopizza",
+    "className": "Druid",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Crayzen",
+    "className": "Warrior",
+    "lastDate": "2022-10-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Creampop",
+    "className": "Shaman",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Crysanthemum",
+    "className": "Druid",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Crythansenum",
+    "className": "Druid",
+    "lastDate": "2022-08-28",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Daat",
+    "className": "Paladin",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dackjark",
+    "className": "Rogue",
+    "lastDate": "2023-07-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dancingcamel",
+    "className": "DeathKnight",
+    "lastDate": "2025-11-02",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Danniah",
+    "className": "Druid",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dannybtw",
+    "className": "Warrior",
+    "lastDate": "2025-03-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Darthfrozone",
+    "className": "Mage",
+    "lastDate": "2020-10-27",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Dazarny",
+    "className": "Rogue",
+    "lastDate": "2024-10-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Deathgen",
+    "className": "DeathKnight",
+    "lastDate": "2024-06-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Deathlotus",
+    "className": "Rogue",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Deathsfathom",
+    "className": "Mage",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Deathsweb",
+    "className": "Priest",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Decapitatorx",
+    "className": "Paladin",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Deéz",
+    "className": "DeathKnight",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Dellila",
+    "className": "Warlock",
+    "lastDate": "2023-05-07",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dellyblast",
+    "className": "Mage",
+    "lastDate": "2023-04-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Delvazor",
+    "className": "Paladin",
+    "lastDate": "2022-10-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Demisan",
+    "className": "Priest",
+    "lastDate": "2020-03-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Dèmonic",
+    "className": "Warlock",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Dentoddoric",
+    "className": "DeathKnight",
+    "lastDate": "2025-03-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dephias",
+    "className": "Rogue",
+    "lastDate": "2024-07-21",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Deshy",
+    "className": "Shaman",
+    "lastDate": "2021-08-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Deslynx",
+    "className": "Warlock",
+    "lastDate": "2023-08-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Desparatus",
+    "className": "Druid",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dessaer",
+    "className": "Unknown",
+    "lastDate": "2023-07-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Devise",
+    "className": "Rogue",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Diablera",
+    "className": "Rogue",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Diamonté",
+    "className": "DeathKnight",
+    "lastDate": "2025-08-03",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Diefrostnovi",
+    "className": "Mage",
+    "lastDate": "2021-03-08",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Dildobike",
+    "className": "Warlock",
+    "lastDate": "2021-08-23",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Dimefox",
+    "className": "Rogue",
+    "lastDate": "2023-04-03",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dimzim",
+    "className": "Warlock",
+    "lastDate": "2024-01-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dinknflicka",
+    "className": "Shaman",
+    "lastDate": "2022-10-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dintendo",
+    "className": "Druid",
+    "lastDate": "2025-09-26",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Dirtydude",
+    "className": "Rogue",
+    "lastDate": "2020-05-17",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Divinenature",
+    "className": "Shaman",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dkamus",
+    "className": "DeathKnight",
+    "lastDate": "2024-11-11",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Dlckktionary",
+    "className": "Mage",
+    "lastDate": "2025-03-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dntazemebro",
+    "className": "Shaman",
+    "lastDate": "2025-01-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Docchicken",
+    "className": "Priest",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dogchapman",
+    "className": "Hunter",
+    "lastDate": "2022-09-19",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dollabillsz",
+    "className": "Priest",
+    "lastDate": "2020-08-09",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Dollabillyal",
+    "className": "Mage",
+    "lastDate": "2020-05-03",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Dollabillzs",
+    "className": "Warlock",
+    "lastDate": "2020-07-26",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Dorfyman",
+    "className": "DeathKnight",
+    "lastDate": "2023-05-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dosan",
+    "className": "Monk",
+    "lastDate": "2026-06-01",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Dotbeard",
+    "className": "Warlock",
+    "lastDate": "2022-09-19",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Douchington",
+    "className": "Druid",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Draezen",
+    "className": "Hunter",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dragalkim",
+    "className": "DeathKnight",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Dragonshank",
+    "className": "Rogue",
+    "lastDate": "2026-07-27",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Drchicken",
+    "className": "Priest",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Dread",
+    "className": "Shaman",
+    "lastDate": "2025-11-02",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Dreådly",
+    "className": "Shaman",
+    "lastDate": "2025-09-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Dreiner",
+    "className": "DeathKnight",
+    "lastDate": "2025-08-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Droogg",
+    "className": "Warlock",
+    "lastDate": "2023-03-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Drrchicken",
+    "className": "Paladin",
+    "lastDate": "2024-10-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Drspinkitten",
+    "className": "Druid",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Dsyelxia",
+    "className": "Warlock",
+    "lastDate": "2021-10-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Duan",
+    "className": "Druid",
+    "lastDate": "2025-06-15",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Duckard",
+    "className": "Warlock",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Duckk",
+    "className": "Hunter",
+    "lastDate": "2020-05-10",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Dystrophys",
+    "className": "Priest",
+    "lastDate": "2023-09-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Eatramen",
+    "className": "Priest",
+    "lastDate": "2021-07-25",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Eggeggeggegg",
+    "className": "Priest",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Egirlabuser",
+    "className": "Paladin",
+    "lastDate": "2022-01-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Eleholy",
+    "className": "Paladin",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Elethea",
+    "className": "Druid",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Elevators",
+    "className": "Priest",
+    "lastDate": "2023-01-16",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Elfofdeath",
+    "className": "Hunter",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Elguapojefe",
+    "className": "Druid",
+    "lastDate": "2025-04-13",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Elundir",
+    "className": "Hunter",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Emorell",
+    "className": "Hunter",
+    "lastDate": "2021-08-15",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Empyt",
+    "className": "Hunter",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Enjoythedots",
+    "className": "Warlock",
+    "lastDate": "2022-02-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Entailed",
+    "className": "Shaman",
+    "lastDate": "2026-06-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Erikthered",
+    "className": "Hunter",
+    "lastDate": "2023-05-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Erindragong",
+    "className": "Priest",
+    "lastDate": "2021-05-30",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Erisius",
+    "className": "Warlock",
+    "lastDate": "2021-09-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Erti",
+    "className": "Mage",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Escalates",
+    "className": "Paladin",
+    "lastDate": "2022-05-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Escalatte",
+    "className": "Shaman",
+    "lastDate": "2022-07-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Espee",
+    "className": "Shaman",
+    "lastDate": "2021-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Eternallord",
+    "className": "Paladin",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Etharialle",
+    "className": "Paladin",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Evoniderin",
+    "className": "Paladin",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Exitium",
+    "className": "Druid",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Ezeru",
+    "className": "Druid",
+    "lastDate": "2020-09-13",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Ezeruu",
+    "className": "Mage",
+    "lastDate": "2020-11-08",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Fadebeard",
+    "className": "Paladin",
+    "lastDate": "2022-07-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Fae",
+    "className": "Paladin",
+    "lastDate": "2026-09-07",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Fairganks",
+    "className": "Rogue",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Fajitajoe",
+    "className": "Priest",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Fakekarkan",
+    "className": "Paladin",
+    "lastDate": "2022-04-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Falata",
+    "className": "Hunter",
+    "lastDate": "2020-09-01",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Fannypak",
+    "className": "Paladin",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Fasterfaster",
+    "className": "Mage",
+    "lastDate": "2021-02-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Fathem",
+    "className": "Shaman",
+    "lastDate": "2025-08-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Fêllo",
+    "className": "Shaman",
+    "lastDate": "2023-10-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Fêlo",
+    "className": "Mage",
+    "lastDate": "2023-07-23",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Ferath",
+    "className": "Druid",
+    "lastDate": "2024-12-29",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Fhae",
+    "className": "Hunter",
+    "lastDate": "2025-06-29",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Fhaena",
+    "className": "Monk",
+    "lastDate": "2025-12-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Fifa",
+    "className": "Rogue",
+    "lastDate": "2025-09-26",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Flamewright",
+    "className": "Mage",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Fluidstrikes",
+    "className": "Rogue",
+    "lastDate": "2022-02-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Foggy",
+    "className": "Warlock",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Fordros",
+    "className": "Warrior",
+    "lastDate": "2020-10-20",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Fowlincident",
+    "className": "Druid",
+    "lastDate": "2025-07-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Fowlìncìdent",
+    "className": "Warlock",
+    "lastDate": "2025-07-13",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Fowlincìdent",
+    "className": "DeathKnight",
+    "lastDate": "2024-11-25",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Fowlìncident",
+    "className": "Mage",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Foxhart",
+    "className": "Warrior",
+    "lastDate": "2021-09-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Freddy",
+    "className": "Paladin",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Freddyp",
+    "className": "Paladin",
+    "lastDate": "2023-05-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Freddypp",
+    "className": "Paladin",
+    "lastDate": "2023-01-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Freddyw",
+    "className": "Warlock",
+    "lastDate": "2023-05-12",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Fredfred",
+    "className": "Paladin",
+    "lastDate": "2021-08-09",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Frenzybeard",
+    "className": "Warrior",
+    "lastDate": "2023-12-30",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Frisch",
+    "className": "Mage",
+    "lastDate": "2020-09-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Frischý",
+    "className": "Paladin",
+    "lastDate": "2021-03-01",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Frischy",
+    "className": "Warrior",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Frixter",
+    "className": "Rogue",
+    "lastDate": "2025-01-27",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Frostcricket",
+    "className": "Mage",
+    "lastDate": "2021-05-24",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Fursáce",
+    "className": "Druid",
+    "lastDate": "2024-10-14",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Fynx",
+    "className": "Priest",
+    "lastDate": "2024-04-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Gambatte",
+    "className": "Rogue",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Garden",
+    "className": "Hunter",
+    "lastDate": "2021-05-24",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Garph",
+    "className": "Unknown",
+    "lastDate": "2022-06-06",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Gatitorapido",
+    "className": "Druid",
+    "lastDate": "2020-09-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Gaymingxd",
+    "className": "Rogue",
+    "lastDate": "2025-09-19",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Gettincrusty",
+    "className": "Hunter",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Ggmylife",
+    "className": "Paladin",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Ghstbear",
+    "className": "Druid",
+    "lastDate": "2020-11-09",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Ghstmarauder",
+    "className": "Hunter",
+    "lastDate": "2024-04-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Ghstravager",
+    "className": "Warlock",
+    "lastDate": "2021-04-11",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Gilaen",
+    "className": "Priest",
+    "lastDate": "2022-10-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Gilthunder",
+    "className": "Shaman",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Globrif",
+    "className": "Druid",
+    "lastDate": "2026-06-15",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Glorfindol",
+    "className": "Priest",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Glorisa",
+    "className": "Unknown",
+    "lastDate": "2022-06-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Glunk",
+    "className": "Priest",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Gonçha",
+    "className": "Hunter",
+    "lastDate": "2022-02-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Goodpawsture",
+    "className": "Druid",
+    "lastDate": "2022-09-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Goonersw",
+    "className": "Warrior",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Granreserva",
+    "className": "Paladin",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Greybeard",
+    "className": "Mage",
+    "lastDate": "2021-04-11",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Grideekay",
+    "className": "DeathKnight",
+    "lastDate": "2023-11-19",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Gridy",
+    "className": "Druid",
+    "lastDate": "2023-08-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Gridydots",
+    "className": "Warlock",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Gridypal",
+    "className": "Paladin",
+    "lastDate": "2023-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Gridyy",
+    "className": "Rogue",
+    "lastDate": "2023-10-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Grippyboi",
+    "className": "DeathKnight",
+    "lastDate": "2023-01-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Griwolf",
+    "className": "Druid",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Grubes",
+    "className": "Mage",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Gtkrwn",
+    "className": "DeathKnight",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Gundemonique",
+    "className": "Warlock",
+    "lastDate": "2024-12-29",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Gunsnbrew",
+    "className": "Druid",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Hansenesian",
+    "className": "DeathKnight",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Happyshifty",
+    "className": "Unknown",
+    "lastDate": "2023-01-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Haptíx",
+    "className": "DeathKnight",
+    "lastDate": "2023-01-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Hasybi",
+    "className": "Rogue",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Hayleyy",
+    "className": "Hunter",
+    "lastDate": "2020-09-21",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Healinrainqt",
+    "className": "Shaman",
+    "lastDate": "2025-06-23",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Healmebithc",
+    "className": "Priest",
+    "lastDate": "2022-10-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Heeka",
+    "className": "Paladin",
+    "lastDate": "2023-10-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Heimdal",
+    "className": "Warrior",
+    "lastDate": "2020-10-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Hekapoo",
+    "className": "Warlock",
+    "lastDate": "2021-05-09",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Hekkapoo",
+    "className": "DeathKnight",
+    "lastDate": "2023-11-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Helen",
+    "className": "Priest",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Helenitatp",
+    "className": "Shaman",
+    "lastDate": "2024-06-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Hellcreeper",
+    "className": "Rogue",
+    "lastDate": "2023-10-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Herakles",
+    "className": "Warrior",
+    "lastDate": "2020-04-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Holygarbage",
+    "className": "Paladin",
+    "lastDate": "2023-10-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Holyshéat",
+    "className": "Paladin",
+    "lastDate": "2020-09-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Holysheat",
+    "className": "Paladin",
+    "lastDate": "2020-08-23",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Holywap",
+    "className": "Paladin",
+    "lastDate": "2025-09-19",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Holywaptwo",
+    "className": "Paladin",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Holywaste",
+    "className": "Paladin",
+    "lastDate": "2023-10-26",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Hoodiemelo",
+    "className": "Paladin",
+    "lastDate": "2023-05-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Hotsaucin",
+    "className": "Paladin",
+    "lastDate": "2022-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Hotshotzz",
+    "className": "Mage",
+    "lastDate": "2024-10-20",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Hotstile",
+    "className": "Rogue",
+    "lastDate": "2021-04-11",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Hydrobirth",
+    "className": "Priest",
+    "lastDate": "2023-07-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Hydroheat",
+    "className": "Mage",
+    "lastDate": "2023-04-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Hydroseed",
+    "className": "Warlock",
+    "lastDate": "2023-07-03",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Ianpotty",
+    "className": "Warlock",
+    "lastDate": "2021-09-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Ianziering",
+    "className": "DeathKnight",
+    "lastDate": "2022-11-06",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Iceburst",
+    "className": "Mage",
+    "lastDate": "2021-05-30",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Idotuburn",
+    "className": "Warlock",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Ieongvik",
+    "className": "DeathKnight",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Iint",
+    "className": "Mage",
+    "lastDate": "2021-05-16",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Ikickinfants",
+    "className": "DeathKnight",
+    "lastDate": "2023-07-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Ikoedawey",
+    "className": "Mage",
+    "lastDate": "2021-06-07",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Ilaypipe",
+    "className": "Mage",
+    "lastDate": "2020-10-24",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Imincolombia",
+    "className": "Monk",
+    "lastDate": "2026-04-26",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Ïmperor",
+    "className": "Warlock",
+    "lastDate": "2020-08-23",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Imrobk",
+    "className": "Priest",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Ingodwetrust",
+    "className": "Priest",
+    "lastDate": "2020-11-23",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Inncioh",
+    "className": "Priest",
+    "lastDate": "2024-10-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Înosuke",
+    "className": "Warrior",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Iparsegrey",
+    "className": "Paladin",
+    "lastDate": "2023-01-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Isinga",
+    "className": "Shaman",
+    "lastDate": "2022-10-16",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Itsmaamm",
+    "className": "Paladin",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Iwontkite",
+    "className": "Hunter",
+    "lastDate": "2025-03-23",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Jackdark",
+    "className": "Rogue",
+    "lastDate": "2024-01-07",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Jackdarktres",
+    "className": "Rogue",
+    "lastDate": "2022-04-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Jackdarktwo",
+    "className": "Rogue",
+    "lastDate": "2022-01-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Jackiedark",
+    "className": "Rogue",
+    "lastDate": "2026-01-26",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Jackry",
+    "className": "Mage",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Jackspencer",
+    "className": "Rogue",
+    "lastDate": "2023-05-07",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Jassian",
+    "className": "Druid",
+    "lastDate": "2022-02-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Jelyta",
+    "className": "Hunter",
+    "lastDate": "2021-05-30",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Jesska",
+    "className": "Hunter",
+    "lastDate": "2022-09-19",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Jhaana",
+    "className": "Hunter",
+    "lastDate": "2023-01-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Jhonitachi",
+    "className": "Mage",
+    "lastDate": "2025-11-02",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Jibi",
+    "className": "Warlock",
+    "lastDate": "2021-04-04",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Jibrill",
+    "className": "Druid",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Johnblack",
+    "className": "Priest",
+    "lastDate": "2022-09-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Johnnyboi",
+    "className": "Hunter",
+    "lastDate": "2022-04-07",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Johnritter",
+    "className": "Paladin",
+    "lastDate": "2022-09-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Johnthewhite",
+    "className": "Mage",
+    "lastDate": "2022-03-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Jojotheta",
+    "className": "Druid",
+    "lastDate": "2025-03-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Jonnyquest",
+    "className": "Paladin",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Jordankest",
+    "className": "Priest",
+    "lastDate": "2021-08-15",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Joshysins",
+    "className": "Mage",
+    "lastDate": "2025-02-03",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Jplux",
+    "className": "Warrior",
+    "lastDate": "2022-03-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Jrewind",
+    "className": "Mage",
+    "lastDate": "2023-03-12",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Judgyboi",
+    "className": "Paladin",
+    "lastDate": "2023-01-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Juggernot",
+    "className": "Warrior",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Juicyfruits",
+    "className": "Druid",
+    "lastDate": "2022-08-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Juicyfruitz",
+    "className": "Druid",
+    "lastDate": "2022-04-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "June",
+    "className": "Monk",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Junedru",
+    "className": "Druid",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Juneww",
+    "className": "Monk",
+    "lastDate": "2025-09-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Jurx",
+    "className": "Rogue",
+    "lastDate": "2025-10-05",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Kaaldr",
+    "className": "DeathKnight",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kabus",
+    "className": "Warlock",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kahnlum",
+    "className": "Warrior",
+    "lastDate": "2023-12-30",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kaiysz",
+    "className": "Paladin",
+    "lastDate": "2026-09-07",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Kali",
+    "className": "Warrior",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Kalligas",
+    "className": "Mage",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kalpa",
+    "className": "Shaman",
+    "lastDate": "2024-06-28",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kargen",
+    "className": "Warrior",
+    "lastDate": "2023-11-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Karkan",
+    "className": "Paladin",
+    "lastDate": "2026-06-15",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Karkant",
+    "className": "DeathKnight",
+    "lastDate": "2025-06-29",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Karkonk",
+    "className": "Monk",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Kasual",
+    "className": "Mage",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Kazuli",
+    "className": "Shaman",
+    "lastDate": "2025-09-19",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Kazuma",
+    "className": "Rogue",
+    "lastDate": "2024-06-16",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Kean",
+    "className": "DeathKnight",
+    "lastDate": "2023-06-12",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Keanubleats",
+    "className": "Shaman",
+    "lastDate": "2022-10-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Keropikapika",
+    "className": "Mage",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Ketel",
+    "className": "Mage",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Keukeukeu",
+    "className": "Paladin",
+    "lastDate": "2024-06-21",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Keylo",
+    "className": "Druid",
+    "lastDate": "2023-04-03",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Khalesii",
+    "className": "Mage",
+    "lastDate": "2022-02-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Khalila",
+    "className": "Druid",
+    "lastDate": "2020-10-21",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Khanlum",
+    "className": "Warlock",
+    "lastDate": "2020-08-16",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Kieran",
+    "className": "Warrior",
+    "lastDate": "2021-04-25",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Kikeadin",
+    "className": "Paladin",
+    "lastDate": "2023-01-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kikioni",
+    "className": "Hunter",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Kleebörp",
+    "className": "Priest",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kleenynx",
+    "className": "DeathKnight",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Klippyy",
+    "className": "Hunter",
+    "lastDate": "2025-08-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Knuttertwo",
+    "className": "Priest",
+    "lastDate": "2025-09-26",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Kolorv",
+    "className": "Hunter",
+    "lastDate": "2023-01-16",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Korrà",
+    "className": "Druid",
+    "lastDate": "2022-10-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kouber",
+    "className": "Paladin",
+    "lastDate": "2025-06-29",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Kougori",
+    "className": "Mage",
+    "lastDate": "2025-02-03",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Koulikov",
+    "className": "Hunter",
+    "lastDate": "2026-05-25",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Kpreem",
+    "className": "Paladin",
+    "lastDate": "2024-10-20",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Kraj",
+    "className": "Mage",
+    "lastDate": "2020-05-25",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Kray",
+    "className": "Warlock",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Krayst",
+    "className": "Paladin",
+    "lastDate": "2023-01-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kriker",
+    "className": "Warrior",
+    "lastDate": "2020-07-12",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Ktn",
+    "className": "Druid",
+    "lastDate": "2022-10-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kubara",
+    "className": "Shaman",
+    "lastDate": "2026-07-13",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Kuber",
+    "className": "Paladin",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kubrakov",
+    "className": "Priest",
+    "lastDate": "2023-10-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kuradeldk",
+    "className": "DeathKnight",
+    "lastDate": "2025-09-04",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Kuradelh",
+    "className": "Hunter",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Kuradelm",
+    "className": "Mage",
+    "lastDate": "2025-06-01",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Kuradelmtwo",
+    "className": "Mage",
+    "lastDate": "2024-10-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Kwehh",
+    "className": "Paladin",
+    "lastDate": "2021-10-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kyleio",
+    "className": "Mage",
+    "lastDate": "2022-10-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Kynx",
+    "className": "Priest",
+    "lastDate": "2025-02-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Lacan",
+    "className": "Paladin",
+    "lastDate": "2022-10-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lalass",
+    "className": "Unknown",
+    "lastDate": "2023-03-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Langqisau",
+    "className": "Paladin",
+    "lastDate": "2023-08-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Laref",
+    "className": "Druid",
+    "lastDate": "2022-02-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Larissel",
+    "className": "Unknown",
+    "lastDate": "2023-03-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lastchicken",
+    "className": "Priest",
+    "lastDate": "2021-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Latedog",
+    "className": "Priest",
+    "lastDate": "2020-12-16",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Lazerynx",
+    "className": "Druid",
+    "lastDate": "2024-01-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Leafea",
+    "className": "Druid",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Leafealol",
+    "className": "Druid",
+    "lastDate": "2025-09-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Leaky",
+    "className": "Warlock",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Leevye",
+    "className": "Priest",
+    "lastDate": "2024-02-12",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lemming",
+    "className": "Warrior",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Leviathal",
+    "className": "Warrior",
+    "lastDate": "2024-04-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Leviathall",
+    "className": "Paladin",
+    "lastDate": "2024-03-04",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Levithon",
+    "className": "Warlock",
+    "lastDate": "2024-04-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lexadin",
+    "className": "Paladin",
+    "lastDate": "2025-09-25",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Lexou",
+    "className": "Shaman",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Lëy",
+    "className": "Druid",
+    "lastDate": "2026-03-02",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Lildayvo",
+    "className": "Warrior",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lilgargussy",
+    "className": "DeathKnight",
+    "lastDate": "2023-07-23",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lilmcmussy",
+    "className": "Monk",
+    "lastDate": "2025-08-10",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Lilmodel",
+    "className": "DeathKnight",
+    "lastDate": "2024-07-07",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Lisalgaib",
+    "className": "Druid",
+    "lastDate": "2025-03-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Locksicles",
+    "className": "Warlock",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lonos",
+    "className": "Mage",
+    "lastDate": "2021-07-28",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Lourimborin",
+    "className": "Hunter",
+    "lastDate": "2021-09-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lowherb",
+    "className": "Hunter",
+    "lastDate": "2022-03-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Luckeylock",
+    "className": "Warlock",
+    "lastDate": "2024-03-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Luckylock",
+    "className": "Warlock",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Luckypaladin",
+    "className": "Paladin",
+    "lastDate": "2023-08-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lukekuechly",
+    "className": "Druid",
+    "lastDate": "2022-10-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lukeperry",
+    "className": "Warrior",
+    "lastDate": "2022-09-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lunha",
+    "className": "Druid",
+    "lastDate": "2023-01-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lunnati",
+    "className": "Warrior",
+    "lastDate": "2020-10-27",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Lurah",
+    "className": "Hunter",
+    "lastDate": "2021-08-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Lurahh",
+    "className": "Hunter",
+    "lastDate": "2021-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Luzdeldia",
+    "className": "Priest",
+    "lastDate": "2023-07-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Luznoceda",
+    "className": "Warlock",
+    "lastDate": "2022-09-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Lynxo",
+    "className": "Warrior",
+    "lastDate": "2020-10-05",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Lythca",
+    "className": "Warrior",
+    "lastDate": "2020-11-17",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Mackdre",
+    "className": "Mage",
+    "lastDate": "2023-08-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Maeror",
+    "className": "DeathKnight",
+    "lastDate": "2026-07-26",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Magegen",
+    "className": "Mage",
+    "lastDate": "2020-11-23",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Magesicles",
+    "className": "Mage",
+    "lastDate": "2023-12-30",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mahlay",
+    "className": "Warlock",
+    "lastDate": "2021-09-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Majlemons",
+    "className": "DeathKnight",
+    "lastDate": "2023-05-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mäk",
+    "className": "Warrior",
+    "lastDate": "2020-09-20",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Maleorc",
+    "className": "Rogue",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Malphaes",
+    "className": "Rogue",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Manley",
+    "className": "Warrior",
+    "lastDate": "2021-05-30",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Manslaughter",
+    "className": "Rogue",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Mânuel",
+    "className": "Warlock",
+    "lastDate": "2025-03-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Martoche",
+    "className": "Monk",
+    "lastDate": "2026-06-15",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Marvelousmim",
+    "className": "Mage",
+    "lastDate": "2021-09-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Marz",
+    "className": "Mage",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Marze",
+    "className": "Mage",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mashirodin",
+    "className": "Paladin",
+    "lastDate": "2025-07-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Mavadin",
+    "className": "Paladin",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Mavaman",
+    "className": "Shaman",
+    "lastDate": "2024-05-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mavdeath",
+    "className": "DeathKnight",
+    "lastDate": "2024-06-28",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mavdog",
+    "className": "Warrior",
+    "lastDate": "2022-02-07",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Maverickdog",
+    "className": "Hunter",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Maverlock",
+    "className": "Warlock",
+    "lastDate": "2020-11-23",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Mavlon",
+    "className": "Mage",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Maxsimas",
+    "className": "DeathKnight",
+    "lastDate": "2025-08-31",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Maybemagee",
+    "className": "Unknown",
+    "lastDate": "2022-12-26",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mcbussyy",
+    "className": "Warrior",
+    "lastDate": "2025-07-13",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Meatempanada",
+    "className": "Warlock",
+    "lastDate": "2023-01-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Megalomania",
+    "className": "Druid",
+    "lastDate": "2024-06-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Meirl",
+    "className": "Druid",
+    "lastDate": "2023-07-23",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Meloni",
+    "className": "Monk",
+    "lastDate": "2026-02-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Mennydotz",
+    "className": "Warlock",
+    "lastDate": "2025-11-09",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Mennyzmage",
+    "className": "Mage",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Mennyzz",
+    "className": "Priest",
+    "lastDate": "2025-07-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Merhks",
+    "className": "Paladin",
+    "lastDate": "2025-06-23",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Meridia",
+    "className": "Paladin",
+    "lastDate": "2021-06-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Merodeador",
+    "className": "Paladin",
+    "lastDate": "2025-08-31",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Mètcalf",
+    "className": "DeathKnight",
+    "lastDate": "2022-10-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Meyj",
+    "className": "Mage",
+    "lastDate": "2020-12-21",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Michaljanvin",
+    "className": "Warrior",
+    "lastDate": "2021-02-08",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Michellevick",
+    "className": "Unknown",
+    "lastDate": "2022-06-06",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mihombre",
+    "className": "Druid",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Minndy",
+    "className": "Priest",
+    "lastDate": "2023-01-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mintnchip",
+    "className": "Priest",
+    "lastDate": "2023-08-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mippsi",
+    "className": "Warlock",
+    "lastDate": "2021-09-19",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mirukutea",
+    "className": "Priest",
+    "lastDate": "2020-10-21",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Missmycrits",
+    "className": "Mage",
+    "lastDate": "2024-04-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Missmymana",
+    "className": "Priest",
+    "lastDate": "2024-11-25",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Mistify",
+    "className": "Monk",
+    "lastDate": "2026-09-07",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Mithid",
+    "className": "Druid",
+    "lastDate": "2024-11-25",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Mitos",
+    "className": "Paladin",
+    "lastDate": "2025-08-31",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Moaana",
+    "className": "Warlock",
+    "lastDate": "2021-09-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Modelex",
+    "className": "Shaman",
+    "lastDate": "2023-02-13",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Modelx",
+    "className": "DeathKnight",
+    "lastDate": "2025-08-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Momdadfightx",
+    "className": "Shaman",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Mommysmilf",
+    "className": "Paladin",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Monsterroach",
+    "className": "Shaman",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Moondj",
+    "className": "Unknown",
+    "lastDate": "2023-07-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Moondoh",
+    "className": "Paladin",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Moondre",
+    "className": "Druid",
+    "lastDate": "2021-09-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Moonkas",
+    "className": "Druid",
+    "lastDate": "2022-12-26",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Moonpex",
+    "className": "Druid",
+    "lastDate": "2025-06-29",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Moonroe",
+    "className": "DeathKnight",
+    "lastDate": "2022-10-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mòósnuckle",
+    "className": "Rogue",
+    "lastDate": "2021-04-11",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Morfe",
+    "className": "Druid",
+    "lastDate": "2023-09-30",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Morningdrink",
+    "className": "Hunter",
+    "lastDate": "2021-03-08",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Mortimerber",
+    "className": "Warrior",
+    "lastDate": "2024-10-14",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Moxì",
+    "className": "Hunter",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Moxnix",
+    "className": "Priest",
+    "lastDate": "2022-10-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Moxxnixx",
+    "className": "Shaman",
+    "lastDate": "2021-05-30",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Muahaha",
+    "className": "DeathKnight",
+    "lastDate": "2024-06-21",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Murrcas",
+    "className": "Rogue",
+    "lastDate": "2021-05-30",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Muscly",
+    "className": "Warrior",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mxrz",
+    "className": "Mage",
+    "lastDate": "2025-09-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Mxssacre",
+    "className": "Warrior",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Mxz",
+    "className": "Priest",
+    "lastDate": "2022-03-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Myotonics",
+    "className": "Shaman",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Nagafish",
+    "className": "Rogue",
+    "lastDate": "2026-04-19",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Nakrak",
+    "className": "Druid",
+    "lastDate": "2024-11-25",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Namigf",
+    "className": "Shaman",
+    "lastDate": "2021-11-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Nareth",
+    "className": "Mage",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Narrwahl",
+    "className": "Druid",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Nataraja",
+    "className": "Paladin",
+    "lastDate": "2025-06-15",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Neet",
+    "className": "Unknown",
+    "lastDate": "2023-03-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Neoz",
+    "className": "Paladin",
+    "lastDate": "2020-10-21",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Nepir",
+    "className": "Mage",
+    "lastDate": "2025-01-13",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Neverblink",
+    "className": "Mage",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Newtsandals",
+    "className": "Paladin",
+    "lastDate": "2025-01-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Nibadin",
+    "className": "Paladin",
+    "lastDate": "2022-09-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Nibgen",
+    "className": "Warrior",
+    "lastDate": "2023-09-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Nibi",
+    "className": "Rogue",
+    "lastDate": "2022-04-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Nibidin",
+    "className": "Paladin",
+    "lastDate": "2024-07-08",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Niblaine",
+    "className": "Priest",
+    "lastDate": "2024-10-20",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Niblainelock",
+    "className": "Warlock",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Niblayne",
+    "className": "Druid",
+    "lastDate": "2024-03-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Nibliz",
+    "className": "Mage",
+    "lastDate": "2023-10-19",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Niblood",
+    "className": "DeathKnight",
+    "lastDate": "2024-10-20",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Nibow",
+    "className": "Hunter",
+    "lastDate": "2023-03-26",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Nickey",
+    "className": "Warrior",
+    "lastDate": "2021-05-30",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Nightbaiine",
+    "className": "DeathKnight",
+    "lastDate": "2024-12-09",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Nightshal",
+    "className": "Druid",
+    "lastDate": "2020-11-09",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Nimnomnom",
+    "className": "Paladin",
+    "lastDate": "2023-05-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Nlhunter",
+    "className": "Hunter",
+    "lastDate": "2023-05-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Nlwarrior",
+    "className": "Warrior",
+    "lastDate": "2022-08-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Noaggroreset",
+    "className": "DeathKnight",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Nøbärä",
+    "className": "Rogue",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Noctuahati",
+    "className": "Druid",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Noddle",
+    "className": "Rogue",
+    "lastDate": "2020-10-21",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Nolubenofear",
+    "className": "Paladin",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Nôraa",
+    "className": "Paladin",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Notachick",
+    "className": "Shaman",
+    "lastDate": "2022-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Notaczech",
+    "className": "Shaman",
+    "lastDate": "2022-01-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Novamarauder",
+    "className": "Druid",
+    "lastDate": "2023-10-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Novaverde",
+    "className": "Mage",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Noxw",
+    "className": "Warrior",
+    "lastDate": "2026-04-26",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Nuckin",
+    "className": "Paladin",
+    "lastDate": "2023-08-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Nutters",
+    "className": "Warlock",
+    "lastDate": "2020-08-03",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Nutwipez",
+    "className": "Druid",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Nvs",
+    "className": "Paladin",
+    "lastDate": "2020-10-21",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Nyssari",
+    "className": "Warrior",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Ober",
+    "className": "Paladin",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Obur",
+    "className": "Paladin",
+    "lastDate": "2024-06-03",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Odjí",
+    "className": "DeathKnight",
+    "lastDate": "2025-09-26",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Ohbiscuits",
+    "className": "Mage",
+    "lastDate": "2021-09-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Oktøberfest",
+    "className": "Priest",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Okuninushi",
+    "className": "Unknown",
+    "lastDate": "2023-03-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Oldaf",
+    "className": "Paladin",
+    "lastDate": "2021-09-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Onaxanamoon",
+    "className": "Warlock",
+    "lastDate": "2025-04-13",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Onlybrian",
+    "className": "DeathKnight",
+    "lastDate": "2025-08-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Onynx",
+    "className": "Druid",
+    "lastDate": "2024-11-25",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Oobie",
+    "className": "Shaman",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Ootermage",
+    "className": "Mage",
+    "lastDate": "2023-04-23",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Opotamus",
+    "className": "Paladin",
+    "lastDate": "2021-05-30",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Opportunity",
+    "className": "Warrior",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Oprahwînfury",
+    "className": "Shaman",
+    "lastDate": "2022-10-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Opzz",
+    "className": "Priest",
+    "lastDate": "2021-05-02",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Orbituary",
+    "className": "Druid",
+    "lastDate": "2025-05-25",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Originate",
+    "className": "Paladin",
+    "lastDate": "2020-10-05",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Ossira",
+    "className": "Shaman",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Oswaldmosley",
+    "className": "DeathKnight",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Ovals",
+    "className": "Shaman",
+    "lastDate": "2024-06-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Pandashooter",
+    "className": "Hunter",
+    "lastDate": "2025-02-03",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Papayacake",
+    "className": "Warrior",
+    "lastDate": "2024-10-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Papyrus",
+    "className": "Warlock",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Parsepunishr",
+    "className": "Priest",
+    "lastDate": "2022-05-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Patronus",
+    "className": "Druid",
+    "lastDate": "2020-07-12",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Paulskallas",
+    "className": "Warlock",
+    "lastDate": "2023-08-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Pawsamoment",
+    "className": "Druid",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Paxw",
+    "className": "Druid",
+    "lastDate": "2025-08-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Penglr",
+    "className": "Hunter",
+    "lastDate": "2023-01-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Pepperpokket",
+    "className": "DeathKnight",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Peteatspleb",
+    "className": "Hunter",
+    "lastDate": "2021-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Phantums",
+    "className": "DeathKnight",
+    "lastDate": "2022-09-12",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Phobiâc",
+    "className": "Hunter",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Phumes",
+    "className": "Mage",
+    "lastDate": "2022-05-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Pigtail",
+    "className": "Priest",
+    "lastDate": "2023-01-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Piraxu",
+    "className": "Hunter",
+    "lastDate": "2026-06-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Plighted",
+    "className": "Paladin",
+    "lastDate": "2024-06-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Popeadin",
+    "className": "Paladin",
+    "lastDate": "2021-07-28",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Popsiclës",
+    "className": "Shaman",
+    "lastDate": "2025-05-18",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Pøpsicles",
+    "className": "Priest",
+    "lastDate": "2024-06-28",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Popsicles",
+    "className": "Priest",
+    "lastDate": "2022-04-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Popthispuss",
+    "className": "Mage",
+    "lastDate": "2022-02-28",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Poysn",
+    "className": "Rogue",
+    "lastDate": "2023-09-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Pozzlik",
+    "className": "Priest",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Prefix",
+    "className": "Warlock",
+    "lastDate": "2020-10-11",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Preying",
+    "className": "Priest",
+    "lastDate": "2022-10-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Prìscilla",
+    "className": "Priest",
+    "lastDate": "2026-06-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Profanedk",
+    "className": "DeathKnight",
+    "lastDate": "2024-10-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Profchicken",
+    "className": "Warlock",
+    "lastDate": "2023-12-19",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Punchline",
+    "className": "Warlock",
+    "lastDate": "2020-10-21",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Purnama",
+    "className": "Mage",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Purplecabb",
+    "className": "Warlock",
+    "lastDate": "2024-07-01",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Purushockama",
+    "className": "Paladin",
+    "lastDate": "2023-01-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Purushottama",
+    "className": "Warrior",
+    "lastDate": "2021-05-16",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Putinpriest",
+    "className": "Priest",
+    "lastDate": "2023-06-23",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Puttbutt",
+    "className": "Warrior",
+    "lastDate": "2020-09-18",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Pvpeniz",
+    "className": "Warrior",
+    "lastDate": "2021-04-11",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Qeeyn",
+    "className": "Mage",
+    "lastDate": "2023-05-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Qhoji",
+    "className": "Shaman",
+    "lastDate": "2021-10-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Qinala",
+    "className": "Mage",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Qonos",
+    "className": "Mage",
+    "lastDate": "2020-12-08",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Quzbeast",
+    "className": "Druid",
+    "lastDate": "2025-08-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Qxy",
+    "className": "Warrior",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Qynx",
+    "className": "Shaman",
+    "lastDate": "2025-10-19",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Railen",
+    "className": "Paladin",
+    "lastDate": "2020-10-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Rainarrow",
+    "className": "Priest",
+    "lastDate": "2022-09-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Rainbolt",
+    "className": "Mage",
+    "lastDate": "2023-12-19",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Raiteii",
+    "className": "Mage",
+    "lastDate": "2021-09-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Ramp",
+    "className": "Priest",
+    "lastDate": "2021-04-25",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Ranjer",
+    "className": "Hunter",
+    "lastDate": "2020-10-26",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Ranquish",
+    "className": "DeathKnight",
+    "lastDate": "2022-09-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Rapongi",
+    "className": "Shaman",
+    "lastDate": "2024-10-14",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Rappongi",
+    "className": "Hunter",
+    "lastDate": "2025-06-23",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Rathanael",
+    "className": "Paladin",
+    "lastDate": "2021-03-28",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Raunchy",
+    "className": "Hunter",
+    "lastDate": "2024-07-22",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Rây",
+    "className": "Paladin",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Realgamer",
+    "className": "Priest",
+    "lastDate": "2021-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Rebbec",
+    "className": "Shaman",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Recic",
+    "className": "Hunter",
+    "lastDate": "2024-06-28",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Redgiant",
+    "className": "Paladin",
+    "lastDate": "2022-02-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Redlumie",
+    "className": "Warrior",
+    "lastDate": "2021-09-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Reflx",
+    "className": "Mage",
+    "lastDate": "2023-05-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Réllìk",
+    "className": "DeathKnight",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Reppu",
+    "className": "Priest",
+    "lastDate": "2021-06-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Reshy",
+    "className": "Paladin",
+    "lastDate": "2024-04-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Revide",
+    "className": "Paladin",
+    "lastDate": "2024-07-08",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Rgds",
+    "className": "Warrior",
+    "lastDate": "2020-11-11",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Rhenei",
+    "className": "Shaman",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Richlly",
+    "className": "Paladin",
+    "lastDate": "2022-02-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Rineki",
+    "className": "Unknown",
+    "lastDate": "2023-07-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Rinxqt",
+    "className": "Hunter",
+    "lastDate": "2023-05-07",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Ripbadpaw",
+    "className": "Shaman",
+    "lastDate": "2022-01-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Ripo",
+    "className": "Paladin",
+    "lastDate": "2025-06-01",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Rjs",
+    "className": "Priest",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Robmain",
+    "className": "Hunter",
+    "lastDate": "2021-02-08",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Robz",
+    "className": "Unknown",
+    "lastDate": "2022-11-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Rondoe",
+    "className": "Druid",
+    "lastDate": "2022-05-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Royymustangg",
+    "className": "Mage",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Ruie",
+    "className": "Mage",
+    "lastDate": "2021-05-30",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Runicbeard",
+    "className": "DeathKnight",
+    "lastDate": "2026-05-17",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Rynguld",
+    "className": "Mage",
+    "lastDate": "2026-07-27",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Sacrania",
+    "className": "Paladin",
+    "lastDate": "2022-10-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Sâint",
+    "className": "Priest",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Saintchicken",
+    "className": "Paladin",
+    "lastDate": "2022-12-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Salamislappa",
+    "className": "Warlock",
+    "lastDate": "2023-08-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Samersun",
+    "className": "Paladin",
+    "lastDate": "2020-04-15",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Samljackson",
+    "className": "Mage",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Samutron",
+    "className": "Warlock",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Sans",
+    "className": "Priest",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Sappir",
+    "className": "Warrior",
+    "lastDate": "2026-06-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Saralim",
+    "className": "Rogue",
+    "lastDate": "2025-03-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Sashey",
+    "className": "Mage",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Sashmage",
+    "className": "Mage",
+    "lastDate": "2025-09-19",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Sathanos",
+    "className": "Unknown",
+    "lastDate": "2023-07-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Sç",
+    "className": "Rogue",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Sceeto",
+    "className": "DeathKnight",
+    "lastDate": "2024-09-01",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Scréwzloose",
+    "className": "Warrior",
+    "lastDate": "2024-11-11",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Scrollius",
+    "className": "Mage",
+    "lastDate": "2021-02-15",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Scümmy",
+    "className": "Druid",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Selfishcnt",
+    "className": "Paladin",
+    "lastDate": "2022-11-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Selfishlol",
+    "className": "Warlock",
+    "lastDate": "2023-01-30",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Selfishx",
+    "className": "Paladin",
+    "lastDate": "2024-06-28",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Sereneldred",
+    "className": "Hunter",
+    "lastDate": "2022-08-28",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Serst",
+    "className": "Rogue",
+    "lastDate": "2022-09-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Sët",
+    "className": "Priest",
+    "lastDate": "2020-11-26",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Sevipersting",
+    "className": "Hunter",
+    "lastDate": "2023-10-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Seymourbutts",
+    "className": "Rogue",
+    "lastDate": "2020-10-21",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Shadê",
+    "className": "Rogue",
+    "lastDate": "2020-12-01",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Shallteàr",
+    "className": "DeathKnight",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Shamanasty",
+    "className": "Shaman",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Shamson",
+    "className": "Shaman",
+    "lastDate": "2023-09-30",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Shandfu",
+    "className": "Monk",
+    "lastDate": "2025-11-17",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Shandx",
+    "className": "Warlock",
+    "lastDate": "2023-08-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Shandz",
+    "className": "Hunter",
+    "lastDate": "2024-12-02",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Shandzbtw",
+    "className": "DeathKnight",
+    "lastDate": "2023-10-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Shandze",
+    "className": "Paladin",
+    "lastDate": "2024-11-25",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Shandzs",
+    "className": "Hunter",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Shandzy",
+    "className": "Mage",
+    "lastDate": "2025-11-23",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Shardikmir",
+    "className": "Druid",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Shellflsh",
+    "className": "Shaman",
+    "lastDate": "2022-09-19",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Shenai",
+    "className": "Mage",
+    "lastDate": "2021-04-18",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Shibalnom",
+    "className": "Warrior",
+    "lastDate": "2025-04-13",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Shippujinrai",
+    "className": "Mage",
+    "lastDate": "2025-06-08",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Shmerg",
+    "className": "Druid",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Shokis",
+    "className": "Shaman",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Shottymalone",
+    "className": "Hunter",
+    "lastDate": "2021-04-25",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Shoutyboi",
+    "className": "Warrior",
+    "lastDate": "2022-04-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Shrynx",
+    "className": "Mage",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Shwemmy",
+    "className": "Unknown",
+    "lastDate": "2023-01-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Sickdickbro",
+    "className": "Warrior",
+    "lastDate": "2020-07-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Sighnez",
+    "className": "Warlock",
+    "lastDate": "2024-12-09",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Sildria",
+    "className": "DeathKnight",
+    "lastDate": "2026-06-15",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Sillodru",
+    "className": "Druid",
+    "lastDate": "2022-10-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Silviera",
+    "className": "Mage",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Simpquéen",
+    "className": "Warrior",
+    "lastDate": "2022-08-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Singa",
+    "className": "Mage",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Sixsixsix",
+    "className": "Priest",
+    "lastDate": "2021-03-01",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Sizuka",
+    "className": "Unknown",
+    "lastDate": "2022-06-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Skeete",
+    "className": "Priest",
+    "lastDate": "2022-10-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Skeltnjelly",
+    "className": "Warlock",
+    "lastDate": "2020-12-15",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Skilzthakilz",
+    "className": "Warlock",
+    "lastDate": "2021-04-18",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Skrimble",
+    "className": "Warlock",
+    "lastDate": "2022-10-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Skyfen",
+    "className": "Warlock",
+    "lastDate": "2020-10-21",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Skyhealz",
+    "className": "Druid",
+    "lastDate": "2023-10-16",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Slipinside",
+    "className": "Priest",
+    "lastDate": "2024-12-15",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Slipnslides",
+    "className": "Paladin",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Slynx",
+    "className": "Mage",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Smkbreak",
+    "className": "Druid",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Sneakyo",
+    "className": "Rogue",
+    "lastDate": "2021-03-08",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Sneekytotems",
+    "className": "Unknown",
+    "lastDate": "2024-06-03",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Snuckle",
+    "className": "Priest",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Somtimmius",
+    "className": "Warrior",
+    "lastDate": "2022-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Soo",
+    "className": "Warrior",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Sopresa",
+    "className": "Priest",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Spb",
+    "className": "Rogue",
+    "lastDate": "2021-05-24",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Spoonqs",
+    "className": "Paladin",
+    "lastDate": "2025-11-02",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Sprahj",
+    "className": "Warrior",
+    "lastDate": "2023-01-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Spraj",
+    "className": "Hunter",
+    "lastDate": "2022-09-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Sprajj",
+    "className": "DeathKnight",
+    "lastDate": "2023-02-13",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Spynx",
+    "className": "Mage",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Squidchilles",
+    "className": "Shaman",
+    "lastDate": "2022-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Srie",
+    "className": "Paladin",
+    "lastDate": "2023-08-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stackhouse",
+    "className": "DeathKnight",
+    "lastDate": "2026-06-15",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Stanwick",
+    "className": "Warrior",
+    "lastDate": "2023-10-16",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Staticbeard",
+    "className": "Shaman",
+    "lastDate": "2023-10-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stayjealousx",
+    "className": "Shaman",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Stealthrun",
+    "className": "Rogue",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stefie",
+    "className": "DeathKnight",
+    "lastDate": "2023-01-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Steveharvano",
+    "className": "Warrior",
+    "lastDate": "2025-12-21",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Stiing",
+    "className": "Priest",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Stiingroy",
+    "className": "Druid",
+    "lastDate": "2021-10-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimadin",
+    "className": "Paladin",
+    "lastDate": "2023-07-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimadintwo",
+    "className": "Paladin",
+    "lastDate": "2023-07-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimlock",
+    "className": "Warlock",
+    "lastDate": "2022-08-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimlocktwo",
+    "className": "Warlock",
+    "lastDate": "2023-02-06",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimrogue",
+    "className": "Rogue",
+    "lastDate": "2023-01-16",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimshield",
+    "className": "Priest",
+    "lastDate": "2023-04-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimshock",
+    "className": "Shaman",
+    "lastDate": "2025-08-31",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Stimshocktwo",
+    "className": "Shaman",
+    "lastDate": "2022-09-04",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimshot",
+    "className": "Hunter",
+    "lastDate": "2022-09-04",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimshots",
+    "className": "Hunter",
+    "lastDate": "2025-08-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Stimshottwo",
+    "className": "Hunter",
+    "lastDate": "2023-06-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimstrike",
+    "className": "DeathKnight",
+    "lastDate": "2023-03-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimuluspack",
+    "className": "Mage",
+    "lastDate": "2023-04-03",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimulúspack",
+    "className": "Mage",
+    "lastDate": "2022-05-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stimúluspack",
+    "className": "Mage",
+    "lastDate": "2022-05-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stingg",
+    "className": "Paladin",
+    "lastDate": "2021-03-08",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Stingr",
+    "className": "Warlock",
+    "lastDate": "2020-06-21",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Stingrðy",
+    "className": "Warrior",
+    "lastDate": "2020-10-18",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Stingroý",
+    "className": "Shaman",
+    "lastDate": "2021-08-02",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Stingrôy",
+    "className": "Rogue",
+    "lastDate": "2020-08-28",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Stingroy",
+    "className": "Hunter",
+    "lastDate": "2020-06-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Stlouis",
+    "className": "Shaman",
+    "lastDate": "2021-09-13",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Størmer",
+    "className": "Shaman",
+    "lastDate": "2024-06-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stranglekelp",
+    "className": "Druid",
+    "lastDate": "2023-05-28",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Stynx",
+    "className": "Mage",
+    "lastDate": "2023-11-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Sugartots",
+    "className": "Rogue",
+    "lastDate": "2023-10-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Sumtingwong",
+    "className": "Rogue",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Supergiagant",
+    "className": "Shaman",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Supergiant",
+    "className": "Shaman",
+    "lastDate": "2024-04-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Supershady",
+    "className": "Rogue",
+    "lastDate": "2023-09-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Surhunt",
+    "className": "Hunter",
+    "lastDate": "2026-07-27",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Susen",
+    "className": "Shaman",
+    "lastDate": "2026-03-29",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Susën",
+    "className": "Druid",
+    "lastDate": "2021-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Swaktion",
+    "className": "Unknown",
+    "lastDate": "2024-06-03",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Swapedsoul",
+    "className": "Warlock",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Sweetdots",
+    "className": "Warlock",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Swooshers",
+    "className": "Warlock",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Synez",
+    "className": "Warlock",
+    "lastDate": "2024-11-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Synx",
+    "className": "Warlock",
+    "lastDate": "2021-01-18",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Tacotacotaco",
+    "className": "Warlock",
+    "lastDate": "2022-08-07",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Talch",
+    "className": "Druid",
+    "lastDate": "2022-01-23",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Tanakh",
+    "className": "DeathKnight",
+    "lastDate": "2023-01-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Tankocrisp",
+    "className": "Warrior",
+    "lastDate": "2020-10-20",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Tarnation",
+    "className": "Mage",
+    "lastDate": "2021-07-18",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Taryeth",
+    "className": "Paladin",
+    "lastDate": "2023-10-28",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Taurtuga",
+    "className": "Priest",
+    "lastDate": "2024-06-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Tavik",
+    "className": "Warrior",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Tavikk",
+    "className": "Warrior",
+    "lastDate": "2023-04-03",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Tbctank",
+    "className": "Paladin",
+    "lastDate": "2023-07-23",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Teehee",
+    "className": "Mage",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Teerage",
+    "className": "Warrior",
+    "lastDate": "2025-09-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Teeraj",
+    "className": "Hunter",
+    "lastDate": "2022-03-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Tegridytrees",
+    "className": "Druid",
+    "lastDate": "2024-01-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Tenaman",
+    "className": "Shaman",
+    "lastDate": "2024-11-25",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Tengen",
+    "className": "Warrior",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Tengenn",
+    "className": "Warrior",
+    "lastDate": "2024-10-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Tenngenn",
+    "className": "Warrior",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Tenshock",
+    "className": "Warlock",
+    "lastDate": "2023-09-30",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Terraxito",
+    "className": "Monk",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Tërrycrëws",
+    "className": "Warlock",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Teshy",
+    "className": "Paladin",
+    "lastDate": "2021-08-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Thaliaa",
+    "className": "Paladin",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Thäpope",
+    "className": "Paladin",
+    "lastDate": "2020-04-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Thefishguy",
+    "className": "Unknown",
+    "lastDate": "2021-03-08",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Thegmarauder",
+    "className": "Priest",
+    "lastDate": "2021-05-09",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Thekinglew",
+    "className": "Mage",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Themungerer",
+    "className": "Paladin",
+    "lastDate": "2022-01-10",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Thicktony",
+    "className": "Warrior",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Thirza",
+    "className": "Warlock",
+    "lastDate": "2024-06-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Threesunders",
+    "className": "Warrior",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Thugangeles",
+    "className": "Paladin",
+    "lastDate": "2020-03-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Thunderekz",
+    "className": "Shaman",
+    "lastDate": "2023-06-23",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Thuro",
+    "className": "Paladin",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Thyc",
+    "className": "Priest",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Tieg",
+    "className": "Priest",
+    "lastDate": "2024-03-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Timbergling",
+    "className": "Priest",
+    "lastDate": "2021-07-28",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Tinyteehee",
+    "className": "Mage",
+    "lastDate": "2025-06-29",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Tokenrogue",
+    "className": "Rogue",
+    "lastDate": "2025-06-15",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Tomdabomb",
+    "className": "Warrior",
+    "lastDate": "2023-01-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Torispelling",
+    "className": "Mage",
+    "lastDate": "2022-11-07",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Torontojoe",
+    "className": "Rogue",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Totemsenju",
+    "className": "Shaman",
+    "lastDate": "2025-04-13",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Tougeki",
+    "className": "Mage",
+    "lastDate": "2024-05-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Toxicgamer",
+    "className": "Warlock",
+    "lastDate": "2020-10-12",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Transmute",
+    "className": "Mage",
+    "lastDate": "2021-07-18",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Treebeard",
+    "className": "Druid",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Treebeardtwo",
+    "className": "Druid",
+    "lastDate": "2023-02-13",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Trigolol",
+    "className": "Warrior",
+    "lastDate": "2023-10-28",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Triibal",
+    "className": "Paladin",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Truckya",
+    "className": "Warrior",
+    "lastDate": "2023-02-12",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Tsgdream",
+    "className": "Paladin",
+    "lastDate": "2024-08-25",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Ttxdx",
+    "className": "DeathKnight",
+    "lastDate": "2023-08-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Tülleb",
+    "className": "Paladin",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Turlenorc",
+    "className": "Hunter",
+    "lastDate": "2021-01-11",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Tuxthecat",
+    "className": "Mage",
+    "lastDate": "2023-01-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Twelvthmann",
+    "className": "Mage",
+    "lastDate": "2022-03-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Tyrnan",
+    "className": "Warrior",
+    "lastDate": "2022-08-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Unber",
+    "className": "DeathKnight",
+    "lastDate": "2023-09-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Unclebumi",
+    "className": "Druid",
+    "lastDate": "2022-10-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Unjustbecuz",
+    "className": "DeathKnight",
+    "lastDate": "2024-10-06",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Unluckylock",
+    "className": "Warlock",
+    "lastDate": "2023-09-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Upper",
+    "className": "Mage",
+    "lastDate": "2020-12-29",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Uqqer",
+    "className": "Hunter",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Urbo",
+    "className": "Priest",
+    "lastDate": "2025-08-10",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Urologist",
+    "className": "Priest",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Uwufemboy",
+    "className": "DeathKnight",
+    "lastDate": "2023-05-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Vadakin",
+    "className": "Warlock",
+    "lastDate": "2025-09-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Vantaris",
+    "className": "Priest",
+    "lastDate": "2025-03-31",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Varnae",
+    "className": "Warlock",
+    "lastDate": "2022-10-27",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Vashtia",
+    "className": "Mage",
+    "lastDate": "2024-07-08",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Vataloca",
+    "className": "Shaman",
+    "lastDate": "2022-10-24",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Verbgodx",
+    "className": "Warrior",
+    "lastDate": "2024-06-03",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Verdè",
+    "className": "Druid",
+    "lastDate": "2026-06-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Veredys",
+    "className": "Hunter",
+    "lastDate": "2025-08-31",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Veree",
+    "className": "Warrior",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Verynicehair",
+    "className": "Rogue",
+    "lastDate": "2021-02-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Vestrid",
+    "className": "Mage",
+    "lastDate": "2021-09-15",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Viglance",
+    "className": "Paladin",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Vilentviolet",
+    "className": "Paladin",
+    "lastDate": "2024-12-22",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Vitaunus",
+    "className": "Priest",
+    "lastDate": "2020-10-14",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Volkswórgen",
+    "className": "Rogue",
+    "lastDate": "2026-09-07",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Volsong",
+    "className": "Paladin",
+    "lastDate": "2025-03-31",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Vonzee",
+    "className": "Warlock",
+    "lastDate": "2024-06-18",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Vorsal",
+    "className": "Mage",
+    "lastDate": "2023-07-09",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Vraylune",
+    "className": "Priest",
+    "lastDate": "2022-02-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Warlockjizz",
+    "className": "Warlock",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Wärrïör",
+    "className": "Warrior",
+    "lastDate": "2022-08-21",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Warriorpex",
+    "className": "Warrior",
+    "lastDate": "2026-02-22",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Wasalu",
+    "className": "Rogue",
+    "lastDate": "2020-10-20",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Washedmage",
+    "className": "Mage",
+    "lastDate": "2023-04-16",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Wheellz",
+    "className": "Hunter",
+    "lastDate": "2021-07-28",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Whitebeard",
+    "className": "Mage",
+    "lastDate": "2021-01-05",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Whoosa",
+    "className": "DeathKnight",
+    "lastDate": "2025-04-13",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Wildctrl",
+    "className": "Shaman",
+    "lastDate": "2025-09-28",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Williamriker",
+    "className": "Shaman",
+    "lastDate": "2022-09-04",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Williamwonka",
+    "className": "Warrior",
+    "lastDate": "2024-06-03",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Wingzoo",
+    "className": "Hunter",
+    "lastDate": "2022-10-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Winri",
+    "className": "Warlock",
+    "lastDate": "2023-05-08",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Wispis",
+    "className": "Druid",
+    "lastDate": "2024-06-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Woozu",
+    "className": "Warlock",
+    "lastDate": "2022-10-31",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Wotlktank",
+    "className": "Paladin",
+    "lastDate": "2022-09-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Wrathrodas",
+    "className": "Hunter",
+    "lastDate": "2022-12-05",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Wrathwaiting",
+    "className": "Paladin",
+    "lastDate": "2022-04-25",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Wreckalol",
+    "className": "Priest",
+    "lastDate": "2022-03-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Wübz",
+    "className": "Mage",
+    "lastDate": "2020-12-22",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Xaiva",
+    "className": "Druid",
+    "lastDate": "2024-10-14",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Xenthyk",
+    "className": "Hunter",
+    "lastDate": "2026-03-30",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Xiemos",
+    "className": "Warlock",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Xinxao",
+    "className": "Shaman",
+    "lastDate": "2026-01-18",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Xploited",
+    "className": "Warrior",
+    "lastDate": "2021-04-18",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Xshøt",
+    "className": "Rogue",
+    "lastDate": "2024-06-11",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Xufu",
+    "className": "Paladin",
+    "lastDate": "2021-03-08",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Yäkuza",
+    "className": "Rogue",
+    "lastDate": "2025-04-20",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Yaruichi",
+    "className": "Warlock",
+    "lastDate": "2025-08-17",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Yellock",
+    "className": "Warlock",
+    "lastDate": "2026-09-20",
+    "source": "Vitality — Ra-den"
+  },
+  {
+    "name": "Yeseseyy",
+    "className": "Rogue",
+    "lastDate": "2025-09-19",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Ygcyhn",
+    "className": "Druid",
+    "lastDate": "2025-08-24",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Yitzahk",
+    "className": "Warrior",
+    "lastDate": "2020-07-27",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Youngzelda",
+    "className": "Paladin",
+    "lastDate": "2025-04-27",
+    "source": "Inept — Benediction"
+  },
+  {
+    "name": "Zaek",
+    "className": "Druid",
+    "lastDate": "2023-09-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zappyboí",
+    "className": "Shaman",
+    "lastDate": "2022-02-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zappzap",
+    "className": "Shaman",
+    "lastDate": "2021-10-17",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zebbsded",
+    "className": "DeathKnight",
+    "lastDate": "2022-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zenal",
+    "className": "Paladin",
+    "lastDate": "2023-10-12",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zentro",
+    "className": "Warlock",
+    "lastDate": "2021-09-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zerbeh",
+    "className": "Unknown",
+    "lastDate": "2021-05-24",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Zerby",
+    "className": "Rogue",
+    "lastDate": "2021-11-19",
+    "source": "Might — Fairbanks"
+  },
+  {
+    "name": "Zhardoom",
+    "className": "Warlock",
+    "lastDate": "2021-11-01",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zheria",
+    "className": "Paladin",
+    "lastDate": "2022-02-02",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zimbuh",
+    "className": "Druid",
+    "lastDate": "2023-08-14",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zimone",
+    "className": "Mage",
+    "lastDate": "2023-03-13",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zimshock",
+    "className": "Shaman",
+    "lastDate": "2023-08-06",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zimstrike",
+    "className": "DeathKnight",
+    "lastDate": "2023-10-29",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zimtwo",
+    "className": "Shaman",
+    "lastDate": "2022-12-13",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zimx",
+    "className": "Paladin",
+    "lastDate": "2022-08-22",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zivz",
+    "className": "Warlock",
+    "lastDate": "2023-02-20",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zoddimmortal",
+    "className": "Druid",
+    "lastDate": "2023-10-16",
+    "source": "Inept — Grobbulus"
+  },
+  {
+    "name": "Zors",
+    "className": "Monk",
+    "lastDate": "2025-07-06",
+    "source": "Inept — Benediction"
+  }
+]
