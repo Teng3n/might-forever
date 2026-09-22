@@ -220,8 +220,12 @@ main {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.home-summary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .roster-summary-grid {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .card-grid {
@@ -3687,6 +3691,14 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   .two-column,
   .resource-list {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .home-summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .roster-summary-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .action-metrics {
