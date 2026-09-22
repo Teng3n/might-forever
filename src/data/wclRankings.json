@@ -1,14 +1,9 @@
 {
   "available": false,
-  "reason": "Warcraft Logs API did not expose guild zone rankings in the queried schema.",
-  "currentRaid": "Siege of Orgrimmar",
-  "difficulty": "Heroic",
-  "sourceLabel": "Vitality - Raden",
+  "reason": "Not configured",
+  "currentRaid": null,
+  "difficulty": null,
+  "sourceLabel": "Might Forever",
   "lastUpdated": null,
-  "rankings": {
-    "world": null,
-    "region": null,
-    "realm": null,
-    "faction": null
-  }
+  "rankings": []
 }

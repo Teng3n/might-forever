@@ -1,8 +1,8 @@
 name: Sync guild data
 
 on:
-  schedule:
-    - cron: "*/15 * * * *"
+  # Legacy roster/calendar plumbing retained as a manual scaffold. Do not run
+  # until Might Forever has its own roster workbook and ranges.
   workflow_dispatch:
 
 permissions:
@@ -80,7 +80,7 @@ jobs:
           git add "${SHEET_DATA_FILES[@]}"
           git commit -m "chore(data): sync guild data from Google Sheets"
           for attempt in 1 2 3; do
-            git pull --rebase origin feature/guild-site-mvp
+            git pull --rebase origin vitality-forever
             if git push; then
               exit 0
             fi

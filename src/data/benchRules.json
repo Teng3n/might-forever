@@ -1,40 +1,11 @@
 {
-  "neverBenchPlayers": [
-    "karkonk",
-    "tengen"
-  ],
-  "progressionCorePlayers": [
-    "cardinalcrzy",
-    "chonkars",
-    "drchicken",
-    "fae",
-    "june",
-    "kuradelh",
-    "lexou",
-    "maverickdog",
-    "oswaldmosley",
-    "teehee"
-  ],
-  "avoidBenchingTogether": [
-    [
-      "cardinalcrzy",
-      "drchicken"
-    ],
-    [
-      "fae",
-      "viglance"
-    ]
-  ],
-  "minimumAvailableByRole": {
-    "Healer": 5
-  },
-  "minimumAvailableByClass": {
-    "Death Knight": 1,
-    "Shaman": 3,
-    "Warrior": 2
-  },
-  "requireAtLeastOneAvailablePerClass": true,
-  "minimumAvailablePerClass": 1,
+  "neverBenchPlayers": [],
+  "progressionCorePlayers": [],
+  "avoidBenchingTogether": [],
+  "minimumAvailableByRole": {},
+  "minimumAvailableByClass": {},
+  "requireAtLeastOneAvailablePerClass": false,
+  "minimumAvailablePerClass": 0,
   "planningWindowWeeks": 4,
   "scoring": {
     "lowBenchCountWeight": 10,
@@ -43,5 +14,5 @@
     "recentlyUnavailablePenalty": -5,
     "adjacentUnavailablePenalty": -10
   },
-  "source": "sheet"
+  "source": "fallback"
 }

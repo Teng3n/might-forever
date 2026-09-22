@@ -1,15 +1,8 @@
 name: Audit Warcraft Logs guild history
 
 on:
+  # Historical WCL auditing is retained as a manual development utility.
   workflow_dispatch:
-  push:
-    branches:
-      - feature/guild-site-mvp
-    paths:
-      - ".github/workflows/audit-wcl-guild-history.yml"
-      - "package.json"
-      - "package-lock.json"
-      - "scripts/audit-warcraft-logs-guild-history.ts"
 
 permissions:
   contents: write

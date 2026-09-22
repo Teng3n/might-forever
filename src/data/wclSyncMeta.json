@@ -1,83 +1,10 @@
 {
-  "lastWclSync": "2026-09-22T16:36:57.799Z",
-  "source": "Warcraft Logs API v2",
-  "endpoint": "https://classic.warcraftlogs.com/api/v2/client",
-  "guild": "Vitality",
-  "server": "Raden",
-  "serverSlug": "raden",
-  "region": "US",
-  "sources": [
-    {
-      "guildName": "Vitality",
-      "serverSlug": "raden",
-      "region": "US",
-      "label": "Vitality - Raden",
-      "expansions": [
-        "mop"
-      ],
-      "tiers": [
-        "tier-14",
-        "tier-15",
-        "tier-16"
-      ]
-    },
-    {
-      "guildId": 482914,
-      "guildName": "Might",
-      "serverSlug": "fairbanks",
-      "region": "US",
-      "label": "Might - Fairbanks",
-      "expansions": [
-        "classic",
-        "tbc"
-      ],
-      "tiers": [
-        "classic-aq",
-        "classic-bwl",
-        "classic-mc-ony",
-        "classic-naxx",
-        "tbc-tier-4",
-        "tbc-tier-5"
-      ]
-    },
-    {
-      "guildId": 619658,
-      "guildName": "Inept",
-      "serverSlug": "grobbulus",
-      "region": "US",
-      "label": "Inept - Grobbulus",
-      "expansions": [
-        "tbc",
-        "wrath"
-      ],
-      "tiers": [
-        "tbc-sunwell",
-        "tbc-tier-5",
-        "tbc-tier-6",
-        "wrath-tier-10",
-        "wrath-tier-7",
-        "wrath-tier-8",
-        "wrath-tier-9"
-      ]
-    },
-    {
-      "guildId": 738773,
-      "guildName": "Inept",
-      "serverSlug": "benediction",
-      "region": "US",
-      "label": "Inept - Benediction",
-      "expansions": [
-        "cata"
-      ],
-      "tiers": [
-        "cata-tier-11",
-        "cata-tier-12",
-        "cata-tier-13"
-      ]
-    }
-  ],
-  "reportsSynced": 1059,
-  "fightsSynced": 42533,
-  "bossAttendanceEventsSynced": 42021,
-  "guildProgressRecordsSynced": 10
+  "lastWclSync": null,
+  "source": "Not configured",
+  "guild": "Might Forever",
+  "sources": [],
+  "reportsSynced": 0,
+  "fightsSynced": 0,
+  "bossAttendanceEventsSynced": 0,
+  "guildProgressRecordsSynced": 0
 }

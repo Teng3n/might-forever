@@ -1,66 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageHeader from "../components/PageHeader.astro";
-import { getPlayerClass, getPlayerNameStyle } from "../lib/playerStyles";
+import surveyInsights from "../data/surveyInsights.json";
 
 const discordUrl = "https://discord.gg/Eg3UkkgcGj";
-const applicationUrl = "https://forms.gle/Ka2nMVkdp5wNCjZq8";
-
-const leaders = [
-  { role: "Guild Master", name: "Tengen" },
-  { role: "Officer", name: "DrChicken" },
-  { role: "Officer", name: "Karkan" },
-];
-
-const expectations = [
-  "Attend at least 90% of raids with absences and tardiness communicated in a timely manner.",
-  "Arrive fully prepared with consumables, gems, enchants, and strong class knowledge.",
-  "Maintain comprehensive knowledge of boss mechanics.",
-  "Keep a positive attitude and be willing to accept constructive feedback.",
-  "Participate in a rotating bench when needed.",
-];
-
-const addons = [
-  { name: "WeakAuras", url: "https://www.curseforge.com/wow/addons/weakauras-2" },
-  { name: "GTFO", url: "https://www.curseforge.com/wow/addons/gtfo" },
-  { name: "MRT", url: "https://www.curseforge.com/wow/addons/method-raid-tools" },
-  { name: "RCLootCouncil", url: "https://www.curseforge.com/wow/addons/rclootcouncil-classic" },
-];
-
-const recruitmentNeeds = [
-  { priority: "Current Needs", detail: "No specific needs at the moment." },
-  { priority: "Always Considered", detail: "Exceptional players are always considered regardless of class or spec." },
-];
 ---
 
-<Layout title="Vitality | MoP Classic Guild">
-  <PageHeader
-    eyebrow="Home"
-    title="Vitality"
-  />
+<Layout title="Might Forever | Guild Development">
+  <PageHeader eyebrow="Pre-launch" title="Might Forever" />
 
   <section class="content-grid two-column">
-    <article class="panel copy-panel">
+    <article class="panel copy-panel hero-panel">
       <div class="section-heading">
-        <p class="eyebrow">Welcome</p>
-        <h2>Welcome to Vitality</h2>
+        <p class="eyebrow">A new chapter</p>
+        <h2>Building the guild foundation</h2>
       </div>
       <div class="info-copy">
         <p>
-          Our guild is a semi-hardcore raiding community founded on day one of World of
-          Warcraft: Classic on the Fairbanks server. Our goal is to clear current content in a
-          timely and efficient manner.
+          Might Forever is the working home for our next World of Warcraft guild. This site is a
+          clean foundation for planning the launch, forming the roster, and building the systems
+          the team will use once the game is closer.
         </p>
         <p>
-          Vitality has a rich history of raiding and friendships dating back to the original
-          vanilla World of Warcraft. Our core team has been raiding together since Warlords of
-          Draenor, and we strive to maintain a friendly, inclusive, and high-performing community
-          that helps its members achieve their raiding goals.
-        </p>
-        <p>
-          If you are interested in joining our guild, please contact Tengen or any of our officers.
-          We welcome both guild and non-guild members to join our Discord server and participate in
-          community activities.
+          The old Mists of Pandaria data stays preserved in the Might Forever archive. Nothing from that
+          roster, calendar, or loot history carries into this site.
         </p>
       </div>
     </article>
@@ -68,111 +31,69 @@ const recruitmentNeeds = [
     <div class="stack homepage-side-stack">
       <article class="panel resources-panel">
         <div class="section-heading">
-          <p class="eyebrow">Resources</p>
-          <h2>Quick Links</h2>
+          <p class="eyebrow">Start here</p>
+          <h2>Guild Links</h2>
         </div>
         <div class="resource-list compact">
           <a class="resource-link" href={discordUrl}>
             <span>Discord</span>
-            <small>Community and raid voice</small>
+            <small>Community and planning</small>
           </a>
-          <a class="resource-link" href={applicationUrl}>
-            <span>Apply Here</span>
-            <small>Guild application</small>
+          <a class="resource-link" href="/roster">
+            <span>Roster Foundation</span>
+            <small>Ready for the future roster source</small>
+          </a>
+          <a class="resource-link" href="/officer/survey-insights">
+            <span>Officer Survey Insights</span>
+            <small>{surveyInsights.responseCount} launch survey responses</small>
           </a>
         </div>
-      </article>
-
-      <article class="panel">
-        <div class="section-heading">
-          <p class="eyebrow">Raid Times</p>
-          <h2>Weekly Raid Nights</h2>
-        </div>
-        <ul class="schedule-list">
-          <li>
-            <span>Sunday</span>
-            <strong>8:00 PM - 11:00 PM PT</strong>
-          </li>
-          <li>
-            <span>Monday</span>
-            <strong>8:00 PM - 11:00 PM PT</strong>
-          </li>
-        </ul>
       </article>
     </div>
   </section>
 
-  <section class="content-grid two-column">
-    <article class="panel">
-      <div class="section-heading">
-        <p class="eyebrow">Leadership</p>
-        <h2>Officer Team</h2>
-      </div>
-      <ul class="clean-list leadership-list">
-        {
-          leaders.map((leader) => (
-            <li>
-              <span>{leader.role}</span>
-              <strong
-                class="player-name"
-                style={getPlayerNameStyle(leader.name)}
-                title={getPlayerClass(leader.name)}
-              >
-                {leader.name}
-              </strong>
-            </li>
-          ))
-        }
-      </ul>
+  <section class="dashboard-grid">
+    <article class="stat-card">
+      <span>Roster</span>
+      <strong>0</strong>
+      <small>Not yet formed</small>
     </article>
-
-    <article class="panel">
-      <div class="section-heading">
-        <p class="eyebrow">Recruitment</p>
-        <h2>Current Recruitment Needs</h2>
-      </div>
-      <ul class="clean-list recruitment-list">
-        {
-          recruitmentNeeds.map((need) => (
-            <li>
-              <span>{need.priority}</span>
-              <strong>{need.detail}</strong>
-            </li>
-          ))
-        }
-      </ul>
+    <article class="stat-card">
+      <span>Loot system</span>
+      <strong>—</strong>
+      <small>Not configured</small>
+    </article>
+    <article class="stat-card">
+      <span>Survey responses</span>
+      <strong>{surveyInsights.responseCount}</strong>
+      <small>Officer analytics available</small>
     </article>
   </section>
 
   <section class="content-grid two-column">
-    <div class="stack">
-      <article class="panel copy-panel">
-        <div class="section-heading">
-          <p class="eyebrow">Loot System</p>
-          <h2>Loot Council</h2>
-        </div>
-        <p class="info-note">Performance, attendance, and contribution-based Loot Council.</p>
-        <p class="info-note">Always considering exceptional players regardless of class or spec.</p>
-      </article>
-
-      <article class="panel">
-        <div class="section-heading">
-          <p class="eyebrow">Required Add-ons</p>
-          <h2>Raid Tools</h2>
-        </div>
-        <ul class="clean-list addon-list">
-          {addons.map((addon) => <li><a href={addon.url}>{addon.name}</a></li>)}
-        </ul>
-      </article>
-    </div>
-
-    <article class="panel">
+    <article class="panel copy-panel">
       <div class="section-heading">
-        <p class="eyebrow">Raider Expectations</p>
-        <h2>Team Standards</h2>
+        <p class="eyebrow">Ready now</p>
+        <h2>Planning infrastructure</h2>
       </div>
       <ul class="clean-list expectation-list">
-        {expectations.map((item) => <li>{item}</li>)}
+        <li>Permanent Might Forever development deployment.</li>
+        <li>Empty roster and data contracts ready for future spreadsheets.</li>
+        <li>Officer-gated survey decision dashboard.</li>
+        <li>Manual-only data refresh path with no background polling.</li>
+      </ul>
+    </article>
+
+    <article class="panel copy-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Later</p>
+        <h2>Systems to connect</h2>
+      </div>
+      <ul class="clean-list expectation-list">
+        <li>Roster and character data source.</li>
+        <li>Raid calendar and availability.</li>
+        <li>Loot policy and tracking, once the guild chooses a system.</li>
+        <li>Progression and Warcraft Logs after the game launches.</li>
       </ul>
     </article>
   </section>

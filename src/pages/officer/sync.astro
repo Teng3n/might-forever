@@ -3,7 +3,7 @@ import OfficerGate from "../../components/OfficerGate.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Officer Sync | Vitality">
+<Layout title="Officer Sync | Might Forever">
   <OfficerGate>
     <section data-officer-sync-root></section>
   </OfficerGate>
@@ -130,8 +130,8 @@ import Layout from "../../layouts/Layout.astro";
     });
   };
 
-  window.addEventListener("vitality:officer-unlocked", renderOfficerSync);
-  window.addEventListener("vitality:officer-locked", () => {
+  window.addEventListener("might:officer-unlocked", renderOfficerSync);
+  window.addEventListener("might:officer-locked", () => {
     syncRendered = false;
 
     if (syncRoot) {

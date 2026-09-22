@@ -3,7 +3,7 @@ import OfficerGate from "../../components/OfficerGate.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Officer Roster | Vitality">
+<Layout title="Officer Roster | Might Forever">
   <OfficerGate>
     <section data-officer-roster-root></section>
   </OfficerGate>
@@ -224,8 +224,8 @@ import Layout from "../../layouts/Layout.astro";
     }
   };
 
-  window.addEventListener("vitality:officer-unlocked", loadOfficerRoster);
-  window.addEventListener("vitality:officer-locked", () => {
+  window.addEventListener("might:officer-unlocked", loadOfficerRoster);
+  window.addEventListener("might:officer-locked", () => {
     rosterRendered = false;
 
     if (rosterRoot) {

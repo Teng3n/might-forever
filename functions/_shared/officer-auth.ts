@@ -3,7 +3,7 @@ export interface OfficerAuthEnv {
   SYNC_TRIGGER_PASSWORD_HASH?: string;
 }
 
-const OFFICER_SESSION_COOKIE = "vitality_officer_session";
+const OFFICER_SESSION_COOKIE = "might_forever_officer_session";
 const OFFICER_SESSION_MAX_AGE_SECONDS = 8 * 60 * 60;
 const encoder = new TextEncoder();
 

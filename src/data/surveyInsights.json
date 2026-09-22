@@ -1,0 +1,122 @@
+{
+  "generatedAt": null,
+  "responseCount": 30,
+  "lastResponseAt": "9/22/2026 0:12:47",
+  "source": {
+    "spreadsheetId": "1EuKIShP55UUqlD0H3Ho_n00W9vaYnHcGMcdzDH9AcGw",
+    "tabName": "Form Responses 1"
+  },
+  "series": [
+    {
+      "id": "launchParticipation",
+      "title": "Expected launch participation",
+      "answers": [
+        { "label": "Highly active; primary game", "count": 18 },
+        { "label": "Regular participation", "count": 5 },
+        { "label": "Casual or social participation", "count": 4 },
+        { "label": "Primarily raid attendance", "count": 2 },
+        { "label": "Undecided", "count": 1 }
+      ]
+    },
+    {
+      "id": "serverPreference",
+      "title": "Server preference",
+      "answers": [
+        { "label": "PvP", "count": 15 },
+        { "label": "No preference", "count": 11 },
+        { "label": "PvE", "count": 4 }
+      ]
+    },
+    {
+      "id": "serverFlexibility",
+      "title": "Would follow to a different server",
+      "answers": [
+        { "label": "Yes", "count": 21 },
+        { "label": "It depends on the selected server", "count": 8 },
+        { "label": "No", "count": 1 }
+      ]
+    },
+    {
+      "id": "factionPreference",
+      "title": "Faction preference",
+      "answers": [
+        { "label": "Either / no preference", "count": 14 },
+        { "label": "Alliance", "count": 12 },
+        { "label": "Horde", "count": 4 }
+      ]
+    },
+    {
+      "id": "factionFlexibility",
+      "title": "Would follow to a different faction",
+      "answers": [
+        { "label": "Yes", "count": 20 },
+        { "label": "Possibly", "count": 6 },
+        { "label": "No", "count": 4 }
+      ]
+    },
+    {
+      "id": "classInterest",
+      "title": "Likely main class",
+      "answers": [
+        { "label": "Paladin", "count": 6 },
+        { "label": "Druid", "count": 4 },
+        { "label": "Mage", "count": 3 },
+        { "label": "Shaman", "count": 3 },
+        { "label": "Warlock", "count": 3 },
+        { "label": "Rogue", "count": 3 },
+        { "label": "Undecided", "count": 3 },
+        { "label": "Hunter", "count": 2 },
+        { "label": "Priest", "count": 2 },
+        { "label": "Warrior", "count": 1 }
+      ]
+    },
+    {
+      "id": "rolePreference",
+      "title": "Preferred raid role",
+      "answers": [
+        { "label": "Flexible; willing to fill as needed", "count": 8 },
+        { "label": "Melee DPS", "count": 8 },
+        { "label": "Ranged DPS", "count": 5 },
+        { "label": "Healer", "count": 4 },
+        { "label": "Undecided", "count": 3 },
+        { "label": "Tank", "count": 2 }
+      ]
+    },
+    {
+      "id": "alternateCharacters",
+      "title": "Raid-ready alternate characters",
+      "answers": [
+        { "label": "Yes, one", "count": 9 },
+        { "label": "Undecided", "count": 9 },
+        { "label": "Yes, several", "count": 7 },
+        { "label": "No", "count": 5 }
+      ]
+    },
+    {
+      "id": "professions",
+      "title": "Profession interest",
+      "answers": [
+        { "label": "Engineering", "count": 9 },
+        { "label": "Tailoring", "count": 9 },
+        { "label": "Undecided", "count": 9 },
+        { "label": "Leatherworking", "count": 8 },
+        { "label": "Enchanting", "count": 6 },
+        { "label": "Blacksmithing", "count": 5 },
+        { "label": "Skinning", "count": 5 },
+        { "label": "Alchemy", "count": 4 },
+        { "label": "Herbalism", "count": 3 },
+        { "label": "Mining", "count": 3 },
+        { "label": "Inscription", "count": 1 },
+        { "label": "Jewelcrafting", "count": 1 }
+      ]
+    },
+    {
+      "id": "raidInterest",
+      "title": "Interested in raiding",
+      "answers": [
+        { "label": "Yes", "count": 25 },
+        { "label": "Undecided", "count": 5 }
+      ]
+    }
+  ]
+}

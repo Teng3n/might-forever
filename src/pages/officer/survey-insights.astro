@@ -1,0 +1,116 @@
+---
+import OfficerGate from "../../components/OfficerGate.astro";
+import Layout from "../../layouts/Layout.astro";
+import surveyInsights from "../../data/surveyInsights.json";
+
+type Answer = { label: string; count: number };
+type Series = { id: string; title: string; answers: Answer[] };
+
+const series = surveyInsights.series as Series[];
+const byId = new Map(series.map((item) => [item.id, item]));
+const total = surveyInsights.responseCount;
+const count = (seriesId: string, label: string) =>
+  byId.get(seriesId)?.answers.find((answer) => answer.label === label)?.count ?? 0;
+const percent = (value: number, denominator = total) =>
+  denominator > 0 ? Math.round((value / denominator) * 100) : 0;
+
+const headlineMetrics = [
+  {
+    label: "Survey responses",
+    value: String(total),
+    detail: "Current launch-planning sample",
+  },
+  {
+    label: "Want to raid",
+    value: `${percent(count("raidInterest", "Yes"))}%`,
+    detail: `${count("raidInterest", "Yes")} yes · ${count("raidInterest", "Undecided")} undecided`,
+  },
+  {
+    label: "Server-flexible",
+    value: `${percent(count("serverFlexibility", "Yes") + count("serverFlexibility", "It depends on the selected server"))}%`,
+    detail: "Yes or depends on selection",
+  },
+  {
+    label: "Faction-flexible",
+    value: `${percent(count("factionFlexibility", "Yes") + count("factionFlexibility", "Possibly"))}%`,
+    detail: "Yes or possibly",
+  },
+];
+
+const sourceUrl = `https://docs.google.com/spreadsheets/d/${surveyInsights.source.spreadsheetId}/edit#gid=352637669`;
+---
+
+<Layout title="Survey Insights | Might Forever">
+  <OfficerGate>
+    <section class="page-header officer-client-heading">
+      <p class="eyebrow">Officer · Launch Survey</p>
+      <h1>Survey Insights</h1>
+      <p>Aggregated decision support from the WoW Forever guild launch survey.</p>
+    </section>
+
+    <section class="dashboard-grid survey-headline-grid">
+      {
+        headlineMetrics.map((metric) => (
+          <article class="stat-card">
+            <span>{metric.label}</span>
+            <strong>{metric.value}</strong>
+            <small>{metric.detail}</small>
+          </article>
+        ))
+      }
+    </section>
+
+    <section class="panel survey-takeaways">
+      <div class="section-heading">
+        <p class="eyebrow">Decision snapshot</p>
+        <h2>What the current responses suggest</h2>
+      </div>
+      <ul class="clean-list expectation-list">
+        <li><strong>PvP leads server preference:</strong> 15 prefer PvP, while 11 have no preference.</li>
+        <li><strong>Faction is comparatively open:</strong> 14 have no preference and 26 would follow or possibly follow a different faction.</li>
+        <li><strong>Raid demand is strong:</strong> 25 respondents said yes and the remaining 5 are undecided.</li>
+        <li><strong>Role flexibility is valuable:</strong> 8 respondents are willing to fill as needed, matching the 8 who currently prefer melee DPS.</li>
+        <li><strong>Early class concentration:</strong> Paladin leads at 6, followed by Druid at 4.</li>
+      </ul>
+    </section>
+
+    <section class="survey-chart-grid" aria-label="Survey response distributions">
+      {
+        series.map((item) => (
+          <article class="panel survey-chart-card">
+            <div class="section-heading">
+              <p class="eyebrow">{item.answers.reduce((sum, answer) => sum + answer.count, 0)} selections</p>
+              <h2>{item.title}</h2>
+            </div>
+            <div class="survey-bars">
+              {item.answers.map((answer) => {
+                const denominator = item.id === "professions" ? total : item.answers.reduce((sum, candidate) => sum + candidate.count, 0);
+                const answerPercent = percent(answer.count, denominator);
+
+                return (
+                  <div class="survey-bar-row">
+                    <div class="survey-bar-label">
+                      <span>{answer.label}</span>
+                      <strong>{answer.count} <small>({answerPercent}%)</small></strong>
+                    </div>
+                    <div class="survey-bar-track" aria-hidden="true">
+                      <span style={`--survey-bar-width: ${answerPercent}%`}></span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </article>
+        ))
+      }
+    </section>
+
+    <section class="panel survey-source-panel">
+      <div>
+        <p class="eyebrow">Source</p>
+        <p class="info-note">Last recorded response: {surveyInsights.lastResponseAt}. Usernames and free-text specialization answers are excluded from this dashboard data.</p>
+      </div>
+      <a class="filter-button is-subtle" href={sourceUrl} target="_blank" rel="noreferrer">Open response sheet</a>
+    </section>
+  </OfficerGate>
+</Layout>

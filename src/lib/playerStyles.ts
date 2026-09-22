@@ -1,6 +1,11 @@
 import roster from "../data/roster.json";
 import { normalizePlayerName } from "./playerNames";
 
+type RosterMember = {
+  character: string;
+  class: string;
+};
+
 export const classColors: Record<string, string> = {
   "Death Knight": "#c41e3a",
   Druid: "#ff7c0a",
@@ -15,7 +20,8 @@ export const classColors: Record<string, string> = {
   Warrior: "#c69b6d",
 };
 
-const rosterByName = new Map(roster.map((member) => [normalizePlayerName(member.character), member]));
+const rosterMembers = roster as RosterMember[];
+const rosterByName = new Map(rosterMembers.map((member) => [normalizePlayerName(member.character), member]));
 
 export const getPlayerClass = (name: string) => rosterByName.get(normalizePlayerName(name))?.class;
 

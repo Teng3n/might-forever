@@ -1,16 +1,10 @@
 ---
-import fs from "node:fs";
-import path from "node:path";
 import "../styles/global.css";
 
 interface Props {
   title?: string;
 }
-type SyncMeta = {
-  lastDataSyncAt?: string;
-};
-
-const { title = "Vitality" } = Astro.props;
+const { title = "Might Forever" } = Astro.props;
 type NavChild = {
   href: string;
   label: string;
@@ -23,21 +17,7 @@ type NavItem = NavChild & {
 
 const navItems: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/progression", label: "Progression" },
   { href: "/roster", label: "Roster" },
-  { href: "/calendar", label: "Calendar" },
-  {
-    href: "/loot",
-    label: "Loot",
-    matchPrefix: "/loot",
-    children: [
-      { href: "/loot/bis-lists", label: "BiS Lists" },
-      { href: "/loot/gear-needs", label: "Gear Needs" },
-      { href: "/loot", label: "Summary" },
-      { href: "/loot/history", label: "History" },
-    ],
-  },
   {
     href: "/officer",
     label: "Officer",
@@ -50,37 +30,8 @@ const isActive = (item: NavItem) => {
   const matchPrefix = item.matchPrefix ?? "";
   return pathname === item.href || (typeof matchPrefix === "string" && matchPrefix.length > 0 && pathname.startsWith(matchPrefix));
 };
-
 const isExactActive = (href: string) => pathname === href;
-const readSyncMeta = (): SyncMeta => {
-  try {
-    return JSON.parse(fs.readFileSync(path.join(process.cwd(), "src/data/syncMeta.json"), "utf8")) as SyncMeta;
-  } catch {
-    return {};
-  }
-};
-const formatLastDataSync = (value?: string) => {
-  if (!value) {
-    return "Unknown";
-  }
 
-  const date = new Date(value);
-
-  if (Number.isNaN(date.getTime())) {
-    return "Unknown";
-  }
-
-  return new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-    timeZone: "America/Los_Angeles",
-  }).format(date);
-};
-const syncMeta = readSyncMeta();
-const lastDataSync = formatLastDataSync(syncMeta.lastDataSyncAt);
 ---
 
 <!doctype html>
@@ -90,7 +41,7 @@ const lastDataSync = formatLastDataSync(syncMeta.lastDataSyncAt);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Static guild site for a World of Warcraft Mists of Pandaria Classic raid team."
+      content="Pre-launch planning hub for the Might Forever World of Warcraft guild."
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
@@ -98,7 +49,7 @@ const lastDataSync = formatLastDataSync(syncMeta.lastDataSyncAt);
   <body>
     <div class="app-frame">
       <aside class="side-nav" aria-label="Guild navigation">
-        <a class="side-nav-title" href="/">Vitality</a>
+        <a class="side-nav-title" href="/">Might Forever</a>
         <nav>
           {
             navItems.map((item) =>
@@ -130,8 +81,8 @@ const lastDataSync = formatLastDataSync(syncMeta.lastDataSyncAt);
           <slot />
         </main>
         <footer class="site-footer">
-          <span>Vitality Guild Tools</span>
-          <span class="site-footer-sync">Last data sync: {lastDataSync}</span>
+          <span>Might Forever</span>
+          <span class="site-footer-sync">Pre-launch foundation</span>
         </footer>
       </div>
     </div>

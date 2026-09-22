@@ -2,60 +2,25 @@
 import Layout from "../layouts/Layout.astro";
 import PageHeader from "../components/PageHeader.astro";
 import StatCard from "../components/StatCard.astro";
-import { activeRosterPlayers } from "../lib/guildData";
-import { classColors, getPlayerNameStyle } from "../lib/playerStyles";
-import { cleanPlayerName, getPlayerProfileHref } from "../lib/playerNames";
-
-const members = [...activeRosterPlayers].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
-const roleCount = (role: string) => members.filter((member) => member.role === role).length;
-
-const classColor = (className: string) => classColors[className] ?? "#f2f0e8";
 ---
 
-<Layout title="Roster | Vitality">
-  <PageHeader
-    eyebrow="Roster"
-    title="Raid Team"
-  />
+<Layout title="Roster | Might Forever">
+  <PageHeader eyebrow="Roster" title="Guild Roster" />
 
   <section class="dashboard-grid roster-summary-grid">
-    <StatCard label="Roster Count" value={members.length} />
-    <StatCard label="Tanks" value={roleCount("Tank")} />
-    <StatCard label="Healers" value={roleCount("Healer")} />
-    <StatCard label="Melee DPS" value={roleCount("Melee DPS")} />
-    <StatCard label="Ranged DPS" value={roleCount("Ranged DPS")} />
+    <StatCard label="Roster Count" value={0} detail="Awaiting roster source" />
+    <StatCard label="Tanks" value={0} />
+    <StatCard label="Healers" value={0} />
+    <StatCard label="Melee DPS" value={0} />
+    <StatCard label="Ranged DPS" value={0} />
   </section>
 
-  <section class="panel">
-    <div class="table-shell">
-      <table class="data-table roster-table">
-        <thead>
-          <tr>
-            <th>Character</th>
-            <th>Class</th>
-            <th>Spec</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            members.map((member) => (
-              <tr style={`--class-color: ${classColor(member.className)}`}>
-                <td data-label="Character">
-                  <a
-                    class="player-name"
-                    href={getPlayerProfileHref(member.name)}
-                    style={getPlayerNameStyle(member.name)}
-                  >
-                    {cleanPlayerName(member.name)}
-                  </a>
-                </td>
-                <td data-label="Class">{member.className}</td>
-                <td data-label="Spec">{member.spec}</td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
-    </div>
+  <section class="panel empty-state-panel">
+    <p class="eyebrow">Foundation ready</p>
+    <h2>No roster has been created yet</h2>
+    <p class="info-note">
+      This page is intentionally empty. When the Might Forever roster spreadsheet is ready, its
+      data can be connected here without carrying over any Might Forever members.
+    </p>
   </section>
 </Layout>

@@ -4,42 +4,28 @@ import Layout from "../../layouts/Layout.astro";
 
 const officerTools = [
   {
-    eyebrow: "Data",
-    title: "Sync",
-    description: "Refresh guild data from Google Sheets and Warcraft Logs.",
-    href: "/officer/sync",
-    action: "Open Sync",
+    eyebrow: "Launch Survey",
+    title: "Survey Insights",
+    description: "Review launch interest, server and faction preferences, class demand, roles, and raid intent.",
+    href: "/officer/survey-insights",
+    action: "Open Insights",
   },
   {
-    eyebrow: "Roster",
-    title: "Officer Roster",
-    description: "Review roster status, loot totals, and attendance signals.",
-    href: "/officer/roster",
-    action: "Open Roster",
-  },
-  {
-    eyebrow: "Progression",
-    title: "Prog Bench",
-    description: "Generate boss-by-boss progression bench suggestions.",
-    href: "/officer/boss-bench-suggestions",
-    action: "Open Prog Bench",
-  },
-  {
-    eyebrow: "Farm",
-    title: "Farm Bench",
-    description: "Generate weekly farm bench suggestions.",
-    href: "/officer/farm-bench-suggestions",
-    action: "Open Farm Bench",
+    eyebrow: "Foundation",
+    title: "Data Setup",
+    description: "Roster, calendar, loot, and progression sources are intentionally not configured yet.",
+    href: "/roster",
+    action: "View Roster Shell",
   },
 ];
 ---
 
-<Layout title="Officer | Vitality">
+<Layout title="Officer | Might Forever">
   <OfficerGate>
     <section class="page-header officer-client-heading">
       <p class="eyebrow">Officer</p>
-      <h1>Officer Tools</h1>
-      <p>Private planning tools for roster data, syncing, and bench suggestions.</p>
+      <h1>Planning Tools</h1>
+      <p>Private decision support for the Might Forever launch.</p>
     </section>
 
     <section class="officer-tools-panel-group" aria-label="Officer tools">
@@ -52,11 +38,8 @@ const officerTools = [
                 <h2>{tool.title}</h2>
                 <p class="info-note">{tool.description}</p>
               </div>
-
               <div class="officer-tool-actions">
-                <a class="filter-button is-subtle" href={tool.href}>
-                  {tool.action}
-                </a>
+                <a class="filter-button is-subtle" href={tool.href}>{tool.action}</a>
               </div>
             </article>
           ))

@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Vitality crest">
-  <rect width="160" height="160" rx="8" fill="#0d1110"/>
-  <path d="M80 12 132 34v43c0 34-21 60-52 71-31-11-52-37-52-71V34L80 12Z" fill="#162019" stroke="#c89b3c" stroke-width="6"/>
-  <path d="M54 103c18-7 29-24 33-54 13 16 18 32 12 49 12-4 20-13 25-25-2 31-19 53-44 62-17-6-28-17-26-32Z" fill="#6fcf97"/>
-  <path d="M62 75c10 3 20 2 31-3-5 14-13 24-25 30-7-7-9-16-6-27Z" fill="#f4d27a"/>
-  <path d="M80 20v116" stroke="#c89b3c" stroke-width="3" opacity=".35"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Might Forever crest">
+  <rect width="160" height="160" rx="8" fill="#080b16"/>
+  <path d="M80 12 132 34v43c0 34-21 60-52 71-31-11-52-37-52-71V34L80 12Z" fill="#18223d" stroke="#7c8cff" stroke-width="6"/>
+  <path d="M54 103c18-7 29-24 33-54 13 16 18 32 12 49 12-4 20-13 25-25-2 31-19 53-44 62-17-6-28-17-26-32Z" fill="#d47cff"/>
+  <path d="M62 75c10 3 20 2 31-3-5 14-13 24-25 30-7-7-9-16-6-27Z" fill="#aeb8ff"/>
+  <path d="M80 20v116" stroke="#7c8cff" stroke-width="3" opacity=".35"/>
 </svg>

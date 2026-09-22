@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vitality guild crest">
-  <rect width="64" height="64" rx="8" fill="#101814"/>
-  <path d="M32 6 52 14v17c0 13-8 23-20 27C20 54 12 44 12 31V14L32 6Z" fill="#1d2a23" stroke="#c89b3c" stroke-width="3"/>
-  <path d="M22 39c7-3 11-9 12-19 5 6 7 12 5 18 4-1 7-4 9-8-1 10-7 17-16 20-6-2-10-6-10-11Z" fill="#6fcf97"/>
-  <path d="M26 28c3 1 6 1 10-1-2 4-4 7-8 9-2-2-3-4-2-8Z" fill="#f4d27a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Might Forever guild crest">
+  <rect width="64" height="64" rx="8" fill="#080b16"/>
+  <path d="M32 6 52 14v17c0 13-8 23-20 27C20 54 12 44 12 31V14L32 6Z" fill="#18223d" stroke="#7c8cff" stroke-width="3"/>
+  <path d="M22 39c7-3 11-9 12-19 5 6 7 12 5 18 4-1 7-4 9-8-1 10-7 17-16 20-6-2-10-6-10-11Z" fill="#d47cff"/>
+  <path d="M26 28c3 1 6 1 10-1-2 4-4 7-8 9-2-2-3-4-2-8Z" fill="#aeb8ff"/>
 </svg>
