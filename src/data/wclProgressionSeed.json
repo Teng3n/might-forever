@@ -5118,16 +5118,16 @@
           "encounterId": 51623,
           "difficulties": {
             "Heroic": {
-              "status": "Best Pull",
+              "status": "Killed",
               "difficultyId": 4,
               "rawDifficultyId": 4,
-              "firstKillDate": null,
-              "latestKillDate": null,
-              "bestPercent": 12.97,
-              "reportCode": "Tz49jQNWqrnb3vHf",
-              "reportUrl": "https://classic.warcraftlogs.com/reports/Tz49jQNWqrnb3vHf#fight=79",
-              "pulls": 46,
-              "kills": 0
+              "firstKillDate": "2026-09-08T04:24:19.231Z",
+              "latestKillDate": "2026-09-21T04:35:03.180Z",
+              "bestPercent": 0,
+              "reportCode": "q7TNgRphdrZPJxAt",
+              "reportUrl": "https://classic.warcraftlogs.com/reports/q7TNgRphdrZPJxAt#fight=8",
+              "pulls": 156,
+              "kills": 3
             }
           }
         },
@@ -5153,7 +5153,7 @@
       "summary": {
         "normalKilled": 4,
         "normalTotal": 14,
-        "heroicKilled": 13,
+        "heroicKilled": 14,
         "heroicTotal": 14
       }
     }
