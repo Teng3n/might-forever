@@ -32,7 +32,7 @@ const SYNC_WORKFLOWS: Record<SyncType, { workflowFile: string; successMessage: s
     successMessage: "Full sync workflow triggered.",
   },
 };
-const GITHUB_WORKFLOW_DISPATCH_BASE_URL = "https://api.github.com/repos/Teng3n/vitality-mop/actions/workflows";
+const GITHUB_WORKFLOW_DISPATCH_BASE_URL = "https://api.github.com/repos/Teng3n/might-forever/actions/workflows";
 const WORKFLOW_REF = "might-forever";
 const COOLDOWN_MS = 60_000;
 const SYNC_ERROR_MESSAGE = "Unable to trigger sync workflow.";
@@ -115,7 +115,7 @@ export const onRequest = async ({ request, env }: PagesContext) => {
         Accept: "application/vnd.github+json",
         Authorization: `Bearer ${env.GITHUB_ACTIONS_DISPATCH_TOKEN}`,
         "Content-Type": "application/json",
-        "User-Agent": "vitality-mop-pages-function",
+        "User-Agent": "might-forever-pages-function",
         "X-GitHub-Api-Version": "2022-11-28",
       },
       body: JSON.stringify({ ref: WORKFLOW_REF }),
