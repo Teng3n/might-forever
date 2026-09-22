@@ -48,7 +48,7 @@ const schemes = [
 ---
 
 <Layout title="Might Forever Color Lab">
-  <div class="color-lab" data-color-lab data-palette="frostfire">
+  <div class="color-lab" data-color-lab data-palette="frostfire" data-text-treatment="secondary">
     <header class="color-lab-heading">
       <p class="eyebrow">Might Forever design study</p>
       <h1>Choose a color direction</h1>
@@ -72,6 +72,17 @@ const schemes = [
           </button>
         ))
       }
+    </div>
+
+    <div class="text-treatment" aria-label="Emphasis text treatment">
+      <div>
+        <p class="eyebrow">Emphasis text</p>
+        <strong>Separate the words from the blue structure</strong>
+      </div>
+      <div class="text-treatment-buttons" role="group" aria-label="Choose emphasis text color">
+        <button type="button" aria-pressed="true" data-text-button="secondary">Secondary color</button>
+        <button type="button" aria-pressed="false" data-text-button="neutral">Soft white</button>
+      </div>
     </div>
 
     <section class="concept" aria-label="Selected Might Forever theme preview">
@@ -125,10 +136,19 @@ const schemes = [
   const colorLab = document.querySelector<HTMLElement>("[data-color-lab]");
   if (colorLab) {
     const buttons = [...colorLab.querySelectorAll<HTMLButtonElement>("[data-palette-button]")];
+    const textButtons = [...colorLab.querySelectorAll<HTMLButtonElement>("[data-text-button]")];
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         colorLab.dataset.palette = button.dataset.paletteButton;
         buttons.forEach((candidate) =>
+          candidate.setAttribute("aria-pressed", String(candidate === button)),
+        );
+      });
+    });
+    textButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        colorLab.dataset.textTreatment = button.dataset.textButton;
+        textButtons.forEach((candidate) =>
           candidate.setAttribute("aria-pressed", String(candidate === button)),
         );
       });
@@ -146,6 +166,7 @@ const schemes = [
     --preview-muted: #aeb8c5;
     --preview-accent: #ff7a2f;
     --preview-accent-two: #ff435e;
+    --preview-emphasis: #ff6478;
     display: grid;
     gap: 24px;
   }
@@ -159,6 +180,7 @@ const schemes = [
     --preview-muted: #aebbd2;
     --preview-accent: #44d8ff;
     --preview-accent-two: #a680ff;
+    --preview-emphasis: #b99cff;
   }
 
   .color-lab[data-palette="frost"] {
@@ -170,6 +192,7 @@ const schemes = [
     --preview-muted: #b6c9d0;
     --preview-accent: #68d8ff;
     --preview-accent-two: #bdefff;
+    --preview-emphasis: #e5ebee;
   }
 
   .color-lab[data-palette="frostfire"] {
@@ -181,6 +204,7 @@ const schemes = [
     --preview-muted: #b5c6ce;
     --preview-accent: #68d8ff;
     --preview-accent-two: #ff6b57;
+    --preview-emphasis: #ff806d;
   }
 
   .color-lab[data-palette="prismatic"] {
@@ -192,6 +216,7 @@ const schemes = [
     --preview-muted: #b7c0d3;
     --preview-accent: #70d7ff;
     --preview-accent-two: #b58cff;
+    --preview-emphasis: #c0a0ff;
   }
 
   .color-lab[data-palette="stormflare"] {
@@ -203,6 +228,7 @@ const schemes = [
     --preview-muted: #b4bed2;
     --preview-accent: #39d4ff;
     --preview-accent-two: #ff5fa2;
+    --preview-emphasis: #ff73ad;
   }
 
   .color-lab[data-palette="arcane-ember"] {
@@ -214,6 +240,11 @@ const schemes = [
     --preview-muted: #c3b9d3;
     --preview-accent: #a680ff;
     --preview-accent-two: #ff7a45;
+    --preview-emphasis: #ff8d5f;
+  }
+
+  .color-lab[data-text-treatment="neutral"] {
+    --preview-emphasis: var(--preview-text);
   }
 
   .color-lab-heading h1 {
@@ -288,6 +319,48 @@ const schemes = [
     border-radius: 999px;
   }
 
+  .text-treatment {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    background: var(--surface);
+  }
+
+  .text-treatment p {
+    margin: 0 0 4px;
+  }
+
+  .text-treatment-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .text-treatment-buttons button {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 12px;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 850;
+    cursor: pointer;
+  }
+
+  .text-treatment-buttons button:hover,
+  .text-treatment-buttons button:focus-visible,
+  .text-treatment-buttons button[aria-pressed="true"] {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    color: var(--text);
+    outline: none;
+  }
+
   .concept {
     display: grid;
     grid-template-columns: 132px minmax(0, 1fr);
@@ -310,7 +383,7 @@ const schemes = [
   }
 
   .concept-nav > strong {
-    color: var(--preview-accent);
+    color: var(--preview-emphasis);
     font-size: 0.76rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -361,7 +434,7 @@ const schemes = [
   .concept-hero p,
   .concept-panel-heading p {
     margin: 0;
-    color: var(--preview-accent);
+    color: var(--preview-emphasis);
     font-size: 0.7rem;
     font-weight: 900;
     letter-spacing: 0.07em;
@@ -402,7 +475,7 @@ const schemes = [
   }
 
   .concept-stats strong {
-    color: var(--preview-accent);
+    color: var(--preview-emphasis);
     font-size: 1.3rem;
   }
 
@@ -465,7 +538,7 @@ const schemes = [
   .concept-filters .is-active {
     border-color: var(--preview-accent);
     background: color-mix(in srgb, var(--preview-accent) 14%, transparent);
-    color: var(--preview-accent);
+    color: var(--preview-emphasis);
   }
 
   .concept-rows {
@@ -490,8 +563,8 @@ const schemes = [
     width: 38px;
     height: 38px;
     border-radius: 8px;
-    background: color-mix(in srgb, var(--preview-accent) 14%, transparent);
-    color: var(--preview-accent);
+    background: color-mix(in srgb, var(--preview-emphasis) 14%, transparent);
+    color: var(--preview-emphasis);
     font-style: normal;
     font-weight: 900;
   }
@@ -502,7 +575,7 @@ const schemes = [
   }
 
   .concept-rows div strong {
-    color: var(--preview-accent);
+    color: var(--preview-emphasis);
   }
 
   .concept-rows div span,
@@ -533,6 +606,11 @@ const schemes = [
 
     .palette-tabs button {
       min-height: 0;
+    }
+
+    .text-treatment {
+      align-items: stretch;
+      flex-direction: column;
     }
 
     .concept {
