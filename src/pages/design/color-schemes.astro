@@ -3,58 +3,76 @@ import Layout from "../../layouts/Layout.astro";
 
 const schemes = [
   {
-    id: "frostfire-copper",
-    name: "Frostfire · Burnished Copper",
-    detail: "A quieter, more grounded copper with less red saturation than the previous orange.",
-    colors: ["#08131B", "#68D8FF", "#D9824E", "#F4D58D"],
-    family: "frostfire",
-    secondary: "#D9824E",
-    emphasis: "#F4D58D",
+    id: "mop-indigo",
+    name: "MoP Gold · Might Indigo",
+    detail: "The exact current Might Forever blue replacing jade—the closest bridge between both sites.",
+    colors: ["#0B0F0D", "#C89B3C", "#7C8CFF", "#F2F0E8"],
+    family: "mop-blue",
+    secondary: "#7C8CFF",
+    emphasis: "#C89B3C",
   },
   {
-    id: "frostfire-tangerine",
-    name: "Frostfire · Deep Tangerine",
-    detail: "A clearer, brighter orange that feels energetic without drifting into coral-red.",
-    colors: ["#08131B", "#68D8FF", "#F47A42", "#F4D58D"],
-    family: "frostfire",
-    secondary: "#F47A42",
-    emphasis: "#F4D58D",
+    id: "mop-cobalt",
+    name: "MoP Gold · Cobalt",
+    detail: "A saturated mid-blue with more authority and less purple than the current Might accent.",
+    colors: ["#0B0F0D", "#C89B3C", "#5B7CFA", "#F2F0E8"],
+    family: "mop-blue",
+    secondary: "#5B7CFA",
+    emphasis: "#C89B3C",
   },
   {
-    id: "frostfire-apricot",
-    name: "Frostfire · Apricot Ember",
-    detail: "A softer, creamier orange that blends most naturally with the pale-amber text.",
-    colors: ["#08131B", "#68D8FF", "#F2A06B", "#F4D58D"],
-    family: "frostfire",
-    secondary: "#F2A06B",
-    emphasis: "#F4D58D",
+    id: "mop-azure",
+    name: "MoP Gold · Azure",
+    detail: "A clean, bright blue that gives the dark MoP surfaces the clearest high-contrast lift.",
+    colors: ["#0B0F0D", "#C89B3C", "#3EA6FF", "#F2F0E8"],
+    family: "mop-blue",
+    secondary: "#3EA6FF",
+    emphasis: "#C89B3C",
   },
   {
-    id: "frostfire-rust",
-    name: "Frostfire · Rust Flame",
-    detail: "A darker, weathered orange that feels more mature and less luminous against the blue.",
-    colors: ["#08131B", "#68D8FF", "#C96543", "#F4D58D"],
-    family: "frostfire",
-    secondary: "#C96543",
-    emphasis: "#F4D58D",
+    id: "mop-frost",
+    name: "MoP Gold · Frost Blue",
+    detail: "A lighter cyan-blue that feels crisp and luminous while the gold keeps it grounded.",
+    colors: ["#0B0F0D", "#C89B3C", "#68D8FF", "#F2F0E8"],
+    family: "mop-blue",
+    secondary: "#68D8FF",
+    emphasis: "#C89B3C",
   },
   {
-    id: "frostfire-sunset",
-    name: "Frostfire · Sunset Coral",
-    detail: "A softer pink-orange that adds warmth while avoiding the sharpness of the old coral.",
-    colors: ["#08131B", "#68D8FF", "#EA6F63", "#F4D58D"],
-    family: "frostfire",
-    secondary: "#EA6F63",
-    emphasis: "#F4D58D",
+    id: "mop-periwinkle",
+    name: "MoP Gold · Periwinkle",
+    detail: "A softer blue-violet that echoes Might Forever without overwhelming the warmer gold.",
+    colors: ["#0B0F0D", "#C89B3C", "#8EA0FF", "#F2F0E8"],
+    family: "mop-blue",
+    secondary: "#8EA0FF",
+    emphasis: "#C89B3C",
   },
   {
-    id: "frostfire-molten",
-    name: "Frostfire · Molten Amber",
-    detail: "A golden-orange accent that creates the richest contrast while keeping the text pale amber.",
-    colors: ["#08131B", "#68D8FF", "#E89B3D", "#F4D58D"],
-    family: "frostfire",
-    secondary: "#E89B3D",
-    emphasis: "#F4D58D",
+    id: "mop-electric",
+    name: "MoP Gold · Electric Blue",
+    detail: "A vivid cyan-leaning blue with the strongest glow and the most contemporary energy.",
+    colors: ["#0B0F0D", "#C89B3C", "#44C7FF", "#F2F0E8"],
+    family: "mop-blue",
+    secondary: "#44C7FF",
+    emphasis: "#C89B3C",
+  },
+  {
+    id: "mop-steel",
+    name: "MoP Gold · Steel Blue",
+    detail: "A restrained, desaturated blue for a mature treatment with less neon intensity.",
+    colors: ["#0B0F0D", "#C89B3C", "#5F93B8", "#F2F0E8"],
+    family: "mop-blue",
+    secondary: "#5F93B8",
+    emphasis: "#C89B3C",
+  },
+  {
+    id: "mop-royal",
+    name: "MoP Gold · Royal Blue",
+    detail: "A deeper blue-violet with stronger guild-banner character and a more dramatic mood.",
+    colors: ["#0B0F0D", "#C89B3C", "#6670E8", "#F2F0E8"],
+    family: "mop-blue",
+    secondary: "#6670E8",
+    emphasis: "#C89B3C",
   },
 ];
 
@@ -70,11 +88,11 @@ const initialScheme = schemes[0];
   >
     <header class="color-lab-heading">
       <p class="eyebrow">Might Forever design study</p>
-      <h1>Choose the ember accent</h1>
-      <p>Six orange treatments on the same Frostfire Pale Amber foundation.</p>
+      <h1>MoP gold, Might blue</h1>
+      <p>The exact Vitality MoP palette, with jade replaced by eight variations of Might Forever blue.</p>
     </header>
 
-    <div class="palette-tabs" role="group" aria-label="Orange accent variation">
+    <div class="palette-tabs" role="group" aria-label="Blue accent variation">
       {
         schemes.map((scheme, index) => (
           <button
@@ -150,8 +168,8 @@ const initialScheme = schemes[0];
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         colorLab.dataset.family = button.dataset.family;
-        colorLab.style.setProperty("--preview-accent-two", button.dataset.secondary ?? "#d9824e");
-        colorLab.style.setProperty("--preview-emphasis", button.dataset.emphasis ?? "#f2e7d8");
+        colorLab.style.setProperty("--preview-accent-two", button.dataset.secondary ?? "#7c8cff");
+        colorLab.style.setProperty("--preview-emphasis", button.dataset.emphasis ?? "#c89b3c");
         buttons.forEach((candidate) =>
           candidate.setAttribute("aria-pressed", String(candidate === button)),
         );
@@ -162,14 +180,14 @@ const initialScheme = schemes[0];
 
 <style>
   .color-lab {
-    --preview-bg: #08131b;
-    --preview-surface: #0d1c24;
-    --preview-surface-strong: #101f29;
-    --preview-border: #36515d;
-    --preview-text: #f1f7fa;
-    --preview-muted: #b5c6ce;
-    --preview-accent: #68d8ff;
-    --preview-accent-two: #ff6b57;
+    --preview-bg: #0b0f0d;
+    --preview-surface: #111714;
+    --preview-surface-strong: #17211b;
+    --preview-border: #2b3a31;
+    --preview-text: #f2f0e8;
+    --preview-muted: #aeb8ad;
+    --preview-accent: #c89b3c;
+    --preview-accent-two: #7c8cff;
     display: grid;
     gap: 24px;
   }
@@ -189,7 +207,7 @@ const initialScheme = schemes[0];
 
   .palette-tabs {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 10px;
   }
 
@@ -302,7 +320,7 @@ const initialScheme = schemes[0];
     gap: 18px;
     min-width: 0;
     padding: 24px;
-    background: linear-gradient(180deg, color-mix(in srgb, var(--preview-accent) 8%, transparent), transparent 300px);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--preview-accent-two) 8%, transparent), transparent 300px);
   }
 
   .concept-hero {
