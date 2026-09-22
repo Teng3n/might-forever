@@ -33,7 +33,7 @@ const SYNC_WORKFLOWS: Record<SyncType, { workflowFile: string; successMessage: s
   },
 };
 const GITHUB_WORKFLOW_DISPATCH_BASE_URL = "https://api.github.com/repos/Teng3n/vitality-mop/actions/workflows";
-const WORKFLOW_REF = "vitality-forever";
+const WORKFLOW_REF = "might-forever";
 const COOLDOWN_MS = 60_000;
 const SYNC_ERROR_MESSAGE = "Unable to trigger sync workflow.";
 

@@ -80,7 +80,7 @@ jobs:
           git add "${SHEET_DATA_FILES[@]}"
           git commit -m "chore(data): sync guild data from Google Sheets"
           for attempt in 1 2 3; do
-            git pull --rebase origin vitality-forever
+            git pull --rebase origin might-forever
             if git push; then
               exit 0
             fi

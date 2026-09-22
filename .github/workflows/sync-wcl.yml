@@ -61,7 +61,7 @@ jobs:
           git add src/data/wclReports.json src/data/wclBossAttendance.json src/data/wclBossAttendanceSummary.json src/data/wclGuildProgress.json src/data/wclProgressionSeed.json src/data/wclRankings.json src/data/wclSyncMeta.json
           git commit -m "chore(data): sync Warcraft Logs archive data"
           for attempt in 1 2 3; do
-            git pull --rebase origin vitality-forever
+            git pull --rebase origin might-forever
             if git push; then
               exit 0
             fi

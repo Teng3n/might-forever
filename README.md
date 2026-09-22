@@ -2,7 +2,7 @@
 
 Pre-launch Astro site and planning backend for the Might Forever World of Warcraft guild.
 
-The `vitality-forever` branch is intentionally a clean foundation. The MoP-era roster, loot,
+The `might-forever` branch is intentionally a clean foundation. The MoP-era roster, loot,
 calendar, and progression data remain preserved on the `feature/guild-site-mvp` archive branch and
 are not exposed by this deployment.
 
@@ -38,7 +38,7 @@ npm run build
 Use these production settings:
 
 - Project name: `might-forever`
-- Production branch: `vitality-forever`
+- Production branch: `might-forever`
 - Build command: `npm run build`
 - Build output directory: `dist`
 
