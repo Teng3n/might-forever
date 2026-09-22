@@ -1,0 +1,517 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schemes = [
+  {
+    id: "forgefire",
+    name: "Forgefire",
+    detail: "Molten orange, ember red, and gunmetal. Warm, forceful, and built for raid night.",
+    colors: ["#0B0E13", "#FF7A2F", "#FF435E", "#F6F0E8"],
+  },
+  {
+    id: "arcane",
+    name: "Arcane Storm",
+    detail: "Electric cyan and arcane violet over midnight navy. A brighter evolution of the current identity.",
+    colors: ["#070B19", "#44D8FF", "#A680FF", "#F0F6FF"],
+  },
+  {
+    id: "frost",
+    name: "Frostforged",
+    detail: "Frost blue, bright silver, and deep slate. Crisp, controlled, and extremely clean.",
+    colors: ["#08131B", "#68D8FF", "#BDEFFF", "#DDE8ED"],
+  },
+  {
+    id: "blood",
+    name: "Blood & Bone",
+    detail: "Crimson, aged bone, and oxblood. Grounded, aggressive, and unmistakably Warcraft.",
+    colors: ["#16090D", "#F05264", "#E8D5B8", "#F6EEE4"],
+  },
+];
+---
+
+<Layout title="Might Forever Color Lab">
+  <div class="color-lab" data-color-lab data-palette="forgefire">
+    <header class="color-lab-heading">
+      <p class="eyebrow">Might Forever design study</p>
+      <h1>Choose a color direction</h1>
+      <p>Switch between four complete treatments of the same roster archive interface.</p>
+    </header>
+
+    <div class="palette-tabs" role="group" aria-label="Color scheme">
+      {
+        schemes.map((scheme, index) => (
+          <button
+            type="button"
+            data-palette-button={scheme.id}
+            aria-pressed={index === 0 ? "true" : "false"}
+          >
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{scheme.name}</strong>
+            <small>{scheme.detail}</small>
+            <i aria-hidden="true">
+              {scheme.colors.map((color) => <b style={`background: ${color}`}></b>)}
+            </i>
+          </button>
+        ))
+      }
+    </div>
+
+    <section class="concept" aria-label="Selected Might Forever theme preview">
+      <aside class="concept-nav">
+        <strong>Might Forever</strong>
+        <nav>
+          <span>Home</span>
+          <span class="is-active">Roster</span>
+          <small>Guild Archive</small>
+          <span>Officer</span>
+        </nav>
+      </aside>
+
+      <div class="concept-body">
+        <header class="concept-hero">
+          <p>Roster · Classic Vanilla to today</p>
+          <h2>Roster Guild Archive</h2>
+          <span>A person-level history built from actual Warcraft Logs attendance.</span>
+        </header>
+
+        <div class="concept-stats">
+          <article><span>Unique Raiders</span><strong>881</strong><small>Conservative person groups</small></article>
+          <article><span>Logged Characters</span><strong>1,008</strong><small>All had raid attendance</small></article>
+          <article><span>Alt Groups</span><strong>51</strong><small>Profiles with 2+ characters</small></article>
+          <article><span>Years Covered</span><strong>2020–2026</strong><small>Classic Vanilla through MoP</small></article>
+        </div>
+
+        <section class="concept-panel">
+          <div class="concept-panel-heading">
+            <div><p>Find a raider</p><h3>Filter the full archive</h3></div>
+            <span>Reset filters</span>
+          </div>
+          <div class="concept-search">Search people or character names</div>
+          <div class="concept-filters">
+            <b>Expansion</b>
+            <span class="is-active">All</span><span>Classic</span><span>TBC</span><span>Wrath</span><span>Cataclysm</span><span>MoP</span>
+          </div>
+        </section>
+
+        <div class="concept-rows">
+          <article><i>T</i><div><strong>Tengen</strong><span>Warrior · 7 logged characters</span></div><small>Last logged raid<br /><b>Sep 21, 2026</b></small></article>
+          <article><i>K</i><div><strong>Karkan</strong><span>Paladin · 4 logged characters</span></div><small>Last logged raid<br /><b>Sep 14, 2026</b></small></article>
+          <article><i>S</i><div><strong>Stim</strong><span>Priest · 3 logged characters</span></div><small>Last logged raid<br /><b>Aug 31, 2026</b></small></article>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  const colorLab = document.querySelector<HTMLElement>("[data-color-lab]");
+  if (colorLab) {
+    const buttons = [...colorLab.querySelectorAll<HTMLButtonElement>("[data-palette-button]")];
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        colorLab.dataset.palette = button.dataset.paletteButton;
+        buttons.forEach((candidate) =>
+          candidate.setAttribute("aria-pressed", String(candidate === button)),
+        );
+      });
+    });
+  }
+</script>
+
+<style>
+  .color-lab {
+    --preview-bg: #0b0e13;
+    --preview-surface: #10141b;
+    --preview-surface-strong: #141922;
+    --preview-border: #313946;
+    --preview-text: #f6f0e8;
+    --preview-muted: #aeb8c5;
+    --preview-accent: #ff7a2f;
+    --preview-accent-two: #ff435e;
+    display: grid;
+    gap: 24px;
+  }
+
+  .color-lab[data-palette="arcane"] {
+    --preview-bg: #070b19;
+    --preview-surface: #0c1124;
+    --preview-surface-strong: #0e152b;
+    --preview-border: #283756;
+    --preview-text: #f0f6ff;
+    --preview-muted: #aebbd2;
+    --preview-accent: #44d8ff;
+    --preview-accent-two: #a680ff;
+  }
+
+  .color-lab[data-palette="frost"] {
+    --preview-bg: #08131b;
+    --preview-surface: #0d1c26;
+    --preview-surface-strong: #0e202b;
+    --preview-border: #294755;
+    --preview-text: #eef8fb;
+    --preview-muted: #b6c9d0;
+    --preview-accent: #68d8ff;
+    --preview-accent-two: #bdefff;
+  }
+
+  .color-lab[data-palette="blood"] {
+    --preview-bg: #16090d;
+    --preview-surface: #211016;
+    --preview-surface-strong: #251218;
+    --preview-border: #57303a;
+    --preview-text: #f6eee4;
+    --preview-muted: #cdbdb6;
+    --preview-accent: #f05264;
+    --preview-accent-two: #e8d5b8;
+  }
+
+  .color-lab-heading h1 {
+    max-width: 780px;
+    margin: 8px 0 10px;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+  }
+
+  .color-lab-heading > p:last-child {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .palette-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .palette-tabs button {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 4px 9px;
+    align-content: start;
+    min-height: 150px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    background: var(--surface);
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .palette-tabs button:hover,
+  .palette-tabs button:focus-visible,
+  .palette-tabs button[aria-pressed="true"] {
+    border-color: var(--accent);
+    background: var(--surface-strong);
+    outline: none;
+  }
+
+  .palette-tabs button > span {
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 900;
+  }
+
+  .palette-tabs strong {
+    font-size: 0.9rem;
+  }
+
+  .palette-tabs small {
+    grid-column: 1 / -1;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  .palette-tabs i {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 5px;
+    align-self: end;
+    margin-top: 6px;
+  }
+
+  .palette-tabs i b {
+    width: 24px;
+    height: 8px;
+    border-radius: 999px;
+  }
+
+  .concept {
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr);
+    min-height: 720px;
+    overflow: hidden;
+    border: 1px solid var(--preview-border);
+    border-radius: 14px;
+    background: var(--preview-bg);
+    color: var(--preview-text);
+    box-shadow: var(--shadow);
+    transition: background 180ms ease, border-color 180ms ease;
+  }
+
+  .concept-nav {
+    display: grid;
+    align-content: start;
+    gap: 24px;
+    padding: 30px 16px;
+    background: var(--preview-surface);
+  }
+
+  .concept-nav > strong {
+    color: var(--preview-accent);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .concept-nav nav {
+    display: grid;
+    gap: 4px;
+  }
+
+  .concept-nav nav > * {
+    border-left: 2px solid transparent;
+    padding: 7px 8px;
+    color: var(--preview-muted);
+    font-size: 0.78rem;
+  }
+
+  .concept-nav nav .is-active {
+    border-color: var(--preview-accent);
+    color: var(--preview-text);
+  }
+
+  .concept-nav nav small {
+    padding-left: 18px;
+    color: var(--preview-accent-two);
+  }
+
+  .concept-body {
+    display: grid;
+    align-content: start;
+    gap: 18px;
+    min-width: 0;
+    padding: 24px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--preview-accent) 8%, transparent), transparent 300px);
+  }
+
+  .concept-hero {
+    min-height: 230px;
+    border: 1px solid color-mix(in srgb, var(--preview-accent) 38%, transparent);
+    border-radius: 12px;
+    padding: 34px;
+    background:
+      radial-gradient(circle at 88% 16%, color-mix(in srgb, var(--preview-accent-two) 24%, transparent), transparent 25rem),
+      linear-gradient(135deg, color-mix(in srgb, var(--preview-accent) 18%, transparent), transparent 56%),
+      var(--preview-surface);
+  }
+
+  .concept-hero p,
+  .concept-panel-heading p {
+    margin: 0;
+    color: var(--preview-accent);
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .concept-hero h2 {
+    max-width: 720px;
+    margin: 12px 0 16px;
+    font-size: clamp(2.8rem, 7vw, 4.75rem);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+  }
+
+  .concept-hero > span {
+    color: var(--preview-muted);
+  }
+
+  .concept-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .concept-stats article {
+    display: grid;
+    gap: 6px;
+    border: 1px solid var(--preview-border);
+    border-radius: 9px;
+    padding: 14px;
+    background: var(--preview-surface);
+  }
+
+  .concept-stats span,
+  .concept-stats small {
+    color: var(--preview-muted);
+    font-size: 0.66rem;
+  }
+
+  .concept-stats strong {
+    color: var(--preview-accent);
+    font-size: 1.3rem;
+  }
+
+  .concept-panel {
+    display: grid;
+    gap: 14px;
+    border: 1px solid var(--preview-border);
+    border-radius: 10px;
+    padding: 18px;
+    background: var(--preview-surface);
+  }
+
+  .concept-panel-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .concept-panel-heading h3 {
+    margin: 4px 0 0;
+  }
+
+  .concept-panel-heading > span {
+    color: var(--preview-muted);
+    font-size: 0.7rem;
+    text-decoration: underline;
+  }
+
+  .concept-search {
+    border: 1px solid var(--preview-border);
+    border-radius: 7px;
+    padding: 12px;
+    background: var(--preview-bg);
+    color: var(--preview-muted);
+    font-size: 0.76rem;
+  }
+
+  .concept-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    align-items: center;
+  }
+
+  .concept-filters b {
+    width: 100%;
+    color: var(--preview-muted);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+  }
+
+  .concept-filters span {
+    border: 1px solid var(--preview-border);
+    border-radius: 999px;
+    padding: 6px 10px;
+    color: var(--preview-muted);
+    font-size: 0.72rem;
+  }
+
+  .concept-filters .is-active {
+    border-color: var(--preview-accent);
+    background: color-mix(in srgb, var(--preview-accent) 14%, transparent);
+    color: var(--preview-accent);
+  }
+
+  .concept-rows {
+    display: grid;
+    gap: 7px;
+  }
+
+  .concept-rows article {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    border: 1px solid var(--preview-border);
+    border-radius: 8px;
+    padding: 11px 13px;
+    background: color-mix(in srgb, var(--preview-surface-strong) 88%, transparent);
+  }
+
+  .concept-rows i {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--preview-accent) 14%, transparent);
+    color: var(--preview-accent);
+    font-style: normal;
+    font-weight: 900;
+  }
+
+  .concept-rows div {
+    display: grid;
+    gap: 3px;
+  }
+
+  .concept-rows div strong {
+    color: var(--preview-accent);
+  }
+
+  .concept-rows div span,
+  .concept-rows > article > small {
+    color: var(--preview-muted);
+    font-size: 0.7rem;
+  }
+
+  .concept-rows > article > small {
+    text-align: right;
+  }
+
+  .concept-rows small b {
+    color: var(--preview-text);
+  }
+
+  @media (max-width: 960px) {
+    .palette-tabs,
+    .concept-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 700px) {
+    .palette-tabs {
+      grid-template-columns: 1fr;
+    }
+
+    .palette-tabs button {
+      min-height: 0;
+    }
+
+    .concept {
+      grid-template-columns: 1fr;
+    }
+
+    .concept-nav {
+      display: none;
+    }
+
+    .concept-body {
+      padding: 14px;
+    }
+
+    .concept-hero {
+      min-height: 0;
+      padding: 26px 20px;
+    }
+
+    .concept-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .concept-rows article {
+      grid-template-columns: 38px minmax(0, 1fr);
+    }
+
+    .concept-rows > article > small {
+      grid-column: 2;
+      text-align: left;
+    }
+  }
+</style>

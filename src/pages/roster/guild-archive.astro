@@ -8,6 +8,7 @@ type CharacterDetail = {
   name: string;
   className: string;
   lastDate: string;
+  expansion: string;
 };
 
 type HistoricalRaider = {
@@ -16,14 +17,14 @@ type HistoricalRaider = {
   characterDetails: CharacterDetail[];
   classes: string[];
   primaryClass: string;
-  roles: string[];
+  expansions: string[];
   lastDate: string;
   lastSource: string;
   lastCharacter: string;
 };
 
 const raiders = historicalRaiders as HistoricalRaider[];
-const roles = ["Tank", "Healer", "DPS"];
+const expansions = ["Classic", "TBC", "Wrath", "Cataclysm", "MoP"];
 const classes = [
   "Death Knight",
   "Druid",
@@ -98,20 +99,20 @@ const searchValue = (raider: HistoricalRaider) =>
       </div>
 
       <fieldset class="history-filter-group">
-        <legend>Role capability</legend>
-        <div class="history-filter-row" role="group" aria-label="Filter by role capability">
-          <button type="button" aria-pressed="true" data-role-filter="All">
+        <legend>Expansion</legend>
+        <div class="history-filter-row" role="group" aria-label="Filter by expansion">
+          <button type="button" aria-pressed="true" data-expansion-filter="All">
             All <span>{raiders.length}</span>
           </button>
           {
-            roles.map((role) => (
-              <button type="button" aria-pressed="false" data-role-filter={role}>
-                {role} <span>{raiders.filter((raider) => raider.roles.includes(role)).length}</span>
+            expansions.map((expansion) => (
+              <button type="button" aria-pressed="false" data-expansion-filter={expansion}>
+                {expansion} <span>{raiders.filter((raider) => raider.expansions.includes(expansion)).length}</span>
               </button>
             ))
           }
         </div>
-        <p>Role filters reflect what each observed class can perform; historical specs are not recorded on attendance pages.</p>
+        <p>Based on each logged character’s last recorded raid; merged profiles can appear in more than one expansion.</p>
       </fieldset>
 
       <fieldset class="history-filter-group">
@@ -154,7 +155,7 @@ const searchValue = (raider: HistoricalRaider) =>
               data-name={raider.name}
               data-date={raider.lastDate}
               data-search={searchValue(raider)}
-              data-roles={raider.roles.join("|")}
+              data-expansions={raider.expansions.join("|")}
               data-classes={raider.classes.join("|")}
               style={`--class-color: ${classColor(raider.primaryClass)}`}
             >
@@ -174,7 +175,7 @@ const searchValue = (raider: HistoricalRaider) =>
                         {raider.characterDetails.map((character) => (
                           <li>
                             <span style={`--class-color: ${classColor(character.className)}`}>{character.name}</span>
-                            <small>{character.className} · last seen {formatDate(character.lastDate)}</small>
+                            <small>{character.className} · {character.expansion} · last seen {formatDate(character.lastDate)}</small>
                           </li>
                         ))}
                       </ul>
@@ -221,13 +222,13 @@ const searchValue = (raider: HistoricalRaider) =>
     const sort = root.querySelector<HTMLSelectElement>("[data-history-sort]");
     const count = root.querySelector<HTMLElement>("[data-result-count]");
     const empty = root.querySelector<HTMLElement>("[data-history-empty]");
-    const roleButtons = [...root.querySelectorAll<HTMLButtonElement>("[data-role-filter]")];
+    const expansionButtons = [...root.querySelectorAll<HTMLButtonElement>("[data-expansion-filter]")];
     const classButtons = [...root.querySelectorAll<HTMLButtonElement>("[data-class-filter]")];
     const rows = [...root.querySelectorAll<HTMLElement>("[data-raider]")];
-    let selectedRole = "All";
+    let selectedExpansion = "All";
     let selectedClass = "All";
 
-    const updatePressed = (buttons: HTMLButtonElement[], value: string, key: "roleFilter" | "classFilter") => {
+    const updatePressed = (buttons: HTMLButtonElement[], value: string, key: "expansionFilter" | "classFilter") => {
       buttons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset[key] === value)));
     };
 
@@ -236,10 +237,11 @@ const searchValue = (raider: HistoricalRaider) =>
       let visible = 0;
 
       rows.forEach((row) => {
-        const roleMatch = selectedRole === "All" || (row.dataset.roles ?? "").split("|").includes(selectedRole);
+        const expansionMatch =
+          selectedExpansion === "All" || (row.dataset.expansions ?? "").split("|").includes(selectedExpansion);
         const classMatch = selectedClass === "All" || (row.dataset.classes ?? "").split("|").includes(selectedClass);
         const searchMatch = !query || (row.dataset.search ?? "").includes(query);
-        row.hidden = !(roleMatch && classMatch && searchMatch);
+        row.hidden = !(expansionMatch && classMatch && searchMatch);
         if (!row.hidden) visible += 1;
       });
 
@@ -260,10 +262,10 @@ const searchValue = (raider: HistoricalRaider) =>
       list.append(fragment);
     };
 
-    roleButtons.forEach((button) => {
+    expansionButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        selectedRole = button.dataset.roleFilter ?? "All";
-        updatePressed(roleButtons, selectedRole, "roleFilter");
+        selectedExpansion = button.dataset.expansionFilter ?? "All";
+        updatePressed(expansionButtons, selectedExpansion, "expansionFilter");
         apply();
       });
     });
@@ -279,11 +281,11 @@ const searchValue = (raider: HistoricalRaider) =>
     search?.addEventListener("input", apply);
     sort?.addEventListener("change", sortRows);
     root.querySelector<HTMLButtonElement>("[data-reset-filters]")?.addEventListener("click", () => {
-      selectedRole = "All";
+      selectedExpansion = "All";
       selectedClass = "All";
       if (search) search.value = "";
       if (sort) sort.value = "name";
-      updatePressed(roleButtons, selectedRole, "roleFilter");
+      updatePressed(expansionButtons, selectedExpansion, "expansionFilter");
       updatePressed(classButtons, selectedClass, "classFilter");
       sortRows();
       apply();

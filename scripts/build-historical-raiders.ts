@@ -29,19 +29,14 @@ const classNames: Record<string, string> = {
   Unknown: "Unknown",
 };
 
-const classRoles: Record<string, string[]> = {
-  "Death Knight": ["Tank", "DPS"],
-  Druid: ["Tank", "Healer", "DPS"],
-  Hunter: ["DPS"],
-  Mage: ["DPS"],
-  Monk: ["Tank", "Healer", "DPS"],
-  Paladin: ["Tank", "Healer", "DPS"],
-  Priest: ["Healer", "DPS"],
-  Rogue: ["DPS"],
-  Shaman: ["Healer", "DPS"],
-  Warlock: ["DPS"],
-  Warrior: ["Tank", "DPS"],
-  Unknown: [],
+const expansionOrder = ["Classic", "TBC", "Wrath", "Cataclysm", "MoP"];
+
+const getExpansion = (date: string) => {
+  if (date < "2021-06-01") return "Classic";
+  if (date < "2022-09-26") return "TBC";
+  if (date < "2024-05-20") return "Wrath";
+  if (date < "2025-07-21") return "Cataclysm";
+  return "MoP";
 };
 
 const [groupsSource, characterSource] = await Promise.all([
@@ -77,7 +72,9 @@ const people = groups.map((group) => {
   );
   const latestClass = classNames[latest.className] ?? "Unknown";
   const primaryClass = latestClass !== "Unknown" ? latestClass : classes[0] ?? "Unknown";
-  const roles = [...new Set(classes.flatMap((className) => classRoles[className] ?? []))];
+  const expansions = [...new Set(records.map((record) => getExpansion(record.lastDate)))].sort(
+    (left, right) => expansionOrder.indexOf(left) - expansionOrder.indexOf(right),
+  );
 
   return {
     name: group.name,
@@ -87,11 +84,12 @@ const people = groups.map((group) => {
         name: record.name,
         className: classNames[record.className] ?? "Unknown",
         lastDate: record.lastDate,
+        expansion: getExpansion(record.lastDate),
       }))
       .sort((left, right) => right.lastDate.localeCompare(left.lastDate)),
     classes,
     primaryClass,
-    roles,
+    expansions,
     lastDate: latest.lastDate,
     lastSource: latest.source,
     lastCharacter: latest.name,
