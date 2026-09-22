@@ -3,84 +3,58 @@ import Layout from "../../layouts/Layout.astro";
 
 const schemes = [
   {
-    id: "frostfire-ivory",
-    name: "Frostfire · Warm Ivory",
-    detail: "Warm ivory emphasis softens the cold blue structure without competing with the coral glow.",
-    colors: ["#08131B", "#68D8FF", "#FF6B57", "#F2E7D8"],
+    id: "frostfire-copper",
+    name: "Frostfire · Burnished Copper",
+    detail: "A quieter, more grounded copper with less red saturation than the previous orange.",
+    colors: ["#08131B", "#68D8FF", "#D9824E", "#F4D58D"],
     family: "frostfire",
-    emphasis: "#F2E7D8",
-  },
-  {
-    id: "frostfire-glacier",
-    name: "Frostfire · Glacier White",
-    detail: "A cleaner near-white emphasis with just enough coolness to belong to the frost base.",
-    colors: ["#08131B", "#68D8FF", "#FF6B57", "#EAF7F8"],
-    family: "frostfire",
-    emphasis: "#EAF7F8",
-  },
-  {
-    id: "frostfire-peach",
-    name: "Frostfire · Solar Peach",
-    detail: "Soft peach gives names and metrics warmth while preserving the blue-and-coral identity.",
-    colors: ["#08131B", "#68D8FF", "#FF6B57", "#FFB38A"],
-    family: "frostfire",
-    emphasis: "#FFB38A",
-  },
-  {
-    id: "frostfire-rose",
-    name: "Frostfire · Ember Rose",
-    detail: "A muted rose emphasis adds color without repeating the brighter coral highlight exactly.",
-    colors: ["#08131B", "#68D8FF", "#FF6B57", "#FF9A9E"],
-    family: "frostfire",
-    emphasis: "#FF9A9E",
-  },
-  {
-    id: "frostfire-amber",
-    name: "Frostfire · Pale Amber",
-    detail: "Pale amber is the boldest warm text option and creates the strongest blue contrast.",
-    colors: ["#08131B", "#68D8FF", "#FF6B57", "#F4D58D"],
-    family: "frostfire",
+    secondary: "#D9824E",
     emphasis: "#F4D58D",
   },
   {
-    id: "prismatic-silver",
-    name: "Prismatic · Moon Silver",
-    detail: "Neutral silver emphasis lets the violet remain atmospheric rather than becoming the text color.",
-    colors: ["#0A101A", "#70D7FF", "#B58CFF", "#DDE3EE"],
-    family: "prismatic",
-    emphasis: "#DDE3EE",
+    id: "frostfire-tangerine",
+    name: "Frostfire · Deep Tangerine",
+    detail: "A clearer, brighter orange that feels energetic without drifting into coral-red.",
+    colors: ["#08131B", "#68D8FF", "#F47A42", "#F4D58D"],
+    family: "frostfire",
+    secondary: "#F47A42",
+    emphasis: "#F4D58D",
   },
   {
-    id: "prismatic-lilac",
-    name: "Prismatic · Lilac Mist",
-    detail: "A pale lilac treatment is colorful but softer and less saturated than the original violet text.",
-    colors: ["#0A101A", "#70D7FF", "#B58CFF", "#D8C7FF"],
-    family: "prismatic",
-    emphasis: "#D8C7FF",
+    id: "frostfire-apricot",
+    name: "Frostfire · Apricot Ember",
+    detail: "A softer, creamier orange that blends most naturally with the pale-amber text.",
+    colors: ["#08131B", "#68D8FF", "#F2A06B", "#F4D58D"],
+    family: "frostfire",
+    secondary: "#F2A06B",
+    emphasis: "#F4D58D",
   },
   {
-    id: "prismatic-orchid",
-    name: "Prismatic · Soft Orchid",
-    detail: "Soft orchid pushes the magical side of the palette while staying clearly separate from blue.",
-    colors: ["#0A101A", "#70D7FF", "#B58CFF", "#E7A6FF"],
-    family: "prismatic",
-    emphasis: "#E7A6FF",
+    id: "frostfire-rust",
+    name: "Frostfire · Rust Flame",
+    detail: "A darker, weathered orange that feels more mature and less luminous against the blue.",
+    colors: ["#08131B", "#68D8FF", "#C96543", "#F4D58D"],
+    family: "frostfire",
+    secondary: "#C96543",
+    emphasis: "#F4D58D",
   },
   {
-    id: "prismatic-rose",
-    name: "Prismatic · Rose Quartz",
-    detail: "Rose quartz adds a warm counterpoint to the glacier blue without becoming orange or red.",
-    colors: ["#0A101A", "#70D7FF", "#B58CFF", "#F3B3D2"],
-    family: "prismatic",
-    emphasis: "#F3B3D2",
+    id: "frostfire-sunset",
+    name: "Frostfire · Sunset Coral",
+    detail: "A softer pink-orange that adds warmth while avoiding the sharpness of the old coral.",
+    colors: ["#08131B", "#68D8FF", "#EA6F63", "#F4D58D"],
+    family: "frostfire",
+    secondary: "#EA6F63",
+    emphasis: "#F4D58D",
   },
   {
-    id: "prismatic-mint",
-    name: "Prismatic · Polar Mint",
-    detail: "A pale mint emphasis brings a third cool hue and the most unusual contrast of the set.",
-    colors: ["#0A101A", "#70D7FF", "#B58CFF", "#AEEBD8"],
-    family: "prismatic",
-    emphasis: "#AEEBD8",
+    id: "frostfire-molten",
+    name: "Frostfire · Molten Amber",
+    detail: "A golden-orange accent that creates the richest contrast while keeping the text pale amber.",
+    colors: ["#08131B", "#68D8FF", "#E89B3D", "#F4D58D"],
+    family: "frostfire",
+    secondary: "#E89B3D",
+    emphasis: "#F4D58D",
   },
 ];
 
@@ -92,21 +66,22 @@ const initialScheme = schemes[0];
     class="color-lab"
     data-color-lab
     data-family={initialScheme.family}
-    style={`--preview-emphasis: ${initialScheme.emphasis}`}
+    style={`--preview-accent-two: ${initialScheme.secondary}; --preview-emphasis: ${initialScheme.emphasis}`}
   >
     <header class="color-lab-heading">
       <p class="eyebrow">Might Forever design study</p>
-      <h1>Choose the text color</h1>
-      <p>Ten non-blue emphasis treatments across the Frostfire and Prismatic Frost foundations.</p>
+      <h1>Choose the ember accent</h1>
+      <p>Six orange treatments on the same Frostfire Pale Amber foundation.</p>
     </header>
 
-    <div class="palette-tabs" role="group" aria-label="Text color variation">
+    <div class="palette-tabs" role="group" aria-label="Orange accent variation">
       {
         schemes.map((scheme, index) => (
           <button
             type="button"
             data-palette-button={scheme.id}
             data-family={scheme.family}
+            data-secondary={scheme.secondary}
             data-emphasis={scheme.emphasis}
             aria-pressed={index === 0 ? "true" : "false"}
           >
@@ -175,6 +150,7 @@ const initialScheme = schemes[0];
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         colorLab.dataset.family = button.dataset.family;
+        colorLab.style.setProperty("--preview-accent-two", button.dataset.secondary ?? "#d9824e");
         colorLab.style.setProperty("--preview-emphasis", button.dataset.emphasis ?? "#f2e7d8");
         buttons.forEach((candidate) =>
           candidate.setAttribute("aria-pressed", String(candidate === button)),
@@ -198,17 +174,6 @@ const initialScheme = schemes[0];
     gap: 24px;
   }
 
-  .color-lab[data-family="prismatic"] {
-    --preview-bg: #0a101a;
-    --preview-surface: #101827;
-    --preview-surface-strong: #151d31;
-    --preview-border: #3a4562;
-    --preview-text: #f2f6ff;
-    --preview-muted: #b7c0d3;
-    --preview-accent: #70d7ff;
-    --preview-accent-two: #b58cff;
-  }
-
   .color-lab-heading h1 {
     max-width: 780px;
     margin: 8px 0 10px;
@@ -224,7 +189,7 @@ const initialScheme = schemes[0];
 
   .palette-tabs {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
   }
 
