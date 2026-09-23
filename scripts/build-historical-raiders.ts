@@ -7,6 +7,24 @@ type CharacterRecord = {
   className: string;
   lastDate: string;
   source: string;
+  reportUrl?: string;
+  reportCode?: string;
+  reportTitle?: string;
+  fightId?: number;
+  encounterName?: string;
+  appearances?: CharacterAppearance[];
+};
+
+type CharacterAppearance = {
+  expansion: string;
+  className: string;
+  lastDate: string;
+  source: string;
+  reportUrl: string;
+  reportCode: string;
+  reportTitle: string;
+  fightId: number;
+  encounterName: string;
 };
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -65,26 +83,56 @@ if (missing.length > 0) {
 const people = groups.map((group) => {
   const records = group.characters.map((name) => characterByName.get(name)!);
   const latest = [...records].sort((left, right) => right.lastDate.localeCompare(left.lastDate))[0];
-  const observedClasses = [...new Set(records.map((record) => classNames[record.className] ?? "Unknown"))];
+  const appearancesByCharacter = records.map((record) => ({
+    record,
+    appearances:
+      record.appearances?.length
+        ? record.appearances
+        : [
+            {
+              expansion: getExpansion(record.lastDate),
+              className: record.className,
+              lastDate: record.lastDate,
+              source: record.source,
+              reportUrl: record.reportUrl ?? "",
+              reportCode: record.reportCode ?? "",
+              reportTitle: record.reportTitle ?? "",
+              fightId: record.fightId ?? 0,
+              encounterName: record.encounterName ?? "Raid encounter",
+            },
+          ],
+  }));
+  const allAppearances = appearancesByCharacter.flatMap(({ appearances }) => appearances);
+  const observedClasses = [...new Set(allAppearances.map((appearance) => classNames[appearance.className] ?? "Unknown"))];
   const knownClasses = observedClasses.filter((className) => className !== "Unknown");
   const classes = (knownClasses.length > 0 ? knownClasses : observedClasses).sort((left, right) =>
     left.localeCompare(right),
   );
   const latestClass = classNames[latest.className] ?? "Unknown";
   const primaryClass = latestClass !== "Unknown" ? latestClass : classes[0] ?? "Unknown";
-  const expansions = [...new Set(records.map((record) => getExpansion(record.lastDate)))].sort(
+  const expansions = [...new Set(allAppearances.map((appearance) => appearance.expansion))].sort(
     (left, right) => expansionOrder.indexOf(left) - expansionOrder.indexOf(right),
   );
 
   return {
     name: group.name,
     characters: group.characters,
-    characterDetails: records
-      .map((record) => ({
+    characterDetails: appearancesByCharacter
+      .map(({ record, appearances }) => ({
         name: record.name,
         className: classNames[record.className] ?? "Unknown",
         lastDate: record.lastDate,
         expansion: getExpansion(record.lastDate),
+        source: record.source,
+        reportUrl: record.reportUrl ?? "",
+        reportTitle: record.reportTitle ?? "",
+        encounterName: record.encounterName ?? "Raid encounter",
+        appearances: appearances
+          .map((appearance) => ({
+            ...appearance,
+            className: classNames[appearance.className] ?? "Unknown",
+          }))
+          .sort((left, right) => right.lastDate.localeCompare(left.lastDate)),
       }))
       .sort((left, right) => right.lastDate.localeCompare(left.lastDate)),
     classes,
@@ -93,12 +141,11 @@ const people = groups.map((group) => {
     lastDate: latest.lastDate,
     lastSource: latest.source,
     lastCharacter: latest.name,
+    lastReportUrl: latest.reportUrl ?? "",
+    lastReportTitle: latest.reportTitle ?? "",
+    lastEncounterName: latest.encounterName ?? "Raid encounter",
   };
 });
-
-if (people.length !== 881) {
-  throw new Error(`Expected 881 people, found ${people.length}`);
-}
 
 await writeFile(outputPath, `${JSON.stringify(people, null, 2)}\n`, "utf8");
 console.log(`Wrote ${path.relative(root, outputPath)}`);

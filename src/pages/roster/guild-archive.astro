@@ -9,6 +9,21 @@ type CharacterDetail = {
   className: string;
   lastDate: string;
   expansion: string;
+  source: string;
+  reportUrl: string;
+  reportTitle: string;
+  encounterName: string;
+  appearances?: CharacterAppearance[];
+};
+
+type CharacterAppearance = {
+  expansion: string;
+  className: string;
+  lastDate: string;
+  source: string;
+  reportUrl: string;
+  reportTitle: string;
+  encounterName: string;
 };
 
 type HistoricalRaider = {
@@ -21,6 +36,9 @@ type HistoricalRaider = {
   lastDate: string;
   lastSource: string;
   lastCharacter: string;
+  lastReportUrl: string;
+  lastReportTitle: string;
+  lastEncounterName: string;
 };
 
 const raiders = historicalRaiders as HistoricalRaider[];
@@ -51,7 +69,24 @@ const formatDate = (date: string) =>
     timeZone: "UTC",
   }).format(new Date(`${date}T12:00:00Z`));
 const searchValue = (raider: HistoricalRaider) =>
-  [raider.name, ...raider.characters, ...raider.classes, raider.lastSource].join(" ").toLocaleLowerCase();
+  [
+    raider.name,
+    ...raider.characters,
+    ...raider.classes,
+    raider.lastSource,
+    ...raider.characterDetails.flatMap((character) => character.appearances?.map((appearance) => appearance.source) ?? []),
+  ]
+    .join(" ")
+    .toLocaleLowerCase();
+const combinationsValue = (raider: HistoricalRaider) =>
+  [
+    ...new Set(
+      raider.characterDetails.flatMap((character) =>
+        character.appearances?.map((appearance) => `${appearance.expansion}::${appearance.className}`) ??
+        [`${character.expansion}::${character.className}`],
+      ),
+    ),
+  ].join("|");
 ---
 
 <Layout title="Roster Guild Archive | Might Forever">
@@ -61,17 +96,17 @@ const searchValue = (raider: HistoricalRaider) =>
         <p class="eyebrow">Roster · Classic Vanilla to today</p>
         <h1>Roster Guild Archive</h1>
         <p class="history-intro">
-          A person-level history built from actual Warcraft Logs attendance. Every character here has
-          a present mark in at least one uploaded raid report—not merely a spot on a guild roster.
+          A person-level history built from verified Warcraft Logs boss attendance. Every character here
+          participated in at least one uploaded raid encounter—not merely a guild roster or report actor list.
         </p>
       </div>
     </header>
 
     <section class="dashboard-grid history-stats" aria-label="Historical roster totals">
       <StatCard label="Unique Raiders" value={raiders.length} detail="Conservative person groups" />
-      <StatCard label="Logged Characters" value={characterCount} detail="All had raid attendance" />
+      <StatCard label="Logged Characters" value={characterCount} detail="Verified in boss fights" />
       <StatCard label="Alt Groups" value={mergedCount} detail="Profiles with 2+ characters" />
-      <StatCard label="Years Covered" value="2020–2026" detail="Classic Vanilla through MoP" />
+      <StatCard label="Years Covered" value="2019–2026" detail="Classic Vanilla through MoP" />
     </section>
 
     <section class="panel history-controls" aria-labelledby="history-filter-heading">
@@ -102,24 +137,24 @@ const searchValue = (raider: HistoricalRaider) =>
         <legend>Expansion</legend>
         <div class="history-filter-row" role="group" aria-label="Filter by expansion">
           <button type="button" aria-pressed="true" data-expansion-filter="All">
-            All <span>{raiders.length}</span>
+            All <span data-filter-count>{raiders.length}</span>
           </button>
           {
             expansions.map((expansion) => (
               <button type="button" aria-pressed="false" data-expansion-filter={expansion}>
-                {expansion} <span>{raiders.filter((raider) => raider.expansions.includes(expansion)).length}</span>
+                {expansion} <span data-filter-count>{raiders.filter((raider) => raider.expansions.includes(expansion)).length}</span>
               </button>
             ))
           }
         </div>
-        <p>Based on each logged character’s last recorded raid; merged profiles can appear in more than one expansion.</p>
+        <p>Based on verified boss-fight appearances; merged profiles and long-running characters can appear in more than one expansion.</p>
       </fieldset>
 
       <fieldset class="history-filter-group">
         <legend>Class</legend>
         <div class="history-filter-row history-class-filters" role="group" aria-label="Filter by class">
           <button type="button" aria-pressed="true" data-class-filter="All">
-            All <span>{raiders.length}</span>
+            All <span data-filter-count>{raiders.length}</span>
           </button>
           {
             classes.map((className) => (
@@ -129,7 +164,7 @@ const searchValue = (raider: HistoricalRaider) =>
                 data-class-filter={className}
                 style={`--class-color: ${classColor(className)}`}
               >
-                {className} <span>{raiders.filter((raider) => raider.classes.includes(className)).length}</span>
+                {className} <span data-filter-count>{raiders.filter((raider) => raider.classes.includes(className)).length}</span>
               </button>
             ))
           }
@@ -157,6 +192,7 @@ const searchValue = (raider: HistoricalRaider) =>
               data-search={searchValue(raider)}
               data-expansions={raider.expansions.join("|")}
               data-classes={raider.classes.join("|")}
+              data-combinations={combinationsValue(raider)}
               style={`--class-color: ${classColor(raider.primaryClass)}`}
             >
               <div class="history-raider-mark" aria-hidden="true">{raider.name.slice(0, 1)}</div>
@@ -176,12 +212,28 @@ const searchValue = (raider: HistoricalRaider) =>
                           <li>
                             <span style={`--class-color: ${classColor(character.className)}`}>{character.name}</span>
                             <small>{character.className} · {character.expansion} · last seen {formatDate(character.lastDate)}</small>
+                            <div class="history-appearance-links">
+                              {character.appearances?.map((appearance) => (
+                                <a href={appearance.reportUrl} target="_blank" rel="noreferrer">
+                                  {appearance.expansion} source log
+                                </a>
+                              ))}
+                            </div>
                           </li>
                         ))}
                       </ul>
                     </details>
                   ) : (
-                    <p class="history-single-character">1 logged character</p>
+                    <div class="history-single-character">
+                      <span>1 verified character</span>
+                      <div class="history-appearance-links">
+                        {raider.characterDetails[0]?.appearances?.map((appearance) => (
+                          <a href={appearance.reportUrl} target="_blank" rel="noreferrer">
+                            {appearance.expansion} source log
+                          </a>
+                        ))}
+                      </div>
+                    </div>
                   )
                 }
               </div>
@@ -190,6 +242,9 @@ const searchValue = (raider: HistoricalRaider) =>
                 <strong>{formatDate(raider.lastDate)}</strong>
                 <small>{raider.lastSource}</small>
                 {raider.lastCharacter !== raider.name && <small>as {raider.lastCharacter}</small>}
+                <a class="history-log-link" href={raider.lastReportUrl} target="_blank" rel="noreferrer">
+                  Audit source fight ↗
+                </a>
               </div>
             </article>
           ))
@@ -198,16 +253,16 @@ const searchValue = (raider: HistoricalRaider) =>
 
       <div class="panel history-empty" hidden data-history-empty>
         <h3>No raiders match those filters</h3>
-        <p>Try another class or role, or clear the search.</p>
+        <p>Try another expansion or class, or clear the search.</p>
       </div>
     </section>
 
     <aside class="history-methodology">
       <strong>How to read this archive</strong>
       <p>
-        Attendance, class, and last-raid dates come from Warcraft Logs. Person-level merges are deliberately conservative:
-        obvious spelling variants and known alts are grouped, while uncertain names remain separate. “Unknown” means the
-        attendance row did not expose a class, not that the raid appearance is unverified.
+        Attendance, class, dates, and audit links come from each report’s boss-fight participant list. Report actors who
+        never joined a boss encounter are excluded. Person-level merges are deliberately conservative: obvious spelling
+        variants and known alts are grouped, while uncertain names remain separate.
       </p>
     </aside>
   </div>
@@ -232,21 +287,52 @@ const searchValue = (raider: HistoricalRaider) =>
       buttons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset[key] === value)));
     };
 
+    const getCombinations = (row: HTMLElement) =>
+      (row.dataset.combinations ?? "")
+        .split("|")
+        .filter(Boolean)
+        .map((value) => {
+          const [expansion, className] = value.split("::");
+          return { expansion, className };
+        });
+
+    const matches = (row: HTMLElement, expansion: string, className: string, query: string) => {
+      const combinationMatch = getCombinations(row).some(
+        (combination) =>
+          (expansion === "All" || combination.expansion === expansion) &&
+          (className === "All" || combination.className === className),
+      );
+      const searchMatch = !query || (row.dataset.search ?? "").includes(query);
+      return combinationMatch && searchMatch;
+    };
+
+    const updateFacetCounts = (query: string) => {
+      expansionButtons.forEach((button) => {
+        const value = button.dataset.expansionFilter ?? "All";
+        const total = rows.filter((row) => matches(row, value, selectedClass, query)).length;
+        const counter = button.querySelector<HTMLElement>("[data-filter-count]");
+        if (counter) counter.textContent = String(total);
+      });
+      classButtons.forEach((button) => {
+        const value = button.dataset.classFilter ?? "All";
+        const total = rows.filter((row) => matches(row, selectedExpansion, value, query)).length;
+        const counter = button.querySelector<HTMLElement>("[data-filter-count]");
+        if (counter) counter.textContent = String(total);
+      });
+    };
+
     const apply = () => {
       const query = search?.value.trim().toLocaleLowerCase() ?? "";
       let visible = 0;
 
       rows.forEach((row) => {
-        const expansionMatch =
-          selectedExpansion === "All" || (row.dataset.expansions ?? "").split("|").includes(selectedExpansion);
-        const classMatch = selectedClass === "All" || (row.dataset.classes ?? "").split("|").includes(selectedClass);
-        const searchMatch = !query || (row.dataset.search ?? "").includes(query);
-        row.hidden = !(expansionMatch && classMatch && searchMatch);
+        row.hidden = !matches(row, selectedExpansion, selectedClass, query);
         if (!row.hidden) visible += 1;
       });
 
       if (count) count.textContent = String(visible);
       if (empty) empty.hidden = visible !== 0;
+      updateFacetCounts(query);
     };
 
     const sortRows = () => {
@@ -609,6 +695,29 @@ const searchValue = (raider: HistoricalRaider) =>
     font-size: 0.67rem;
   }
 
+  .history-appearance-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    margin-top: 3px;
+  }
+
+  .history-appearance-links a,
+  .history-log-link {
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 850;
+    text-decoration: none;
+  }
+
+  .history-appearance-links a:hover,
+  .history-appearance-links a:focus-visible,
+  .history-log-link:hover,
+  .history-log-link:focus-visible {
+    color: var(--text);
+    text-decoration: underline;
+  }
+
   .history-raider-last {
     display: grid;
     gap: 2px;
@@ -632,6 +741,10 @@ const searchValue = (raider: HistoricalRaider) =>
     max-width: 230px;
     color: var(--muted);
     font-size: 0.72rem;
+  }
+
+  .history-raider-last .history-log-link {
+    margin-top: 5px;
   }
 
   .history-empty {
