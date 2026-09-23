@@ -85,7 +85,7 @@ mergeNames(["Leafea", "Leafealol"]);
 mergeNames(["Lilgargussy", "Lilmcmussy"]);
 mergeNames(["Mavadin", "Mavaman", "Mavdeath", "Mavdog", "Maverickdog", "Maverlock"]);
 mergeNames(["Popsicles", "Popsiclës", "Pøpsicles"]);
-mergeNames(["Tengen", "Tengenn", "Tenngenn", "Tenaman"]);
+mergeNames(["Tengen", "Tengenn", "Tenngenn", "Tenaman", "Magegen", "Deathgen"]);
 mergeMatches((name) => visualKey(name).startsWith("stim"));
 mergeMatches((name) => /^sti+ngr/u.test(visualKey(name)) || ["stiing", "stingg"].includes(visualKey(name)));
 

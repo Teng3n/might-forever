@@ -7577,74 +7577,6 @@
     "lastEncounterName": "Toravon the Ice Watcher"
   },
   {
-    "name": "Deathgen",
-    "characters": [
-      "Deathgen"
-    ],
-    "characterDetails": [
-      {
-        "name": "Deathgen",
-        "className": "Death Knight",
-        "lastDate": "2024-06-11",
-        "expansion": "Cataclysm",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=7&type=summary",
-        "reportTitle": "Baradin Hold",
-        "encounterName": "Argaloth",
-        "appearances": [
-          {
-            "expansion": "Cataclysm",
-            "className": "Death Knight",
-            "lastDate": "2024-06-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=7&type=summary",
-            "reportCode": "zFHfWcTGdJyMhkQN",
-            "reportTitle": "Baradin Hold",
-            "fightId": 7,
-            "encounterName": "Argaloth"
-          },
-          {
-            "expansion": "Wrath",
-            "className": "Death Knight",
-            "lastDate": "2023-10-08",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/zLr9YFbCkANqfaMx#fight=8&type=summary",
-            "reportCode": "zLr9YFbCkANqfaMx",
-            "reportTitle": "10/08/2023 <Inept> ToGC 25M [Run B]",
-            "fightId": 8,
-            "encounterName": "Anub'arak"
-          },
-          {
-            "expansion": "TBC",
-            "className": "Death Knight",
-            "lastDate": "2022-09-25",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/VLv7rGMCNdkjQyR8#fight=8&type=summary",
-            "reportCode": "VLv7rGMCNdkjQyR8",
-            "reportTitle": "Sunwell Plateau",
-            "fightId": 8,
-            "encounterName": "Eredar Twins"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Death Knight"
-    ],
-    "primaryClass": "Death Knight",
-    "expansions": [
-      "TBC",
-      "Wrath",
-      "Cataclysm"
-    ],
-    "lastDate": "2024-06-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Deathgen",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=7&type=summary",
-    "lastReportTitle": "Baradin Hold",
-    "lastEncounterName": "Argaloth"
-  },
-  {
     "name": "Deathlotus",
     "characters": [
       "Deathlotus"
@@ -20278,50 +20210,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/PX9W8jvQV1kRDLbz#fight=1&type=summary",
     "lastReportTitle": "Ulduar",
     "lastEncounterName": "Ignis the Furnace Master"
-  },
-  {
-    "name": "Magegen",
-    "characters": [
-      "Magegen"
-    ],
-    "characterDetails": [
-      {
-        "name": "Magegen",
-        "className": "Mage",
-        "lastDate": "2020-11-23",
-        "expansion": "Classic",
-        "source": "Might — Fairbanks",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/d1G7kLbj6f4aBnMz#fight=3&type=summary",
-        "reportTitle": "Onyxia",
-        "encounterName": "Onyxia",
-        "appearances": [
-          {
-            "expansion": "Classic",
-            "className": "Mage",
-            "lastDate": "2020-11-23",
-            "source": "Might — Fairbanks",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/d1G7kLbj6f4aBnMz#fight=3&type=summary",
-            "reportCode": "d1G7kLbj6f4aBnMz",
-            "reportTitle": "Onyxia",
-            "fightId": 3,
-            "encounterName": "Onyxia"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Mage"
-    ],
-    "primaryClass": "Mage",
-    "expansions": [
-      "Classic"
-    ],
-    "lastDate": "2020-11-23",
-    "lastSource": "Might — Fairbanks",
-    "lastCharacter": "Magegen",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/d1G7kLbj6f4aBnMz#fight=3&type=summary",
-    "lastReportTitle": "Onyxia",
-    "lastEncounterName": "Onyxia"
   },
   {
     "name": "Majlemons",
@@ -34301,6 +34189,8 @@
   {
     "name": "Tengen",
     "characters": [
+      "Deathgen",
+      "Magegen",
       "Tenaman",
       "Tengen",
       "Tengenn",
@@ -34432,6 +34322,51 @@
         ]
       },
       {
+        "name": "Deathgen",
+        "className": "Death Knight",
+        "lastDate": "2024-06-11",
+        "expansion": "Cataclysm",
+        "source": "Inept — Grobbulus",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=7&type=summary",
+        "reportTitle": "Baradin Hold",
+        "encounterName": "Argaloth",
+        "appearances": [
+          {
+            "expansion": "Cataclysm",
+            "className": "Death Knight",
+            "lastDate": "2024-06-11",
+            "source": "Inept — Grobbulus",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=7&type=summary",
+            "reportCode": "zFHfWcTGdJyMhkQN",
+            "reportTitle": "Baradin Hold",
+            "fightId": 7,
+            "encounterName": "Argaloth"
+          },
+          {
+            "expansion": "Wrath",
+            "className": "Death Knight",
+            "lastDate": "2023-10-08",
+            "source": "Inept — Grobbulus",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/zLr9YFbCkANqfaMx#fight=8&type=summary",
+            "reportCode": "zLr9YFbCkANqfaMx",
+            "reportTitle": "10/08/2023 <Inept> ToGC 25M [Run B]",
+            "fightId": 8,
+            "encounterName": "Anub'arak"
+          },
+          {
+            "expansion": "TBC",
+            "className": "Death Knight",
+            "lastDate": "2022-09-25",
+            "source": "Inept — Grobbulus",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/VLv7rGMCNdkjQyR8#fight=8&type=summary",
+            "reportCode": "VLv7rGMCNdkjQyR8",
+            "reportTitle": "Sunwell Plateau",
+            "fightId": 8,
+            "encounterName": "Eredar Twins"
+          }
+        ]
+      },
+      {
         "name": "Tenngenn",
         "className": "Warrior",
         "lastDate": "2023-09-18",
@@ -34453,9 +34388,34 @@
             "encounterName": "Blood Council"
           }
         ]
+      },
+      {
+        "name": "Magegen",
+        "className": "Mage",
+        "lastDate": "2020-11-23",
+        "expansion": "Classic",
+        "source": "Might — Fairbanks",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/d1G7kLbj6f4aBnMz#fight=3&type=summary",
+        "reportTitle": "Onyxia",
+        "encounterName": "Onyxia",
+        "appearances": [
+          {
+            "expansion": "Classic",
+            "className": "Mage",
+            "lastDate": "2020-11-23",
+            "source": "Might — Fairbanks",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/d1G7kLbj6f4aBnMz#fight=3&type=summary",
+            "reportCode": "d1G7kLbj6f4aBnMz",
+            "reportTitle": "Onyxia",
+            "fightId": 3,
+            "encounterName": "Onyxia"
+          }
+        ]
       }
     ],
     "classes": [
+      "Death Knight",
+      "Mage",
       "Shaman",
       "Warrior"
     ],
