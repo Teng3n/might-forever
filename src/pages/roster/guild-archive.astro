@@ -364,7 +364,15 @@ const combinationsValue = (raider: HistoricalRaider) =>
       });
     });
 
-    search?.addEventListener("input", apply);
+    search?.addEventListener("input", () => {
+      if (search.value.trim()) {
+        selectedExpansion = "All";
+        selectedClass = "All";
+        updatePressed(expansionButtons, selectedExpansion, "expansionFilter");
+        updatePressed(classButtons, selectedClass, "classFilter");
+      }
+      apply();
+    });
     sort?.addEventListener("change", sortRows);
     root.querySelector<HTMLButtonElement>("[data-reset-filters]")?.addEventListener("click", () => {
       selectedExpansion = "All";
