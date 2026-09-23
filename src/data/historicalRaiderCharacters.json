@@ -2611,7 +2611,7 @@
   },
   {
     "name": "Chackle",
-    "className": "Unknown",
+    "className": "Priest",
     "lastDate": "2022-07-10",
     "source": "Inept — Grobbulus",
     "reportUrl": "https://classic.warcraftlogs.com/reports/Q3FDxbm8RCVkYvPg#fight=29&type=summary",
@@ -2622,7 +2622,7 @@
     "appearances": [
       {
         "expansion": "TBC",
-        "className": "Unknown",
+        "className": "Priest",
         "lastDate": "2022-07-10",
         "source": "Inept — Grobbulus",
         "reportUrl": "https://classic.warcraftlogs.com/reports/Q3FDxbm8RCVkYvPg#fight=29&type=summary",
@@ -10368,30 +10368,6 @@
     ]
   },
   {
-    "name": "Moondj",
-    "className": "Unknown",
-    "lastDate": "2023-07-10",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-    "reportCode": "fHtwdL4rc3a8YZmA",
-    "reportTitle": "Trial of the Crusader",
-    "fightId": 15,
-    "encounterName": "Anub'arak",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Unknown",
-        "lastDate": "2023-07-10",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-        "reportCode": "fHtwdL4rc3a8YZmA",
-        "reportTitle": "Trial of the Crusader",
-        "fightId": 15,
-        "encounterName": "Anub'arak"
-      }
-    ]
-  },
-  {
     "name": "Moonpex",
     "className": "Druid",
     "lastDate": "2025-06-29",
@@ -10846,8 +10822,8 @@
     "className": "Mage",
     "lastDate": "2025-01-13",
     "source": "Inept — Benediction",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/6kGHnZtL3QbdVRfW#fight=17&type=summary",
-    "reportCode": "6kGHnZtL3QbdVRfW",
+    "reportUrl": "https://classic.warcraftlogs.com/reports/CzdvNJj9rWYnH4Xh#fight=17&type=summary",
+    "reportCode": "CzdvNJj9rWYnH4Xh",
     "reportTitle": "Firelands",
     "fightId": 17,
     "encounterName": "Ragnaros",
@@ -10857,8 +10833,8 @@
         "className": "Mage",
         "lastDate": "2025-01-13",
         "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/6kGHnZtL3QbdVRfW#fight=17&type=summary",
-        "reportCode": "6kGHnZtL3QbdVRfW",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/CzdvNJj9rWYnH4Xh#fight=17&type=summary",
+        "reportCode": "CzdvNJj9rWYnH4Xh",
         "reportTitle": "Firelands",
         "fightId": 17,
         "encounterName": "Ragnaros"
@@ -11291,7 +11267,7 @@
   },
   {
     "name": "nil",
-    "className": "Unknown",
+    "className": "Mage",
     "lastDate": "2021-01-11",
     "source": "Might — Fairbanks",
     "reportUrl": "https://classic.warcraftlogs.com/reports/VgbtG9AJL481jqy2#fight=13&type=summary",
@@ -11302,7 +11278,7 @@
     "appearances": [
       {
         "expansion": "Classic",
-        "className": "Unknown",
+        "className": "Mage",
         "lastDate": "2021-01-11",
         "source": "Might — Fairbanks",
         "reportUrl": "https://classic.warcraftlogs.com/reports/VgbtG9AJL481jqy2#fight=13&type=summary",
@@ -14772,7 +14748,7 @@
   },
   {
     "name": "Sneekytotems",
-    "className": "Unknown",
+    "className": "Shaman",
     "lastDate": "2024-06-03",
     "source": "Inept — Grobbulus",
     "reportUrl": "https://classic.warcraftlogs.com/reports/Ltb94jD3VNrW7q6p#fight=15&type=summary",
@@ -14783,7 +14759,7 @@
     "appearances": [
       {
         "expansion": "Cataclysm",
-        "className": "Unknown",
+        "className": "Shaman",
         "lastDate": "2024-06-03",
         "source": "Inept — Grobbulus",
         "reportUrl": "https://classic.warcraftlogs.com/reports/Ltb94jD3VNrW7q6p#fight=15&type=summary",
@@ -15413,10 +15389,10 @@
     "className": "Hunter",
     "lastDate": "2025-08-25",
     "source": "Inept — Benediction",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=109&type=summary",
-    "reportCode": "16dArTKbGgPY2ZjJ",
+    "reportUrl": "https://classic.warcraftlogs.com/reports/GDFdqzJQg3L7vrax#fight=41&type=summary",
+    "reportCode": "GDFdqzJQg3L7vrax",
     "reportTitle": "Mogu'shan Vaults",
-    "fightId": 109,
+    "fightId": 41,
     "encounterName": "Grand Empress Shek'zeer",
     "appearances": [
       {
@@ -15424,10 +15400,10 @@
         "className": "Hunter",
         "lastDate": "2025-08-25",
         "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=109&type=summary",
-        "reportCode": "16dArTKbGgPY2ZjJ",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/GDFdqzJQg3L7vrax#fight=41&type=summary",
+        "reportCode": "GDFdqzJQg3L7vrax",
         "reportTitle": "Mogu'shan Vaults",
-        "fightId": 109,
+        "fightId": 41,
         "encounterName": "Grand Empress Shek'zeer"
       }
     ]

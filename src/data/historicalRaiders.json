@@ -4212,7 +4212,7 @@
     "characterDetails": [
       {
         "name": "Chackle",
-        "className": "Unknown",
+        "className": "Priest",
         "lastDate": "2022-07-10",
         "expansion": "TBC",
         "source": "Inept — Grobbulus",
@@ -4222,7 +4222,7 @@
         "appearances": [
           {
             "expansion": "TBC",
-            "className": "Unknown",
+            "className": "Priest",
             "lastDate": "2022-07-10",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/Q3FDxbm8RCVkYvPg#fight=29&type=summary",
@@ -4235,9 +4235,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Priest"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Priest",
     "expansions": [
       "TBC"
     ],
@@ -16758,50 +16758,6 @@
     "lastEncounterName": "Will of the Emperor"
   },
   {
-    "name": "Moondj",
-    "characters": [
-      "Moondj"
-    ],
-    "characterDetails": [
-      {
-        "name": "Moondj",
-        "className": "Unknown",
-        "lastDate": "2023-07-10",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Anub'arak",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Unknown",
-            "lastDate": "2023-07-10",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-            "reportCode": "fHtwdL4rc3a8YZmA",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 15,
-            "encounterName": "Anub'arak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Unknown"
-    ],
-    "primaryClass": "Unknown",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-10",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Moondj",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Anub'arak"
-  },
-  {
     "name": "Moonpex",
     "characters": [
       "Moonpex"
@@ -17527,7 +17483,7 @@
         "lastDate": "2025-01-13",
         "expansion": "Cataclysm",
         "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/6kGHnZtL3QbdVRfW#fight=17&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/CzdvNJj9rWYnH4Xh#fight=17&type=summary",
         "reportTitle": "Firelands",
         "encounterName": "Ragnaros",
         "appearances": [
@@ -17536,8 +17492,8 @@
             "className": "Mage",
             "lastDate": "2025-01-13",
             "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/6kGHnZtL3QbdVRfW#fight=17&type=summary",
-            "reportCode": "6kGHnZtL3QbdVRfW",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/CzdvNJj9rWYnH4Xh#fight=17&type=summary",
+            "reportCode": "CzdvNJj9rWYnH4Xh",
             "reportTitle": "Firelands",
             "fightId": 17,
             "encounterName": "Ragnaros"
@@ -17567,7 +17523,7 @@
     "lastDate": "2025-01-13",
     "lastSource": "Inept — Benediction",
     "lastCharacter": "Nepir",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/6kGHnZtL3QbdVRfW#fight=17&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/CzdvNJj9rWYnH4Xh#fight=17&type=summary",
     "lastReportTitle": "Firelands",
     "lastEncounterName": "Ragnaros"
   },
@@ -18105,7 +18061,7 @@
     "characterDetails": [
       {
         "name": "nil",
-        "className": "Unknown",
+        "className": "Mage",
         "lastDate": "2021-01-11",
         "expansion": "Classic",
         "source": "Might — Fairbanks",
@@ -18115,7 +18071,7 @@
         "appearances": [
           {
             "expansion": "Classic",
-            "className": "Unknown",
+            "className": "Mage",
             "lastDate": "2021-01-11",
             "source": "Might — Fairbanks",
             "reportUrl": "https://classic.warcraftlogs.com/reports/VgbtG9AJL481jqy2#fight=13&type=summary",
@@ -18128,9 +18084,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Mage"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Mage",
     "expansions": [
       "Classic"
     ],
@@ -23992,7 +23948,7 @@
     "characterDetails": [
       {
         "name": "Sneekytotems",
-        "className": "Unknown",
+        "className": "Shaman",
         "lastDate": "2024-06-03",
         "expansion": "Cataclysm",
         "source": "Inept — Grobbulus",
@@ -24002,7 +23958,7 @@
         "appearances": [
           {
             "expansion": "Cataclysm",
-            "className": "Unknown",
+            "className": "Shaman",
             "lastDate": "2024-06-03",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/Ltb94jD3VNrW7q6p#fight=15&type=summary",
@@ -24015,9 +23971,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Shaman"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Shaman",
     "expansions": [
       "Cataclysm"
     ],
@@ -24628,7 +24584,7 @@
         "lastDate": "2025-08-25",
         "expansion": "MoP",
         "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=109&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/GDFdqzJQg3L7vrax#fight=41&type=summary",
         "reportTitle": "Mogu'shan Vaults",
         "encounterName": "Grand Empress Shek'zeer",
         "appearances": [
@@ -24637,10 +24593,10 @@
             "className": "Hunter",
             "lastDate": "2025-08-25",
             "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=109&type=summary",
-            "reportCode": "16dArTKbGgPY2ZjJ",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/GDFdqzJQg3L7vrax#fight=41&type=summary",
+            "reportCode": "GDFdqzJQg3L7vrax",
             "reportTitle": "Mogu'shan Vaults",
-            "fightId": 109,
+            "fightId": 41,
             "encounterName": "Grand Empress Shek'zeer"
           }
         ]
