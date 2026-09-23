@@ -13,6 +13,16 @@ const count = (seriesId: string, label: string) =>
   byId.get(seriesId)?.answers.find((answer) => answer.label === label)?.count ?? 0;
 const percent = (value: number, denominator = total) =>
   denominator > 0 ? Math.round((value / denominator) * 100) : 0;
+const topAnswers = (seriesId: string, limit = 2) => byId.get(seriesId)?.answers.slice(0, limit) ?? [];
+const describeAnswers = (answers: Answer[]) =>
+  answers.map((answer) => `${answer.label} (${answer.count})`).join(", followed by ");
+
+const raidYes = count("raidInterest", "Yes");
+const raidUndecided = count("raidInterest", "Undecided");
+const factionFlexible = count("factionFlexibility", "Yes") + count("factionFlexibility", "Possibly");
+const roleLeaders = topAnswers("rolePreference");
+const classLeaders = topAnswers("classInterest");
+const serverLeaders = topAnswers("serverPreference");
 
 const headlineMetrics = [
   {
@@ -66,12 +76,29 @@ const sourceUrl = `https://docs.google.com/spreadsheets/d/${surveyInsights.sourc
         <h2>What the current responses suggest</h2>
       </div>
       <ul class="clean-list expectation-list">
-        <li><strong>PvP leads server preference:</strong> 15 prefer PvP, while 11 have no preference.</li>
-        <li><strong>Faction is comparatively open:</strong> 14 have no preference and 26 would follow or possibly follow a different faction.</li>
-        <li><strong>Raid demand is strong:</strong> 25 respondents said yes and the remaining 5 are undecided.</li>
-        <li><strong>Role flexibility is valuable:</strong> 8 respondents are willing to fill as needed, matching the 8 who currently prefer melee DPS.</li>
-        <li><strong>Early class concentration:</strong> Paladin leads at 6, followed by Druid at 4.</li>
+        <li><strong>Server preference:</strong> {describeAnswers(serverLeaders)}.</li>
+        <li><strong>Faction flexibility:</strong> {factionFlexible} respondents ({percent(factionFlexible)}%) would follow or possibly follow a different faction.</li>
+        <li><strong>Raid interest:</strong> {raidYes} respondents said yes and {raidUndecided} are undecided.</li>
+        <li><strong>Leading raid roles:</strong> {describeAnswers(roleLeaders)}.</li>
+        <li><strong>Leading class interests:</strong> {describeAnswers(classLeaders)}.</li>
       </ul>
+    </section>
+
+    <section class="panel survey-response-browser" aria-labelledby="survey-response-browser-title">
+      <div class="section-heading">
+        <p class="eyebrow">Officer-only detail</p>
+        <h2 id="survey-response-browser-title">Individual responses</h2>
+        <p class="info-note">Choose one respondent for a focused view, or choose everyone to browse all submissions.</p>
+      </div>
+      <label class="field survey-response-picker">
+        <span>Respondent</span>
+        <select data-survey-person-select disabled>
+          <option value="">Loading responses…</option>
+        </select>
+      </label>
+      <div class="survey-response-results" data-survey-person-results aria-live="polite">
+        <p class="info-note">Individual responses are loading.</p>
+      </div>
     </section>
 
     <section class="survey-chart-grid" aria-label="Survey response distributions">
@@ -125,7 +152,7 @@ const sourceUrl = `https://docs.google.com/spreadsheets/d/${surveyInsights.sourc
     <section class="panel survey-source-panel">
       <div>
         <p class="eyebrow">Source</p>
-        <p class="info-note">Last recorded response: {surveyInsights.lastResponseAt}. Discord usernames are loaded only after Officer authentication and are excluded from the public page bundle. Free-text specialization answers remain excluded.</p>
+        <p class="info-note">Last recorded response: {surveyInsights.lastResponseAt}. Automatic refresh checks the sheet every 15 minutes. Discord usernames and individual answers are encrypted and loaded only after Officer authentication.</p>
       </div>
       <a class="filter-button is-subtle" href={sourceUrl} target="_blank" rel="noreferrer">Open response sheet</a>
     </section>
@@ -134,15 +161,122 @@ const sourceUrl = `https://docs.google.com/spreadsheets/d/${surveyInsights.sourc
 
 <script>
   type RespondentLookup = Record<string, Record<string, string[]>>;
+  type SurveyPerson = {
+    id: string;
+    name: string;
+    submittedAt: string;
+    answers: Array<{ question: string; answer: string }>;
+  };
   type RespondentResponse = {
     ok?: boolean;
     message?: string;
     respondents?: RespondentLookup;
+    people?: SurveyPerson[];
   };
 
   const surveyAnswers = Array.from(document.querySelectorAll<HTMLElement>("[data-survey-answer]"));
+  const personSelect = document.querySelector<HTMLSelectElement>("[data-survey-person-select]");
+  const personResults = document.querySelector<HTMLElement>("[data-survey-person-results]");
   let respondentLookup: RespondentLookup | undefined;
+  let surveyPeople: SurveyPerson[] = [];
   let respondentRequest: Promise<void> | undefined;
+
+  const appendPersonAnswers = (container: HTMLElement, person: SurveyPerson) => {
+    const card = document.createElement("article");
+    card.className = "survey-person-card";
+
+    const heading = document.createElement("div");
+    heading.className = "survey-person-heading";
+    const name = document.createElement("h3");
+    name.textContent = person.name;
+    const submittedAt = document.createElement("small");
+    submittedAt.textContent = person.submittedAt ? `Submitted ${person.submittedAt}` : "Submission time unavailable";
+    heading.append(name, submittedAt);
+
+    const answers = document.createElement("dl");
+    answers.className = "survey-person-answers";
+
+    for (const response of person.answers) {
+      const question = document.createElement("dt");
+      question.textContent = response.question;
+      const answer = document.createElement("dd");
+      answer.textContent = response.answer || "No response";
+      answers.append(question, answer);
+    }
+
+    card.append(heading, answers);
+    container.append(card);
+  };
+
+  const renderSelectedPeople = () => {
+    if (!personResults || !personSelect) {
+      return;
+    }
+
+    personResults.replaceChildren();
+    const selection = personSelect.value;
+
+    if (!selection) {
+      const message = document.createElement("p");
+      message.className = "info-note";
+      message.textContent = "Select a respondent to review their full submission.";
+      personResults.append(message);
+      return;
+    }
+
+    if (selection === "all") {
+      const list = document.createElement("div");
+      list.className = "survey-all-responses";
+
+      for (const person of surveyPeople) {
+        const details = document.createElement("details");
+        details.className = "survey-person-details";
+        const summary = document.createElement("summary");
+        summary.textContent = person.name;
+        const content = document.createElement("div");
+        content.className = "survey-person-details-content";
+        appendPersonAnswers(content, person);
+        details.append(summary, content);
+        list.append(details);
+      }
+
+      personResults.append(list);
+      return;
+    }
+
+    const person = surveyPeople.find((candidate) => candidate.id === selection);
+
+    if (person) {
+      appendPersonAnswers(personResults, person);
+    }
+  };
+
+  const populatePersonPicker = () => {
+    if (!personSelect || !personResults) {
+      return;
+    }
+
+    personSelect.replaceChildren();
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = "Select a respondent…";
+    const all = document.createElement("option");
+    all.value = "all";
+    all.textContent = `All respondents (${surveyPeople.length})`;
+    personSelect.append(placeholder, all);
+
+    for (const person of [...surveyPeople].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }))) {
+      const option = document.createElement("option");
+      option.value = person.id;
+      option.textContent = person.name;
+      personSelect.append(option);
+    }
+
+    personSelect.disabled = false;
+    renderSelectedPeople();
+  };
+
+  personSelect?.addEventListener("change", renderSelectedPeople);
 
   const renderRespondents = (answer: HTMLElement, names: string[] | undefined, errorMessage?: string) => {
     const popover = answer.querySelector<HTMLElement>("[data-survey-respondents]");
@@ -215,9 +349,20 @@ const sourceUrl = `https://docs.google.com/spreadsheets/d/${surveyInsights.sourc
         }
 
         respondentLookup = result.respondents;
+        surveyPeople = result.people ?? [];
         populateRespondents();
+        populatePersonPicker();
       } catch (error) {
-        showRespondentError(error instanceof Error ? error.message : "Respondent details are unavailable.");
+        const message = error instanceof Error ? error.message : "Respondent details are unavailable.";
+        showRespondentError(message);
+
+        if (personResults) {
+          personResults.replaceChildren();
+          const errorMessage = document.createElement("p");
+          errorMessage.className = "info-note";
+          errorMessage.textContent = message;
+          personResults.append(errorMessage);
+        }
       } finally {
         respondentRequest = undefined;
       }

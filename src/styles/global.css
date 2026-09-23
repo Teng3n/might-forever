@@ -1777,7 +1777,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   accent-color: var(--accent-secondary);
 }
 
-.field input {
+.field input,
+.field select {
   min-height: 42px;
   width: 100%;
   border: 1px solid var(--border);
@@ -1788,7 +1789,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   font: inherit;
 }
 
-.field input:focus {
+.field input:focus,
+.field select:focus {
   outline: 2px solid rgba(91, 124, 250, 0.42);
   outline-offset: 2px;
 }
@@ -3977,6 +3979,113 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   color: var(--text);
 }
 
+.survey-response-browser {
+  display: grid;
+  gap: 18px;
+}
+
+.survey-response-browser .section-heading {
+  margin-bottom: 0;
+}
+
+.survey-response-picker {
+  width: min(100%, 440px);
+}
+
+.survey-response-picker select:disabled {
+  cursor: progress;
+  opacity: 0.72;
+}
+
+.survey-response-results {
+  min-width: 0;
+}
+
+.survey-response-results > .info-note {
+  margin: 0;
+}
+
+.survey-person-card {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+  border: 1px solid rgba(124, 140, 255, 0.24);
+  border-radius: 10px;
+  padding: 18px;
+  background: rgba(8, 11, 22, 0.45);
+}
+
+.survey-person-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 18px;
+}
+
+.survey-person-heading h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.survey-person-heading small {
+  color: var(--muted);
+}
+
+.survey-person-answers {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.1fr);
+  margin: 0;
+}
+
+.survey-person-answers dt,
+.survey-person-answers dd {
+  margin: 0;
+  border-top: 1px solid rgba(124, 140, 255, 0.16);
+  padding: 11px 0;
+  line-height: 1.5;
+}
+
+.survey-person-answers dt {
+  padding-right: 22px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.survey-person-answers dd {
+  color: var(--text);
+}
+
+.survey-all-responses {
+  display: grid;
+  gap: 10px;
+}
+
+.survey-person-details {
+  overflow: hidden;
+  border: 1px solid rgba(124, 140, 255, 0.22);
+  border-radius: 9px;
+  background: rgba(8, 11, 22, 0.36);
+}
+
+.survey-person-details summary {
+  padding: 13px 16px;
+  color: var(--text);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.survey-person-details[open] summary {
+  border-bottom: 1px solid rgba(124, 140, 255, 0.18);
+  background: rgba(124, 140, 255, 0.08);
+}
+
+.survey-person-details-content {
+  padding: 12px;
+}
+
 .survey-chart-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4151,5 +4260,19 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   .survey-source-panel {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .survey-person-answers {
+    grid-template-columns: 1fr;
+  }
+
+  .survey-person-answers dt {
+    padding-bottom: 3px;
+    border-top: 1px solid rgba(124, 140, 255, 0.16);
+  }
+
+  .survey-person-answers dd {
+    padding-top: 0;
+    border-top: 0;
   }
 }

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "algorithm": "AES-256-GCM",
+  "generatedAt": "",
+  "responseCount": 0,
+  "source": {
+    "spreadsheetId": "1EuKIShP55UUqlD0H3Ho_n00W9vaYnHcGMcdzDH9AcGw",
+    "tabName": "Form Responses 1"
+  },
+  "contentHash": "",
+  "iv": "",
+  "ciphertext": ""
+}
