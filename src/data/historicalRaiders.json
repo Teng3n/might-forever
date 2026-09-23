@@ -459,7 +459,7 @@
     "characterDetails": [
       {
         "name": "Almaero",
-        "className": "Unknown",
+        "className": "Mage",
         "lastDate": "2023-03-05",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
@@ -469,7 +469,7 @@
         "appearances": [
           {
             "expansion": "Wrath",
-            "className": "Unknown",
+            "className": "Mage",
             "lastDate": "2023-03-05",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
@@ -482,9 +482,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Mage"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Mage",
     "expansions": [
       "Wrath"
     ],
@@ -3674,8 +3674,8 @@
         "className": "Warlock",
         "lastDate": "2025-09-22",
         "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+        "source": "Vitality — Raden",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
         "reportTitle": "HoF / ToES",
         "encounterName": "Sha of Fear",
         "appearances": [
@@ -3683,11 +3683,11 @@
             "expansion": "MoP",
             "className": "Warlock",
             "lastDate": "2025-09-22",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
-            "reportCode": "xbBfkcL4CGKyN7MX",
+            "source": "Vitality — Raden",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
+            "reportCode": "WDXRqFJN6HMGca2C",
             "reportTitle": "HoF / ToES",
-            "fightId": 24,
+            "fightId": 20,
             "encounterName": "Sha of Fear"
           },
           {
@@ -4664,8 +4664,8 @@
         "className": "Priest",
         "lastDate": "2025-09-22",
         "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+        "source": "Vitality — Raden",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
         "reportTitle": "HoF / ToES",
         "encounterName": "Sha of Fear",
         "appearances": [
@@ -4673,11 +4673,11 @@
             "expansion": "MoP",
             "className": "Priest",
             "lastDate": "2025-09-22",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
-            "reportCode": "xbBfkcL4CGKyN7MX",
+            "source": "Vitality — Raden",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
+            "reportCode": "WDXRqFJN6HMGca2C",
             "reportTitle": "HoF / ToES",
-            "fightId": 24,
+            "fightId": 20,
             "encounterName": "Sha of Fear"
           },
           {
@@ -4715,9 +4715,9 @@
       "MoP"
     ],
     "lastDate": "2025-09-22",
-    "lastSource": "Inept — Benediction",
+    "lastSource": "Vitality — Raden",
     "lastCharacter": "Chickenmd",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
     "lastReportTitle": "HoF / ToES",
     "lastEncounterName": "Sha of Fear"
   },
@@ -4905,7 +4905,7 @@
     "characterDetails": [
       {
         "name": "Clairesha",
-        "className": "Unknown",
+        "className": "Druid",
         "lastDate": "2023-03-05",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
@@ -4915,7 +4915,7 @@
         "appearances": [
           {
             "expansion": "Wrath",
-            "className": "Unknown",
+            "className": "Druid",
             "lastDate": "2023-03-05",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
@@ -4928,9 +4928,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Druid"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Druid",
     "expansions": [
       "Wrath"
     ],
@@ -5081,7 +5081,7 @@
     "characterDetails": [
       {
         "name": "Consecratist",
-        "className": "Unknown",
+        "className": "Paladin",
         "lastDate": "2023-03-05",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
@@ -5091,7 +5091,7 @@
         "appearances": [
           {
             "expansion": "Wrath",
-            "className": "Unknown",
+            "className": "Paladin",
             "lastDate": "2023-03-05",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
@@ -5104,9 +5104,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Paladin"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Paladin",
     "expansions": [
       "Wrath"
     ],
@@ -6046,7 +6046,7 @@
     "characterDetails": [
       {
         "name": "Dessaer",
-        "className": "Unknown",
+        "className": "Warlock",
         "lastDate": "2023-07-10",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
@@ -6056,7 +6056,7 @@
         "appearances": [
           {
             "expansion": "Wrath",
-            "className": "Unknown",
+            "className": "Warlock",
             "lastDate": "2023-07-10",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
@@ -6069,9 +6069,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Warlock"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Warlock",
     "expansions": [
       "Wrath"
     ],
@@ -7077,8 +7077,8 @@
         "className": "Shaman",
         "lastDate": "2025-09-22",
         "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+        "source": "Vitality — Raden",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
         "reportTitle": "HoF / ToES",
         "encounterName": "Sha of Fear",
         "appearances": [
@@ -7086,11 +7086,11 @@
             "expansion": "MoP",
             "className": "Shaman",
             "lastDate": "2025-09-22",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
-            "reportCode": "xbBfkcL4CGKyN7MX",
+            "source": "Vitality — Raden",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
+            "reportCode": "WDXRqFJN6HMGca2C",
             "reportTitle": "HoF / ToES",
-            "fightId": 24,
+            "fightId": 20,
             "encounterName": "Sha of Fear"
           }
         ]
@@ -7104,9 +7104,9 @@
       "MoP"
     ],
     "lastDate": "2025-09-22",
-    "lastSource": "Inept — Benediction",
+    "lastSource": "Vitality — Raden",
     "lastCharacter": "Dreådly",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
     "lastReportTitle": "HoF / ToES",
     "lastEncounterName": "Sha of Fear"
   },
@@ -9183,7 +9183,7 @@
     "characterDetails": [
       {
         "name": "Garph",
-        "className": "Unknown",
+        "className": "Druid",
         "lastDate": "2022-06-06",
         "expansion": "TBC",
         "source": "Inept — Grobbulus",
@@ -9193,7 +9193,7 @@
         "appearances": [
           {
             "expansion": "TBC",
-            "className": "Unknown",
+            "className": "Druid",
             "lastDate": "2022-06-06",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/WwgMdZbBfaCrt89J#fight=22&type=summary",
@@ -9206,9 +9206,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Druid"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Druid",
     "expansions": [
       "TBC"
     ],
@@ -9477,7 +9477,7 @@
     "characterDetails": [
       {
         "name": "Glorisa",
-        "className": "Unknown",
+        "className": "Mage",
         "lastDate": "2022-06-05",
         "expansion": "TBC",
         "source": "Inept — Grobbulus",
@@ -9487,7 +9487,7 @@
         "appearances": [
           {
             "expansion": "TBC",
-            "className": "Unknown",
+            "className": "Mage",
             "lastDate": "2022-06-05",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/zWj7DKQkr3AMFVbG#fight=28&type=summary",
@@ -9500,9 +9500,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Mage"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Mage",
     "expansions": [
       "TBC"
     ],
@@ -12284,8 +12284,8 @@
         "className": "Monk",
         "lastDate": "2025-09-22",
         "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+        "source": "Vitality — Raden",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
         "reportTitle": "HoF / ToES",
         "encounterName": "Sha of Fear",
         "appearances": [
@@ -12293,11 +12293,11 @@
             "expansion": "MoP",
             "className": "Monk",
             "lastDate": "2025-09-22",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
-            "reportCode": "xbBfkcL4CGKyN7MX",
+            "source": "Vitality — Raden",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
+            "reportCode": "WDXRqFJN6HMGca2C",
             "reportTitle": "HoF / ToES",
-            "fightId": 24,
+            "fightId": 20,
             "encounterName": "Sha of Fear"
           }
         ]
@@ -12311,9 +12311,9 @@
       "MoP"
     ],
     "lastDate": "2025-09-22",
-    "lastSource": "Inept — Benediction",
+    "lastSource": "Vitality — Raden",
     "lastCharacter": "Juneww",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
     "lastReportTitle": "HoF / ToES",
     "lastEncounterName": "Sha of Fear"
   },
@@ -13822,7 +13822,7 @@
     "characterDetails": [
       {
         "name": "Lalass",
-        "className": "Unknown",
+        "className": "Warlock",
         "lastDate": "2023-03-05",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
@@ -13832,7 +13832,7 @@
         "appearances": [
           {
             "expansion": "Wrath",
-            "className": "Unknown",
+            "className": "Warlock",
             "lastDate": "2023-03-05",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
@@ -13845,9 +13845,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Warlock"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Warlock",
     "expansions": [
       "Wrath"
     ],
@@ -13866,7 +13866,7 @@
     "characterDetails": [
       {
         "name": "Larissel",
-        "className": "Unknown",
+        "className": "Hunter",
         "lastDate": "2023-03-05",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
@@ -13876,7 +13876,7 @@
         "appearances": [
           {
             "expansion": "Wrath",
-            "className": "Unknown",
+            "className": "Hunter",
             "lastDate": "2023-03-05",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
@@ -13889,9 +13889,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Hunter"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Hunter",
     "expansions": [
       "Wrath"
     ],
@@ -14046,8 +14046,8 @@
         "className": "Druid",
         "lastDate": "2025-09-22",
         "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+        "source": "Vitality — Raden",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
         "reportTitle": "HoF / ToES",
         "encounterName": "Sha of Fear",
         "appearances": [
@@ -14055,11 +14055,11 @@
             "expansion": "MoP",
             "className": "Druid",
             "lastDate": "2025-09-22",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
-            "reportCode": "xbBfkcL4CGKyN7MX",
+            "source": "Vitality — Raden",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
+            "reportCode": "WDXRqFJN6HMGca2C",
             "reportTitle": "HoF / ToES",
-            "fightId": 24,
+            "fightId": 20,
             "encounterName": "Sha of Fear"
           },
           {
@@ -14132,9 +14132,9 @@
       "MoP"
     ],
     "lastDate": "2025-09-22",
-    "lastSource": "Inept — Benediction",
+    "lastSource": "Vitality — Raden",
     "lastCharacter": "Leafealol",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
     "lastReportTitle": "HoF / ToES",
     "lastEncounterName": "Sha of Fear"
   },
@@ -16309,7 +16309,7 @@
     "characterDetails": [
       {
         "name": "Michellevick",
-        "className": "Unknown",
+        "className": "Hunter",
         "lastDate": "2022-06-06",
         "expansion": "TBC",
         "source": "Inept — Grobbulus",
@@ -16319,7 +16319,7 @@
         "appearances": [
           {
             "expansion": "TBC",
-            "className": "Unknown",
+            "className": "Hunter",
             "lastDate": "2022-06-06",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/WwgMdZbBfaCrt89J#fight=22&type=summary",
@@ -16332,9 +16332,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Hunter"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Hunter",
     "expansions": [
       "TBC"
     ],
@@ -17114,8 +17114,8 @@
         "className": "Mage",
         "lastDate": "2025-09-22",
         "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+        "source": "Vitality — Raden",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
         "reportTitle": "HoF / ToES",
         "encounterName": "Sha of Fear",
         "appearances": [
@@ -17123,11 +17123,11 @@
             "expansion": "MoP",
             "className": "Mage",
             "lastDate": "2025-09-22",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
-            "reportCode": "xbBfkcL4CGKyN7MX",
+            "source": "Vitality — Raden",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
+            "reportCode": "WDXRqFJN6HMGca2C",
             "reportTitle": "HoF / ToES",
-            "fightId": 24,
+            "fightId": 20,
             "encounterName": "Sha of Fear"
           },
           {
@@ -17153,9 +17153,9 @@
       "MoP"
     ],
     "lastDate": "2025-09-22",
-    "lastSource": "Inept — Benediction",
+    "lastSource": "Vitality — Raden",
     "lastCharacter": "Mxrz",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
     "lastReportTitle": "HoF / ToES",
     "lastEncounterName": "Sha of Fear"
   },
@@ -18889,7 +18889,7 @@
     "characterDetails": [
       {
         "name": "Okuninushi",
-        "className": "Unknown",
+        "className": "Warlock",
         "lastDate": "2023-03-05",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
@@ -18899,7 +18899,7 @@
         "appearances": [
           {
             "expansion": "Wrath",
-            "className": "Unknown",
+            "className": "Warlock",
             "lastDate": "2023-03-05",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
@@ -18912,9 +18912,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Warlock"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Warlock",
     "expansions": [
       "Wrath"
     ],
@@ -21450,7 +21450,7 @@
     "characterDetails": [
       {
         "name": "Rineki",
-        "className": "Unknown",
+        "className": "Hunter",
         "lastDate": "2023-07-10",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
@@ -21460,7 +21460,7 @@
         "appearances": [
           {
             "expansion": "Wrath",
-            "className": "Unknown",
+            "className": "Hunter",
             "lastDate": "2023-07-10",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
@@ -21473,9 +21473,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Hunter"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Hunter",
     "expansions": [
       "Wrath"
     ],
@@ -21626,7 +21626,7 @@
     "characterDetails": [
       {
         "name": "Robz",
-        "className": "Unknown",
+        "className": "Warlock",
         "lastDate": "2022-11-27",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
@@ -21636,7 +21636,7 @@
         "appearances": [
           {
             "expansion": "Wrath",
-            "className": "Unknown",
+            "className": "Warlock",
             "lastDate": "2022-11-27",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/QCLmTfnW4Y7HBFZD#fight=6&type=summary",
@@ -21649,9 +21649,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Warlock"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Warlock",
     "expansions": [
       "Wrath"
     ],
@@ -21938,7 +21938,7 @@
     "characterDetails": [
       {
         "name": "Salamislappa",
-        "className": "Unknown",
+        "className": "Warlock",
         "lastDate": "2023-07-10",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
@@ -21948,7 +21948,7 @@
         "appearances": [
           {
             "expansion": "Wrath",
-            "className": "Unknown",
+            "className": "Warlock",
             "lastDate": "2023-07-10",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
@@ -21961,9 +21961,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Warlock"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Warlock",
     "expansions": [
       "Wrath"
     ],
@@ -22070,7 +22070,7 @@
     "characterDetails": [
       {
         "name": "Sathanos",
-        "className": "Unknown",
+        "className": "Paladin",
         "lastDate": "2023-07-10",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
@@ -22080,7 +22080,7 @@
         "appearances": [
           {
             "expansion": "Wrath",
-            "className": "Unknown",
+            "className": "Paladin",
             "lastDate": "2023-07-10",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
@@ -22093,9 +22093,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Paladin"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Paladin",
     "expansions": [
       "Wrath"
     ],
@@ -23491,7 +23491,7 @@
     "characterDetails": [
       {
         "name": "Sizuka",
-        "className": "Unknown",
+        "className": "Mage",
         "lastDate": "2022-06-05",
         "expansion": "TBC",
         "source": "Inept — Grobbulus",
@@ -23501,7 +23501,7 @@
         "appearances": [
           {
             "expansion": "TBC",
-            "className": "Unknown",
+            "className": "Mage",
             "lastDate": "2022-06-05",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/zWj7DKQkr3AMFVbG#fight=28&type=summary",
@@ -23514,9 +23514,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Mage"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Mage",
     "expansions": [
       "TBC"
     ],
@@ -25597,7 +25597,7 @@
     "characterDetails": [
       {
         "name": "Swaktion",
-        "className": "Unknown",
+        "className": "Shaman",
         "lastDate": "2024-06-03",
         "expansion": "Cataclysm",
         "source": "Inept — Grobbulus",
@@ -25607,7 +25607,7 @@
         "appearances": [
           {
             "expansion": "Cataclysm",
-            "className": "Unknown",
+            "className": "Shaman",
             "lastDate": "2024-06-03",
             "source": "Inept — Grobbulus",
             "reportUrl": "https://classic.warcraftlogs.com/reports/Ltb94jD3VNrW7q6p#fight=15&type=summary",
@@ -25620,9 +25620,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Shaman"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Shaman",
     "expansions": [
       "Cataclysm"
     ],
@@ -26258,8 +26258,8 @@
         "className": "Warrior",
         "lastDate": "2025-09-22",
         "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+        "source": "Vitality — Raden",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
         "reportTitle": "HoF / ToES",
         "encounterName": "Sha of Fear",
         "appearances": [
@@ -26267,11 +26267,11 @@
             "expansion": "MoP",
             "className": "Warrior",
             "lastDate": "2025-09-22",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
-            "reportCode": "xbBfkcL4CGKyN7MX",
+            "source": "Vitality — Raden",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
+            "reportCode": "WDXRqFJN6HMGca2C",
             "reportTitle": "HoF / ToES",
-            "fightId": 24,
+            "fightId": 20,
             "encounterName": "Sha of Fear"
           },
           {
@@ -26297,9 +26297,9 @@
       "MoP"
     ],
     "lastDate": "2025-09-22",
-    "lastSource": "Inept — Benediction",
+    "lastSource": "Vitality — Raden",
     "lastCharacter": "Teerage",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/WDXRqFJN6HMGca2C#fight=20&type=summary",
     "lastReportTitle": "HoF / ToES",
     "lastEncounterName": "Sha of Fear"
   },
@@ -26622,7 +26622,7 @@
     "characterDetails": [
       {
         "name": "Thefishguy",
-        "className": "Unknown",
+        "className": "Druid",
         "lastDate": "2021-03-08",
         "expansion": "Classic",
         "source": "Might — Fairbanks",
@@ -26632,7 +26632,7 @@
         "appearances": [
           {
             "expansion": "Classic",
-            "className": "Unknown",
+            "className": "Druid",
             "lastDate": "2021-03-08",
             "source": "Might — Fairbanks",
             "reportUrl": "https://classic.warcraftlogs.com/reports/aXHJrTNYZmkVqCjQ#fight=56&type=summary",
@@ -26645,9 +26645,9 @@
       }
     ],
     "classes": [
-      "Unknown"
+      "Druid"
     ],
-    "primaryClass": "Unknown",
+    "primaryClass": "Druid",
     "expansions": [
       "Classic"
     ],
@@ -29896,7 +29896,7 @@
           },
           {
             "expansion": "Classic",
-            "className": "Unknown",
+            "className": "Paladin",
             "lastDate": "2021-05-24",
             "source": "Might — Fairbanks",
             "reportUrl": "https://classic.warcraftlogs.com/reports/gTrPh61CmqV7yv3p#fight=5&type=summary",

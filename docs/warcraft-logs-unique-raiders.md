@@ -2,10 +2,10 @@
 
 Generated from verified boss-fight attendance on 2026-09-23.
 
-- Inept — Benediction: 88 character names
+- Inept — Benediction: 81 character names
 - Inept — Grobbulus: 354 character names
 - Might — Fairbanks: 270 character names
-- Vitality — Raden: 59 character names
+- Vitality — Raden: 66 character names
 - Combined unique character names: 679
 
 Definition: a named player character included in `friendlyPlayers` for at least one uploaded raid boss encounter where an approved guild-anchor character appeared in the same fight. Merely appearing elsewhere in the report, in a report actor list, or in a guild roster is not enough. Names are deduplicated case-insensitively across all guild identities.
