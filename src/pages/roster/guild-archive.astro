@@ -87,6 +87,29 @@ const combinationsValue = (raider: HistoricalRaider) =>
       ),
     ),
   ].join("|");
+const appearanceHistoryValue = (raider: HistoricalRaider) =>
+  JSON.stringify(
+    raider.characterDetails.flatMap((character) =>
+      (character.appearances?.length
+        ? character.appearances
+        : [
+            {
+              expansion: character.expansion,
+              className: character.className,
+              lastDate: character.lastDate,
+              source: character.source,
+              reportUrl: character.reportUrl,
+              reportTitle: character.reportTitle,
+              encounterName: character.encounterName,
+            },
+          ]
+      ).map((appearance) => ({
+        ...appearance,
+        characterName: character.name,
+        color: classColor(appearance.className),
+      })),
+    ),
+  );
 ---
 
 <Layout title="Roster Guild Archive | Might Forever">
@@ -193,6 +216,7 @@ const combinationsValue = (raider: HistoricalRaider) =>
               data-expansions={raider.expansions.join("|")}
               data-classes={raider.classes.join("|")}
               data-combinations={combinationsValue(raider)}
+              data-appearance-history={appearanceHistoryValue(raider)}
               style={`--class-color: ${classColor(raider.primaryClass)}`}
             >
               <div class="history-raider-mark" aria-hidden="true">{raider.name.slice(0, 1)}</div>
@@ -200,21 +224,29 @@ const combinationsValue = (raider: HistoricalRaider) =>
                 <h3>{raider.name}</h3>
                 <div class="history-class-list" aria-label={`Observed classes for ${raider.name}`}>
                   {raider.classes.map((className) => (
-                    <span style={`--class-color: ${classColor(className)}`}>{className}</span>
+                    <span data-class-pill={className} style={`--class-color: ${classColor(className)}`}>{className}</span>
                   ))}
                 </div>
                 {
                   raider.characters.length > 1 ? (
                     <details class="history-aliases">
-                      <summary>{raider.characters.length} logged characters</summary>
+                      <summary data-alias-summary>{raider.characters.length} logged characters</summary>
                       <ul>
                         {raider.characterDetails.map((character) => (
-                          <li>
+                          <li data-character-row={character.name}>
                             <span style={`--class-color: ${classColor(character.className)}`}>{character.name}</span>
-                            <small>{character.className} · {character.expansion} · last seen {formatDate(character.lastDate)}</small>
+                            <small data-character-meta>{character.className} · {character.expansion} · last seen {formatDate(character.lastDate)}</small>
                             <div class="history-appearance-links">
                               {character.appearances?.map((appearance) => (
-                                <a href={appearance.reportUrl} target="_blank" rel="noreferrer">
+                                <a
+                                  href={appearance.reportUrl}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  data-appearance-link
+                                  data-character={character.name}
+                                  data-expansion={appearance.expansion}
+                                  data-class={appearance.className}
+                                >
                                   {appearance.expansion} source log
                                 </a>
                               ))}
@@ -228,7 +260,15 @@ const combinationsValue = (raider: HistoricalRaider) =>
                       <span>1 verified character</span>
                       <div class="history-appearance-links">
                         {raider.characterDetails[0]?.appearances?.map((appearance) => (
-                          <a href={appearance.reportUrl} target="_blank" rel="noreferrer">
+                          <a
+                            href={appearance.reportUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            data-appearance-link
+                            data-character={raider.characterDetails[0]?.name}
+                            data-expansion={appearance.expansion}
+                            data-class={appearance.className}
+                          >
                             {appearance.expansion} source log
                           </a>
                         ))}
@@ -239,10 +279,10 @@ const combinationsValue = (raider: HistoricalRaider) =>
               </div>
               <div class="history-raider-last">
                 <span>Last logged raid</span>
-                <strong>{formatDate(raider.lastDate)}</strong>
-                <small>{raider.lastSource}</small>
-                {raider.lastCharacter !== raider.name && <small>as {raider.lastCharacter}</small>}
-                <a class="history-log-link" href={raider.lastReportUrl} target="_blank" rel="noreferrer">
+                <strong data-context-date>{formatDate(raider.lastDate)}</strong>
+                <small data-context-source>{raider.lastSource}</small>
+                <small data-context-character hidden={raider.lastCharacter === raider.name}>as {raider.lastCharacter}</small>
+                <a class="history-log-link" data-context-link href={raider.lastReportUrl} target="_blank" rel="noreferrer">
                   Audit source fight ↗
                 </a>
               </div>
@@ -269,6 +309,16 @@ const combinationsValue = (raider: HistoricalRaider) =>
 </Layout>
 
 <script>
+  type AppearanceContext = {
+    characterName: string;
+    expansion: string;
+    className: string;
+    lastDate: string;
+    source: string;
+    reportUrl: string;
+    color: string;
+  };
+
   const root = document.querySelector<HTMLElement>("[data-history-root]");
 
   if (root) {
@@ -280,6 +330,7 @@ const combinationsValue = (raider: HistoricalRaider) =>
     const expansionButtons = [...root.querySelectorAll<HTMLButtonElement>("[data-expansion-filter]")];
     const classButtons = [...root.querySelectorAll<HTMLButtonElement>("[data-class-filter]")];
     const rows = [...root.querySelectorAll<HTMLElement>("[data-raider]")];
+    const appearanceCache = new WeakMap<HTMLElement, AppearanceContext[]>();
     let selectedExpansion = "All";
     let selectedClass = "All";
 
@@ -306,6 +357,99 @@ const combinationsValue = (raider: HistoricalRaider) =>
       return combinationMatch && searchMatch;
     };
 
+    const getAppearances = (row: HTMLElement) => {
+      const cached = appearanceCache.get(row);
+      if (cached) return cached;
+      try {
+        const parsed = JSON.parse(row.dataset.appearanceHistory ?? "[]") as AppearanceContext[];
+        appearanceCache.set(row, parsed);
+        return parsed;
+      } catch {
+        appearanceCache.set(row, []);
+        return [];
+      }
+    };
+
+    const formatContextDate = (date: string) =>
+      new Intl.DateTimeFormat("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+        timeZone: "UTC",
+      }).format(new Date(`${date}T12:00:00Z`));
+
+    const latestAppearance = (appearances: AppearanceContext[]) =>
+      [...appearances].sort((left, right) => right.lastDate.localeCompare(left.lastDate))[0];
+
+    const updateRowContext = (row: HTMLElement, query: string) => {
+      const allAppearances = getAppearances(row);
+      let contextual = allAppearances.filter(
+        (appearance) =>
+          (selectedExpansion === "All" || appearance.expansion === selectedExpansion) &&
+          (selectedClass === "All" || appearance.className === selectedClass),
+      );
+
+      if (selectedExpansion === "All" && selectedClass === "All" && query) {
+        const characterMatches = contextual.filter((appearance) =>
+          appearance.characterName.toLocaleLowerCase().includes(query),
+        );
+        if (characterMatches.length > 0) contextual = characterMatches;
+      }
+
+      const latest = latestAppearance(contextual);
+      if (!latest) return;
+
+      row.dataset.date = latest.lastDate;
+      row.style.setProperty("--class-color", latest.color);
+      const date = row.querySelector<HTMLElement>("[data-context-date]");
+      const source = row.querySelector<HTMLElement>("[data-context-source]");
+      const character = row.querySelector<HTMLElement>("[data-context-character]");
+      const link = row.querySelector<HTMLAnchorElement>("[data-context-link]");
+      if (date) date.textContent = formatContextDate(latest.lastDate);
+      if (source) source.textContent = latest.source;
+      if (character) {
+        character.textContent = `as ${latest.characterName}`;
+        character.hidden = latest.characterName === row.dataset.name;
+      }
+      if (link) link.href = latest.reportUrl;
+
+      const contextualClasses = new Set(contextual.map((appearance) => appearance.className));
+      row.querySelectorAll<HTMLElement>("[data-class-pill]").forEach((pill) => {
+        pill.hidden = !contextualClasses.has(pill.dataset.classPill ?? "");
+      });
+
+      const contextualCharacters = new Set(contextual.map((appearance) => appearance.characterName));
+      const characterRows = [...row.querySelectorAll<HTMLElement>("[data-character-row]")];
+      characterRows.forEach((characterRow) => {
+        const characterName = characterRow.dataset.characterRow ?? "";
+        const appearances = contextual.filter((appearance) => appearance.characterName === characterName);
+        characterRow.hidden = appearances.length === 0;
+        const characterLatest = latestAppearance(appearances);
+        const meta = characterRow.querySelector<HTMLElement>("[data-character-meta]");
+        if (meta && characterLatest) {
+          meta.textContent = `${characterLatest.className} · ${characterLatest.expansion} · last seen ${formatContextDate(characterLatest.lastDate)}`;
+        }
+      });
+
+      row.querySelectorAll<HTMLAnchorElement>("[data-appearance-link]").forEach((appearanceLink) => {
+        appearanceLink.hidden = !contextual.some(
+          (appearance) =>
+            appearance.characterName === appearanceLink.dataset.character &&
+            appearance.expansion === appearanceLink.dataset.expansion &&
+            appearance.className === appearanceLink.dataset.class,
+        );
+      });
+
+      const summary = row.querySelector<HTMLElement>("[data-alias-summary]");
+      if (summary) {
+        const total = characterRows.length;
+        const shown = contextualCharacters.size;
+        summary.textContent = shown === total
+          ? `${total} logged characters`
+          : `${shown} matching character${shown === 1 ? "" : "s"}`;
+      }
+    };
+
     const updateFacetCounts = (query: string) => {
       expansionButtons.forEach((button) => {
         const value = button.dataset.expansionFilter ?? "All";
@@ -327,12 +471,16 @@ const combinationsValue = (raider: HistoricalRaider) =>
 
       rows.forEach((row) => {
         row.hidden = !matches(row, selectedExpansion, selectedClass, query);
-        if (!row.hidden) visible += 1;
+        if (!row.hidden) {
+          updateRowContext(row, query);
+          visible += 1;
+        }
       });
 
       if (count) count.textContent = String(visible);
       if (empty) empty.hidden = visible !== 0;
       updateFacetCounts(query);
+      sortRows();
     };
 
     const sortRows = () => {

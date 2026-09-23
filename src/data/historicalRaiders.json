@@ -320,94 +320,6 @@
     "lastEncounterName": "Ragnaros"
   },
   {
-    "name": "Aggrened",
-    "characters": [
-      "Aggrened"
-    ],
-    "characterDetails": [
-      {
-        "name": "Aggrened",
-        "className": "Monk",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=37&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Blade Lord Ta'yak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Monk",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=37&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 37,
-            "encounterName": "Blade Lord Ta'yak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Monk"
-    ],
-    "primaryClass": "Monk",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Aggrened",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=37&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Blade Lord Ta'yak"
-  },
-  {
-    "name": "Äimsir",
-    "characters": [
-      "Äimsir"
-    ],
-    "characterDetails": [
-      {
-        "name": "Äimsir",
-        "className": "Priest",
-        "lastDate": "2025-08-25",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=49&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Blade Lord Ta'yak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Priest",
-            "lastDate": "2025-08-25",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=49&type=summary",
-            "reportCode": "16dArTKbGgPY2ZjJ",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 49,
-            "encounterName": "Blade Lord Ta'yak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Priest"
-    ],
-    "primaryClass": "Priest",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-08-25",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Äimsir",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=49&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Blade Lord Ta'yak"
-  },
-  {
     "name": "Akali",
     "characters": [
       "Akali"
@@ -672,50 +584,6 @@
     "lastEncounterName": "Onyxia"
   },
   {
-    "name": "Amidä",
-    "characters": [
-      "Amidä"
-    ],
-    "characterDetails": [
-      {
-        "name": "Amidä",
-        "className": "Druid",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Druid",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Druid"
-    ],
-    "primaryClass": "Druid",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Amidä",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
-  },
-  {
     "name": "Anathia",
     "characters": [
       "Anathia"
@@ -846,94 +714,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/2FQ18pbgDTjcyG3L#fight=92&type=summary",
     "lastReportTitle": "LOOOGSS",
     "lastEncounterName": "Onyxia"
-  },
-  {
-    "name": "Animis",
-    "characters": [
-      "Animis"
-    ],
-    "characterDetails": [
-      {
-        "name": "Animis",
-        "className": "Druid",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Druid",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Druid"
-    ],
-    "primaryClass": "Druid",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Animis",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
-  },
-  {
-    "name": "Aniriss",
-    "characters": [
-      "Aniriss"
-    ],
-    "characterDetails": [
-      {
-        "name": "Aniriss",
-        "className": "Hunter",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=53&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Wind Lord Mel'jarak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Hunter",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=53&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 53,
-            "encounterName": "Wind Lord Mel'jarak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Hunter"
-    ],
-    "primaryClass": "Hunter",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Aniriss",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=53&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Wind Lord Mel'jarak"
   },
   {
     "name": "Areliux",
@@ -1235,10 +1015,10 @@
             "className": "Shaman",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           }
         ]
@@ -1293,50 +1073,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/PJVwR28CtvkFpyBN#fight=19&type=summary",
     "lastReportTitle": "Siege of Orgrimmar",
     "lastEncounterName": "Garrosh Hellscream"
-  },
-  {
-    "name": "Asharras",
-    "characters": [
-      "Asharras"
-    ],
-    "characterDetails": [
-      {
-        "name": "Asharras",
-        "className": "Monk",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=25&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Wind Lord Mel'jarak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Monk",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=25&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 25,
-            "encounterName": "Wind Lord Mel'jarak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Monk"
-    ],
-    "primaryClass": "Monk",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Asharras",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=25&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Wind Lord Mel'jarak"
   },
   {
     "name": "Audiorekt",
@@ -1564,50 +1300,6 @@
     "lastEncounterName": "Gahz'ranka"
   },
   {
-    "name": "Azarielle",
-    "characters": [
-      "Azarielle"
-    ],
-    "characterDetails": [
-      {
-        "name": "Azarielle",
-        "className": "Warlock",
-        "lastDate": "2026-06-15",
-        "expansion": "MoP",
-        "source": "Vitality — Raden",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/BLX3pWTjRVYKHb6d#fight=1&type=summary",
-        "reportTitle": "Siege of Orgrimmar",
-        "encounterName": "Lei Shen",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Warlock",
-            "lastDate": "2026-06-15",
-            "source": "Vitality — Raden",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/BLX3pWTjRVYKHb6d#fight=1&type=summary",
-            "reportCode": "BLX3pWTjRVYKHb6d",
-            "reportTitle": "Siege of Orgrimmar",
-            "fightId": 1,
-            "encounterName": "Lei Shen"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Warlock"
-    ],
-    "primaryClass": "Warlock",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2026-06-15",
-    "lastSource": "Vitality — Raden",
-    "lastCharacter": "Azarielle",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/BLX3pWTjRVYKHb6d#fight=1&type=summary",
-    "lastReportTitle": "Siege of Orgrimmar",
-    "lastEncounterName": "Lei Shen"
-  },
-  {
     "name": "Azennath",
     "characters": [
       "Azennath"
@@ -1619,7 +1311,7 @@
         "lastDate": "2023-09-11",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/N1KxtARTYkFfLH2y#fight=34&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/N1KxtARTYkFfLH2y#fight=33&type=summary",
         "reportTitle": "09/10/2023 <Inept> Ulduar 25M",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -1628,10 +1320,10 @@
             "className": "Priest",
             "lastDate": "2023-09-11",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/N1KxtARTYkFfLH2y#fight=34&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/N1KxtARTYkFfLH2y#fight=33&type=summary",
             "reportCode": "N1KxtARTYkFfLH2y",
             "reportTitle": "09/10/2023 <Inept> Ulduar 25M",
-            "fightId": 34,
+            "fightId": 33,
             "encounterName": "Yogg-Saron"
           }
         ]
@@ -1647,7 +1339,7 @@
     "lastDate": "2023-09-11",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Azennath",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/N1KxtARTYkFfLH2y#fight=34&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/N1KxtARTYkFfLH2y#fight=33&type=summary",
     "lastReportTitle": "09/10/2023 <Inept> Ulduar 25M",
     "lastEncounterName": "Yogg-Saron"
   },
@@ -2098,23 +1790,23 @@
       {
         "name": "Barkbeard",
         "className": "Druid",
-        "lastDate": "2023-02-08",
+        "lastDate": "2022-11-06",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/HwQNqKtXzn2dRZ9D#fight=79&type=summary",
-        "reportTitle": "Ulduar",
-        "encounterName": "Freya",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/NrRkwKCdpGjcAmn7#fight=55&type=summary",
+        "reportTitle": "Naxx / Sarth / Maly",
+        "encounterName": "Sartharion",
         "appearances": [
           {
             "expansion": "Wrath",
             "className": "Druid",
-            "lastDate": "2023-02-08",
+            "lastDate": "2022-11-06",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/HwQNqKtXzn2dRZ9D#fight=79&type=summary",
-            "reportCode": "HwQNqKtXzn2dRZ9D",
-            "reportTitle": "Ulduar",
-            "fightId": 79,
-            "encounterName": "Freya"
+            "reportUrl": "https://classic.warcraftlogs.com/reports/NrRkwKCdpGjcAmn7#fight=55&type=summary",
+            "reportCode": "NrRkwKCdpGjcAmn7",
+            "reportTitle": "Naxx / Sarth / Maly",
+            "fightId": 55,
+            "encounterName": "Sartharion"
           },
           {
             "expansion": "TBC",
@@ -2138,12 +1830,12 @@
       "TBC",
       "Wrath"
     ],
-    "lastDate": "2023-02-08",
+    "lastDate": "2022-11-06",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Barkbeard",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/HwQNqKtXzn2dRZ9D#fight=79&type=summary",
-    "lastReportTitle": "Ulduar",
-    "lastEncounterName": "Freya"
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/NrRkwKCdpGjcAmn7#fight=55&type=summary",
+    "lastReportTitle": "Naxx / Sarth / Maly",
+    "lastEncounterName": "Sartharion"
   },
   {
     "name": "Bayy",
@@ -2891,7 +2583,7 @@
         "lastDate": "2024-04-14",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
         "reportTitle": "Icecrown Citadel",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -2900,10 +2592,10 @@
             "className": "Warrior",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           }
         ]
@@ -4089,50 +3781,6 @@
     "lastEncounterName": "Garrosh Hellscream"
   },
   {
-    "name": "Calicags",
-    "characters": [
-      "Calicags"
-    ],
-    "characterDetails": [
-      {
-        "name": "Calicags",
-        "className": "Warrior",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Warrior",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Warrior"
-    ],
-    "primaryClass": "Warrior",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Calicags",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
-  },
-  {
     "name": "Callukeeper",
     "characters": [
       "Callukeeper"
@@ -5074,50 +4722,6 @@
     "lastEncounterName": "Sha of Fear"
   },
   {
-    "name": "Chickenphd",
-    "characters": [
-      "Chickenphd"
-    ],
-    "characterDetails": [
-      {
-        "name": "Chickenphd",
-        "className": "Warlock",
-        "lastDate": "2024-11-25",
-        "expansion": "Cataclysm",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-        "reportTitle": "Firelands",
-        "encounterName": "Ragnaros",
-        "appearances": [
-          {
-            "expansion": "Cataclysm",
-            "className": "Warlock",
-            "lastDate": "2024-11-25",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-            "reportCode": "WrvYgMFKA1cPnx9z",
-            "reportTitle": "Firelands",
-            "fightId": 10,
-            "encounterName": "Ragnaros"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Warlock"
-    ],
-    "primaryClass": "Warlock",
-    "expansions": [
-      "Cataclysm"
-    ],
-    "lastDate": "2024-11-25",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Chickenphd",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-    "lastReportTitle": "Firelands",
-    "lastEncounterName": "Ragnaros"
-  },
-  {
     "name": "Chonkars",
     "characters": [
       "Chonkars"
@@ -5470,50 +5074,6 @@
     "lastEncounterName": "Yogg-Saron"
   },
   {
-    "name": "Concerted",
-    "characters": [
-      "Concerted"
-    ],
-    "characterDetails": [
-      {
-        "name": "Concerted",
-        "className": "Warrior",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Warrior",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Warrior"
-    ],
-    "primaryClass": "Warrior",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Concerted",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
-  },
-  {
     "name": "Consecratist",
     "characters": [
       "Consecratist"
@@ -5656,50 +5216,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/VLv7rGMCNdkjQyR8#fight=8&type=summary",
     "lastReportTitle": "Sunwell Plateau",
     "lastEncounterName": "Eredar Twins"
-  },
-  {
-    "name": "Coralisia",
-    "characters": [
-      "Coralisia"
-    ],
-    "characterDetails": [
-      {
-        "name": "Coralisia",
-        "className": "Shaman",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Shaman",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Shaman"
-    ],
-    "primaryClass": "Shaman",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Coralisia",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
   },
   {
     "name": "Corñholio",
@@ -5901,7 +5417,7 @@
         "lastDate": "2024-04-14",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
         "reportTitle": "Icecrown Citadel",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -5910,10 +5426,10 @@
             "className": "Paladin",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           },
           {
@@ -5954,7 +5470,7 @@
     "lastDate": "2024-04-14",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Daat",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
     "lastReportTitle": "Icecrown Citadel",
     "lastEncounterName": "Yogg-Saron"
   },
@@ -6101,50 +5617,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/Hcj4LP8xyGvhYkAb#fight=14&type=summary",
     "lastReportTitle": "Firelands",
     "lastEncounterName": "Beth'tilac"
-  },
-  {
-    "name": "Deathlotus",
-    "characters": [
-      "Deathlotus"
-    ],
-    "characterDetails": [
-      {
-        "name": "Deathlotus",
-        "className": "Rogue",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Rogue",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Rogue"
-    ],
-    "primaryClass": "Rogue",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Deathlotus",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
   },
   {
     "name": "Deathsfathom",
@@ -6531,23 +6003,23 @@
       {
         "name": "Deslynx",
         "className": "Warlock",
-        "lastDate": "2023-06-23",
+        "lastDate": "2023-01-21",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/8VKCJFBgZPwDcHdL#fight=24&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Thorim",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/mGvHtfxcrdDAVBXb#fight=84&type=summary",
+        "reportTitle": "Ulduar",
+        "encounterName": "Yogg-Saron",
         "appearances": [
           {
             "expansion": "Wrath",
             "className": "Warlock",
-            "lastDate": "2023-06-23",
+            "lastDate": "2023-01-21",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/8VKCJFBgZPwDcHdL#fight=24&type=summary",
-            "reportCode": "8VKCJFBgZPwDcHdL",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 24,
-            "encounterName": "Thorim"
+            "reportUrl": "https://classic.warcraftlogs.com/reports/mGvHtfxcrdDAVBXb#fight=84&type=summary",
+            "reportCode": "mGvHtfxcrdDAVBXb",
+            "reportTitle": "Ulduar",
+            "fightId": 84,
+            "encounterName": "Yogg-Saron"
           }
         ]
       }
@@ -6559,12 +6031,12 @@
     "expansions": [
       "Wrath"
     ],
-    "lastDate": "2023-06-23",
+    "lastDate": "2023-01-21",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Deslynx",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/8VKCJFBgZPwDcHdL#fight=24&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Thorim"
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/mGvHtfxcrdDAVBXb#fight=84&type=summary",
+    "lastReportTitle": "Ulduar",
+    "lastEncounterName": "Yogg-Saron"
   },
   {
     "name": "Dessaer",
@@ -7477,10 +6949,10 @@
             "className": "Priest",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           },
           {
@@ -7637,50 +7109,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/xbBfkcL4CGKyN7MX#fight=24&type=summary",
     "lastReportTitle": "HoF / ToES",
     "lastEncounterName": "Sha of Fear"
-  },
-  {
-    "name": "Dreiner",
-    "characters": [
-      "Dreiner"
-    ],
-    "characterDetails": [
-      {
-        "name": "Dreiner",
-        "className": "Death Knight",
-        "lastDate": "2025-08-25",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=49&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Blade Lord Ta'yak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Death Knight",
-            "lastDate": "2025-08-25",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=49&type=summary",
-            "reportCode": "16dArTKbGgPY2ZjJ",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 49,
-            "encounterName": "Blade Lord Ta'yak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Death Knight"
-    ],
-    "primaryClass": "Death Knight",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-08-25",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Dreiner",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=49&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Blade Lord Ta'yak"
   },
   {
     "name": "Droogg",
@@ -8115,50 +7543,6 @@
     "lastEncounterName": "Ragnaros"
   },
   {
-    "name": "Empyt",
-    "characters": [
-      "Empyt"
-    ],
-    "characterDetails": [
-      {
-        "name": "Empyt",
-        "className": "Hunter",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=3&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Wind Lord Mel'jarak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Hunter",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=3&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 3,
-            "encounterName": "Wind Lord Mel'jarak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Hunter"
-    ],
-    "primaryClass": "Hunter",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Empyt",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=3&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Wind Lord Mel'jarak"
-  },
-  {
     "name": "Erikthered",
     "characters": [
       "Erikthered"
@@ -8335,50 +7719,6 @@
     "lastEncounterName": "Daakara"
   },
   {
-    "name": "Eternallord",
-    "characters": [
-      "Eternallord"
-    ],
-    "characterDetails": [
-      {
-        "name": "Eternallord",
-        "className": "Paladin",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Paladin",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Paladin"
-    ],
-    "primaryClass": "Paladin",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Eternallord",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
-  },
-  {
     "name": "Etharialle",
     "characters": [
       "Etharialle"
@@ -8421,50 +7761,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/wxk3Y14f2pND8cCZ#fight=44&type=summary",
     "lastReportTitle": "Molten Core Day 2",
     "lastEncounterName": "Ragnaros"
-  },
-  {
-    "name": "Evoniderin",
-    "characters": [
-      "Evoniderin"
-    ],
-    "characterDetails": [
-      {
-        "name": "Evoniderin",
-        "className": "Paladin",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=37&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Blade Lord Ta'yak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Paladin",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=37&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 37,
-            "encounterName": "Blade Lord Ta'yak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Paladin"
-    ],
-    "primaryClass": "Paladin",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Evoniderin",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=37&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Blade Lord Ta'yak"
   },
   {
     "name": "Exitium",
@@ -9111,10 +8407,10 @@
             "className": "Hunter",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           }
         ]
@@ -9229,7 +8525,6 @@
     "name": "Fowlincident",
     "characters": [
       "Fowlincident",
-      "Fowlincìdent",
       "Fowlìncident",
       "Fowlìncìdent"
     ],
@@ -9292,29 +8587,6 @@
         ]
       },
       {
-        "name": "Fowlincìdent",
-        "className": "Death Knight",
-        "lastDate": "2024-11-25",
-        "expansion": "Cataclysm",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-        "reportTitle": "Firelands",
-        "encounterName": "Ragnaros",
-        "appearances": [
-          {
-            "expansion": "Cataclysm",
-            "className": "Death Knight",
-            "lastDate": "2024-11-25",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-            "reportCode": "WrvYgMFKA1cPnx9z",
-            "reportTitle": "Firelands",
-            "fightId": 10,
-            "encounterName": "Ragnaros"
-          }
-        ]
-      },
-      {
         "name": "Fowlìncident",
         "className": "Mage",
         "lastDate": "2024-04-14",
@@ -9339,7 +8611,6 @@
       }
     ],
     "classes": [
-      "Death Knight",
       "Druid",
       "Mage",
       "Warlock"
@@ -9372,7 +8643,7 @@
         "lastDate": "2023-05-14",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/PZyfX84LJjQVcAMC#fight=51&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/PZyfX84LJjQVcAMC#fight=50&type=summary",
         "reportTitle": "Ulduar",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -9381,10 +8652,10 @@
             "className": "Paladin",
             "lastDate": "2023-05-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/PZyfX84LJjQVcAMC#fight=51&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/PZyfX84LJjQVcAMC#fight=50&type=summary",
             "reportCode": "PZyfX84LJjQVcAMC",
             "reportTitle": "Ulduar",
-            "fightId": 51,
+            "fightId": 50,
             "encounterName": "Yogg-Saron"
           },
           {
@@ -9420,17 +8691,6 @@
             "reportTitle": "Ulduar",
             "fightId": 53,
             "encounterName": "Yogg-Saron"
-          },
-          {
-            "expansion": "TBC",
-            "className": "Warlock",
-            "lastDate": "2022-08-22",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/FtLQTPWc8wz3XV6b#fight=84&type=summary",
-            "reportCode": "FtLQTPWc8wz3XV6b",
-            "reportTitle": "Sunwell Plateau",
-            "fightId": 84,
-            "encounterName": "Hex Lord Malacrass"
           }
         ]
       },
@@ -9528,7 +8788,7 @@
     "lastDate": "2023-05-14",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Freddyp",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/PZyfX84LJjQVcAMC#fight=51&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/PZyfX84LJjQVcAMC#fight=50&type=summary",
     "lastReportTitle": "Ulduar",
     "lastEncounterName": "Yogg-Saron"
   },
@@ -10210,94 +9470,6 @@
     "lastEncounterName": "Archavon the Stone Watcher"
   },
   {
-    "name": "Globrif",
-    "characters": [
-      "Globrif"
-    ],
-    "characterDetails": [
-      {
-        "name": "Globrif",
-        "className": "Druid",
-        "lastDate": "2026-06-15",
-        "expansion": "MoP",
-        "source": "Vitality — Raden",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/BLX3pWTjRVYKHb6d#fight=1&type=summary",
-        "reportTitle": "Siege of Orgrimmar",
-        "encounterName": "Lei Shen",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Druid",
-            "lastDate": "2026-06-15",
-            "source": "Vitality — Raden",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/BLX3pWTjRVYKHb6d#fight=1&type=summary",
-            "reportCode": "BLX3pWTjRVYKHb6d",
-            "reportTitle": "Siege of Orgrimmar",
-            "fightId": 1,
-            "encounterName": "Lei Shen"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Druid"
-    ],
-    "primaryClass": "Druid",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2026-06-15",
-    "lastSource": "Vitality — Raden",
-    "lastCharacter": "Globrif",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/BLX3pWTjRVYKHb6d#fight=1&type=summary",
-    "lastReportTitle": "Siege of Orgrimmar",
-    "lastEncounterName": "Lei Shen"
-  },
-  {
-    "name": "Glorfindol",
-    "characters": [
-      "Glorfindol"
-    ],
-    "characterDetails": [
-      {
-        "name": "Glorfindol",
-        "className": "Priest",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Priest",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Priest"
-    ],
-    "primaryClass": "Priest",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Glorfindol",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
-  },
-  {
     "name": "Glorisa",
     "characters": [
       "Glorisa"
@@ -10674,50 +9846,6 @@
     "lastEncounterName": "General Vezax"
   },
   {
-    "name": "Griwolf",
-    "characters": [
-      "Griwolf"
-    ],
-    "characterDetails": [
-      {
-        "name": "Griwolf",
-        "className": "Druid",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=37&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Blade Lord Ta'yak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Druid",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=37&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 37,
-            "encounterName": "Blade Lord Ta'yak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Druid"
-    ],
-    "primaryClass": "Druid",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Griwolf",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=37&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Blade Lord Ta'yak"
-  },
-  {
     "name": "Grubes",
     "characters": [
       "Grubes"
@@ -10848,50 +9976,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/DwghdjYtVJ2XMCm3#fight=38&type=summary",
     "lastReportTitle": "Firelands",
     "lastEncounterName": "Ragnaros"
-  },
-  {
-    "name": "Happyshifty",
-    "characters": [
-      "Happyshifty"
-    ],
-    "characterDetails": [
-      {
-        "name": "Happyshifty",
-        "className": "Unknown",
-        "lastDate": "2023-01-16",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/a2hPv3yDdMBfrWLH#fight=104&type=summary",
-        "reportTitle": "Naxx / Sarth / Maly",
-        "encounterName": "Kel'Thuzad",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Unknown",
-            "lastDate": "2023-01-16",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/a2hPv3yDdMBfrWLH#fight=104&type=summary",
-            "reportCode": "a2hPv3yDdMBfrWLH",
-            "reportTitle": "Naxx / Sarth / Maly",
-            "fightId": 104,
-            "encounterName": "Kel'Thuzad"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Unknown"
-    ],
-    "primaryClass": "Unknown",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-01-16",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Happyshifty",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/a2hPv3yDdMBfrWLH#fight=104&type=summary",
-    "lastReportTitle": "Naxx / Sarth / Maly",
-    "lastEncounterName": "Kel'Thuzad"
   },
   {
     "name": "Haptíx",
@@ -11261,50 +10345,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/wmn1JBxM6fNVqYk4#fight=12&type=summary",
     "lastReportTitle": "Molten Core",
     "lastEncounterName": "Garr"
-  },
-  {
-    "name": "Helenitatp",
-    "characters": [
-      "Helenitatp"
-    ],
-    "characterDetails": [
-      {
-        "name": "Helenitatp",
-        "className": "Shaman",
-        "lastDate": "2024-06-11",
-        "expansion": "Cataclysm",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=4&type=summary",
-        "reportTitle": "Baradin Hold",
-        "encounterName": "Argaloth",
-        "appearances": [
-          {
-            "expansion": "Cataclysm",
-            "className": "Shaman",
-            "lastDate": "2024-06-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=4&type=summary",
-            "reportCode": "zFHfWcTGdJyMhkQN",
-            "reportTitle": "Baradin Hold",
-            "fightId": 4,
-            "encounterName": "Argaloth"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Shaman"
-    ],
-    "primaryClass": "Shaman",
-    "expansions": [
-      "Cataclysm"
-    ],
-    "lastDate": "2024-06-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Helenitatp",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=4&type=summary",
-    "lastReportTitle": "Baradin Hold",
-    "lastEncounterName": "Argaloth"
   },
   {
     "name": "Hellcreeper",
@@ -11889,50 +10929,6 @@
     "lastEncounterName": "Noth the Plaguebringer"
   },
   {
-    "name": "Idotuburn",
-    "characters": [
-      "Idotuburn"
-    ],
-    "characterDetails": [
-      {
-        "name": "Idotuburn",
-        "className": "Warlock",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Warlock",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Warlock"
-    ],
-    "primaryClass": "Warlock",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Idotuburn",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
-  },
-  {
     "name": "Iint",
     "characters": [
       "Iint"
@@ -12441,50 +11437,6 @@
     "lastEncounterName": "Malygos"
   },
   {
-    "name": "Itsmaamm",
-    "characters": [
-      "Itsmaamm"
-    ],
-    "characterDetails": [
-      {
-        "name": "Itsmaamm",
-        "className": "Paladin",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Paladin",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Paladin"
-    ],
-    "primaryClass": "Paladin",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Itsmaamm",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
-  },
-  {
     "name": "Iwontkite",
     "characters": [
       "Iwontkite"
@@ -12934,50 +11886,6 @@
     "lastEncounterName": "Kel'Thuzad"
   },
   {
-    "name": "Jibrill",
-    "characters": [
-      "Jibrill"
-    ],
-    "characterDetails": [
-      {
-        "name": "Jibrill",
-        "className": "Druid",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=53&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Wind Lord Mel'jarak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Druid",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=53&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 53,
-            "encounterName": "Wind Lord Mel'jarak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Druid"
-    ],
-    "primaryClass": "Druid",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Jibrill",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=53&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Wind Lord Mel'jarak"
-  },
-  {
     "name": "Johnblack",
     "characters": [
       "Johnblack"
@@ -13064,50 +11972,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/8cjmTGpYhAVLfxQ4#fight=18&type=summary",
     "lastReportTitle": "BT / Hyjal",
     "lastEncounterName": "Illidan Stormrage"
-  },
-  {
-    "name": "Jonnyquest",
-    "characters": [
-      "Jonnyquest"
-    ],
-    "characterDetails": [
-      {
-        "name": "Jonnyquest",
-        "className": "Paladin",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Paladin",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Paladin"
-    ],
-    "primaryClass": "Paladin",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Jonnyquest",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
   },
   {
     "name": "Joshysins",
@@ -13521,7 +12385,7 @@
         "lastDate": "2024-04-14",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
         "reportTitle": "Icecrown Citadel",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -13530,10 +12394,10 @@
             "className": "Warlock",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           }
         ]
@@ -13549,7 +12413,7 @@
     "lastDate": "2024-04-14",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Kabus",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
     "lastReportTitle": "Icecrown Citadel",
     "lastEncounterName": "Yogg-Saron"
   },
@@ -14012,7 +12876,7 @@
         "lastDate": "2023-06-12",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/nGACqPh1cWF2RBgT#fight=66&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/nGACqPh1cWF2RBgT#fight=65&type=summary",
         "reportTitle": "Ulduar",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -14021,10 +12885,10 @@
             "className": "Death Knight",
             "lastDate": "2023-06-12",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/nGACqPh1cWF2RBgT#fight=66&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/nGACqPh1cWF2RBgT#fight=65&type=summary",
             "reportCode": "nGACqPh1cWF2RBgT",
             "reportTitle": "Ulduar",
-            "fightId": 66,
+            "fightId": 65,
             "encounterName": "Yogg-Saron"
           }
         ]
@@ -14040,7 +12904,7 @@
     "lastDate": "2023-06-12",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Kean",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/nGACqPh1cWF2RBgT#fight=66&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/nGACqPh1cWF2RBgT#fight=65&type=summary",
     "lastReportTitle": "Ulduar",
     "lastEncounterName": "Yogg-Saron"
   },
@@ -14188,7 +13052,7 @@
         "lastDate": "2024-04-14",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
         "reportTitle": "Icecrown Citadel",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -14197,10 +13061,10 @@
             "className": "Death Knight",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           }
         ]
@@ -14216,53 +13080,9 @@
     "lastDate": "2024-04-14",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Kleenynx",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
     "lastReportTitle": "Icecrown Citadel",
     "lastEncounterName": "Yogg-Saron"
-  },
-  {
-    "name": "Klippyy",
-    "characters": [
-      "Klippyy"
-    ],
-    "characterDetails": [
-      {
-        "name": "Klippyy",
-        "className": "Hunter",
-        "lastDate": "2025-08-25",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=49&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Blade Lord Ta'yak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Hunter",
-            "lastDate": "2025-08-25",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=49&type=summary",
-            "reportCode": "16dArTKbGgPY2ZjJ",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 49,
-            "encounterName": "Blade Lord Ta'yak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Hunter"
-    ],
-    "primaryClass": "Hunter",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-08-25",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Klippyy",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=49&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Blade Lord Ta'yak"
   },
   {
     "name": "Kolorv",
@@ -14744,7 +13564,7 @@
         "lastDate": "2024-04-14",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
         "reportTitle": "Icecrown Citadel",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -14753,10 +13573,10 @@
             "className": "Paladin",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           }
         ]
@@ -14772,7 +13592,7 @@
     "lastDate": "2024-04-14",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Kuber",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
     "lastReportTitle": "Icecrown Citadel",
     "lastEncounterName": "Yogg-Saron"
   },
@@ -15272,7 +14092,7 @@
         "lastDate": "2024-04-14",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
         "reportTitle": "Icecrown Citadel",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -15281,10 +14101,10 @@
             "className": "Druid",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           },
           {
@@ -15806,7 +14626,7 @@
         "lastDate": "2024-04-14",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
         "reportTitle": "Icecrown Citadel",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -15815,10 +14635,10 @@
             "className": "Warlock",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           },
           {
@@ -15846,7 +14666,7 @@
     "lastDate": "2024-04-14",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Locksicles",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
     "lastReportTitle": "Icecrown Citadel",
     "lastEncounterName": "Yogg-Saron"
   },
@@ -16224,7 +15044,7 @@
         "lastDate": "2023-07-10",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=28&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=27&type=summary",
         "reportTitle": "Trial of the Crusader",
         "encounterName": "Kologarn",
         "appearances": [
@@ -16233,10 +15053,10 @@
             "className": "Priest",
             "lastDate": "2023-07-10",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=28&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=27&type=summary",
             "reportCode": "fHtwdL4rc3a8YZmA",
             "reportTitle": "Trial of the Crusader",
-            "fightId": 28,
+            "fightId": 27,
             "encounterName": "Kologarn"
           }
         ]
@@ -16252,7 +15072,7 @@
     "lastDate": "2023-07-10",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Luzdeldia",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=28&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=27&type=summary",
     "lastReportTitle": "Trial of the Crusader",
     "lastEncounterName": "Kologarn"
   },
@@ -16544,7 +15364,7 @@
         "lastDate": "2024-04-14",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
         "reportTitle": "Icecrown Citadel",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -16553,10 +15373,10 @@
             "className": "Rogue",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           }
         ]
@@ -16572,7 +15392,7 @@
     "lastDate": "2024-04-14",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Malphaes",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
     "lastReportTitle": "Icecrown Citadel",
     "lastEncounterName": "Yogg-Saron"
   },
@@ -16675,50 +15495,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/wmn1JBxM6fNVqYk4#fight=12&type=summary",
     "lastReportTitle": "Molten Core",
     "lastEncounterName": "Garr"
-  },
-  {
-    "name": "Martoche",
-    "characters": [
-      "Martoche"
-    ],
-    "characterDetails": [
-      {
-        "name": "Martoche",
-        "className": "Monk",
-        "lastDate": "2026-06-15",
-        "expansion": "MoP",
-        "source": "Vitality — Raden",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/BLX3pWTjRVYKHb6d#fight=1&type=summary",
-        "reportTitle": "Siege of Orgrimmar",
-        "encounterName": "Lei Shen",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Monk",
-            "lastDate": "2026-06-15",
-            "source": "Vitality — Raden",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/BLX3pWTjRVYKHb6d#fight=1&type=summary",
-            "reportCode": "BLX3pWTjRVYKHb6d",
-            "reportTitle": "Siege of Orgrimmar",
-            "fightId": 1,
-            "encounterName": "Lei Shen"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Monk"
-    ],
-    "primaryClass": "Monk",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2026-06-15",
-    "lastSource": "Vitality — Raden",
-    "lastCharacter": "Martoche",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/BLX3pWTjRVYKHb6d#fight=1&type=summary",
-    "lastReportTitle": "Siege of Orgrimmar",
-    "lastEncounterName": "Lei Shen"
   },
   {
     "name": "Marz",
@@ -17055,50 +15831,6 @@
     "lastEncounterName": "Garrosh Hellscream"
   },
   {
-    "name": "Maybemagee",
-    "characters": [
-      "Maybemagee"
-    ],
-    "characterDetails": [
-      {
-        "name": "Maybemagee",
-        "className": "Unknown",
-        "lastDate": "2022-12-26",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/ykdPpbQfXN3CDT4J#fight=54&type=summary",
-        "reportTitle": "Naxx / Sarth / Maly",
-        "encounterName": "Kel'Thuzad",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Unknown",
-            "lastDate": "2022-12-26",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/ykdPpbQfXN3CDT4J#fight=54&type=summary",
-            "reportCode": "ykdPpbQfXN3CDT4J",
-            "reportTitle": "Naxx / Sarth / Maly",
-            "fightId": 54,
-            "encounterName": "Kel'Thuzad"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Unknown"
-    ],
-    "primaryClass": "Unknown",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2022-12-26",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Maybemagee",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/ykdPpbQfXN3CDT4J#fight=54&type=summary",
-    "lastReportTitle": "Naxx / Sarth / Maly",
-    "lastEncounterName": "Kel'Thuzad"
-  },
-  {
     "name": "Mcbussyy",
     "characters": [
       "Mcbussyy"
@@ -17394,50 +16126,6 @@
     "lastEncounterName": "Sha of Fear"
   },
   {
-    "name": "Mercurows",
-    "characters": [
-      "Mercurows"
-    ],
-    "characterDetails": [
-      {
-        "name": "Mercurows",
-        "className": "Priest",
-        "lastDate": "2021-06-15",
-        "expansion": "TBC",
-        "source": "Might — Fairbanks",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/pZ8kjLYKafFXDzJT#fight=39&type=summary",
-        "reportTitle": "Gruul / Magtheridon",
-        "encounterName": "Nightbane",
-        "appearances": [
-          {
-            "expansion": "TBC",
-            "className": "Priest",
-            "lastDate": "2021-06-15",
-            "source": "Might — Fairbanks",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/pZ8kjLYKafFXDzJT#fight=39&type=summary",
-            "reportCode": "pZ8kjLYKafFXDzJT",
-            "reportTitle": "Gruul / Magtheridon",
-            "fightId": 39,
-            "encounterName": "Nightbane"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Priest"
-    ],
-    "primaryClass": "Priest",
-    "expansions": [
-      "TBC"
-    ],
-    "lastDate": "2021-06-15",
-    "lastSource": "Might — Fairbanks",
-    "lastCharacter": "Mercurows",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/pZ8kjLYKafFXDzJT#fight=39&type=summary",
-    "lastReportTitle": "Gruul / Magtheridon",
-    "lastEncounterName": "Nightbane"
-  },
-  {
     "name": "Merhks",
     "characters": [
       "Merhks"
@@ -17658,50 +16346,6 @@
     "lastEncounterName": "M'uru"
   },
   {
-    "name": "Mihombre",
-    "characters": [
-      "Mihombre"
-    ],
-    "characterDetails": [
-      {
-        "name": "Mihombre",
-        "className": "Druid",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=3&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Wind Lord Mel'jarak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Druid",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=3&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 3,
-            "encounterName": "Wind Lord Mel'jarak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Druid"
-    ],
-    "primaryClass": "Druid",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Mihombre",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=3&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Wind Lord Mel'jarak"
-  },
-  {
     "name": "Minndy",
     "characters": [
       "Minndy"
@@ -17910,23 +16554,23 @@
       {
         "name": "Missmymana",
         "className": "Priest",
-        "lastDate": "2024-11-25",
+        "lastDate": "2024-08-06",
         "expansion": "Cataclysm",
         "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-        "reportTitle": "Firelands",
-        "encounterName": "Ragnaros",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/g6nptCxafmDJZvjc#fight=44&type=summary",
+        "reportTitle": "TotFW / BWD / BoT",
+        "encounterName": "Nefarian's End",
         "appearances": [
           {
             "expansion": "Cataclysm",
             "className": "Priest",
-            "lastDate": "2024-11-25",
+            "lastDate": "2024-08-06",
             "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-            "reportCode": "WrvYgMFKA1cPnx9z",
-            "reportTitle": "Firelands",
-            "fightId": 10,
-            "encounterName": "Ragnaros"
+            "reportUrl": "https://classic.warcraftlogs.com/reports/g6nptCxafmDJZvjc#fight=44&type=summary",
+            "reportCode": "g6nptCxafmDJZvjc",
+            "reportTitle": "TotFW / BWD / BoT",
+            "fightId": 44,
+            "encounterName": "Nefarian's End"
           },
           {
             "expansion": "Wrath",
@@ -17950,12 +16594,12 @@
       "Wrath",
       "Cataclysm"
     ],
-    "lastDate": "2024-11-25",
+    "lastDate": "2024-08-06",
     "lastSource": "Inept — Benediction",
     "lastCharacter": "Missmymana",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-    "lastReportTitle": "Firelands",
-    "lastEncounterName": "Ragnaros"
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/g6nptCxafmDJZvjc#fight=44&type=summary",
+    "lastReportTitle": "TotFW / BWD / BoT",
+    "lastEncounterName": "Nefarian's End"
   },
   {
     "name": "Mistify",
@@ -18000,50 +16644,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/GwhHQDamJWKCYVB3#fight=9&type=summary",
     "lastReportTitle": "Siege of Orgrimmar",
     "lastEncounterName": "Garrosh Hellscream"
-  },
-  {
-    "name": "Mithid",
-    "characters": [
-      "Mithid"
-    ],
-    "characterDetails": [
-      {
-        "name": "Mithid",
-        "className": "Druid",
-        "lastDate": "2024-11-25",
-        "expansion": "Cataclysm",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-        "reportTitle": "Firelands",
-        "encounterName": "Ragnaros",
-        "appearances": [
-          {
-            "expansion": "Cataclysm",
-            "className": "Druid",
-            "lastDate": "2024-11-25",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-            "reportCode": "WrvYgMFKA1cPnx9z",
-            "reportTitle": "Firelands",
-            "fightId": 10,
-            "encounterName": "Ragnaros"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Druid"
-    ],
-    "primaryClass": "Druid",
-    "expansions": [
-      "Cataclysm"
-    ],
-    "lastDate": "2024-11-25",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Mithid",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-    "lastReportTitle": "Firelands",
-    "lastEncounterName": "Ragnaros"
   },
   {
     "name": "Modelex",
@@ -18158,50 +16758,6 @@
     "lastEncounterName": "Will of the Emperor"
   },
   {
-    "name": "Monsterroach",
-    "characters": [
-      "Monsterroach"
-    ],
-    "characterDetails": [
-      {
-        "name": "Monsterroach",
-        "className": "Shaman",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=50&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Blade Lord Ta'yak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Shaman",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=50&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 50,
-            "encounterName": "Blade Lord Ta'yak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Shaman"
-    ],
-    "primaryClass": "Shaman",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Monsterroach",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=50&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Blade Lord Ta'yak"
-  },
-  {
     "name": "Moondj",
     "characters": [
       "Moondj"
@@ -18244,50 +16800,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
     "lastReportTitle": "Trial of the Crusader",
     "lastEncounterName": "Anub'arak"
-  },
-  {
-    "name": "Moonkas",
-    "characters": [
-      "Moonkas"
-    ],
-    "characterDetails": [
-      {
-        "name": "Moonkas",
-        "className": "Druid",
-        "lastDate": "2022-12-26",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/ykdPpbQfXN3CDT4J#fight=54&type=summary",
-        "reportTitle": "Naxx / Sarth / Maly",
-        "encounterName": "Kel'Thuzad",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Druid",
-            "lastDate": "2022-12-26",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/ykdPpbQfXN3CDT4J#fight=54&type=summary",
-            "reportCode": "ykdPpbQfXN3CDT4J",
-            "reportTitle": "Naxx / Sarth / Maly",
-            "fightId": 54,
-            "encounterName": "Kel'Thuzad"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Druid"
-    ],
-    "primaryClass": "Druid",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2022-12-26",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Moonkas",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/ykdPpbQfXN3CDT4J#fight=54&type=summary",
-    "lastReportTitle": "Naxx / Sarth / Maly",
-    "lastEncounterName": "Kel'Thuzad"
   },
   {
     "name": "Moonpex",
@@ -18345,7 +16857,7 @@
         "lastDate": "2022-11-01",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=66&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=65&type=summary",
         "reportTitle": "Naxx / Sarth / Maly",
         "encounterName": "Archavon the Stone Watcher",
         "appearances": [
@@ -18354,10 +16866,10 @@
             "className": "Death Knight",
             "lastDate": "2022-11-01",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=66&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=65&type=summary",
             "reportCode": "hJ6YKZ8F1QTq4jw9",
             "reportTitle": "Naxx / Sarth / Maly",
-            "fightId": 66,
+            "fightId": 65,
             "encounterName": "Archavon the Stone Watcher"
           }
         ]
@@ -18373,7 +16885,7 @@
     "lastDate": "2022-11-01",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Moonroe",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=66&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=65&type=summary",
     "lastReportTitle": "Naxx / Sarth / Maly",
     "lastEncounterName": "Archavon the Stone Watcher"
   },
@@ -18744,23 +17256,23 @@
       {
         "name": "Nakrak",
         "className": "Druid",
-        "lastDate": "2024-11-25",
+        "lastDate": "2024-06-11",
         "expansion": "Cataclysm",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-        "reportTitle": "Firelands",
-        "encounterName": "Ragnaros",
+        "source": "Inept — Grobbulus",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=7&type=summary",
+        "reportTitle": "Baradin Hold",
+        "encounterName": "Argaloth",
         "appearances": [
           {
             "expansion": "Cataclysm",
             "className": "Druid",
-            "lastDate": "2024-11-25",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-            "reportCode": "WrvYgMFKA1cPnx9z",
-            "reportTitle": "Firelands",
-            "fightId": 10,
-            "encounterName": "Ragnaros"
+            "lastDate": "2024-06-11",
+            "source": "Inept — Grobbulus",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=7&type=summary",
+            "reportCode": "zFHfWcTGdJyMhkQN",
+            "reportTitle": "Baradin Hold",
+            "fightId": 7,
+            "encounterName": "Argaloth"
           },
           {
             "expansion": "Wrath",
@@ -18784,12 +17296,12 @@
       "Wrath",
       "Cataclysm"
     ],
-    "lastDate": "2024-11-25",
-    "lastSource": "Inept — Benediction",
+    "lastDate": "2024-06-11",
+    "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Nakrak",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-    "lastReportTitle": "Firelands",
-    "lastEncounterName": "Ragnaros"
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=7&type=summary",
+    "lastReportTitle": "Baradin Hold",
+    "lastEncounterName": "Argaloth"
   },
   {
     "name": "Nareth",
@@ -19729,7 +18241,7 @@
         "lastDate": "2024-04-14",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
         "reportTitle": "Icecrown Citadel",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -19738,10 +18250,10 @@
             "className": "Death Knight",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           }
         ]
@@ -19757,7 +18269,7 @@
     "lastDate": "2024-04-14",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Noaggroreset",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
     "lastReportTitle": "Icecrown Citadel",
     "lastEncounterName": "Yogg-Saron"
   },
@@ -19892,50 +18404,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/Hb4AChvK32WtgV7J#fight=58&type=summary",
     "lastReportTitle": "Week 52... No Onslaught",
     "lastEncounterName": "Ragnaros"
-  },
-  {
-    "name": "Nôraa",
-    "characters": [
-      "Nôraa"
-    ],
-    "characterDetails": [
-      {
-        "name": "Nôraa",
-        "className": "Paladin",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=25&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Wind Lord Mel'jarak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Paladin",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=25&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 25,
-            "encounterName": "Wind Lord Mel'jarak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Paladin"
-    ],
-    "primaryClass": "Paladin",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Nôraa",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=25&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Wind Lord Mel'jarak"
   },
   {
     "name": "Notachick",
@@ -20214,50 +18682,6 @@
     "lastEncounterName": "Onyxia"
   },
   {
-    "name": "Nutwipez",
-    "characters": [
-      "Nutwipez"
-    ],
-    "characterDetails": [
-      {
-        "name": "Nutwipez",
-        "className": "Druid",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=37&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Blade Lord Ta'yak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Druid",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=37&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 37,
-            "encounterName": "Blade Lord Ta'yak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Druid"
-    ],
-    "primaryClass": "Druid",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Nutwipez",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=37&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Blade Lord Ta'yak"
-  },
-  {
     "name": "Nvs",
     "characters": [
       "Nvs"
@@ -20369,7 +18793,7 @@
         "lastDate": "2024-04-14",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
         "reportTitle": "Icecrown Citadel",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -20378,10 +18802,10 @@
             "className": "Paladin",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           }
         ]
@@ -20397,7 +18821,7 @@
     "lastDate": "2024-04-14",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Ober",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
     "lastReportTitle": "Icecrown Citadel",
     "lastEncounterName": "Yogg-Saron"
   },
@@ -20456,50 +18880,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/6kPqmnVGy7A4jhfg#fight=52&type=summary",
     "lastReportTitle": "TotFW / BWD / BoT",
     "lastEncounterName": "Cho'gall"
-  },
-  {
-    "name": "Oktøberfest",
-    "characters": [
-      "Oktøberfest"
-    ],
-    "characterDetails": [
-      {
-        "name": "Oktøberfest",
-        "className": "Priest",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Priest",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Priest"
-    ],
-    "primaryClass": "Priest",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Oktøberfest",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
   },
   {
     "name": "Okuninushi",
@@ -20588,50 +18968,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/nHaKLyAJR9wYNWjF#fight=29&type=summary",
     "lastReportTitle": "04/13/2025 <Inept> Dragon Soul 25 H / Day 1",
     "lastEncounterName": "Madness of Deathwing"
-  },
-  {
-    "name": "Onynx",
-    "characters": [
-      "Onynx"
-    ],
-    "characterDetails": [
-      {
-        "name": "Onynx",
-        "className": "Druid",
-        "lastDate": "2024-11-25",
-        "expansion": "Cataclysm",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-        "reportTitle": "Firelands",
-        "encounterName": "Ragnaros",
-        "appearances": [
-          {
-            "expansion": "Cataclysm",
-            "className": "Druid",
-            "lastDate": "2024-11-25",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-            "reportCode": "WrvYgMFKA1cPnx9z",
-            "reportTitle": "Firelands",
-            "fightId": 10,
-            "encounterName": "Ragnaros"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Druid"
-    ],
-    "primaryClass": "Druid",
-    "expansions": [
-      "Cataclysm"
-    ],
-    "lastDate": "2024-11-25",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Onynx",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-    "lastReportTitle": "Firelands",
-    "lastEncounterName": "Ragnaros"
   },
   {
     "name": "Ootermage",
@@ -20864,50 +19200,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/9maw8CfX36gvHDWh#fight=2&type=summary",
     "lastReportTitle": "Blackwing Lair",
     "lastEncounterName": "Razorgore the Untamed"
-  },
-  {
-    "name": "Ossira",
-    "characters": [
-      "Ossira"
-    ],
-    "characterDetails": [
-      {
-        "name": "Ossira",
-        "className": "Shaman",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=3&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Wind Lord Mel'jarak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Shaman",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=3&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 3,
-            "encounterName": "Wind Lord Mel'jarak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Shaman"
-    ],
-    "primaryClass": "Shaman",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Ossira",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=3&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Wind Lord Mel'jarak"
   },
   {
     "name": "Oswaldmosley",
@@ -21242,50 +19534,6 @@
     "lastEncounterName": "Ragnaros"
   },
   {
-    "name": "Penglr",
-    "characters": [
-      "Penglr"
-    ],
-    "characterDetails": [
-      {
-        "name": "Penglr",
-        "className": "Hunter",
-        "lastDate": "2023-01-16",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/a2hPv3yDdMBfrWLH#fight=104&type=summary",
-        "reportTitle": "Naxx / Sarth / Maly",
-        "encounterName": "Kel'Thuzad",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Hunter",
-            "lastDate": "2023-01-16",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/a2hPv3yDdMBfrWLH#fight=104&type=summary",
-            "reportCode": "a2hPv3yDdMBfrWLH",
-            "reportTitle": "Naxx / Sarth / Maly",
-            "fightId": 104,
-            "encounterName": "Kel'Thuzad"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Hunter"
-    ],
-    "primaryClass": "Hunter",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-01-16",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Penglr",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/a2hPv3yDdMBfrWLH#fight=104&type=summary",
-    "lastReportTitle": "Naxx / Sarth / Maly",
-    "lastEncounterName": "Kel'Thuzad"
-  },
-  {
     "name": "Pepperpokket",
     "characters": [
       "Pepperpokket"
@@ -21418,50 +19666,6 @@
     "lastEncounterName": "Kil'jaeden"
   },
   {
-    "name": "Phobiâc",
-    "characters": [
-      "Phobiâc"
-    ],
-    "characterDetails": [
-      {
-        "name": "Phobiâc",
-        "className": "Hunter",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Hunter",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Hunter"
-    ],
-    "primaryClass": "Hunter",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Phobiâc",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
-  },
-  {
     "name": "Phumes",
     "characters": [
       "Phumes"
@@ -21504,50 +19708,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/Vyk4GCgqaXnQDJPv#fight=106&type=summary",
     "lastReportTitle": "BT / Hyjal",
     "lastEncounterName": "Archimonde"
-  },
-  {
-    "name": "Plighted",
-    "characters": [
-      "Plighted"
-    ],
-    "characterDetails": [
-      {
-        "name": "Plighted",
-        "className": "Paladin",
-        "lastDate": "2024-06-11",
-        "expansion": "Cataclysm",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=4&type=summary",
-        "reportTitle": "Baradin Hold",
-        "encounterName": "Argaloth",
-        "appearances": [
-          {
-            "expansion": "Cataclysm",
-            "className": "Paladin",
-            "lastDate": "2024-06-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=4&type=summary",
-            "reportCode": "zFHfWcTGdJyMhkQN",
-            "reportTitle": "Baradin Hold",
-            "fightId": 4,
-            "encounterName": "Argaloth"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Paladin"
-    ],
-    "primaryClass": "Paladin",
-    "expansions": [
-      "Cataclysm"
-    ],
-    "lastDate": "2024-06-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Plighted",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=4&type=summary",
-    "lastReportTitle": "Baradin Hold",
-    "lastEncounterName": "Argaloth"
   },
   {
     "name": "Popeadin",
@@ -22373,50 +20533,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/DdAm8aJwYbGxBcvH#fight=1&type=summary",
     "lastReportTitle": "Onyxia",
     "lastEncounterName": "Onyxia"
-  },
-  {
-    "name": "Quzbeast",
-    "characters": [
-      "Quzbeast"
-    ],
-    "characterDetails": [
-      {
-        "name": "Quzbeast",
-        "className": "Druid",
-        "lastDate": "2025-08-25",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=49&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Blade Lord Ta'yak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Druid",
-            "lastDate": "2025-08-25",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=49&type=summary",
-            "reportCode": "16dArTKbGgPY2ZjJ",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 49,
-            "encounterName": "Blade Lord Ta'yak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Druid"
-    ],
-    "primaryClass": "Druid",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-08-25",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Quzbeast",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=49&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Blade Lord Ta'yak"
   },
   {
     "name": "Qynx",
@@ -23558,20 +21674,20 @@
         "lastDate": "2022-05-02",
         "expansion": "TBC",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/PgaJ9R4YFGTWDdt3#fight=20&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/PgaJ9R4YFGTWDdt3#fight=13&type=summary",
         "reportTitle": "SSC / TK",
-        "encounterName": "Gruul the Dragonkiller",
+        "encounterName": "Lady Vashj",
         "appearances": [
           {
             "expansion": "TBC",
             "className": "Druid",
             "lastDate": "2022-05-02",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/PgaJ9R4YFGTWDdt3#fight=20&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/PgaJ9R4YFGTWDdt3#fight=13&type=summary",
             "reportCode": "PgaJ9R4YFGTWDdt3",
             "reportTitle": "SSC / TK",
-            "fightId": 20,
-            "encounterName": "Gruul the Dragonkiller"
+            "fightId": 13,
+            "encounterName": "Lady Vashj"
           }
         ]
       }
@@ -23586,9 +21702,9 @@
     "lastDate": "2022-05-02",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Rondoe",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/PgaJ9R4YFGTWDdt3#fight=20&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/PgaJ9R4YFGTWDdt3#fight=13&type=summary",
     "lastReportTitle": "SSC / TK",
-    "lastEncounterName": "Gruul the Dragonkiller"
+    "lastEncounterName": "Lady Vashj"
   },
   {
     "name": "Ruie",
@@ -24636,23 +22752,23 @@
       {
         "name": "Shandze",
         "className": "Paladin",
-        "lastDate": "2024-11-25",
+        "lastDate": "2024-10-20",
         "expansion": "Cataclysm",
         "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-        "reportTitle": "Firelands",
-        "encounterName": "Ragnaros",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/pj3Q9tKVWFdRr47q#fight=38&type=summary",
+        "reportTitle": "TotFW / BWD / BoT",
+        "encounterName": "Ascendant Council",
         "appearances": [
           {
             "expansion": "Cataclysm",
             "className": "Paladin",
-            "lastDate": "2024-11-25",
+            "lastDate": "2024-10-20",
             "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-            "reportCode": "WrvYgMFKA1cPnx9z",
-            "reportTitle": "Firelands",
-            "fightId": 10,
-            "encounterName": "Ragnaros"
+            "reportUrl": "https://classic.warcraftlogs.com/reports/pj3Q9tKVWFdRr47q#fight=38&type=summary",
+            "reportCode": "pj3Q9tKVWFdRr47q",
+            "reportTitle": "TotFW / BWD / BoT",
+            "fightId": 38,
+            "encounterName": "Ascendant Council"
           }
         ]
       },
@@ -24746,50 +22862,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/aN2Q8rfMv1YXgnJL#fight=24&type=summary",
     "lastReportTitle": "HoF / ToES",
     "lastEncounterName": "Sha of Fear"
-  },
-  {
-    "name": "Shardikmir",
-    "characters": [
-      "Shardikmir"
-    ],
-    "characterDetails": [
-      {
-        "name": "Shardikmir",
-        "className": "Druid",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=25&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Wind Lord Mel'jarak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Druid",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=25&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 25,
-            "encounterName": "Wind Lord Mel'jarak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Druid"
-    ],
-    "primaryClass": "Druid",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Shardikmir",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=25&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Wind Lord Mel'jarak"
   },
   {
     "name": "Shellflsh",
@@ -25180,50 +23252,6 @@
     "lastEncounterName": "Garrosh Hellscream"
   },
   {
-    "name": "Shwemmy",
-    "characters": [
-      "Shwemmy"
-    ],
-    "characterDetails": [
-      {
-        "name": "Shwemmy",
-        "className": "Unknown",
-        "lastDate": "2023-01-16",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/a2hPv3yDdMBfrWLH#fight=104&type=summary",
-        "reportTitle": "Naxx / Sarth / Maly",
-        "encounterName": "Kel'Thuzad",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Unknown",
-            "lastDate": "2023-01-16",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/a2hPv3yDdMBfrWLH#fight=104&type=summary",
-            "reportCode": "a2hPv3yDdMBfrWLH",
-            "reportTitle": "Naxx / Sarth / Maly",
-            "fightId": 104,
-            "encounterName": "Kel'Thuzad"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Unknown"
-    ],
-    "primaryClass": "Unknown",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-01-16",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Shwemmy",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/a2hPv3yDdMBfrWLH#fight=104&type=summary",
-    "lastReportTitle": "Naxx / Sarth / Maly",
-    "lastEncounterName": "Kel'Thuzad"
-  },
-  {
     "name": "Sickdickbro",
     "characters": [
       "Sickdickbro"
@@ -25310,50 +23338,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/3qVYZnjWwxdDHCb4#fight=15&type=summary",
     "lastReportTitle": "Firelands",
     "lastEncounterName": "Ragnaros"
-  },
-  {
-    "name": "Sildria",
-    "characters": [
-      "Sildria"
-    ],
-    "characterDetails": [
-      {
-        "name": "Sildria",
-        "className": "Death Knight",
-        "lastDate": "2026-06-15",
-        "expansion": "MoP",
-        "source": "Vitality — Raden",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/BLX3pWTjRVYKHb6d#fight=1&type=summary",
-        "reportTitle": "Siege of Orgrimmar",
-        "encounterName": "Lei Shen",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Death Knight",
-            "lastDate": "2026-06-15",
-            "source": "Vitality — Raden",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/BLX3pWTjRVYKHb6d#fight=1&type=summary",
-            "reportCode": "BLX3pWTjRVYKHb6d",
-            "reportTitle": "Siege of Orgrimmar",
-            "fightId": 1,
-            "encounterName": "Lei Shen"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Death Knight"
-    ],
-    "primaryClass": "Death Knight",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2026-06-15",
-    "lastSource": "Vitality — Raden",
-    "lastCharacter": "Sildria",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/BLX3pWTjRVYKHb6d#fight=1&type=summary",
-    "lastReportTitle": "Siege of Orgrimmar",
-    "lastEncounterName": "Lei Shen"
   },
   {
     "name": "Simpquéen",
@@ -25699,7 +23683,7 @@
         "lastDate": "2022-11-01",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=66&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=65&type=summary",
         "reportTitle": "Naxx / Sarth / Maly",
         "encounterName": "Archavon the Stone Watcher",
         "appearances": [
@@ -25708,10 +23692,10 @@
             "className": "Warlock",
             "lastDate": "2022-11-01",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=66&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=65&type=summary",
             "reportCode": "hJ6YKZ8F1QTq4jw9",
             "reportTitle": "Naxx / Sarth / Maly",
-            "fightId": 66,
+            "fightId": 65,
             "encounterName": "Archavon the Stone Watcher"
           }
         ]
@@ -25727,7 +23711,7 @@
     "lastDate": "2022-11-01",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Skrimble",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=66&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=65&type=summary",
     "lastReportTitle": "Naxx / Sarth / Maly",
     "lastEncounterName": "Archavon the Stone Watcher"
   },
@@ -26519,50 +24503,6 @@
     "lastEncounterName": "Anub'arak"
   },
   {
-    "name": "Stayjealousx",
-    "characters": [
-      "Stayjealousx"
-    ],
-    "characterDetails": [
-      {
-        "name": "Stayjealousx",
-        "className": "Shaman",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=25&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Wind Lord Mel'jarak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Shaman",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=25&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 25,
-            "encounterName": "Wind Lord Mel'jarak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Shaman"
-    ],
-    "primaryClass": "Shaman",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Stayjealousx",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=25&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Wind Lord Mel'jarak"
-  },
-  {
     "name": "Steveharvano",
     "characters": [
       "Steveharvano"
@@ -26634,8 +24574,7 @@
       "Stimshottwo",
       "Stimstrike",
       "Stimuluspack",
-      "Stimulúspack",
-      "Stimúluspack"
+      "Stimulúspack"
     ],
     "characterDetails": [
       {
@@ -26689,7 +24628,7 @@
         "lastDate": "2025-08-25",
         "expansion": "MoP",
         "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/GDFdqzJQg3L7vrax#fight=41&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=109&type=summary",
         "reportTitle": "Mogu'shan Vaults",
         "encounterName": "Grand Empress Shek'zeer",
         "appearances": [
@@ -26698,10 +24637,10 @@
             "className": "Hunter",
             "lastDate": "2025-08-25",
             "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/GDFdqzJQg3L7vrax#fight=41&type=summary",
-            "reportCode": "GDFdqzJQg3L7vrax",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/16dArTKbGgPY2ZjJ#fight=109&type=summary",
+            "reportCode": "16dArTKbGgPY2ZjJ",
             "reportTitle": "Mogu'shan Vaults",
-            "fightId": 41,
+            "fightId": 109,
             "encounterName": "Grand Empress Shek'zeer"
           }
         ]
@@ -26772,17 +24711,6 @@
             "reportTitle": "Ulduar",
             "fightId": 73,
             "encounterName": "Yogg-Saron"
-          },
-          {
-            "expansion": "TBC",
-            "className": "Hunter",
-            "lastDate": "2022-08-22",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/FtLQTPWc8wz3XV6b#fight=84&type=summary",
-            "reportCode": "FtLQTPWc8wz3XV6b",
-            "reportTitle": "Sunwell Plateau",
-            "fightId": 84,
-            "encounterName": "Hex Lord Malacrass"
           }
         ]
       },
@@ -26983,23 +24911,23 @@
       {
         "name": "Stimlock",
         "className": "Warlock",
-        "lastDate": "2022-08-24",
+        "lastDate": "2022-08-22",
         "expansion": "TBC",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/Jt8mBQLpXRH37gnd#fight=66&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/Jt8mBQLpXRH37gnd#fight=41&type=summary",
         "reportTitle": "BT / Hyjal",
-        "encounterName": "Hex Lord Malacrass",
+        "encounterName": "Illidan Stormrage",
         "appearances": [
           {
             "expansion": "TBC",
             "className": "Warlock",
-            "lastDate": "2022-08-24",
+            "lastDate": "2022-08-22",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/Jt8mBQLpXRH37gnd#fight=66&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/Jt8mBQLpXRH37gnd#fight=41&type=summary",
             "reportCode": "Jt8mBQLpXRH37gnd",
             "reportTitle": "BT / Hyjal",
-            "fightId": 66,
-            "encounterName": "Hex Lord Malacrass"
+            "fightId": 41,
+            "encounterName": "Illidan Stormrage"
           }
         ]
       },
@@ -27009,43 +24937,20 @@
         "lastDate": "2022-05-02",
         "expansion": "TBC",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/PgaJ9R4YFGTWDdt3#fight=20&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/PgaJ9R4YFGTWDdt3#fight=13&type=summary",
         "reportTitle": "SSC / TK",
-        "encounterName": "Gruul the Dragonkiller",
+        "encounterName": "Lady Vashj",
         "appearances": [
           {
             "expansion": "TBC",
             "className": "Mage",
             "lastDate": "2022-05-02",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/PgaJ9R4YFGTWDdt3#fight=20&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/PgaJ9R4YFGTWDdt3#fight=13&type=summary",
             "reportCode": "PgaJ9R4YFGTWDdt3",
             "reportTitle": "SSC / TK",
-            "fightId": 20,
-            "encounterName": "Gruul the Dragonkiller"
-          }
-        ]
-      },
-      {
-        "name": "Stimúluspack",
-        "className": "Mage",
-        "lastDate": "2022-05-02",
-        "expansion": "TBC",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/PgaJ9R4YFGTWDdt3#fight=21&type=summary",
-        "reportTitle": "SSC / TK",
-        "encounterName": "Gruul the Dragonkiller",
-        "appearances": [
-          {
-            "expansion": "TBC",
-            "className": "Mage",
-            "lastDate": "2022-05-02",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/PgaJ9R4YFGTWDdt3#fight=21&type=summary",
-            "reportCode": "PgaJ9R4YFGTWDdt3",
-            "reportTitle": "SSC / TK",
-            "fightId": 21,
-            "encounterName": "Gruul the Dragonkiller"
+            "fightId": 13,
+            "encounterName": "Lady Vashj"
           }
         ]
       }
@@ -27479,7 +25384,7 @@
         "lastDate": "2024-04-14",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
         "reportTitle": "Icecrown Citadel",
         "encounterName": "Yogg-Saron",
         "appearances": [
@@ -27488,10 +25393,10 @@
             "className": "Shaman",
             "lastDate": "2024-04-14",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
             "reportCode": "DLmR64BVZckdjAXN",
             "reportTitle": "Icecrown Citadel",
-            "fightId": 55,
+            "fightId": 54,
             "encounterName": "Yogg-Saron"
           },
           {
@@ -27542,7 +25447,7 @@
     "lastDate": "2024-04-14",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Supergiant",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=55&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
     "lastReportTitle": "Icecrown Citadel",
     "lastEncounterName": "Yogg-Saron"
   },
@@ -27727,50 +25632,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/Ltb94jD3VNrW7q6p#fight=15&type=summary",
     "lastReportTitle": "TotFW / BWD / BoT",
     "lastEncounterName": "Chimaeron"
-  },
-  {
-    "name": "Swapedsoul",
-    "characters": [
-      "Swapedsoul"
-    ],
-    "characterDetails": [
-      {
-        "name": "Swapedsoul",
-        "className": "Warlock",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Warlock",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Warlock"
-    ],
-    "primaryClass": "Warlock",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Swapedsoul",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
   },
   {
     "name": "Synez",
@@ -28491,7 +26352,6 @@
     "characters": [
       "Deathgen",
       "Magegen",
-      "Tenaman",
       "Tengen",
       "Tengenn",
       "Tenngenn"
@@ -28561,29 +26421,6 @@
             "reportTitle": "Naxxramas",
             "fightId": 117,
             "encounterName": "The Four Horsemen"
-          }
-        ]
-      },
-      {
-        "name": "Tenaman",
-        "className": "Shaman",
-        "lastDate": "2024-11-25",
-        "expansion": "Cataclysm",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-        "reportTitle": "Firelands",
-        "encounterName": "Ragnaros",
-        "appearances": [
-          {
-            "expansion": "Cataclysm",
-            "className": "Shaman",
-            "lastDate": "2024-11-25",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-            "reportCode": "WrvYgMFKA1cPnx9z",
-            "reportTitle": "Firelands",
-            "fightId": 10,
-            "encounterName": "Ragnaros"
           }
         ]
       },
@@ -28716,7 +26553,6 @@
     "classes": [
       "Death Knight",
       "Mage",
-      "Shaman",
       "Warrior"
     ],
     "primaryClass": "Warrior",
@@ -28733,50 +26569,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/PJVwR28CtvkFpyBN#fight=19&type=summary",
     "lastReportTitle": "Siege of Orgrimmar",
     "lastEncounterName": "Garrosh Hellscream"
-  },
-  {
-    "name": "Terraxito",
-    "characters": [
-      "Terraxito"
-    ],
-    "characterDetails": [
-      {
-        "name": "Terraxito",
-        "className": "Monk",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=53&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Wind Lord Mel'jarak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Monk",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=53&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 53,
-            "encounterName": "Wind Lord Mel'jarak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Monk"
-    ],
-    "primaryClass": "Monk",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Terraxito",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=53&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Wind Lord Mel'jarak"
   },
   {
     "name": "Thäpope",
@@ -29129,50 +26921,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/1Z7Lc42raHPjyXYb#fight=60&type=summary",
     "lastReportTitle": "peepoHoliday",
     "lastEncounterName": "Onyxia"
-  },
-  {
-    "name": "Thyc",
-    "characters": [
-      "Thyc"
-    ],
-    "characterDetails": [
-      {
-        "name": "Thyc",
-        "className": "Priest",
-        "lastDate": "2025-09-17",
-        "expansion": "MoP",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=3&type=summary",
-        "reportTitle": "Mogu'shan Vaults",
-        "encounterName": "Wind Lord Mel'jarak",
-        "appearances": [
-          {
-            "expansion": "MoP",
-            "className": "Priest",
-            "lastDate": "2025-09-17",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=3&type=summary",
-            "reportCode": "y1T4nZBCdXjYpPWD",
-            "reportTitle": "Mogu'shan Vaults",
-            "fightId": 3,
-            "encounterName": "Wind Lord Mel'jarak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Priest"
-    ],
-    "primaryClass": "Priest",
-    "expansions": [
-      "MoP"
-    ],
-    "lastDate": "2025-09-17",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Thyc",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/y1T4nZBCdXjYpPWD#fight=3&type=summary",
-    "lastReportTitle": "Mogu'shan Vaults",
-    "lastEncounterName": "Wind Lord Mel'jarak"
   },
   {
     "name": "Tieg",
@@ -30012,50 +27760,6 @@
     "lastEncounterName": "Yogg-Saron"
   },
   {
-    "name": "Tyrnan",
-    "characters": [
-      "Tyrnan"
-    ],
-    "characterDetails": [
-      {
-        "name": "Tyrnan",
-        "className": "Warrior",
-        "lastDate": "2022-08-24",
-        "expansion": "TBC",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/Jt8mBQLpXRH37gnd#fight=66&type=summary",
-        "reportTitle": "BT / Hyjal",
-        "encounterName": "Hex Lord Malacrass",
-        "appearances": [
-          {
-            "expansion": "TBC",
-            "className": "Warrior",
-            "lastDate": "2022-08-24",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/Jt8mBQLpXRH37gnd#fight=66&type=summary",
-            "reportCode": "Jt8mBQLpXRH37gnd",
-            "reportTitle": "BT / Hyjal",
-            "fightId": 66,
-            "encounterName": "Hex Lord Malacrass"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Warrior"
-    ],
-    "primaryClass": "Warrior",
-    "expansions": [
-      "TBC"
-    ],
-    "lastDate": "2022-08-24",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Tyrnan",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/Jt8mBQLpXRH37gnd#fight=66&type=summary",
-    "lastReportTitle": "BT / Hyjal",
-    "lastEncounterName": "Hex Lord Malacrass"
-  },
-  {
     "name": "Unclebumi",
     "characters": [
       "Unclebumi"
@@ -30067,7 +27771,7 @@
         "lastDate": "2022-11-01",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=66&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=65&type=summary",
         "reportTitle": "Naxx / Sarth / Maly",
         "encounterName": "Archavon the Stone Watcher",
         "appearances": [
@@ -30076,10 +27780,10 @@
             "className": "Druid",
             "lastDate": "2022-11-01",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=66&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=65&type=summary",
             "reportCode": "hJ6YKZ8F1QTq4jw9",
             "reportTitle": "Naxx / Sarth / Maly",
-            "fightId": 66,
+            "fightId": 65,
             "encounterName": "Archavon the Stone Watcher"
           }
         ]
@@ -30095,7 +27799,7 @@
     "lastDate": "2022-11-01",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Unclebumi",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=66&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=65&type=summary",
     "lastReportTitle": "Naxx / Sarth / Maly",
     "lastEncounterName": "Archavon the Stone Watcher"
   },
@@ -30828,50 +28532,6 @@
     "lastEncounterName": "Madness of Deathwing"
   },
   {
-    "name": "Vorsal",
-    "characters": [
-      "Vorsal"
-    ],
-    "characterDetails": [
-      {
-        "name": "Vorsal",
-        "className": "Mage",
-        "lastDate": "2023-07-11",
-        "expansion": "Wrath",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-        "reportTitle": "Trial of the Crusader",
-        "encounterName": "Koralon the Flame Watcher",
-        "appearances": [
-          {
-            "expansion": "Wrath",
-            "className": "Mage",
-            "lastDate": "2023-07-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-            "reportCode": "JFpkKG19wfRjnLT2",
-            "reportTitle": "Trial of the Crusader",
-            "fightId": 40,
-            "encounterName": "Koralon the Flame Watcher"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Mage"
-    ],
-    "primaryClass": "Mage",
-    "expansions": [
-      "Wrath"
-    ],
-    "lastDate": "2023-07-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Vorsal",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/JFpkKG19wfRjnLT2#fight=40&type=summary",
-    "lastReportTitle": "Trial of the Crusader",
-    "lastEncounterName": "Koralon the Flame Watcher"
-  },
-  {
     "name": "Warlockjizz",
     "characters": [
       "Warlockjizz"
@@ -31491,7 +29151,7 @@
         "lastDate": "2022-11-01",
         "expansion": "Wrath",
         "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=66&type=summary",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=65&type=summary",
         "reportTitle": "Naxx / Sarth / Maly",
         "encounterName": "Archavon the Stone Watcher",
         "appearances": [
@@ -31500,10 +29160,10 @@
             "className": "Warlock",
             "lastDate": "2022-11-01",
             "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=66&type=summary",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=65&type=summary",
             "reportCode": "hJ6YKZ8F1QTq4jw9",
             "reportTitle": "Naxx / Sarth / Maly",
-            "fightId": 66,
+            "fightId": 65,
             "encounterName": "Archavon the Stone Watcher"
           }
         ]
@@ -31519,7 +29179,7 @@
     "lastDate": "2022-11-01",
     "lastSource": "Inept — Grobbulus",
     "lastCharacter": "Woozu",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=66&type=summary",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/hJ6YKZ8F1QTq4jw9#fight=65&type=summary",
     "lastReportTitle": "Naxx / Sarth / Maly",
     "lastEncounterName": "Archavon the Stone Watcher"
   },
@@ -31898,50 +29558,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/aXqhPNfdL8jMby6p#fight=92&type=summary",
     "lastReportTitle": "Naxxramas",
     "lastEncounterName": "Kel'Thuzad"
-  },
-  {
-    "name": "Xshøt",
-    "characters": [
-      "Xshøt"
-    ],
-    "characterDetails": [
-      {
-        "name": "Xshøt",
-        "className": "Rogue",
-        "lastDate": "2024-06-11",
-        "expansion": "Cataclysm",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=4&type=summary",
-        "reportTitle": "Baradin Hold",
-        "encounterName": "Argaloth",
-        "appearances": [
-          {
-            "expansion": "Cataclysm",
-            "className": "Rogue",
-            "lastDate": "2024-06-11",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=4&type=summary",
-            "reportCode": "zFHfWcTGdJyMhkQN",
-            "reportTitle": "Baradin Hold",
-            "fightId": 4,
-            "encounterName": "Argaloth"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Rogue"
-    ],
-    "primaryClass": "Rogue",
-    "expansions": [
-      "Cataclysm"
-    ],
-    "lastDate": "2024-06-11",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Xshøt",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/zFHfWcTGdJyMhkQN#fight=4&type=summary",
-    "lastReportTitle": "Baradin Hold",
-    "lastEncounterName": "Argaloth"
   },
   {
     "name": "Xufu",
@@ -32420,13 +30036,12 @@
     "lastEncounterName": "Instructor Razuvious"
   },
   {
-    "name": "Zimx",
+    "name": "Zimone",
     "characters": [
       "Zimone",
       "Zimshock",
       "Zimstrike",
-      "Zimtwo",
-      "Zimx"
+      "Zimtwo"
     ],
     "characterDetails": [
       {
@@ -32531,35 +30146,11 @@
             "encounterName": "Mimiron"
           }
         ]
-      },
-      {
-        "name": "Zimx",
-        "className": "Paladin",
-        "lastDate": "2022-08-24",
-        "expansion": "TBC",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/Jt8mBQLpXRH37gnd#fight=66&type=summary",
-        "reportTitle": "BT / Hyjal",
-        "encounterName": "Hex Lord Malacrass",
-        "appearances": [
-          {
-            "expansion": "TBC",
-            "className": "Paladin",
-            "lastDate": "2022-08-24",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/Jt8mBQLpXRH37gnd#fight=66&type=summary",
-            "reportCode": "Jt8mBQLpXRH37gnd",
-            "reportTitle": "BT / Hyjal",
-            "fightId": 66,
-            "encounterName": "Hex Lord Malacrass"
-          }
-        ]
       }
     ],
     "classes": [
       "Death Knight",
       "Mage",
-      "Paladin",
       "Shaman"
     ],
     "primaryClass": "Death Knight",
