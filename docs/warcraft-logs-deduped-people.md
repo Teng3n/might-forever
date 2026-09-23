@@ -3,8 +3,8 @@
 Generated from `warcraft-logs-unique-raiders.md` on 2026-09-22.
 
 - Logged character names: 880
-- Conservative person groups: 755
-- Character aliases collapsed: 125
+- Conservative person groups: 754
+- Character aliases collapsed: 126
 - Multi-character groups: 51
 
 This is a best-effort identity estimate, not a fact supplied by Warcraft Logs. Exact appearances in uploaded reports are factual; the person-level merges are inferred. The pass merges accent/special-character variants, explicit `two`/`tres` suffixes, the user-confirmed families, and a limited set of strong shared-stem alt families. Uncertain similarities remain separate.
@@ -672,102 +672,101 @@ Explicitly kept separate per user guidance: `Khalila` and `Khanlum`; `Lilmodel` 
 657. **Teehee**
 658. **Teerage**
 659. **Tegridytrees**
-660. **Tenaman**
-661. **Tengen** — characters: Tengen, Tengenn, Tenngenn
-662. **Tenshock**
-663. **Terraxito**
-664. **Thaliaa**
-665. **Thäpope**
-666. **Thefishguy**
-667. **Thegmarauder**
-668. **Thekinglew**
-669. **Thicktony**
-670. **Thirza**
-671. **Threesunders**
-672. **Thugangeles**
-673. **Thuro**
-674. **Thyc**
-675. **Tieg**
-676. **Timbergling**
-677. **Tinyteehee**
-678. **Tokenrogue**
-679. **Tomdabomb**
-680. **Torispelling**
-681. **Torontojoe**
-682. **Totemsenju**
-683. **Tougeki**
-684. **Toxicgamer**
-685. **Transmute**
-686. **Treebeard** — characters: Treebeard, Treebeardtwo
-687. **Trigolol**
-688. **Triibal**
-689. **Truckya**
-690. **Tsgdream**
-691. **Ttxdx**
-692. **Turlenorc**
-693. **Tuxthecat**
-694. **Tyrnan**
-695. **Unber**
-696. **Unclebumi**
-697. **Unjustbecuz**
-698. **Upper**
-699. **Uqqer**
-700. **Urbo**
-701. **Urologist**
-702. **Uwufemboy**
-703. **Vantaris**
-704. **Varnae**
-705. **Vashtia**
-706. **Vataloca**
-707. **Verbgodx**
-708. **Veree**
-709. **Verynicehair**
-710. **Viglance**
-711. **Vilentviolet**
-712. **Vitaunus**
-713. **Volkswórgen**
-714. **Volsong**
-715. **Vonzee**
-716. **Vorsal**
-717. **Warlockjizz**
-718. **Wärrïör**
-719. **Warriorpex**
-720. **Wasalu**
-721. **Washedmage**
-722. **Wheellz**
-723. **Whitebeard**
-724. **Whoosa**
-725. **Williamriker**
-726. **Williamwonka**
-727. **Wingzoo**
-728. **Winri**
-729. **Wispis**
-730. **Woozu**
-731. **Wotlktank**
-732. **Wrathwaiting**
-733. **Wübz**
-734. **Xaiva**
-735. **Xenthyk**
-736. **Xiemos**
-737. **Xinxao**
-738. **Xploited**
-739. **Xshøt**
-740. **Xufu**
-741. **Yäkuza**
-742. **Yellock**
-743. **Yeseseyy**
-744. **Yitzahk**
-745. **Youngzelda**
-746. **Zaek**
-747. **Zebbsded**
-748. **Zenal**
-749. **Zerbeh**
-750. **Zerby**
-751. **Zerothreat**
-752. **Zimbuh**
-753. **Zimx** — characters: Zimone, Zimshock, Zimstrike, Zimtwo, Zimx
-754. **Zivz**
-755. **Zors**
+660. **Tengen** — characters: Tenaman, Tengen, Tengenn, Tenngenn
+661. **Tenshock**
+662. **Terraxito**
+663. **Thaliaa**
+664. **Thäpope**
+665. **Thefishguy**
+666. **Thegmarauder**
+667. **Thekinglew**
+668. **Thicktony**
+669. **Thirza**
+670. **Threesunders**
+671. **Thugangeles**
+672. **Thuro**
+673. **Thyc**
+674. **Tieg**
+675. **Timbergling**
+676. **Tinyteehee**
+677. **Tokenrogue**
+678. **Tomdabomb**
+679. **Torispelling**
+680. **Torontojoe**
+681. **Totemsenju**
+682. **Tougeki**
+683. **Toxicgamer**
+684. **Transmute**
+685. **Treebeard** — characters: Treebeard, Treebeardtwo
+686. **Trigolol**
+687. **Triibal**
+688. **Truckya**
+689. **Tsgdream**
+690. **Ttxdx**
+691. **Turlenorc**
+692. **Tuxthecat**
+693. **Tyrnan**
+694. **Unber**
+695. **Unclebumi**
+696. **Unjustbecuz**
+697. **Upper**
+698. **Uqqer**
+699. **Urbo**
+700. **Urologist**
+701. **Uwufemboy**
+702. **Vantaris**
+703. **Varnae**
+704. **Vashtia**
+705. **Vataloca**
+706. **Verbgodx**
+707. **Veree**
+708. **Verynicehair**
+709. **Viglance**
+710. **Vilentviolet**
+711. **Vitaunus**
+712. **Volkswórgen**
+713. **Volsong**
+714. **Vonzee**
+715. **Vorsal**
+716. **Warlockjizz**
+717. **Wärrïör**
+718. **Warriorpex**
+719. **Wasalu**
+720. **Washedmage**
+721. **Wheellz**
+722. **Whitebeard**
+723. **Whoosa**
+724. **Williamriker**
+725. **Williamwonka**
+726. **Wingzoo**
+727. **Winri**
+728. **Wispis**
+729. **Woozu**
+730. **Wotlktank**
+731. **Wrathwaiting**
+732. **Wübz**
+733. **Xaiva**
+734. **Xenthyk**
+735. **Xiemos**
+736. **Xinxao**
+737. **Xploited**
+738. **Xshøt**
+739. **Xufu**
+740. **Yäkuza**
+741. **Yellock**
+742. **Yeseseyy**
+743. **Yitzahk**
+744. **Youngzelda**
+745. **Zaek**
+746. **Zebbsded**
+747. **Zenal**
+748. **Zerbeh**
+749. **Zerby**
+750. **Zerothreat**
+751. **Zimbuh**
+752. **Zimx** — characters: Zimone, Zimshock, Zimstrike, Zimtwo, Zimx
+753. **Zivz**
+754. **Zors**
 
 ## Merged groups only
 
@@ -819,6 +818,6 @@ Explicitly kept separate per user guidance: `Khalila` and `Khanlum`; `Lilmodel` 
 - **Supergiant**: Supergiagant, Supergiant
 - **Susen**: Susen, Susën
 - **Tavik**: Tavik, Tavikk
-- **Tengen**: Tengen, Tengenn, Tenngenn
+- **Tengen**: Tenaman, Tengen, Tengenn, Tenngenn
 - **Treebeard**: Treebeard, Treebeardtwo
 - **Zimx**: Zimone, Zimshock, Zimstrike, Zimtwo, Zimx

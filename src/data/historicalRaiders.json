@@ -34299,52 +34299,9 @@
     "lastEncounterName": "Halion"
   },
   {
-    "name": "Tenaman",
-    "characters": [
-      "Tenaman"
-    ],
-    "characterDetails": [
-      {
-        "name": "Tenaman",
-        "className": "Shaman",
-        "lastDate": "2024-11-25",
-        "expansion": "Cataclysm",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-        "reportTitle": "Firelands",
-        "encounterName": "Ragnaros",
-        "appearances": [
-          {
-            "expansion": "Cataclysm",
-            "className": "Shaman",
-            "lastDate": "2024-11-25",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-            "reportCode": "WrvYgMFKA1cPnx9z",
-            "reportTitle": "Firelands",
-            "fightId": 10,
-            "encounterName": "Ragnaros"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Shaman"
-    ],
-    "primaryClass": "Shaman",
-    "expansions": [
-      "Cataclysm"
-    ],
-    "lastDate": "2024-11-25",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Tenaman",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
-    "lastReportTitle": "Firelands",
-    "lastEncounterName": "Ragnaros"
-  },
-  {
     "name": "Tengen",
     "characters": [
+      "Tenaman",
       "Tengen",
       "Tengenn",
       "Tenngenn"
@@ -34418,6 +34375,29 @@
         ]
       },
       {
+        "name": "Tenaman",
+        "className": "Shaman",
+        "lastDate": "2024-11-25",
+        "expansion": "Cataclysm",
+        "source": "Inept — Benediction",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
+        "reportTitle": "Firelands",
+        "encounterName": "Ragnaros",
+        "appearances": [
+          {
+            "expansion": "Cataclysm",
+            "className": "Shaman",
+            "lastDate": "2024-11-25",
+            "source": "Inept — Benediction",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/WrvYgMFKA1cPnx9z#fight=10&type=summary",
+            "reportCode": "WrvYgMFKA1cPnx9z",
+            "reportTitle": "Firelands",
+            "fightId": 10,
+            "encounterName": "Ragnaros"
+          }
+        ]
+      },
+      {
         "name": "Tengenn",
         "className": "Warrior",
         "lastDate": "2024-10-06",
@@ -34476,6 +34456,7 @@
       }
     ],
     "classes": [
+      "Shaman",
       "Warrior"
     ],
     "primaryClass": "Warrior",
