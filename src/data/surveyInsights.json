@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-24T06:32:46.815Z",
-  "responseCount": 36,
-  "lastResponseAt": "9/23/2026 21:55:14",
+  "generatedAt": "2026-09-24T20:40:11.964Z",
+  "responseCount": 37,
+  "lastResponseAt": "9/24/2026 10:41:07",
   "source": {
     "spreadsheetId": "1EuKIShP55UUqlD0H3Ho_n00W9vaYnHcGMcdzDH9AcGw",
     "tabName": "Form Responses 1"
@@ -17,7 +17,7 @@
         },
         {
           "label": "Casual or social participation",
-          "count": 5
+          "count": 6
         },
         {
           "label": "Regular participation",
@@ -43,7 +43,7 @@
         },
         {
           "label": "No preference",
-          "count": 12
+          "count": 13
         },
         {
           "label": "PvE",
@@ -57,7 +57,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 25
+          "count": 26
         },
         {
           "label": "It depends on the selected server",
@@ -75,7 +75,7 @@
       "answers": [
         {
           "label": "Either / no preference",
-          "count": 16
+          "count": 17
         },
         {
           "label": "Alliance",
@@ -93,7 +93,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 24
+          "count": 25
         },
         {
           "label": "Possibly",
@@ -122,11 +122,11 @@
           "count": 4
         },
         {
-          "label": "Mage",
-          "count": 3
+          "label": "Priest",
+          "count": 4
         },
         {
-          "label": "Priest",
+          "label": "Mage",
           "count": 3
         },
         {
@@ -169,7 +169,7 @@
         },
         {
           "label": "Healer",
-          "count": 4
+          "count": 5
         },
         {
           "label": "Undecided",
@@ -187,7 +187,7 @@
       "answers": [
         {
           "label": "Undecided",
-          "count": 11
+          "count": 12
         },
         {
           "label": "Yes, one",
@@ -213,7 +213,7 @@
         },
         {
           "label": "Undecided",
-          "count": 11
+          "count": 12
         },
         {
           "label": "Leatherworking",
@@ -263,7 +263,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 28
+          "count": 29
         },
         {
           "label": "Undecided",
