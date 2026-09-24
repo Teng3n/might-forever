@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-23T17:11:33.294Z",
-  "responseCount": 34,
-  "lastResponseAt": "9/22/2026 16:58:12",
+  "generatedAt": "2026-09-24T06:32:46.815Z",
+  "responseCount": 36,
+  "lastResponseAt": "9/23/2026 21:55:14",
   "source": {
     "spreadsheetId": "1EuKIShP55UUqlD0H3Ho_n00W9vaYnHcGMcdzDH9AcGw",
     "tabName": "Form Responses 1"
@@ -13,7 +13,7 @@
       "answers": [
         {
           "label": "Highly active; primary game",
-          "count": 20
+          "count": 21
         },
         {
           "label": "Casual or social participation",
@@ -24,11 +24,11 @@
           "count": 5
         },
         {
-          "label": "Primarily raid attendance",
-          "count": 2
+          "label": "Undecided",
+          "count": 3
         },
         {
-          "label": "Undecided",
+          "label": "Primarily raid attendance",
           "count": 2
         }
       ]
@@ -39,11 +39,11 @@
       "answers": [
         {
           "label": "PvP",
-          "count": 18
+          "count": 19
         },
         {
           "label": "No preference",
-          "count": 11
+          "count": 12
         },
         {
           "label": "PvE",
@@ -57,7 +57,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 23
+          "count": 25
         },
         {
           "label": "It depends on the selected server",
@@ -75,7 +75,7 @@
       "answers": [
         {
           "label": "Either / no preference",
-          "count": 15
+          "count": 16
         },
         {
           "label": "Alliance",
@@ -83,7 +83,7 @@
         },
         {
           "label": "Horde",
-          "count": 5
+          "count": 6
         }
       ]
     },
@@ -93,11 +93,11 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 23
+          "count": 24
         },
         {
           "label": "Possibly",
-          "count": 7
+          "count": 8
         },
         {
           "label": "No",
@@ -111,7 +111,7 @@
       "answers": [
         {
           "label": "Paladin",
-          "count": 7
+          "count": 8
         },
         {
           "label": "Rogue",
@@ -147,7 +147,7 @@
         },
         {
           "label": "Warrior",
-          "count": 1
+          "count": 2
         }
       ]
     },
@@ -161,11 +161,11 @@
         },
         {
           "label": "Melee DPS",
-          "count": 9
+          "count": 10
         },
         {
           "label": "Ranged DPS",
-          "count": 6
+          "count": 7
         },
         {
           "label": "Healer",
@@ -187,11 +187,11 @@
       "answers": [
         {
           "label": "Undecided",
-          "count": 10
+          "count": 11
         },
         {
           "label": "Yes, one",
-          "count": 9
+          "count": 10
         },
         {
           "label": "No",
@@ -209,11 +209,11 @@
       "answers": [
         {
           "label": "Engineering",
-          "count": 11
+          "count": 12
         },
         {
           "label": "Undecided",
-          "count": 10
+          "count": 11
         },
         {
           "label": "Leatherworking",
@@ -228,16 +228,16 @@
           "count": 6
         },
         {
+          "label": "Blacksmithing",
+          "count": 6
+        },
+        {
           "label": "Enchanting",
           "count": 6
         },
         {
           "label": "Skinning",
           "count": 6
-        },
-        {
-          "label": "Blacksmithing",
-          "count": 5
         },
         {
           "label": "Herbalism",
@@ -263,11 +263,11 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 27
+          "count": 28
         },
         {
           "label": "Undecided",
-          "count": 5
+          "count": 6
         },
         {
           "label": "No; just a casual member",
