@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-24T20:40:11.964Z",
-  "responseCount": 37,
-  "lastResponseAt": "9/24/2026 10:41:07",
+  "generatedAt": "2026-09-28T16:00:16.427Z",
+  "responseCount": 38,
+  "lastResponseAt": "9/28/2026 0:49:20",
   "source": {
     "spreadsheetId": "1EuKIShP55UUqlD0H3Ho_n00W9vaYnHcGMcdzDH9AcGw",
     "tabName": "Form Responses 1"
@@ -17,7 +17,7 @@
         },
         {
           "label": "Casual or social participation",
-          "count": 6
+          "count": 7
         },
         {
           "label": "Regular participation",
@@ -39,7 +39,7 @@
       "answers": [
         {
           "label": "PvP",
-          "count": 19
+          "count": 20
         },
         {
           "label": "No preference",
@@ -65,7 +65,7 @@
         },
         {
           "label": "No",
-          "count": 2
+          "count": 3
         }
       ]
     },
@@ -83,7 +83,7 @@
         },
         {
           "label": "Horde",
-          "count": 6
+          "count": 7
         }
       ]
     },
@@ -93,7 +93,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 25
+          "count": 26
         },
         {
           "label": "Possibly",
@@ -114,15 +114,15 @@
           "count": 8
         },
         {
+          "label": "Priest",
+          "count": 5
+        },
+        {
           "label": "Rogue",
           "count": 5
         },
         {
           "label": "Druid",
-          "count": 4
-        },
-        {
-          "label": "Priest",
           "count": 4
         },
         {
@@ -165,7 +165,7 @@
         },
         {
           "label": "Ranged DPS",
-          "count": 7
+          "count": 8
         },
         {
           "label": "Healer",
@@ -187,7 +187,7 @@
       "answers": [
         {
           "label": "Undecided",
-          "count": 12
+          "count": 13
         },
         {
           "label": "Yes, one",
@@ -209,7 +209,7 @@
       "answers": [
         {
           "label": "Engineering",
-          "count": 12
+          "count": 13
         },
         {
           "label": "Undecided",
@@ -225,7 +225,7 @@
         },
         {
           "label": "Alchemy",
-          "count": 6
+          "count": 7
         },
         {
           "label": "Blacksmithing",
@@ -271,7 +271,7 @@
         },
         {
           "label": "No; just a casual member",
-          "count": 2
+          "count": 3
         }
       ]
     }
