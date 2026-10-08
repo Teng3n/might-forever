@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-04T08:49:48.498Z",
-  "responseCount": 39,
-  "lastResponseAt": "10/3/2026 20:34:55",
+  "generatedAt": "2026-10-08T05:01:58.939Z",
+  "responseCount": 40,
+  "lastResponseAt": "10/7/2026 21:07:48",
   "source": {
     "spreadsheetId": "1EuKIShP55UUqlD0H3Ho_n00W9vaYnHcGMcdzDH9AcGw",
     "tabName": "Form Responses 1"
@@ -13,7 +13,7 @@
       "answers": [
         {
           "label": "Highly active; primary game",
-          "count": 21
+          "count": 22
         },
         {
           "label": "Casual or social participation",
@@ -39,7 +39,7 @@
       "answers": [
         {
           "label": "PvP",
-          "count": 21
+          "count": 22
         },
         {
           "label": "No preference",
@@ -57,7 +57,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 26
+          "count": 27
         },
         {
           "label": "It depends on the selected server",
@@ -75,7 +75,7 @@
       "answers": [
         {
           "label": "Either / no preference",
-          "count": 17
+          "count": 18
         },
         {
           "label": "Alliance",
@@ -93,7 +93,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 27
+          "count": 28
         },
         {
           "label": "Possibly",
@@ -130,11 +130,11 @@
           "count": 4
         },
         {
-          "label": "Shaman",
-          "count": 3
+          "label": "Undecided",
+          "count": 4
         },
         {
-          "label": "Undecided",
+          "label": "Shaman",
           "count": 3
         },
         {
@@ -157,7 +157,7 @@
       "answers": [
         {
           "label": "Flexible; willing to fill as needed",
-          "count": 10
+          "count": 11
         },
         {
           "label": "Melee DPS",
@@ -191,7 +191,7 @@
         },
         {
           "label": "Yes, one",
-          "count": 10
+          "count": 11
         },
         {
           "label": "No",
@@ -213,7 +213,7 @@
         },
         {
           "label": "Undecided",
-          "count": 13
+          "count": 14
         },
         {
           "label": "Tailoring",
@@ -228,15 +228,15 @@
           "count": 7
         },
         {
+          "label": "Skinning",
+          "count": 7
+        },
+        {
           "label": "Blacksmithing",
           "count": 6
         },
         {
           "label": "Enchanting",
-          "count": 6
-        },
-        {
-          "label": "Skinning",
           "count": 6
         },
         {
@@ -263,7 +263,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 30
+          "count": 31
         },
         {
           "label": "Undecided",
