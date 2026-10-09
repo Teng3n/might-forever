@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-08T05:01:58.939Z",
-  "responseCount": 40,
-  "lastResponseAt": "10/7/2026 21:07:48",
+  "generatedAt": "2026-10-09T10:35:16.955Z",
+  "responseCount": 41,
+  "lastResponseAt": "10/9/2026 0:42:59",
   "source": {
     "spreadsheetId": "1EuKIShP55UUqlD0H3Ho_n00W9vaYnHcGMcdzDH9AcGw",
     "tabName": "Form Responses 1"
@@ -25,7 +25,7 @@
         },
         {
           "label": "Undecided",
-          "count": 3
+          "count": 4
         },
         {
           "label": "Primarily raid attendance",
@@ -43,7 +43,7 @@
         },
         {
           "label": "No preference",
-          "count": 13
+          "count": 14
         },
         {
           "label": "PvE",
@@ -57,7 +57,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 27
+          "count": 28
         },
         {
           "label": "It depends on the selected server",
@@ -75,7 +75,7 @@
       "answers": [
         {
           "label": "Either / no preference",
-          "count": 18
+          "count": 19
         },
         {
           "label": "Alliance",
@@ -93,7 +93,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 28
+          "count": 29
         },
         {
           "label": "Possibly",
@@ -115,7 +115,7 @@
         },
         {
           "label": "Priest",
-          "count": 5
+          "count": 6
         },
         {
           "label": "Rogue",
@@ -157,7 +157,7 @@
       "answers": [
         {
           "label": "Flexible; willing to fill as needed",
-          "count": 11
+          "count": 12
         },
         {
           "label": "Melee DPS",
@@ -191,7 +191,7 @@
         },
         {
           "label": "Yes, one",
-          "count": 11
+          "count": 12
         },
         {
           "label": "No",
@@ -208,11 +208,11 @@
       "title": "Profession interest",
       "answers": [
         {
-          "label": "Engineering",
-          "count": 14
+          "label": "Undecided",
+          "count": 15
         },
         {
-          "label": "Undecided",
+          "label": "Engineering",
           "count": 14
         },
         {
@@ -263,7 +263,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 31
+          "count": 32
         },
         {
           "label": "Undecided",
