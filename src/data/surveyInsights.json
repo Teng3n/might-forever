@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-09T10:35:16.955Z",
-  "responseCount": 41,
-  "lastResponseAt": "10/9/2026 0:42:59",
+  "generatedAt": "2026-10-12T08:03:15.638Z",
+  "responseCount": 42,
+  "lastResponseAt": "10/11/2026 19:32:30",
   "source": {
     "spreadsheetId": "1EuKIShP55UUqlD0H3Ho_n00W9vaYnHcGMcdzDH9AcGw",
     "tabName": "Form Responses 1"
@@ -21,7 +21,7 @@
         },
         {
           "label": "Regular participation",
-          "count": 6
+          "count": 7
         },
         {
           "label": "Undecided",
@@ -43,7 +43,7 @@
         },
         {
           "label": "No preference",
-          "count": 14
+          "count": 15
         },
         {
           "label": "PvE",
@@ -57,7 +57,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 28
+          "count": 29
         },
         {
           "label": "It depends on the selected server",
@@ -75,7 +75,7 @@
       "answers": [
         {
           "label": "Either / no preference",
-          "count": 19
+          "count": 20
         },
         {
           "label": "Alliance",
@@ -93,7 +93,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 29
+          "count": 30
         },
         {
           "label": "Possibly",
@@ -122,15 +122,15 @@
           "count": 5
         },
         {
+          "label": "Undecided",
+          "count": 5
+        },
+        {
           "label": "Druid",
           "count": 4
         },
         {
           "label": "Mage",
-          "count": 4
-        },
-        {
-          "label": "Undecided",
           "count": 4
         },
         {
@@ -157,7 +157,7 @@
       "answers": [
         {
           "label": "Flexible; willing to fill as needed",
-          "count": 12
+          "count": 13
         },
         {
           "label": "Melee DPS",
@@ -187,7 +187,7 @@
       "answers": [
         {
           "label": "Undecided",
-          "count": 13
+          "count": 14
         },
         {
           "label": "Yes, one",
@@ -225,6 +225,10 @@
         },
         {
           "label": "Alchemy",
+          "count": 8
+        },
+        {
+          "label": "Blacksmithing",
           "count": 7
         },
         {
@@ -232,20 +236,16 @@
           "count": 7
         },
         {
-          "label": "Blacksmithing",
-          "count": 6
-        },
-        {
           "label": "Enchanting",
           "count": 6
         },
         {
           "label": "Herbalism",
-          "count": 3
+          "count": 4
         },
         {
           "label": "Mining",
-          "count": 3
+          "count": 4
         },
         {
           "label": "Inscription",
@@ -263,7 +263,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 32
+          "count": 33
         },
         {
           "label": "Undecided",
