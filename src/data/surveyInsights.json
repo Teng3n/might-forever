@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-12T08:03:15.638Z",
-  "responseCount": 42,
-  "lastResponseAt": "10/11/2026 19:32:30",
+  "generatedAt": "2026-10-13T23:55:59.942Z",
+  "responseCount": 43,
+  "lastResponseAt": "10/13/2026 15:18:03",
   "source": {
     "spreadsheetId": "1EuKIShP55UUqlD0H3Ho_n00W9vaYnHcGMcdzDH9AcGw",
     "tabName": "Form Responses 1"
@@ -13,7 +13,7 @@
       "answers": [
         {
           "label": "Highly active; primary game",
-          "count": 22
+          "count": 23
         },
         {
           "label": "Casual or social participation",
@@ -39,7 +39,7 @@
       "answers": [
         {
           "label": "PvP",
-          "count": 22
+          "count": 23
         },
         {
           "label": "No preference",
@@ -61,7 +61,7 @@
         },
         {
           "label": "It depends on the selected server",
-          "count": 10
+          "count": 11
         },
         {
           "label": "No",
@@ -79,7 +79,7 @@
         },
         {
           "label": "Alliance",
-          "count": 15
+          "count": 16
         },
         {
           "label": "Horde",
@@ -101,7 +101,7 @@
         },
         {
           "label": "No",
-          "count": 4
+          "count": 5
         }
       ]
     },
@@ -111,7 +111,7 @@
       "answers": [
         {
           "label": "Paladin",
-          "count": 8
+          "count": 9
         },
         {
           "label": "Priest",
@@ -169,7 +169,7 @@
         },
         {
           "label": "Healer",
-          "count": 5
+          "count": 6
         },
         {
           "label": "Undecided",
@@ -191,7 +191,7 @@
         },
         {
           "label": "Yes, one",
-          "count": 12
+          "count": 13
         },
         {
           "label": "No",
@@ -208,12 +208,12 @@
       "title": "Profession interest",
       "answers": [
         {
-          "label": "Undecided",
+          "label": "Engineering",
           "count": 15
         },
         {
-          "label": "Engineering",
-          "count": 14
+          "label": "Undecided",
+          "count": 15
         },
         {
           "label": "Tailoring",
@@ -232,19 +232,19 @@
           "count": 7
         },
         {
+          "label": "Enchanting",
+          "count": 7
+        },
+        {
           "label": "Skinning",
           "count": 7
         },
         {
-          "label": "Enchanting",
-          "count": 6
+          "label": "Mining",
+          "count": 5
         },
         {
           "label": "Herbalism",
-          "count": 4
-        },
-        {
-          "label": "Mining",
           "count": 4
         },
         {
@@ -263,7 +263,7 @@
       "answers": [
         {
           "label": "Yes",
-          "count": 33
+          "count": 34
         },
         {
           "label": "Undecided",
