@@ -5,12 +5,21 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = path.join(root, "docs", "warcraft-logs-unique-raiders.md");
 const outputPath = path.join(root, "docs", "warcraft-logs-deduped-people.md");
+const exclusionsPath = path.join(root, "src", "data", "historicalRaiderExclusions.json");
 
-const source = await readFile(sourcePath, "utf8");
+const [source, exclusionSource] = await Promise.all([
+  readFile(sourcePath, "utf8"),
+  readFile(exclusionsPath, "utf8"),
+]);
+const exclusions = JSON.parse(exclusionSource) as { characters?: string[] };
+const excludedNames = new Set(
+  (exclusions.characters ?? []).map((name) => name.normalize("NFC").toLocaleLowerCase()),
+);
 const characters = source
   .split(/\r?\n/u)
   .map((line) => line.match(/^\d+\.\s+(.+)$/u)?.[1]?.trim())
-  .filter((name): name is string => Boolean(name));
+  .filter((name): name is string => Boolean(name))
+  .filter((name) => !excludedNames.has(name.normalize("NFC").toLocaleLowerCase()));
 
 if (characters.length === 0) {
   throw new Error(`No numbered character entries found in ${sourcePath}`);
@@ -169,14 +178,14 @@ const collapsedCharacters = characters.length - personGroups.length;
 const lines = [
   "# Warcraft Logs Conservatively Deduplicated People",
   "",
-  "Generated from `warcraft-logs-unique-raiders.md` on 2026-09-22.",
+  `Generated from \`warcraft-logs-unique-raiders.md\` on ${new Date().toISOString().slice(0, 10)}.`,
   "",
   `- Logged character names: ${characters.length}`,
   `- Conservative person groups: ${personGroups.length}`,
   `- Character aliases collapsed: ${collapsedCharacters}`,
   `- Multi-character groups: ${mergedGroups.length}`,
   "",
-  "This is a best-effort identity estimate, not a fact supplied by Warcraft Logs. Exact appearances in uploaded reports are factual; the person-level merges are inferred. The pass merges accent/special-character variants, explicit `two`/`tres` suffixes, the user-confirmed families, and a limited set of strong shared-stem alt families. Uncertain similarities remain separate.",
+  "This is a best-effort identity estimate, not a fact supplied by Warcraft Logs. Attendance entries with only `friendlyPlayers` metadata and no supporting participant evidence are excluded. Person-level merges remain inferred. The pass merges accent/special-character variants, explicit `two`/`tres` suffixes, user-confirmed families, and a limited set of strong shared-stem alt families. Uncertain similarities remain separate.",
   "",
   "Explicitly kept separate per user guidance: `Khalila` and `Khanlum`; `Lilmodel` and the `Lilgargussy`/`Lilmcmussy` person.",
   "",

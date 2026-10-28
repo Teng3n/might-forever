@@ -251,30 +251,6 @@
     ]
   },
   {
-    "name": "Almaero",
-    "className": "Mage",
-    "lastDate": "2023-03-05",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-    "reportCode": "NrJz8LXGwQYpWP7x",
-    "reportTitle": "Ulduar",
-    "fightId": 58,
-    "encounterName": "Yogg-Saron",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Mage",
-        "lastDate": "2023-03-05",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-        "reportCode": "NrJz8LXGwQYpWP7x",
-        "reportTitle": "Ulduar",
-        "fightId": 58,
-        "encounterName": "Yogg-Saron"
-      }
-    ]
-  },
-  {
     "name": "Alwaysjacked",
     "className": "Paladin",
     "lastDate": "2020-11-02",
@@ -2610,30 +2586,6 @@
     ]
   },
   {
-    "name": "Chackle",
-    "className": "Priest",
-    "lastDate": "2022-07-10",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/Q3FDxbm8RCVkYvPg#fight=29&type=summary",
-    "reportCode": "Q3FDxbm8RCVkYvPg",
-    "reportTitle": "Sunwell Plateau",
-    "fightId": 29,
-    "encounterName": "Brutallus",
-    "appearances": [
-      {
-        "expansion": "TBC",
-        "className": "Priest",
-        "lastDate": "2022-07-10",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/Q3FDxbm8RCVkYvPg#fight=29&type=summary",
-        "reportCode": "Q3FDxbm8RCVkYvPg",
-        "reportTitle": "Sunwell Plateau",
-        "fightId": 29,
-        "encounterName": "Brutallus"
-      }
-    ]
-  },
-  {
     "name": "Chad",
     "className": "Rogue",
     "lastDate": "2019-10-15",
@@ -3034,30 +2986,6 @@
     ]
   },
   {
-    "name": "Clairesha",
-    "className": "Druid",
-    "lastDate": "2023-03-05",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-    "reportCode": "NrJz8LXGwQYpWP7x",
-    "reportTitle": "Ulduar",
-    "fightId": 58,
-    "encounterName": "Yogg-Saron",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Druid",
-        "lastDate": "2023-03-05",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-        "reportCode": "NrJz8LXGwQYpWP7x",
-        "reportTitle": "Ulduar",
-        "fightId": 58,
-        "encounterName": "Yogg-Saron"
-      }
-    ]
-  },
-  {
     "name": "Clapathy",
     "className": "Mage",
     "lastDate": "2019-11-11",
@@ -3125,30 +3053,6 @@
         "reportCode": "fLMjTnYgF8N4DAd2",
         "reportTitle": "Icecrown Citadel",
         "fightId": 22,
-        "encounterName": "Yogg-Saron"
-      }
-    ]
-  },
-  {
-    "name": "Consecratist",
-    "className": "Paladin",
-    "lastDate": "2023-03-05",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-    "reportCode": "NrJz8LXGwQYpWP7x",
-    "reportTitle": "Ulduar",
-    "fightId": 58,
-    "encounterName": "Yogg-Saron",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Paladin",
-        "lastDate": "2023-03-05",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-        "reportCode": "NrJz8LXGwQYpWP7x",
-        "reportTitle": "Ulduar",
-        "fightId": 58,
         "encounterName": "Yogg-Saron"
       }
     ]
@@ -3729,30 +3633,6 @@
         "reportTitle": "Ulduar",
         "fightId": 84,
         "encounterName": "Yogg-Saron"
-      }
-    ]
-  },
-  {
-    "name": "Dessaer",
-    "className": "Warlock",
-    "lastDate": "2023-07-10",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-    "reportCode": "fHtwdL4rc3a8YZmA",
-    "reportTitle": "Trial of the Crusader",
-    "fightId": 15,
-    "encounterName": "Anub'arak",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Warlock",
-        "lastDate": "2023-07-10",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-        "reportCode": "fHtwdL4rc3a8YZmA",
-        "reportTitle": "Trial of the Crusader",
-        "fightId": 15,
-        "encounterName": "Anub'arak"
       }
     ]
   },
@@ -5661,30 +5541,6 @@
     ]
   },
   {
-    "name": "Garph",
-    "className": "Druid",
-    "lastDate": "2022-06-06",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/WwgMdZbBfaCrt89J#fight=22&type=summary",
-    "reportCode": "WwgMdZbBfaCrt89J",
-    "reportTitle": "Sunwell Plateau",
-    "fightId": 22,
-    "encounterName": "M'uru",
-    "appearances": [
-      {
-        "expansion": "TBC",
-        "className": "Druid",
-        "lastDate": "2022-06-06",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/WwgMdZbBfaCrt89J#fight=22&type=summary",
-        "reportCode": "WwgMdZbBfaCrt89J",
-        "reportTitle": "Sunwell Plateau",
-        "fightId": 22,
-        "encounterName": "M'uru"
-      }
-    ]
-  },
-  {
     "name": "Gatitorapido",
     "className": "Druid",
     "lastDate": "2020-09-22",
@@ -5847,30 +5703,6 @@
         "reportTitle": "Naxx / Sarth / Maly",
         "fightId": 65,
         "encounterName": "Archavon the Stone Watcher"
-      }
-    ]
-  },
-  {
-    "name": "Glorisa",
-    "className": "Mage",
-    "lastDate": "2022-06-05",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/zWj7DKQkr3AMFVbG#fight=28&type=summary",
-    "reportCode": "zWj7DKQkr3AMFVbG",
-    "reportTitle": "Sunwell Plateau",
-    "fightId": 28,
-    "encounterName": "Brutallus",
-    "appearances": [
-      {
-        "expansion": "TBC",
-        "className": "Mage",
-        "lastDate": "2022-06-05",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/zWj7DKQkr3AMFVbG#fight=28&type=summary",
-        "reportCode": "zWj7DKQkr3AMFVbG",
-        "reportTitle": "Sunwell Plateau",
-        "fightId": 28,
-        "encounterName": "Brutallus"
       }
     ]
   },
@@ -8513,54 +8345,6 @@
     ]
   },
   {
-    "name": "Lalass",
-    "className": "Warlock",
-    "lastDate": "2023-03-05",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-    "reportCode": "NrJz8LXGwQYpWP7x",
-    "reportTitle": "Ulduar",
-    "fightId": 58,
-    "encounterName": "Yogg-Saron",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Warlock",
-        "lastDate": "2023-03-05",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-        "reportCode": "NrJz8LXGwQYpWP7x",
-        "reportTitle": "Ulduar",
-        "fightId": 58,
-        "encounterName": "Yogg-Saron"
-      }
-    ]
-  },
-  {
-    "name": "Larissel",
-    "className": "Hunter",
-    "lastDate": "2023-03-05",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-    "reportCode": "NrJz8LXGwQYpWP7x",
-    "reportTitle": "Ulduar",
-    "fightId": 58,
-    "encounterName": "Yogg-Saron",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Hunter",
-        "lastDate": "2023-03-05",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-        "reportCode": "NrJz8LXGwQYpWP7x",
-        "reportTitle": "Ulduar",
-        "fightId": 58,
-        "encounterName": "Yogg-Saron"
-      }
-    ]
-  },
-  {
     "name": "Lastchicken",
     "className": "Priest",
     "lastDate": "2021-08-23",
@@ -10097,30 +9881,6 @@
     ]
   },
   {
-    "name": "Michellevick",
-    "className": "Hunter",
-    "lastDate": "2022-06-06",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/WwgMdZbBfaCrt89J#fight=22&type=summary",
-    "reportCode": "WwgMdZbBfaCrt89J",
-    "reportTitle": "Sunwell Plateau",
-    "fightId": 22,
-    "encounterName": "M'uru",
-    "appearances": [
-      {
-        "expansion": "TBC",
-        "className": "Hunter",
-        "lastDate": "2022-06-06",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/WwgMdZbBfaCrt89J#fight=22&type=summary",
-        "reportCode": "WwgMdZbBfaCrt89J",
-        "reportTitle": "Sunwell Plateau",
-        "fightId": 22,
-        "encounterName": "M'uru"
-      }
-    ]
-  },
-  {
     "name": "Minndy",
     "className": "Priest",
     "lastDate": "2023-01-15",
@@ -10770,30 +10530,6 @@
     ]
   },
   {
-    "name": "Neet",
-    "className": "Paladin",
-    "lastDate": "2023-03-05",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-    "reportCode": "NrJz8LXGwQYpWP7x",
-    "reportTitle": "Ulduar",
-    "fightId": 58,
-    "encounterName": "Yogg-Saron",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Paladin",
-        "lastDate": "2023-03-05",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-        "reportCode": "NrJz8LXGwQYpWP7x",
-        "reportTitle": "Ulduar",
-        "fightId": 58,
-        "encounterName": "Yogg-Saron"
-      }
-    ]
-  },
-  {
     "name": "Neoz",
     "className": "Paladin",
     "lastDate": "2019-10-21",
@@ -11266,30 +11002,6 @@
     ]
   },
   {
-    "name": "nil",
-    "className": "Mage",
-    "lastDate": "2021-01-11",
-    "source": "Might — Fairbanks",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/VgbtG9AJL481jqy2#fight=13&type=summary",
-    "reportCode": "VgbtG9AJL481jqy2",
-    "reportTitle": "Molten Core",
-    "fightId": 13,
-    "encounterName": "Garr",
-    "appearances": [
-      {
-        "expansion": "Classic",
-        "className": "Mage",
-        "lastDate": "2021-01-11",
-        "source": "Might — Fairbanks",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/VgbtG9AJL481jqy2#fight=13&type=summary",
-        "reportCode": "VgbtG9AJL481jqy2",
-        "reportTitle": "Molten Core",
-        "fightId": 13,
-        "encounterName": "Garr"
-      }
-    ]
-  },
-  {
     "name": "Nimnomnom",
     "className": "Paladin",
     "lastDate": "2023-05-21",
@@ -11703,30 +11415,6 @@
         "reportTitle": "Icecrown Citadel",
         "fightId": 64,
         "encounterName": "The Lich King"
-      }
-    ]
-  },
-  {
-    "name": "Okuninushi",
-    "className": "Warlock",
-    "lastDate": "2023-03-05",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-    "reportCode": "NrJz8LXGwQYpWP7x",
-    "reportTitle": "Ulduar",
-    "fightId": 58,
-    "encounterName": "Yogg-Saron",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Warlock",
-        "lastDate": "2023-03-05",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/NrJz8LXGwQYpWP7x#fight=58&type=summary",
-        "reportCode": "NrJz8LXGwQYpWP7x",
-        "reportTitle": "Ulduar",
-        "fightId": 58,
-        "encounterName": "Yogg-Saron"
       }
     ]
   },
@@ -13225,30 +12913,6 @@
     ]
   },
   {
-    "name": "Rineki",
-    "className": "Hunter",
-    "lastDate": "2023-07-10",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-    "reportCode": "fHtwdL4rc3a8YZmA",
-    "reportTitle": "Trial of the Crusader",
-    "fightId": 15,
-    "encounterName": "Anub'arak",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Hunter",
-        "lastDate": "2023-07-10",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-        "reportCode": "fHtwdL4rc3a8YZmA",
-        "reportTitle": "Trial of the Crusader",
-        "fightId": 15,
-        "encounterName": "Anub'arak"
-      }
-    ]
-  },
-  {
     "name": "Rinxqt",
     "className": "Hunter",
     "lastDate": "2023-05-08",
@@ -13317,30 +12981,6 @@
         "reportTitle": "Molten Core",
         "fightId": 11,
         "encounterName": "Garr"
-      }
-    ]
-  },
-  {
-    "name": "Robz",
-    "className": "Warlock",
-    "lastDate": "2022-11-27",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/QCLmTfnW4Y7HBFZD#fight=6&type=summary",
-    "reportCode": "QCLmTfnW4Y7HBFZD",
-    "reportTitle": "Naxx / Sarth / Maly",
-    "fightId": 6,
-    "encounterName": "Instructor Razuvious",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Warlock",
-        "lastDate": "2022-11-27",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/QCLmTfnW4Y7HBFZD#fight=6&type=summary",
-        "reportCode": "QCLmTfnW4Y7HBFZD",
-        "reportTitle": "Naxx / Sarth / Maly",
-        "fightId": 6,
-        "encounterName": "Instructor Razuvious"
       }
     ]
   },
@@ -13509,30 +13149,6 @@
     ]
   },
   {
-    "name": "Salamislappa",
-    "className": "Warlock",
-    "lastDate": "2023-07-10",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-    "reportCode": "fHtwdL4rc3a8YZmA",
-    "reportTitle": "Trial of the Crusader",
-    "fightId": 15,
-    "encounterName": "Anub'arak",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Warlock",
-        "lastDate": "2023-07-10",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-        "reportCode": "fHtwdL4rc3a8YZmA",
-        "reportTitle": "Trial of the Crusader",
-        "fightId": 15,
-        "encounterName": "Anub'arak"
-      }
-    ]
-  },
-  {
     "name": "Samersun",
     "className": "Paladin",
     "lastDate": "2020-04-15",
@@ -13577,30 +13193,6 @@
         "reportTitle": "Molten Core Day 2",
         "fightId": 44,
         "encounterName": "Ragnaros"
-      }
-    ]
-  },
-  {
-    "name": "Sathanos",
-    "className": "Paladin",
-    "lastDate": "2023-07-10",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-    "reportCode": "fHtwdL4rc3a8YZmA",
-    "reportTitle": "Trial of the Crusader",
-    "fightId": 15,
-    "encounterName": "Anub'arak",
-    "appearances": [
-      {
-        "expansion": "Wrath",
-        "className": "Paladin",
-        "lastDate": "2023-07-10",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/fHtwdL4rc3a8YZmA#fight=15&type=summary",
-        "reportCode": "fHtwdL4rc3a8YZmA",
-        "reportTitle": "Trial of the Crusader",
-        "fightId": 15,
-        "encounterName": "Anub'arak"
       }
     ]
   },
@@ -14450,30 +14042,6 @@
     ]
   },
   {
-    "name": "Sizuka",
-    "className": "Mage",
-    "lastDate": "2022-06-05",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/zWj7DKQkr3AMFVbG#fight=28&type=summary",
-    "reportCode": "zWj7DKQkr3AMFVbG",
-    "reportTitle": "Sunwell Plateau",
-    "fightId": 28,
-    "encounterName": "Brutallus",
-    "appearances": [
-      {
-        "expansion": "TBC",
-        "className": "Mage",
-        "lastDate": "2022-06-05",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/zWj7DKQkr3AMFVbG#fight=28&type=summary",
-        "reportCode": "zWj7DKQkr3AMFVbG",
-        "reportTitle": "Sunwell Plateau",
-        "fightId": 28,
-        "encounterName": "Brutallus"
-      }
-    ]
-  },
-  {
     "name": "Skeete",
     "className": "Priest",
     "lastDate": "2022-11-01",
@@ -14743,30 +14311,6 @@
         "reportTitle": "Blackwing Lair",
         "fightId": 23,
         "encounterName": "Nefarian"
-      }
-    ]
-  },
-  {
-    "name": "Sneekytotems",
-    "className": "Shaman",
-    "lastDate": "2024-06-03",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/Ltb94jD3VNrW7q6p#fight=15&type=summary",
-    "reportCode": "Ltb94jD3VNrW7q6p",
-    "reportTitle": "TotFW / BWD / BoT",
-    "fightId": 15,
-    "encounterName": "Chimaeron",
-    "appearances": [
-      {
-        "expansion": "Cataclysm",
-        "className": "Shaman",
-        "lastDate": "2024-06-03",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/Ltb94jD3VNrW7q6p#fight=15&type=summary",
-        "reportCode": "Ltb94jD3VNrW7q6p",
-        "reportTitle": "TotFW / BWD / BoT",
-        "fightId": 15,
-        "encounterName": "Chimaeron"
       }
     ]
   },
@@ -15920,30 +15464,6 @@
     ]
   },
   {
-    "name": "Swaktion",
-    "className": "Shaman",
-    "lastDate": "2024-06-03",
-    "source": "Inept — Grobbulus",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/Ltb94jD3VNrW7q6p#fight=15&type=summary",
-    "reportCode": "Ltb94jD3VNrW7q6p",
-    "reportTitle": "TotFW / BWD / BoT",
-    "fightId": 15,
-    "encounterName": "Chimaeron",
-    "appearances": [
-      {
-        "expansion": "Cataclysm",
-        "className": "Shaman",
-        "lastDate": "2024-06-03",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/Ltb94jD3VNrW7q6p#fight=15&type=summary",
-        "reportCode": "Ltb94jD3VNrW7q6p",
-        "reportTitle": "TotFW / BWD / BoT",
-        "fightId": 15,
-        "encounterName": "Chimaeron"
-      }
-    ]
-  },
-  {
     "name": "Synez",
     "className": "Warlock",
     "lastDate": "2024-11-25",
@@ -16517,30 +16037,6 @@
         "reportTitle": "Week 27",
         "fightId": 78,
         "encounterName": "Onyxia"
-      }
-    ]
-  },
-  {
-    "name": "Thefishguy",
-    "className": "Druid",
-    "lastDate": "2021-03-08",
-    "source": "Might — Fairbanks",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/aXHJrTNYZmkVqCjQ#fight=56&type=summary",
-    "reportCode": "aXHJrTNYZmkVqCjQ",
-    "reportTitle": "Temple of Ahn'Qiraj",
-    "fightId": 56,
-    "encounterName": "Viscidus",
-    "appearances": [
-      {
-        "expansion": "Classic",
-        "className": "Druid",
-        "lastDate": "2021-03-08",
-        "source": "Might — Fairbanks",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/aXHJrTNYZmkVqCjQ#fight=56&type=summary",
-        "reportCode": "aXHJrTNYZmkVqCjQ",
-        "reportTitle": "Temple of Ahn'Qiraj",
-        "fightId": 56,
-        "encounterName": "Viscidus"
       }
     ]
   },
@@ -18408,41 +17904,6 @@
         "reportTitle": "10/08/2023 <Inept> ToGC 25M [Run B]",
         "fightId": 8,
         "encounterName": "Anub'arak"
-      }
-    ]
-  },
-  {
-    "name": "Zerbeh",
-    "className": "Paladin",
-    "lastDate": "2021-11-18",
-    "source": "Might — Fairbanks",
-    "reportUrl": "https://classic.warcraftlogs.com/reports/fvapRry4zmkGXn7j#fight=50&type=summary",
-    "reportCode": "fvapRry4zmkGXn7j",
-    "reportTitle": "Temple of Ahn'Qiraj",
-    "fightId": 50,
-    "encounterName": "C'Thun",
-    "appearances": [
-      {
-        "expansion": "TBC",
-        "className": "Paladin",
-        "lastDate": "2021-11-18",
-        "source": "Might — Fairbanks",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/fvapRry4zmkGXn7j#fight=50&type=summary",
-        "reportCode": "fvapRry4zmkGXn7j",
-        "reportTitle": "Temple of Ahn'Qiraj",
-        "fightId": 50,
-        "encounterName": "C'Thun"
-      },
-      {
-        "expansion": "Classic",
-        "className": "Paladin",
-        "lastDate": "2021-05-24",
-        "source": "Might — Fairbanks",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/gTrPh61CmqV7yv3p#fight=5&type=summary",
-        "reportCode": "gTrPh61CmqV7yv3p",
-        "reportTitle": "Naxxramas",
-        "fightId": 5,
-        "encounterName": "Kel'Thuzad"
       }
     ]
   },

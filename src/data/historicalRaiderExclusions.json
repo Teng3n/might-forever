@@ -1,0 +1,29 @@
+{
+  "reviewedAt": "2026-10-28",
+  "reason": "Excluded from the verified attendance archive because the Warcraft Logs audit found no class subtype, friendly spec, or ranked-character evidence. These names appeared only in friendlyPlayers metadata, which can contain report actors who did not participate in the fight.",
+  "characters": [
+    "Almaero",
+    "Chackle",
+    "Clairesha",
+    "Consecratist",
+    "Dessaer",
+    "Garph",
+    "Glorisa",
+    "Lalass",
+    "Larissel",
+    "Michellevick",
+    "Moondj",
+    "Neet",
+    "nil",
+    "Okuninushi",
+    "Rineki",
+    "Robz",
+    "Salamislappa",
+    "Sathanos",
+    "Sizuka",
+    "Sneekytotems",
+    "Swaktion",
+    "Thefishguy",
+    "Zerbeh"
+  ]
+}
