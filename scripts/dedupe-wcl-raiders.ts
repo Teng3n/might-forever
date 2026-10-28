@@ -92,6 +92,7 @@ mergeNames(["Kargen", "Karkan", "Karkant", "Karkonk", "Fakekarkan"]);
 mergeNames(["Kuradeldk", "Kuradelh", "Kuradelm", "Kuradelmtwo"]);
 mergeNames(["Leafea", "Leafealol"]);
 mergeNames(["Lilgargussy", "Lilmcmussy"]);
+mergeNames(["Koulikov", "Kuber"]);
 mergeNames(["Mavadin", "Mavaman", "Mavdeath", "Mavdog", "Maverickdog", "Maverlock"]);
 mergeNames(["Popsicles", "Popsiclës", "Pøpsicles"]);
 mergeNames(["Tengen", "Tengenn", "Tenngenn", "Tenaman", "Magegen", "Deathgen"]);
@@ -156,6 +157,7 @@ const preferredRepresentatives = new Map<string, string>([
   ["Tengen", "Tengen"],
   ["Stimadin", "Stim"],
   ["Stiing", "Stingroy"],
+  ["Lilmodel", "Model"],
 ]);
 
 function representative(names: string[]) {
@@ -187,12 +189,15 @@ const lines = [
   "",
   "This is a best-effort identity estimate, not a fact supplied by Warcraft Logs. Attendance entries with only `friendlyPlayers` metadata and no supporting participant evidence are excluded. Person-level merges remain inferred. The pass merges accent/special-character variants, explicit `two`/`tres` suffixes, user-confirmed families, and a limited set of strong shared-stem alt families. Uncertain similarities remain separate.",
   "",
-  "Explicitly kept separate per user guidance: `Khalila` and `Khanlum`; `Lilmodel` and the `Lilgargussy`/`Lilmcmussy` person.",
+  "User-confirmed identities: `Lilmodel` is **Model**; `Koulikov` is an alt of **Kuber**. `Khalila` and `Khanlum` remain separate.",
   "",
   "## Person-level roster",
   "",
   ...personGroups.map((group, index) => {
-    const aliases = group.names.length > 1 ? ` — characters: ${group.names.join(", ")}` : "";
+    const aliases =
+      group.names.length > 1 || !group.names.includes(group.representative)
+        ? ` — characters: ${group.names.join(", ")}`
+        : "";
     return `${index + 1}. **${group.representative}**${aliases}`;
   }),
   "",

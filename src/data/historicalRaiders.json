@@ -12708,62 +12708,6 @@
     "lastEncounterName": "Baleroc"
   },
   {
-    "name": "Koulikov",
-    "characters": [
-      "Koulikov"
-    ],
-    "characterDetails": [
-      {
-        "name": "Koulikov",
-        "className": "Hunter",
-        "lastDate": "2025-07-20",
-        "expansion": "Cataclysm",
-        "source": "Inept — Grobbulus",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/HKa74MWJ8CGph92R#fight=20&type=summary",
-        "reportTitle": "07/20/2025 <Inept> Dragon Soul 25 H (last raid of Cata :( )",
-        "encounterName": "Spine of Deathwing",
-        "appearances": [
-          {
-            "expansion": "Cataclysm",
-            "className": "Hunter",
-            "lastDate": "2025-07-20",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/HKa74MWJ8CGph92R#fight=20&type=summary",
-            "reportCode": "HKa74MWJ8CGph92R",
-            "reportTitle": "07/20/2025 <Inept> Dragon Soul 25 H (last raid of Cata :( )",
-            "fightId": 20,
-            "encounterName": "Spine of Deathwing"
-          },
-          {
-            "expansion": "Wrath",
-            "className": "Hunter",
-            "lastDate": "2023-09-24",
-            "source": "Inept — Grobbulus",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/yH8pztaDbYChwmP4#fight=9&type=summary",
-            "reportCode": "yH8pztaDbYChwmP4",
-            "reportTitle": "Group B",
-            "fightId": 9,
-            "encounterName": "Anub'arak"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Hunter"
-    ],
-    "primaryClass": "Hunter",
-    "expansions": [
-      "Wrath",
-      "Cataclysm"
-    ],
-    "lastDate": "2025-07-20",
-    "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Koulikov",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/HKa74MWJ8CGph92R#fight=20&type=summary",
-    "lastReportTitle": "07/20/2025 <Inept> Dragon Soul 25 H (last raid of Cata :( )",
-    "lastEncounterName": "Spine of Deathwing"
-  },
-  {
     "name": "Kpreem",
     "characters": [
       "Kpreem"
@@ -13010,9 +12954,44 @@
   {
     "name": "Kuber",
     "characters": [
+      "Koulikov",
       "Kuber"
     ],
     "characterDetails": [
+      {
+        "name": "Koulikov",
+        "className": "Hunter",
+        "lastDate": "2025-07-20",
+        "expansion": "Cataclysm",
+        "source": "Inept — Grobbulus",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/HKa74MWJ8CGph92R#fight=20&type=summary",
+        "reportTitle": "07/20/2025 <Inept> Dragon Soul 25 H (last raid of Cata :( )",
+        "encounterName": "Spine of Deathwing",
+        "appearances": [
+          {
+            "expansion": "Cataclysm",
+            "className": "Hunter",
+            "lastDate": "2025-07-20",
+            "source": "Inept — Grobbulus",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/HKa74MWJ8CGph92R#fight=20&type=summary",
+            "reportCode": "HKa74MWJ8CGph92R",
+            "reportTitle": "07/20/2025 <Inept> Dragon Soul 25 H (last raid of Cata :( )",
+            "fightId": 20,
+            "encounterName": "Spine of Deathwing"
+          },
+          {
+            "expansion": "Wrath",
+            "className": "Hunter",
+            "lastDate": "2023-09-24",
+            "source": "Inept — Grobbulus",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/yH8pztaDbYChwmP4#fight=9&type=summary",
+            "reportCode": "yH8pztaDbYChwmP4",
+            "reportTitle": "Group B",
+            "fightId": 9,
+            "encounterName": "Anub'arak"
+          }
+        ]
+      },
       {
         "name": "Kuber",
         "className": "Paladin",
@@ -13038,18 +13017,20 @@
       }
     ],
     "classes": [
+      "Hunter",
       "Paladin"
     ],
-    "primaryClass": "Paladin",
+    "primaryClass": "Hunter",
     "expansions": [
-      "Wrath"
+      "Wrath",
+      "Cataclysm"
     ],
-    "lastDate": "2024-04-14",
+    "lastDate": "2025-07-20",
     "lastSource": "Inept — Grobbulus",
-    "lastCharacter": "Kuber",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/DLmR64BVZckdjAXN#fight=54&type=summary",
-    "lastReportTitle": "Icecrown Citadel",
-    "lastEncounterName": "Yogg-Saron"
+    "lastCharacter": "Koulikov",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/HKa74MWJ8CGph92R#fight=20&type=summary",
+    "lastReportTitle": "07/20/2025 <Inept> Dragon Soul 25 H (last raid of Cata :( )",
+    "lastEncounterName": "Spine of Deathwing"
   },
   {
     "name": "Kubrakov",
@@ -13898,50 +13879,6 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/gL7hAd13txVaFrfY#fight=53&type=summary",
     "lastReportTitle": "Mogu'shan Vaults",
     "lastEncounterName": "Will of the Emperor"
-  },
-  {
-    "name": "Lilmodel",
-    "characters": [
-      "Lilmodel"
-    ],
-    "characterDetails": [
-      {
-        "name": "Lilmodel",
-        "className": "Death Knight",
-        "lastDate": "2024-07-08",
-        "expansion": "Cataclysm",
-        "source": "Inept — Benediction",
-        "reportUrl": "https://classic.warcraftlogs.com/reports/HWT7zMF1Ynbd3pm6#fight=48&type=summary",
-        "reportTitle": "TotFW / BWD / BoT",
-        "encounterName": "Cho'gall",
-        "appearances": [
-          {
-            "expansion": "Cataclysm",
-            "className": "Death Knight",
-            "lastDate": "2024-07-08",
-            "source": "Inept — Benediction",
-            "reportUrl": "https://classic.warcraftlogs.com/reports/HWT7zMF1Ynbd3pm6#fight=48&type=summary",
-            "reportCode": "HWT7zMF1Ynbd3pm6",
-            "reportTitle": "TotFW / BWD / BoT",
-            "fightId": 48,
-            "encounterName": "Cho'gall"
-          }
-        ]
-      }
-    ],
-    "classes": [
-      "Death Knight"
-    ],
-    "primaryClass": "Death Knight",
-    "expansions": [
-      "Cataclysm"
-    ],
-    "lastDate": "2024-07-08",
-    "lastSource": "Inept — Benediction",
-    "lastCharacter": "Lilmodel",
-    "lastReportUrl": "https://classic.warcraftlogs.com/reports/HWT7zMF1Ynbd3pm6#fight=48&type=summary",
-    "lastReportTitle": "TotFW / BWD / BoT",
-    "lastEncounterName": "Cho'gall"
   },
   {
     "name": "Locksicles",
@@ -15929,6 +15866,50 @@
     "lastReportUrl": "https://classic.warcraftlogs.com/reports/GwhHQDamJWKCYVB3#fight=9&type=summary",
     "lastReportTitle": "Siege of Orgrimmar",
     "lastEncounterName": "Garrosh Hellscream"
+  },
+  {
+    "name": "Model",
+    "characters": [
+      "Lilmodel"
+    ],
+    "characterDetails": [
+      {
+        "name": "Lilmodel",
+        "className": "Death Knight",
+        "lastDate": "2024-07-08",
+        "expansion": "Cataclysm",
+        "source": "Inept — Benediction",
+        "reportUrl": "https://classic.warcraftlogs.com/reports/HWT7zMF1Ynbd3pm6#fight=48&type=summary",
+        "reportTitle": "TotFW / BWD / BoT",
+        "encounterName": "Cho'gall",
+        "appearances": [
+          {
+            "expansion": "Cataclysm",
+            "className": "Death Knight",
+            "lastDate": "2024-07-08",
+            "source": "Inept — Benediction",
+            "reportUrl": "https://classic.warcraftlogs.com/reports/HWT7zMF1Ynbd3pm6#fight=48&type=summary",
+            "reportCode": "HWT7zMF1Ynbd3pm6",
+            "reportTitle": "TotFW / BWD / BoT",
+            "fightId": 48,
+            "encounterName": "Cho'gall"
+          }
+        ]
+      }
+    ],
+    "classes": [
+      "Death Knight"
+    ],
+    "primaryClass": "Death Knight",
+    "expansions": [
+      "Cataclysm"
+    ],
+    "lastDate": "2024-07-08",
+    "lastSource": "Inept — Benediction",
+    "lastCharacter": "Lilmodel",
+    "lastReportUrl": "https://classic.warcraftlogs.com/reports/HWT7zMF1Ynbd3pm6#fight=48&type=summary",
+    "lastReportTitle": "TotFW / BWD / BoT",
+    "lastEncounterName": "Cho'gall"
   },
   {
     "name": "Modelex",

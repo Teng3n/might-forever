@@ -3,13 +3,13 @@
 Generated from `warcraft-logs-unique-raiders.md` on 2026-10-28.
 
 - Logged character names: 641
-- Conservative person groups: 527
-- Character aliases collapsed: 114
-- Multi-character groups: 46
+- Conservative person groups: 526
+- Character aliases collapsed: 115
+- Multi-character groups: 47
 
 This is a best-effort identity estimate, not a fact supplied by Warcraft Logs. Attendance entries with only `friendlyPlayers` metadata and no supporting participant evidence are excluded. Person-level merges remain inferred. The pass merges accent/special-character variants, explicit `two`/`tres` suffixes, user-confirmed families, and a limited set of strong shared-stem alt families. Uncertain similarities remain separate.
 
-Explicitly kept separate per user guidance: `Khalila` and `Khanlum`; `Lilmodel` and the `Lilgargussy`/`Lilmcmussy` person.
+User-confirmed identities: `Lilmodel` is **Model**; `Koulikov` is an alt of **Kuber**. `Khalila` and `Khanlum` remain separate.
 
 ## Person-level roster
 
@@ -253,293 +253,292 @@ Explicitly kept separate per user guidance: `Khalila` and `Khanlum`; `Lilmodel` 
 238. **Kolorv**
 239. **Kouber**
 240. **Kougori**
-241. **Koulikov**
-242. **Kpreem**
-243. **Kraj**
-244. **Kray**
-245. **Kriker**
-246. **Kubara**
-247. **Kuber**
-248. **Kubrakov**
-249. **Kuradelh** — characters: Kuradeldk, Kuradelh, Kuradelm, Kuradelmtwo
-250. **Kynx**
-251. **Lastchicken**
-252. **Latedog**
-253. **Lazerynx**
-254. **Leafea** — characters: Leafea, Leafealol
-255. **Leaky**
-256. **Leevye**
-257. **Levithon** — characters: Leviathal, Leviathall, Levithon
-258. **Lexadin**
-259. **Lexou**
-260. **Lëy**
-261. **Lilmcmussy**
-262. **Lilmodel**
-263. **Locksicles**
-264. **Lowherb**
-265. **Luckylock** — characters: Luckeylock, Luckylock, Unluckylock
-266. **Lukeperry**
-267. **Lunnati**
-268. **Lurah** — characters: Lurah, Lurahh
-269. **Luzdeldia**
-270. **Luznoceda**
-271. **Lynxo**
-272. **Lythca**
-273. **Majlemons**
-274. **Mäk**
-275. **Maleorc**
-276. **Malphaes**
-277. **Manley**
-278. **Manslaughter**
-279. **Marz**
-280. **Marze**
-281. **Mashirodin**
-282. **Maverickdog** — characters: Mavadin, Mavdog, Maverickdog, Maverlock
-283. **Mcbussyy**
-284. **Megalomania**
-285. **Meirl**
-286. **Meloni**
-287. **Mennyzz** — characters: Mennydotz, Mennyzmage, Mennyzz
-288. **Merhks**
-289. **Meridia**
-290. **Meyj**
-291. **Michaljanvin**
-292. **Minndy**
-293. **Mippsi**
-294. **Mirukutea**
-295. **Missmycrits**
-296. **Missmymana**
-297. **Mistify**
-298. **Modelex**
-299. **Modelx**
-300. **Moonpex**
-301. **Moonroe**
-302. **Morningdrink**
-303. **Mortimerber**
-304. **Moxnix** — characters: Moxnix, Moxxnixx
-305. **Murrcas**
-306. **Mxrz**
-307. **Myotonics**
-308. **Nakrak**
-309. **Nareth**
-310. **Nataraja**
-311. **Neoz**
-312. **Nepir**
-313. **Newtsandals**
-314. **Nibi** — characters: Nibadin, Nibgen, Nibi, Nibidin, Niblaine, Niblainelock, Niblayne, Nibliz, Niblood, Nibow
-315. **Nickey**
-316. **Nightbaiine**
-317. **Nightshal**
-318. **Nimnomnom**
-319. **Noaggroreset**
-320. **Noctuahati**
-321. **Noddle**
-322. **Nolubenofear**
-323. **Notachick**
-324. **Novamarauder**
-325. **Novaverde**
-326. **Noxw**
-327. **Nuckin**
-328. **Nutters**
-329. **Nvs**
-330. **Nyssari**
-331. **Ober**
-332. **Obur**
-333. **Onaxanamoon**
-334. **Ootermage**
-335. **Opotamus**
-336. **Opzz**
-337. **Orbituary**
-338. **Originate**
-339. **Oswaldmosley**
-340. **Ovals**
-341. **Pandashooter**
-342. **Papayacake**
-343. **Papyrus**
-344. **Parsepunishr**
-345. **Patronus**
-346. **Pepperpokket**
-347. **Peteatspleb**
-348. **Phantums**
-349. **Phumes**
-350. **Popeadin**
-351. **Popsicles** — characters: Popsicles, Popsiclës, Pøpsicles
-352. **Poysn**
-353. **Prefix**
-354. **Profanedk**
-355. **Profchicken**
-356. **Punchline**
-357. **Purnama**
-358. **Purplecabb**
-359. **Purushockama**
-360. **Purushottama**
-361. **Puttbutt**
-362. **Pvpeniz**
-363. **Qeeyn**
-364. **Qinala**
-365. **Qonos**
-366. **Qynx**
-367. **Railen**
-368. **Rainbolt** — characters: Rainarrow, Rainbolt
-369. **Ramp**
-370. **Ranjer**
-371. **Ranquish**
-372. **Rapongi** — characters: Rapongi, Rappongi
-373. **Rathanael**
-374. **Raunchy**
-375. **Realgamer**
-376. **Rebbec**
-377. **Redgiant**
-378. **Reflx**
-379. **Reppu**
-380. **Reshy**
-381. **Revide**
-382. **Rgds**
-383. **Rinxqt**
-384. **Ripo**
-385. **Robmain**
-386. **Rondoe**
-387. **Ruie**
-388. **Runicbeard**
-389. **Sacrania**
-390. **Sâint**
-391. **Samersun**
-392. **Sans**
-393. **Sceeto**
-394. **Scréwzloose**
-395. **Scrollius**
-396. **Selfishlol**
-397. **Selfishx**
-398. **Sereneldred**
-399. **Serst**
-400. **Sët**
-401. **Sevipersting**
-402. **Seymourbutts**
-403. **Shadê**
-404. **Shandx** — characters: Shandfu, Shandx, Shandz, Shandzbtw, Shandze, Shandzs, Shandzy
-405. **Shellflsh**
-406. **Shenai**
-407. **Shibalnom**
-408. **Shippujinrai**
-409. **Shmerg**
-410. **Shottymalone**
-411. **Shoutyboi**
-412. **Shrynx**
-413. **Sickdickbro**
-414. **Sighnez**
-415. **Simpquéen**
-416. **Singa**
-417. **Sixsixsix**
-418. **Skeete**
-419. **Skeltnjelly**
-420. **Skilzthakilz**
-421. **Skrimble**
-422. **Skyfen**
-423. **Slipinside** — characters: Slipinside, Slipnslides
-424. **Slynx**
-425. **Smkbreak**
-426. **Sneakyo**
-427. **Snuckle** — characters: Mòósnuckle, Snuckle
-428. **Somtimmius**
-429. **Soo**
-430. **Spb**
-431. **Spraj** — characters: Sprahj, Spraj, Sprajj
-432. **Spynx**
-433. **Squidchilles**
-434. **Staticbeard**
-435. **Steveharvano**
-436. **Stim** — characters: Stimadin, Stimadintwo, Stimlock, Stimlocktwo, Stimrogue, Stimshield, Stimshock, Stimshocktwo, Stimshot, Stimshots, Stimshottwo, Stimstrike, Stimuluspack, Stimulúspack
-437. **Stingroy** — characters: Stiing, Stingg, Stingr, Stingrðy, Stingroy, Stingroý, Stingrôy
-438. **Størmer**
-439. **Stranglekelp**
-440. **Sugartots**
-441. **Supergiant** — characters: Supergiagant, Supergiant
-442. **Supershady**
-443. **Susen** — characters: Susen, Susën
-444. **Synez**
-445. **Synx**
-446. **Tacotacotaco**
-447. **Talch**
-448. **Tanakh**
-449. **Tankocrisp**
-450. **Tarnation**
-451. **Taryeth**
-452. **Taurtuga**
-453. **Tavik** — characters: Tavik, Tavikk
-454. **Tbctank**
-455. **Teehee**
-456. **Teerage**
-457. **Tegridytrees**
-458. **Tengen** — characters: Deathgen, Magegen, Tengen, Tengenn, Tenngenn
-459. **Thäpope**
-460. **Thegmarauder**
-461. **Thekinglew**
-462. **Thirza**
-463. **Threesunders**
-464. **Thugangeles**
-465. **Thuro**
-466. **Tieg**
-467. **Tinyteehee**
-468. **Tokenrogue**
-469. **Tomdabomb**
-470. **Torispelling**
-471. **Torontojoe**
-472. **Totemsenju**
-473. **Tougeki**
-474. **Toxicgamer**
-475. **Transmute**
-476. **Treebeard** — characters: Treebeard, Treebeardtwo
-477. **Trigolol**
-478. **Truckya**
-479. **Tsgdream**
-480. **Turlenorc**
-481. **Unclebumi**
-482. **Unjustbecuz**
-483. **Upper**
-484. **Uqqer**
-485. **Urbo**
-486. **Uwufemboy**
-487. **Vantaris**
-488. **Vashtia**
-489. **Vataloca**
-490. **Veree**
-491. **Verynicehair**
-492. **Viglance**
-493. **Vilentviolet**
-494. **Vitaunus**
-495. **Volkswórgen**
-496. **Volsong**
-497. **Warlockjizz**
-498. **Warriorpex**
-499. **Wasalu**
-500. **Washedmage**
-501. **Wheellz**
-502. **Whitebeard**
-503. **Whoosa**
-504. **Williamriker**
-505. **Wingzoo**
-506. **Winri**
-507. **Wispis**
-508. **Woozu**
-509. **Wotlktank**
-510. **Wrathwaiting**
-511. **Wübz**
-512. **Xaiva**
-513. **Xenthyk**
-514. **Xiemos**
-515. **Xinxao**
-516. **Xploited**
-517. **Xufu**
-518. **Yäkuza**
-519. **Yellock**
-520. **Yitzahk**
-521. **Youngzelda**
-522. **Zaek**
-523. **Zenal**
-524. **Zerby**
-525. **Zimbuh**
-526. **Zimone** — characters: Zimone, Zimshock, Zimstrike, Zimtwo
-527. **Zors**
+241. **Kpreem**
+242. **Kraj**
+243. **Kray**
+244. **Kriker**
+245. **Kubara**
+246. **Kuber** — characters: Koulikov, Kuber
+247. **Kubrakov**
+248. **Kuradelh** — characters: Kuradeldk, Kuradelh, Kuradelm, Kuradelmtwo
+249. **Kynx**
+250. **Lastchicken**
+251. **Latedog**
+252. **Lazerynx**
+253. **Leafea** — characters: Leafea, Leafealol
+254. **Leaky**
+255. **Leevye**
+256. **Levithon** — characters: Leviathal, Leviathall, Levithon
+257. **Lexadin**
+258. **Lexou**
+259. **Lëy**
+260. **Lilmcmussy**
+261. **Locksicles**
+262. **Lowherb**
+263. **Luckylock** — characters: Luckeylock, Luckylock, Unluckylock
+264. **Lukeperry**
+265. **Lunnati**
+266. **Lurah** — characters: Lurah, Lurahh
+267. **Luzdeldia**
+268. **Luznoceda**
+269. **Lynxo**
+270. **Lythca**
+271. **Majlemons**
+272. **Mäk**
+273. **Maleorc**
+274. **Malphaes**
+275. **Manley**
+276. **Manslaughter**
+277. **Marz**
+278. **Marze**
+279. **Mashirodin**
+280. **Maverickdog** — characters: Mavadin, Mavdog, Maverickdog, Maverlock
+281. **Mcbussyy**
+282. **Megalomania**
+283. **Meirl**
+284. **Meloni**
+285. **Mennyzz** — characters: Mennydotz, Mennyzmage, Mennyzz
+286. **Merhks**
+287. **Meridia**
+288. **Meyj**
+289. **Michaljanvin**
+290. **Minndy**
+291. **Mippsi**
+292. **Mirukutea**
+293. **Missmycrits**
+294. **Missmymana**
+295. **Mistify**
+296. **Model** — characters: Lilmodel
+297. **Modelex**
+298. **Modelx**
+299. **Moonpex**
+300. **Moonroe**
+301. **Morningdrink**
+302. **Mortimerber**
+303. **Moxnix** — characters: Moxnix, Moxxnixx
+304. **Murrcas**
+305. **Mxrz**
+306. **Myotonics**
+307. **Nakrak**
+308. **Nareth**
+309. **Nataraja**
+310. **Neoz**
+311. **Nepir**
+312. **Newtsandals**
+313. **Nibi** — characters: Nibadin, Nibgen, Nibi, Nibidin, Niblaine, Niblainelock, Niblayne, Nibliz, Niblood, Nibow
+314. **Nickey**
+315. **Nightbaiine**
+316. **Nightshal**
+317. **Nimnomnom**
+318. **Noaggroreset**
+319. **Noctuahati**
+320. **Noddle**
+321. **Nolubenofear**
+322. **Notachick**
+323. **Novamarauder**
+324. **Novaverde**
+325. **Noxw**
+326. **Nuckin**
+327. **Nutters**
+328. **Nvs**
+329. **Nyssari**
+330. **Ober**
+331. **Obur**
+332. **Onaxanamoon**
+333. **Ootermage**
+334. **Opotamus**
+335. **Opzz**
+336. **Orbituary**
+337. **Originate**
+338. **Oswaldmosley**
+339. **Ovals**
+340. **Pandashooter**
+341. **Papayacake**
+342. **Papyrus**
+343. **Parsepunishr**
+344. **Patronus**
+345. **Pepperpokket**
+346. **Peteatspleb**
+347. **Phantums**
+348. **Phumes**
+349. **Popeadin**
+350. **Popsicles** — characters: Popsicles, Popsiclës, Pøpsicles
+351. **Poysn**
+352. **Prefix**
+353. **Profanedk**
+354. **Profchicken**
+355. **Punchline**
+356. **Purnama**
+357. **Purplecabb**
+358. **Purushockama**
+359. **Purushottama**
+360. **Puttbutt**
+361. **Pvpeniz**
+362. **Qeeyn**
+363. **Qinala**
+364. **Qonos**
+365. **Qynx**
+366. **Railen**
+367. **Rainbolt** — characters: Rainarrow, Rainbolt
+368. **Ramp**
+369. **Ranjer**
+370. **Ranquish**
+371. **Rapongi** — characters: Rapongi, Rappongi
+372. **Rathanael**
+373. **Raunchy**
+374. **Realgamer**
+375. **Rebbec**
+376. **Redgiant**
+377. **Reflx**
+378. **Reppu**
+379. **Reshy**
+380. **Revide**
+381. **Rgds**
+382. **Rinxqt**
+383. **Ripo**
+384. **Robmain**
+385. **Rondoe**
+386. **Ruie**
+387. **Runicbeard**
+388. **Sacrania**
+389. **Sâint**
+390. **Samersun**
+391. **Sans**
+392. **Sceeto**
+393. **Scréwzloose**
+394. **Scrollius**
+395. **Selfishlol**
+396. **Selfishx**
+397. **Sereneldred**
+398. **Serst**
+399. **Sët**
+400. **Sevipersting**
+401. **Seymourbutts**
+402. **Shadê**
+403. **Shandx** — characters: Shandfu, Shandx, Shandz, Shandzbtw, Shandze, Shandzs, Shandzy
+404. **Shellflsh**
+405. **Shenai**
+406. **Shibalnom**
+407. **Shippujinrai**
+408. **Shmerg**
+409. **Shottymalone**
+410. **Shoutyboi**
+411. **Shrynx**
+412. **Sickdickbro**
+413. **Sighnez**
+414. **Simpquéen**
+415. **Singa**
+416. **Sixsixsix**
+417. **Skeete**
+418. **Skeltnjelly**
+419. **Skilzthakilz**
+420. **Skrimble**
+421. **Skyfen**
+422. **Slipinside** — characters: Slipinside, Slipnslides
+423. **Slynx**
+424. **Smkbreak**
+425. **Sneakyo**
+426. **Snuckle** — characters: Mòósnuckle, Snuckle
+427. **Somtimmius**
+428. **Soo**
+429. **Spb**
+430. **Spraj** — characters: Sprahj, Spraj, Sprajj
+431. **Spynx**
+432. **Squidchilles**
+433. **Staticbeard**
+434. **Steveharvano**
+435. **Stim** — characters: Stimadin, Stimadintwo, Stimlock, Stimlocktwo, Stimrogue, Stimshield, Stimshock, Stimshocktwo, Stimshot, Stimshots, Stimshottwo, Stimstrike, Stimuluspack, Stimulúspack
+436. **Stingroy** — characters: Stiing, Stingg, Stingr, Stingrðy, Stingroy, Stingroý, Stingrôy
+437. **Størmer**
+438. **Stranglekelp**
+439. **Sugartots**
+440. **Supergiant** — characters: Supergiagant, Supergiant
+441. **Supershady**
+442. **Susen** — characters: Susen, Susën
+443. **Synez**
+444. **Synx**
+445. **Tacotacotaco**
+446. **Talch**
+447. **Tanakh**
+448. **Tankocrisp**
+449. **Tarnation**
+450. **Taryeth**
+451. **Taurtuga**
+452. **Tavik** — characters: Tavik, Tavikk
+453. **Tbctank**
+454. **Teehee**
+455. **Teerage**
+456. **Tegridytrees**
+457. **Tengen** — characters: Deathgen, Magegen, Tengen, Tengenn, Tenngenn
+458. **Thäpope**
+459. **Thegmarauder**
+460. **Thekinglew**
+461. **Thirza**
+462. **Threesunders**
+463. **Thugangeles**
+464. **Thuro**
+465. **Tieg**
+466. **Tinyteehee**
+467. **Tokenrogue**
+468. **Tomdabomb**
+469. **Torispelling**
+470. **Torontojoe**
+471. **Totemsenju**
+472. **Tougeki**
+473. **Toxicgamer**
+474. **Transmute**
+475. **Treebeard** — characters: Treebeard, Treebeardtwo
+476. **Trigolol**
+477. **Truckya**
+478. **Tsgdream**
+479. **Turlenorc**
+480. **Unclebumi**
+481. **Unjustbecuz**
+482. **Upper**
+483. **Uqqer**
+484. **Urbo**
+485. **Uwufemboy**
+486. **Vantaris**
+487. **Vashtia**
+488. **Vataloca**
+489. **Veree**
+490. **Verynicehair**
+491. **Viglance**
+492. **Vilentviolet**
+493. **Vitaunus**
+494. **Volkswórgen**
+495. **Volsong**
+496. **Warlockjizz**
+497. **Warriorpex**
+498. **Wasalu**
+499. **Washedmage**
+500. **Wheellz**
+501. **Whitebeard**
+502. **Whoosa**
+503. **Williamriker**
+504. **Wingzoo**
+505. **Winri**
+506. **Wispis**
+507. **Woozu**
+508. **Wotlktank**
+509. **Wrathwaiting**
+510. **Wübz**
+511. **Xaiva**
+512. **Xenthyk**
+513. **Xiemos**
+514. **Xinxao**
+515. **Xploited**
+516. **Xufu**
+517. **Yäkuza**
+518. **Yellock**
+519. **Yitzahk**
+520. **Youngzelda**
+521. **Zaek**
+522. **Zenal**
+523. **Zerby**
+524. **Zimbuh**
+525. **Zimone** — characters: Zimone, Zimshock, Zimstrike, Zimtwo
+526. **Zors**
 
 ## Merged groups only
 
@@ -565,6 +564,7 @@ Explicitly kept separate per user guidance: `Khalila` and `Khanlum`; `Lilmodel` 
 - **Juicyfruits**: Juicyfruits, Juicyfruitz
 - **Kahnlum**: Kahnlum, Khanlum
 - **Karkan**: Fakekarkan, Kargen, Karkan, Karkant, Karkonk
+- **Kuber**: Koulikov, Kuber
 - **Kuradelh**: Kuradeldk, Kuradelh, Kuradelm, Kuradelmtwo
 - **Leafea**: Leafea, Leafealol
 - **Levithon**: Leviathal, Leviathall, Levithon
