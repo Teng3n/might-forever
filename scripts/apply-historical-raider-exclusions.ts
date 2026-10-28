@@ -3,19 +3,41 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 type Appearance = {
+  expansion: string;
+  className: string;
+  lastDate: string;
   source: string;
+  reportUrl: string;
+  reportCode: string;
+  reportTitle: string;
+  fightId: number;
+  encounterName: string;
 };
 
 type CharacterRecord = {
   name: string;
+  className: string;
+  lastDate: string;
   source: string;
+  reportUrl: string;
+  reportCode: string;
+  reportTitle: string;
+  fightId: number;
+  encounterName: string;
   appearances?: Appearance[];
+};
+
+type AppearanceExclusion = {
+  characterName: string;
+  reportCode: string;
+  fightId: number;
 };
 
 type ExclusionFile = {
   reviewedAt: string;
   reason: string;
   characters: string[];
+  appearances?: AppearanceExclusion[];
 };
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -30,11 +52,67 @@ const [characterSource, exclusionSource] = await Promise.all([
 
 const characters = JSON.parse(characterSource) as CharacterRecord[];
 const exclusions = JSON.parse(exclusionSource) as ExclusionFile;
-const excludedNames = new Set(exclusions.characters.map((name) => name.normalize("NFC").toLocaleLowerCase()));
-const retained = characters.filter((character) => !excludedNames.has(character.name.normalize("NFC").toLocaleLowerCase()));
-const removed = characters.filter((character) => excludedNames.has(character.name.normalize("NFC").toLocaleLowerCase()));
+const normalizeName = (name: string) => name.normalize("NFC").toLocaleLowerCase();
+const appearanceKey = (characterName: string, reportCode: string, fightId: number) =>
+  `${normalizeName(characterName)}|${reportCode.toLocaleLowerCase()}|${fightId}`;
+const excludedNames = new Set(exclusions.characters.map(normalizeName));
+const excludedAppearances = new Set(
+  (exclusions.appearances ?? []).map((appearance) =>
+    appearanceKey(appearance.characterName, appearance.reportCode, appearance.fightId),
+  ),
+);
+const removed: CharacterRecord[] = [];
+const retained: CharacterRecord[] = [];
+let prunedAppearanceCount = 0;
 
-if (removed.length === 0) {
+for (const character of characters) {
+  if (excludedNames.has(normalizeName(character.name))) {
+    removed.push(character);
+    continue;
+  }
+
+  const appearances = character.appearances?.length
+    ? character.appearances
+    : [
+        {
+          expansion: "",
+          className: character.className,
+          lastDate: character.lastDate,
+          source: character.source,
+          reportUrl: character.reportUrl,
+          reportCode: character.reportCode,
+          reportTitle: character.reportTitle,
+          fightId: character.fightId,
+          encounterName: character.encounterName,
+        },
+      ];
+  const keptAppearances = appearances.filter(
+    (appearance) => !excludedAppearances.has(appearanceKey(character.name, appearance.reportCode, appearance.fightId)),
+  );
+  prunedAppearanceCount += appearances.length - keptAppearances.length;
+
+  if (keptAppearances.length === 0) {
+    removed.push(character);
+    continue;
+  }
+
+  const sortedAppearances = [...keptAppearances].sort((left, right) => right.lastDate.localeCompare(left.lastDate));
+  const latest = sortedAppearances[0];
+  retained.push({
+    ...character,
+    className: latest.className,
+    lastDate: latest.lastDate,
+    source: latest.source,
+    reportUrl: latest.reportUrl,
+    reportCode: latest.reportCode,
+    reportTitle: latest.reportTitle,
+    fightId: latest.fightId,
+    encounterName: latest.encounterName,
+    appearances: sortedAppearances,
+  });
+}
+
+if (removed.length === 0 && prunedAppearanceCount === 0) {
   console.log("No excluded historical-raider records were present.");
 } else {
   await writeFile(charactersPath, `${JSON.stringify(retained, null, 2)}\n`, "utf8");
@@ -75,4 +153,5 @@ await writeFile(rosterPath, rosterLines.join("\n"), "utf8");
 console.log(`Historical raider records retained: ${retained.length}`);
 console.log(`Historical raider records removed: ${removed.length}`);
 console.log(`Excluded names absent from the input: ${exclusions.characters.length - removed.length}`);
+console.log(`Metadata-only appearances pruned from retained characters: ${prunedAppearanceCount}`);
 if (removed.length > 0) console.log(`Removed: ${removed.map((character) => character.name).join(", ")}`);
