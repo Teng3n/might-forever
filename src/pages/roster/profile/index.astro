@@ -60,16 +60,19 @@ import PageHeader from "../../../components/PageHeader.astro";
           </div>
           <p class="muted" data-equipment-count></p>
         </div>
-        <div class="character-equipment-layout">
-          <div class="character-equipment-column" data-equipment-left></div>
+        <div class="character-equipment-layout" aria-label="Equipped item paper doll">
+          <div class="character-equipment-column is-left" data-equipment-left aria-label="Left equipment slots"></div>
           <figure class="character-render-stage">
             <img data-character-render alt="" hidden />
             <figcaption data-character-render-caption></figcaption>
           </figure>
-          <div class="character-equipment-column" data-equipment-right></div>
+          <div class="character-equipment-column is-right" data-equipment-right aria-label="Right equipment slots"></div>
+          <div class="character-equipment-weapons" data-equipment-weapons aria-label="Weapon equipment slots"></div>
         </div>
       </section>
+    </div>
 
+    <div class="character-profile-secondary-grid">
       <aside class="panel character-history-panel" aria-labelledby="history-heading">
         <div class="character-section-heading">
           <div>
@@ -81,9 +84,7 @@ import PageHeader from "../../../components/PageHeader.astro";
         <p class="character-history-note" data-history-note></p>
         <ol class="character-history-list" data-history-list></ol>
       </aside>
-    </div>
 
-    <div class="character-profile-secondary-grid">
       <section class="panel character-detail-panel" aria-labelledby="pvp-heading">
         <div class="character-section-heading">
           <div>
@@ -204,13 +205,39 @@ import PageHeader from "../../../components/PageHeader.astro";
     EPIC: "#a335ee",
     LEGENDARY: "#ff8000",
   };
-  const leftSlots = new Set(["HEAD", "NECK", "SHOULDER", "BACK", "CHEST", "WRIST", "HANDS", "WAIST"]);
+  const leftSlots = [
+    { key: "HEAD", label: "Head" },
+    { key: "NECK", label: "Neck" },
+    { key: "SHOULDERS", label: "Shoulders" },
+    { key: "BACK", label: "Back" },
+    { key: "CHEST", label: "Chest" },
+    { key: "SHIRT", label: "Shirt" },
+    { key: "TABARD", label: "Tabard" },
+    { key: "WRIST", label: "Wrist" },
+  ] as const;
+  const rightSlots = [
+    { key: "HANDS", label: "Hands" },
+    { key: "WAIST", label: "Waist" },
+    { key: "LEGS", label: "Legs" },
+    { key: "FEET", label: "Feet" },
+    { key: "RING_1", label: "Ring 1" },
+    { key: "RING_2", label: "Ring 2" },
+    { key: "TRINKET_1", label: "Trinket 1" },
+    { key: "TRINKET_2", label: "Trinket 2" },
+  ] as const;
+  const weaponSlots = [
+    { key: "MAIN_HAND", label: "Main Hand" },
+    { key: "OFF_HAND", label: "Off Hand" },
+    { key: "RANGED", label: "Ranged" },
+    { key: "AMMO", label: "Ammo" },
+  ] as const;
   const loading = document.querySelector<HTMLElement>("[data-character-loading]");
   const errorState = document.querySelector<HTMLElement>("[data-character-error]");
   const errorMessage = document.querySelector<HTMLElement>("[data-character-error-message]");
   const content = document.querySelector<HTMLElement>("[data-character-content]");
   const leftEquipment = document.querySelector<HTMLElement>("[data-equipment-left]");
   const rightEquipment = document.querySelector<HTMLElement>("[data-equipment-right]");
+  const weaponEquipment = document.querySelector<HTMLElement>("[data-equipment-weapons]");
   const historyList = document.querySelector<HTMLOListElement>("[data-history-list]");
 
   const setText = (selector: string, value: string | number) => {
@@ -232,21 +259,37 @@ import PageHeader from "../../../components/PageHeader.astro";
     }).format(date);
   };
 
-  const createEquipmentItem = (item: EquipmentItem) => {
+  const getSlotKey = (value: string) => value.trim().toLocaleUpperCase().replaceAll(/[^A-Z0-9]+/g, "_");
+
+  const createEquipmentItem = (item: EquipmentItem | undefined, slotLabel: string) => {
     const row = document.createElement("article");
     const artwork = document.createElement("div");
     const copy = document.createElement("div");
-    const heading = document.createElement("div");
     const name = document.createElement("strong");
     const slot = document.createElement("span");
     const detail = document.createElement("small");
     row.className = "character-equipment-item";
     artwork.className = "character-item-artwork";
     copy.className = "character-item-copy";
-    heading.className = "character-item-heading";
+    slot.className = "character-item-slot";
+    slot.textContent = slotLabel;
+
+    if (!item) {
+      row.classList.add("is-empty");
+      name.textContent = "Empty slot";
+      artwork.setAttribute("aria-hidden", "true");
+      artwork.textContent = "—";
+      copy.append(slot, name);
+      row.append(artwork, copy);
+      return row;
+    }
+
+    const qualityColor = qualityColors[item.quality] ?? "#f2f0e8";
+    row.style.setProperty("--item-quality", qualityColor);
+    row.title = [item.name, item.itemLevel === null ? "" : `Item level ${item.itemLevel}`, ...item.enchantments, item.setName ?? ""]
+      .filter(Boolean)
+      .join(" · ");
     name.textContent = item.name;
-    name.style.setProperty("--item-quality", qualityColors[item.quality] ?? "#f2f0e8");
-    slot.textContent = item.slotLabel;
     detail.textContent = [
       item.itemLevel === null ? "" : `Item level ${item.itemLevel}`,
       item.enchantments[0] ?? "",
@@ -265,19 +308,33 @@ import PageHeader from "../../../components/PageHeader.astro";
       artwork.textContent = item.slotLabel.slice(0, 1);
     }
 
-    heading.append(name, slot);
-    copy.append(heading, detail);
+    if (item.itemLevel !== null) {
+      const itemLevel = document.createElement("span");
+      itemLevel.className = "character-item-level";
+      itemLevel.textContent = String(item.itemLevel);
+      artwork.append(itemLevel);
+    }
+
+    copy.append(slot, name, detail);
     row.append(artwork, copy);
     return row;
   };
 
   const renderEquipment = (items: EquipmentItem[]) => {
-    if (!leftEquipment || !rightEquipment) return;
+    if (!leftEquipment || !rightEquipment || !weaponEquipment) return;
     leftEquipment.replaceChildren();
     rightEquipment.replaceChildren();
+    weaponEquipment.replaceChildren();
+    const itemsBySlot = new Map(items.map((item) => [getSlotKey(item.slot), item]));
 
-    for (const item of items) {
-      (leftSlots.has(item.slot) ? leftEquipment : rightEquipment).append(createEquipmentItem(item));
+    for (const slot of leftSlots) {
+      leftEquipment.append(createEquipmentItem(itemsBySlot.get(slot.key), slot.label));
+    }
+    for (const slot of rightSlots) {
+      rightEquipment.append(createEquipmentItem(itemsBySlot.get(slot.key), slot.label));
+    }
+    for (const slot of weaponSlots) {
+      weaponEquipment.append(createEquipmentItem(itemsBySlot.get(slot.key), slot.label));
     }
 
     setText("[data-equipment-count]", `${items.length} equipped items`);

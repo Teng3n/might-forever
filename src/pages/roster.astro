@@ -281,12 +281,17 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
       counts.set(label, (counts.get(label) ?? 0) + 1);
     }
 
-    const sorted = [...counts.entries()].sort(
-      ([leftLabel, leftCount], [rightLabel, rightCount]) =>
+    const sorted = [...counts.entries()].sort(([leftLabel, leftCount], [rightLabel, rightCount]) => {
+      if (compositionDimension === "class") {
+        return leftLabel.localeCompare(rightLabel);
+      }
+
+      return (
         (leftLabel === "Unassigned" ? 1 : 0) - (rightLabel === "Unassigned" ? 1 : 0) ||
         rightCount - leftCount ||
-        leftLabel.localeCompare(rightLabel),
-    );
+        leftLabel.localeCompare(rightLabel)
+      );
+    });
 
     compositionBars.replaceChildren();
     compositionBars.dataset.dimension = compositionDimension;
