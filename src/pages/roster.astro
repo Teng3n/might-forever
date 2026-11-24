@@ -1,26 +1,367 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageHeader from "../components/PageHeader.astro";
-import StatCard from "../components/StatCard.astro";
+
+const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/armory/guild/might";
 ---
 
 <Layout title="Roster | Might Forever">
-  <PageHeader eyebrow="Roster" title="Guild Roster" />
+  <PageHeader
+    eyebrow="WoW Forever · Alliance · PvP"
+    title="Might Guild Roster"
+    description="A live view of Might in World of Warcraft: Forever. Character profiles are the next layer; this roster establishes the stable identities their gear history will follow."
+  />
 
-  <section class="dashboard-grid roster-summary-grid">
-    <StatCard label="Roster Count" value={0} detail="Awaiting roster source" />
-    <StatCard label="Tanks" value={0} />
-    <StatCard label="Healers" value={0} />
-    <StatCard label="Melee DPS" value={0} />
-    <StatCard label="Ranged DPS" value={0} />
+  <section class="panel roster-identity-panel" aria-labelledby="guild-roster-heading">
+    <div>
+      <p class="eyebrow">Live guild data</p>
+      <h2 id="guild-roster-heading" data-guild-name>Might</h2>
+      <p class="roster-identity-meta" data-guild-meta>North America · Alliance · PvP</p>
+    </div>
+    <div class="roster-identity-actions">
+      <span class="roster-sync-status" data-roster-sync-status aria-live="polite">Connecting to Blizzard…</span>
+      <a class="filter-button is-subtle" href={officialGuildUrl} target="_blank" rel="noreferrer">
+        Open Blizzard Armory
+      </a>
+    </div>
   </section>
 
-  <section class="panel empty-state-panel">
-    <p class="eyebrow">Foundation ready</p>
-    <h2>No roster has been created yet</h2>
-    <p class="info-note">
-      This page is intentionally empty. When the Might Forever roster spreadsheet is ready, its
-      data can be connected here without carrying over any Vitality MoP members.
+  <section class="dashboard-grid roster-summary-grid" aria-label="Roster summary">
+    <article class="stat-card">
+      <span>Members</span>
+      <strong data-roster-stat="members">—</strong>
+      <small>Characters in guild</small>
+    </article>
+    <article class="stat-card">
+      <span>Level 60</span>
+      <strong data-roster-stat="level-cap">—</strong>
+      <small>At the current cap</small>
+    </article>
+    <article class="stat-card">
+      <span>Average level</span>
+      <strong data-roster-stat="average-level">—</strong>
+      <small>Across the roster</small>
+    </article>
+    <article class="stat-card">
+      <span>Classes</span>
+      <strong data-roster-stat="classes">—</strong>
+      <small>Represented</small>
+    </article>
+    <article class="stat-card">
+      <span>Ruleset</span>
+      <strong data-roster-stat="ruleset">PvP</strong>
+      <small data-roster-faction>Alliance</small>
+    </article>
+  </section>
+
+  <section class="panel roster-browser" data-roster-root aria-busy="true">
+    <div class="roster-browser-heading">
+      <div class="section-heading">
+        <p class="eyebrow">Characters</p>
+        <h2>Guild roster</h2>
+      </div>
+      <p class="muted roster-result-count" data-roster-result-count>Loading roster…</p>
+    </div>
+
+    <form class="roster-filter" data-roster-filter hidden>
+      <label class="roster-filter-field">
+        <span>Search</span>
+        <input type="search" name="search" placeholder="Character name" autocomplete="off" />
+      </label>
+      <label class="roster-filter-field">
+        <span>Class</span>
+        <select name="class">
+          <option value="">All classes</option>
+        </select>
+      </label>
+      <label class="roster-filter-field">
+        <span>Guild rank</span>
+        <select name="rank">
+          <option value="">All ranks</option>
+        </select>
+      </label>
+      <label class="roster-filter-field">
+        <span>Minimum level</span>
+        <select name="minimumLevel">
+          <option value="0">Any level</option>
+          <option value="60">Level 60</option>
+          <option value="50">50+</option>
+          <option value="40">40+</option>
+          <option value="30">30+</option>
+          <option value="20">20+</option>
+          <option value="10">10+</option>
+        </select>
+      </label>
+      <button class="filter-button is-subtle roster-reset-button" type="reset">Clear filters</button>
+    </form>
+
+    <div class="roster-loading-state" data-roster-loading>
+      <div class="roster-loading-line"></div>
+      <div class="roster-loading-line"></div>
+      <div class="roster-loading-line"></div>
+      <span class="sr-only">Loading the Might guild roster from Blizzard.</span>
+    </div>
+
+    <div class="roster-error-state" data-roster-error hidden>
+      <p class="eyebrow">Roster unavailable</p>
+      <h3>Live data is not connected yet</h3>
+      <p data-roster-error-message>
+        The Blizzard connection is being configured. The official Armory is still available in the meantime.
+      </p>
+      <a class="filter-button" href={officialGuildUrl} target="_blank" rel="noreferrer">View official roster</a>
+    </div>
+
+    <div class="table-shell roster-table-shell" data-roster-table-shell hidden>
+      <table class="data-table roster-table forever-roster-table">
+        <caption class="sr-only">Current World of Warcraft: Forever roster for Might</caption>
+        <thead>
+          <tr>
+            <th scope="col">Character</th>
+            <th scope="col">Level</th>
+            <th scope="col">Class</th>
+            <th scope="col">Race</th>
+            <th scope="col">Guild rank</th>
+          </tr>
+        </thead>
+        <tbody data-roster-body></tbody>
+      </table>
+    </div>
+
+    <div class="roster-empty-filter" data-roster-empty-filter hidden>
+      <p>No characters match these filters.</p>
+    </div>
+
+    <p class="roster-data-note muted">
+      Blizzard updates character data after logout. Some profiles may be unavailable when a player has disabled
+      community-app sharing in their Battle.net privacy settings.
     </p>
   </section>
 </Layout>
+
+<script>
+  type RosterMember = {
+    id: number;
+    slug: string;
+    name: string;
+    level: number;
+    className: string;
+    raceName: string;
+    rank: number;
+    rankLabel: string;
+    armoryUrl: string;
+  };
+
+  type RosterPayload = {
+    ok: true;
+    syncedAt: string;
+    guild: {
+      name: string;
+      faction: string;
+      ruleset: string;
+      memberCount: number;
+      armoryUrl: string;
+    };
+    summary: {
+      memberCount: number;
+      levelCapCount: number;
+      averageLevel: number;
+      classCount: number;
+    };
+    members: RosterMember[];
+  };
+
+  const classColors: Record<string, string> = {
+    Druid: "#ff7c0a",
+    Hunter: "#aad372",
+    Mage: "#3fc7eb",
+    Paladin: "#f48cba",
+    Priest: "#ffffff",
+    Rogue: "#fff468",
+    Shaman: "#0070dd",
+    Warlock: "#8788ee",
+    Warrior: "#c69b6d",
+  };
+
+  const root = document.querySelector<HTMLElement>("[data-roster-root]");
+  const filter = document.querySelector<HTMLFormElement>("[data-roster-filter]");
+  const body = document.querySelector<HTMLTableSectionElement>("[data-roster-body]");
+  const loading = document.querySelector<HTMLElement>("[data-roster-loading]");
+  const errorState = document.querySelector<HTMLElement>("[data-roster-error]");
+  const errorMessage = document.querySelector<HTMLElement>("[data-roster-error-message]");
+  const tableShell = document.querySelector<HTMLElement>("[data-roster-table-shell]");
+  const emptyFilter = document.querySelector<HTMLElement>("[data-roster-empty-filter]");
+  const resultCount = document.querySelector<HTMLElement>("[data-roster-result-count]");
+  const syncStatus = document.querySelector<HTMLElement>("[data-roster-sync-status]");
+  const classSelect = filter?.elements.namedItem("class") as HTMLSelectElement | null;
+  const rankSelect = filter?.elements.namedItem("rank") as HTMLSelectElement | null;
+  let members: RosterMember[] = [];
+
+  const setText = (selector: string, value: string | number) => {
+    const element = document.querySelector<HTMLElement>(selector);
+
+    if (element) {
+      element.textContent = String(value);
+    }
+  };
+
+  const formatSyncTime = (value: string) => {
+    const date = new Date(value);
+
+    if (Number.isNaN(date.getTime())) {
+      return "Sync time unavailable";
+    }
+
+    return `Updated ${new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      timeZone: "America/Los_Angeles",
+      timeZoneName: "short",
+    }).format(date)}`;
+  };
+
+  const addOptions = (select: HTMLSelectElement | null, values: Array<{ value: string; label: string }>) => {
+    if (!select) {
+      return;
+    }
+
+    for (const item of values) {
+      const option = document.createElement("option");
+      option.value = item.value;
+      option.textContent = item.label;
+      select.append(option);
+    }
+  };
+
+  const createCell = (label: string, text: string) => {
+    const cell = document.createElement("td");
+    cell.dataset.label = label;
+    cell.textContent = text;
+    return cell;
+  };
+
+  const renderMembers = (visibleMembers: RosterMember[]) => {
+    if (!body || !tableShell || !emptyFilter || !resultCount) {
+      return;
+    }
+
+    body.replaceChildren();
+
+    for (const member of visibleMembers) {
+      const row = document.createElement("tr");
+      const nameCell = document.createElement("td");
+      const link = document.createElement("a");
+      nameCell.dataset.label = "Character";
+      link.className = "player-name roster-character-link";
+      link.href = member.armoryUrl;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.textContent = member.name;
+      link.style.setProperty("--player-color", classColors[member.className] ?? "#f2f0e8");
+      link.setAttribute("aria-label", `${member.name} on the Blizzard Armory`);
+      nameCell.append(link);
+      row.append(
+        nameCell,
+        createCell("Level", String(member.level)),
+        createCell("Class", member.className),
+        createCell("Race", member.raceName),
+        createCell("Guild rank", member.rankLabel),
+      );
+      body.append(row);
+    }
+
+    const hasResults = visibleMembers.length > 0;
+    tableShell.hidden = !hasResults;
+    emptyFilter.hidden = hasResults;
+    resultCount.textContent = `${visibleMembers.length} of ${members.length} characters`;
+  };
+
+  const applyFilters = () => {
+    if (!filter) {
+      return;
+    }
+
+    const formData = new FormData(filter);
+    const query = String(formData.get("search") ?? "").trim().toLocaleLowerCase();
+    const className = String(formData.get("class") ?? "");
+    const rank = String(formData.get("rank") ?? "");
+    const minimumLevel = Number(formData.get("minimumLevel") ?? 0);
+    const visibleMembers = members.filter(
+      (member) =>
+        (!query || member.name.toLocaleLowerCase().includes(query)) &&
+        (!className || member.className === className) &&
+        (!rank || String(member.rank) === rank) &&
+        member.level >= minimumLevel,
+    );
+
+    renderMembers(visibleMembers);
+  };
+
+  const showError = (message: string) => {
+    if (loading) loading.hidden = true;
+    if (tableShell) tableShell.hidden = true;
+    if (errorState) errorState.hidden = false;
+    if (errorMessage) errorMessage.textContent = message;
+    if (resultCount) resultCount.textContent = "Roster unavailable";
+    if (syncStatus) syncStatus.textContent = "Connection pending";
+    if (root) root.setAttribute("aria-busy", "false");
+  };
+
+  const loadRoster = async () => {
+    let failureMessage = "Unable to load the live guild roster.";
+
+    try {
+      const response = await fetch("/api/forever-roster", { headers: { Accept: "application/json" } });
+      const isJson = response.headers.get("Content-Type")?.toLowerCase().includes("application/json");
+
+      if (!isJson) {
+        throw new Error(failureMessage);
+      }
+
+      const payload = (await response.json()) as RosterPayload | { ok?: false; message?: string };
+
+      if (!response.ok || payload.ok !== true || !("members" in payload) || !Array.isArray(payload.members)) {
+        failureMessage = "message" in payload && payload.message ? payload.message : failureMessage;
+        throw new Error(failureMessage);
+      }
+
+      members = payload.members;
+      setText("[data-guild-name]", payload.guild.name);
+      setText("[data-guild-meta]", `North America · ${payload.guild.faction} · ${payload.guild.ruleset}`);
+      setText('[data-roster-stat="members"]', payload.summary.memberCount);
+      setText('[data-roster-stat="level-cap"]', payload.summary.levelCapCount);
+      setText('[data-roster-stat="average-level"]', payload.summary.averageLevel);
+      setText('[data-roster-stat="classes"]', payload.summary.classCount);
+      setText('[data-roster-stat="ruleset"]', payload.guild.ruleset);
+      setText("[data-roster-faction]", payload.guild.faction);
+
+      if (syncStatus) syncStatus.textContent = formatSyncTime(payload.syncedAt);
+
+      const classes = [...new Set(members.map((member) => member.className))].sort((a, b) => a.localeCompare(b));
+      const ranks = [...new Map(members.map((member) => [member.rank, member.rankLabel])).entries()].sort(
+        ([left], [right]) => left - right,
+      );
+      addOptions(
+        classSelect,
+        classes.map((className) => ({ value: className, label: className })),
+      );
+      addOptions(
+        rankSelect,
+        ranks.map(([rank, label]) => ({ value: String(rank), label })),
+      );
+
+      if (loading) loading.hidden = true;
+      if (filter) filter.hidden = false;
+      if (root) root.setAttribute("aria-busy", "false");
+      renderMembers(members);
+    } catch {
+      showError(failureMessage);
+    }
+  };
+
+  filter?.addEventListener("input", applyFilters);
+  filter?.addEventListener("change", applyFilters);
+  filter?.addEventListener("reset", () => window.setTimeout(applyFilters));
+  void loadRoster();
+</script>
