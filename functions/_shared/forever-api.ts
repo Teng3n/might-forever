@@ -56,6 +56,7 @@ export interface ForeverCharacterItem {
   id: number;
   slot: string;
   slotLabel: string;
+  inventoryType: string | null;
   name: string;
   itemLevel: number | null;
   quality: string;
@@ -908,6 +909,7 @@ export const getForeverCharacter = async (env: ForeverApiEnv, requestedSlug: str
         id: itemId,
         slot,
         slotLabel: getReferenceName(value.slot, locale) || slot,
+        inventoryType: getTypeName(value.inventory_type) || null,
         name,
         itemLevel: getNestedNumber(value, "level"),
         quality: getTypeName(value.quality) || "UNKNOWN",

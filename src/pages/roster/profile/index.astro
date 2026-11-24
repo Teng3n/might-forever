@@ -109,7 +109,6 @@ import PageHeader from "../../../components/PageHeader.astro";
               <p class="eyebrow">Equipment sets</p>
               <h3 id="equipment-sets-heading">Set bonuses</h3>
             </div>
-            <span data-character-set-count></span>
           </div>
           <div class="character-set-list" data-character-set-list></div>
         </section>
@@ -133,6 +132,7 @@ import PageHeader from "../../../components/PageHeader.astro";
     id: number;
     slot: string;
     slotLabel: string;
+    inventoryType?: string | null;
     name: string;
     itemLevel: number | null;
     quality: string;
@@ -284,7 +284,29 @@ import PageHeader from "../../../components/PageHeader.astro";
 
   const getSlotKey = (value: string) => value.trim().toLocaleUpperCase().replaceAll(/[^A-Z0-9]+/g, "_");
 
-  const createEquipmentItem = (item: EquipmentItem | undefined, slotLabel: string) => {
+  const enchantableSlots = new Set([
+    "HEAD",
+    "SHOULDERS",
+    "BACK",
+    "CHEST",
+    "WRIST",
+    "HANDS",
+    "LEGS",
+    "FEET",
+    "MAIN_HAND",
+  ]);
+  const enchantableOffHandTypes = new Set(["SHIELD", "WEAPON", "WEAPONOFFHAND"]);
+
+  const isMissingEnchant = (item: EquipmentItem, characterLevel: number) => {
+    if (characterLevel < 60 || item.enchantments.length > 0) return false;
+    const slotKey = getSlotKey(item.slot);
+    return (
+      enchantableSlots.has(slotKey) ||
+      (slotKey === "OFF_HAND" && enchantableOffHandTypes.has(item.inventoryType ?? ""))
+    );
+  };
+
+  const createEquipmentItem = (item: EquipmentItem | undefined, slotLabel: string, characterLevel: number) => {
     const row = document.createElement("article");
     const artwork = document.createElement("div");
     const copy = document.createElement("div");
@@ -307,9 +329,17 @@ import PageHeader from "../../../components/PageHeader.astro";
       return row;
     }
 
+    const missingEnchant = isMissingEnchant(item, characterLevel);
     const qualityColor = getQualityColor(item.quality);
     row.style.setProperty("--item-quality", qualityColor);
-    row.title = [item.name, item.qualityLabel, item.itemLevel === null ? "" : `Item level ${item.itemLevel}`, ...item.enchantments, item.setName ?? ""]
+    row.title = [
+      item.name,
+      item.qualityLabel,
+      item.itemLevel === null ? "" : `Item level ${item.itemLevel}`,
+      ...item.enchantments,
+      item.setName ?? "",
+      missingEnchant ? "Missing enchant" : "",
+    ]
       .filter(Boolean)
       .join(" · ");
     name.textContent = item.name;
@@ -339,11 +369,25 @@ import PageHeader from "../../../components/PageHeader.astro";
     }
 
     copy.append(slot, name, detail);
+
+    if (missingEnchant) {
+      const warning = document.createElement("span");
+      const warningIcon = document.createElement("span");
+      warning.className = "character-item-warning";
+      warning.setAttribute("aria-label", `${item.name} is missing an enchant`);
+      warning.title = "No enchantment reported by Blizzard";
+      warningIcon.className = "character-item-warning-icon";
+      warningIcon.setAttribute("aria-hidden", "true");
+      warningIcon.textContent = "!";
+      warning.append(warningIcon, "Missing enchant");
+      copy.append(warning);
+    }
+
     row.append(artwork, copy);
     return row;
   };
 
-  const renderEquipment = (items: EquipmentItem[]) => {
+  const renderEquipment = (items: EquipmentItem[], characterLevel: number) => {
     if (!leftEquipment || !rightEquipment || !weaponEquipment) return;
     leftEquipment.replaceChildren();
     rightEquipment.replaceChildren();
@@ -351,13 +395,13 @@ import PageHeader from "../../../components/PageHeader.astro";
     const itemsBySlot = new Map(items.map((item) => [getSlotKey(item.slot), item]));
 
     for (const slot of leftSlots) {
-      leftEquipment.append(createEquipmentItem(itemsBySlot.get(slot.key), slot.label));
+      leftEquipment.append(createEquipmentItem(itemsBySlot.get(slot.key), slot.label, characterLevel));
     }
     for (const slot of rightSlots) {
-      rightEquipment.append(createEquipmentItem(itemsBySlot.get(slot.key), slot.label));
+      rightEquipment.append(createEquipmentItem(itemsBySlot.get(slot.key), slot.label, characterLevel));
     }
     for (const slot of weaponSlots) {
-      weaponEquipment.append(createEquipmentItem(itemsBySlot.get(slot.key), slot.label));
+      weaponEquipment.append(createEquipmentItem(itemsBySlot.get(slot.key), slot.label, characterLevel));
     }
 
     setText("[data-equipment-count]", `${items.length} equipped items`);
@@ -467,7 +511,12 @@ import PageHeader from "../../../components/PageHeader.astro";
 
     if (!section || !list) return;
     list.replaceChildren();
-    const equipmentSets = payload.equipmentSets ?? [];
+    const equipmentSets = (payload.equipmentSets ?? [])
+      .map((equipmentSet) => ({
+        ...equipmentSet,
+        bonuses: equipmentSet.bonuses.filter((bonus) => bonus.active),
+      }))
+      .filter((equipmentSet) => equipmentSet.bonuses.length > 0);
 
     if (!equipmentSets.length) {
       section.hidden = true;
@@ -478,27 +527,18 @@ import PageHeader from "../../../components/PageHeader.astro";
       const card = document.createElement("article");
       const heading = document.createElement("div");
       const name = document.createElement("strong");
-      const count = document.createElement("span");
-      const items = document.createElement("p");
       const bonuses = document.createElement("ul");
-      const totalLabel = equipmentSet.totalCount > 0 ? ` of ${equipmentSet.totalCount}` : "";
       card.className = "character-set-card";
       heading.className = "character-set-card-heading";
       name.textContent = equipmentSet.name;
-      count.textContent = `${equipmentSet.equippedCount}${totalLabel} pieces`;
-      items.className = "character-set-items";
-      items.textContent = equipmentSet.equippedItems.join(" · ");
       bonuses.className = "character-set-bonuses";
 
       for (const bonus of equipmentSet.bonuses) {
         const row = document.createElement("li");
         const threshold = document.createElement("span");
         const description = document.createElement("span");
-        row.className = bonus.active ? "is-active" : "is-inactive";
-        row.setAttribute(
-          "aria-label",
-          `${bonus.requiredCount}-piece bonus${bonus.active ? " active" : " inactive"}: ${bonus.description}`,
-        );
+        row.className = "is-active";
+        row.setAttribute("aria-label", `${bonus.requiredCount}-piece bonus: ${bonus.description}`);
         threshold.className = "character-set-threshold";
         threshold.textContent = `${bonus.requiredCount}-piece`;
         description.textContent = bonus.description;
@@ -506,17 +546,11 @@ import PageHeader from "../../../components/PageHeader.astro";
         bonuses.append(row);
       }
 
-      heading.append(name, count);
-      card.append(heading);
-      if (equipmentSet.equippedItems.length) card.append(items);
-      if (equipmentSet.bonuses.length) card.append(bonuses);
+      heading.append(name);
+      card.append(heading, bonuses);
       list.append(card);
     }
 
-    setText(
-      "[data-character-set-count]",
-      `${equipmentSets.length} set${equipmentSets.length === 1 ? "" : "s"}`,
-    );
     section.hidden = false;
   };
 
@@ -583,7 +617,7 @@ import PageHeader from "../../../components/PageHeader.astro";
       render.hidden = false;
     }
 
-    renderEquipment(payload.equipment);
+    renderEquipment(payload.equipment, payload.character.level);
     renderHistory(payload);
     renderPvp(payload);
     renderStatistics(payload);
@@ -609,7 +643,7 @@ import PageHeader from "../../../components/PageHeader.astro";
     }
 
     try {
-      const response = await fetch(`/api/forever-character/${encodeURIComponent(slug)}?v=2`, {
+      const response = await fetch(`/api/forever-character/${encodeURIComponent(slug)}?v=3`, {
         headers: { Accept: "application/json" },
       });
       const payload = (await response.json()) as CharacterPayload | { ok?: false; message?: string };
