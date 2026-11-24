@@ -205,6 +205,7 @@ import PageHeader from "../../../components/PageHeader.astro";
     EPIC: "#a335ee",
     LEGENDARY: "#ff8000",
   };
+  const getQualityColor = (quality: string) => qualityColors[quality.trim().toLocaleUpperCase()] ?? "#f2f0e8";
   const leftSlots = [
     { key: "HEAD", label: "Head" },
     { key: "NECK", label: "Neck" },
@@ -284,9 +285,9 @@ import PageHeader from "../../../components/PageHeader.astro";
       return row;
     }
 
-    const qualityColor = qualityColors[item.quality] ?? "#f2f0e8";
+    const qualityColor = getQualityColor(item.quality);
     row.style.setProperty("--item-quality", qualityColor);
-    row.title = [item.name, item.itemLevel === null ? "" : `Item level ${item.itemLevel}`, ...item.enchantments, item.setName ?? ""]
+    row.title = [item.name, item.qualityLabel, item.itemLevel === null ? "" : `Item level ${item.itemLevel}`, ...item.enchantments, item.setName ?? ""]
       .filter(Boolean)
       .join(" · ");
     name.textContent = item.name;
@@ -365,7 +366,7 @@ import PageHeader from "../../../components/PageHeader.astro";
       const detail = document.createElement("small");
       marker.className = "character-history-marker";
       heading.textContent = `Gained ${event.itemName}`;
-      heading.style.setProperty("--item-quality", qualityColors[event.quality] ?? "#f2f0e8");
+      heading.style.setProperty("--item-quality", getQualityColor(event.quality));
       detail.textContent = [
         event.itemLevel === null ? "" : `Item level ${event.itemLevel}`,
         event.slot.replaceAll("_", " ").toLocaleLowerCase(),
