@@ -118,6 +118,12 @@ export interface ForeverCharacterPayload {
   }>;
 }
 
+const MANUAL_CHARACTER_SPECIALIZATIONS: Record<string, { specialization: string; role: string }> = {
+  "bad-pawsture": { specialization: "Feral Combat", role: "Melee DPS" },
+  "chonkars-winterbourne": { specialization: "Arms", role: "Melee DPS" },
+  "morphling-shapeshifter": { specialization: "Feral Combat", role: "Melee DPS" },
+};
+
 type JsonRecord = Record<string, unknown>;
 
 const TOKEN_TIMEOUT_MS = 10_000;
@@ -729,6 +735,15 @@ export const getForeverRoster = async (env: ForeverApiEnv): Promise<ForeverRoste
     }
   }
 
+  for (const member of payload.members) {
+    const manualSpecialization = MANUAL_CHARACTER_SPECIALIZATIONS[member.slug];
+
+    if (manualSpecialization) {
+      member.specialization = manualSpecialization.specialization;
+      member.role = manualSpecialization.role;
+    }
+  }
+
   payload.summary.levelCapProfileCount = itemLevels.length;
   payload.summary.averageItemLevel = itemLevels.length
     ? Math.round((itemLevels.reduce((total, itemLevel) => total + itemLevel, 0) / itemLevels.length) * 10) / 10
@@ -881,7 +896,8 @@ export const getForeverCharacter = async (env: ForeverApiEnv, requestedSlug: str
     return { ...publicItem, iconUrl } satisfies ForeverCharacterItem;
   });
 
-  const specialization = getActiveSpecialization(specializationData);
+  const manualSpecialization = MANUAL_CHARACTER_SPECIALIZATIONS[slug];
+  const specialization = manualSpecialization?.specialization ?? getActiveSpecialization(specializationData);
   const lastLoginTimestamp = cleanNumber(profileData.last_login_timestamp);
   const lastLoginDate = lastLoginTimestamp ? new Date(lastLoginTimestamp) : null;
   const guildName = getReferenceName(profileData.guild, locale) || "Might";
@@ -928,7 +944,7 @@ export const getForeverCharacter = async (env: ForeverApiEnv, requestedSlug: str
       faction: getTypeName(profileData.faction) || "Alliance",
       guildName,
       specialization,
-      role: getRole(className, specialization),
+      role: manualSpecialization?.role ?? getRole(className, specialization),
       achievementPoints: cleanNumber(profileData.achievement_points) ?? 0,
       equippedItemLevel: cleanNumber(profileData.equipped_item_level),
       averageItemLevel: cleanNumber(profileData.average_item_level),

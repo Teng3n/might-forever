@@ -18,7 +18,7 @@ interface CacheStorageWithDefault extends CacheStorage {
 const FRESH_CACHE_SECONDS = 30 * 60;
 const STALE_CACHE_SECONDS = 24 * 60 * 60;
 const BROWSER_CACHE_SECONDS = 5 * 60;
-const CACHE_VERSION = "v2";
+const CACHE_VERSION = "v3";
 
 const responseHeaders = {
   "Content-Type": "application/json; charset=utf-8",

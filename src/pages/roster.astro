@@ -303,45 +303,52 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
 
     compositionBars.replaceChildren();
     compositionBars.dataset.dimension = compositionDimension;
+    compositionBars.style.setProperty("--composition-item-count", String(sorted.length));
+    const largestCount = Math.max(...sorted.map(([, count]) => count), 1);
 
-    for (const [label, count] of sorted) {
+    for (const [index, [label, count]] of sorted.entries()) {
       const percent = levelCapMembers.length ? (count / levelCapMembers.length) * 100 : 0;
-      const row = document.createElement("div");
-      const nameGroup = document.createElement("div");
-      const swatch = document.createElement("span");
-      const name = document.createElement("span");
-      const value = document.createElement("div");
-      const countValue = document.createElement("strong");
-      const percentValue = document.createElement("span");
+      const categoryMembers = levelCapMembers
+        .filter((member) => getCompositionValue(member, compositionDimension) === label)
+        .sort((left, right) => left.name.localeCompare(right.name));
+      const playerNames = categoryMembers.map((member) => member.name);
+      const column = document.createElement("button");
+      const countValue = document.createElement("span");
       const track = document.createElement("div");
       const bar = document.createElement("div");
-      row.className = "roster-composition-row";
-      nameGroup.className = "roster-composition-label";
-      swatch.className = "roster-composition-swatch";
-      name.textContent = label;
-      value.className = "roster-composition-value";
+      const tooltip = document.createElement("span");
+      const tooltipHeading = document.createElement("strong");
+      const tooltipPlayers = document.createElement("span");
+      const tooltipId = `composition-tooltip-${compositionDimension}-${index}`;
+      column.className = "roster-composition-column";
+      column.type = "button";
+      column.setAttribute(
+        "aria-label",
+        `${label}: ${count} of ${levelCapMembers.length} level 60 characters. ${playerNames.join(", ")}`,
+      );
+      column.setAttribute("aria-describedby", tooltipId);
+      countValue.className = "roster-composition-count";
       countValue.textContent = String(count);
-      percentValue.textContent = `${Math.round(percent)}%`;
       track.className = "roster-composition-track";
-      track.setAttribute("role", "progressbar");
-      track.setAttribute("aria-label", `${label}: ${count} of ${levelCapMembers.length} level 60 characters`);
-      track.setAttribute("aria-valuemin", "0");
-      track.setAttribute("aria-valuemax", String(levelCapMembers.length));
-      track.setAttribute("aria-valuenow", String(count));
+      track.setAttribute("aria-hidden", "true");
       bar.className = "roster-composition-bar";
-      bar.style.width = `${percent}%`;
-      row.style.setProperty(
+      bar.style.height = `${(count / largestCount) * 100}%`;
+      tooltip.className = "roster-composition-tooltip";
+      tooltip.id = tooltipId;
+      tooltip.setAttribute("role", "tooltip");
+      tooltipHeading.textContent = `${label} · ${count} (${Math.round(percent)}%)`;
+      tooltipPlayers.textContent = playerNames.join(", ");
+      tooltip.append(tooltipHeading, tooltipPlayers);
+      column.style.setProperty(
         "--composition-color",
         compositionDimension === "class"
           ? classColors[label] ?? "#7c8cff"
           : roleColors[label] ?? "#7c8cff",
       );
 
-      nameGroup.append(swatch, name);
-      value.append(countValue, percentValue);
       track.append(bar);
-      row.append(nameGroup, track, value);
-      compositionBars.append(row);
+      column.append(countValue, track, tooltip);
+      compositionBars.append(column);
     }
 
     const unassignedCount = counts.get("Unassigned") ?? 0;
@@ -423,7 +430,7 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
     let failureMessage = "Unable to load the live guild roster.";
 
     try {
-      const response = await fetch("/api/forever-roster?v=2", {
+      const response = await fetch("/api/forever-roster?v=3", {
         headers: { Accept: "application/json" },
         cache: "no-store",
       });
