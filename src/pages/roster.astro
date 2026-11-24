@@ -42,28 +42,16 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
       <strong data-roster-stat="average-item-level">—</strong>
       <small>Level 60 characters only</small>
     </article>
-    <article class="stat-card">
-      <span>Classes</span>
-      <strong data-roster-stat="classes">—</strong>
-      <small>Represented</small>
-    </article>
   </section>
 
-  <section class="panel roster-composition" data-roster-composition hidden aria-labelledby="composition-heading">
-    <div class="roster-composition-heading">
-      <div>
-        <p class="eyebrow">Level 60 overview</p>
-        <h2 id="composition-heading">Roster composition</h2>
-        <p class="muted" data-composition-summary>Loading level-60 profiles…</p>
-      </div>
-      <div class="roster-composition-tabs" role="group" aria-label="Roster composition dimension">
-        <button class="filter-button is-subtle is-active" type="button" data-composition-dimension="class" aria-pressed="true">
-          Class
-        </button>
-        <button class="filter-button is-subtle" type="button" data-composition-dimension="role" aria-pressed="false">
-          Role
-        </button>
-      </div>
+  <section class="panel roster-composition" data-roster-composition hidden aria-label="Level 60 roster composition">
+    <div class="roster-composition-tabs" role="group" aria-label="Roster composition dimension">
+      <button class="filter-button is-subtle is-active" type="button" data-composition-dimension="class" aria-pressed="true">
+        Class
+      </button>
+      <button class="filter-button is-subtle" type="button" data-composition-dimension="role" aria-pressed="false">
+        Role
+      </button>
     </div>
     <div class="roster-composition-bars" data-composition-bars aria-live="polite"></div>
   </section>
@@ -224,7 +212,6 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
   const syncStatus = document.querySelector<HTMLElement>("[data-roster-sync-status]");
   const composition = document.querySelector<HTMLElement>("[data-roster-composition]");
   const compositionBars = document.querySelector<HTMLElement>("[data-composition-bars]");
-  const compositionSummary = document.querySelector<HTMLElement>("[data-composition-summary]");
   const compositionButtons = [...document.querySelectorAll<HTMLButtonElement>("[data-composition-dimension]")];
   const classSelect = filter?.elements.namedItem("class") as HTMLSelectElement | null;
   const rankSelect = filter?.elements.namedItem("rank") as HTMLSelectElement | null;
@@ -282,7 +269,7 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
   };
 
   const renderComposition = () => {
-    if (!composition || !compositionBars || !compositionSummary) {
+    if (!composition || !compositionBars) {
       return;
     }
 
@@ -351,11 +338,6 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
       compositionBars.append(column);
     }
 
-    const unassignedCount = counts.get("Unassigned") ?? 0;
-    compositionSummary.textContent =
-      compositionDimension === "class"
-        ? `${levelCapMembers.length} level 60 characters · ${counts.size} classes represented`
-        : `${levelCapMembers.length} level 60 characters · ${unassignedCount ? `${unassignedCount} role${unassignedCount === 1 ? "" : "s"} unassigned` : "all roles assigned"}`;
     composition.hidden = false;
   };
 
@@ -456,8 +438,6 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
         '[data-roster-stat="average-item-level"]',
         payload.summary.averageItemLevel === null ? "—" : payload.summary.averageItemLevel.toFixed(1),
       );
-      setText('[data-roster-stat="classes"]', payload.summary.classCount);
-
       if (syncStatus) syncStatus.textContent = formatSyncTime(payload.syncedAt);
 
       const classes = [...new Set(members.map((member) => member.className))].sort((a, b) => a.localeCompare(b));

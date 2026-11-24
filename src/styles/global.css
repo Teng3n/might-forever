@@ -225,7 +225,7 @@ main {
 }
 
 .roster-summary-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .card-grid {
@@ -3700,7 +3700,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   }
 
   .roster-summary-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .action-metrics {
@@ -4325,7 +4325,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .roster-composition {
   display: grid;
-  gap: 26px;
+  gap: 12px;
   overflow: visible;
   background:
     radial-gradient(circle at 92% 8%, rgba(91, 124, 250, 0.14), transparent 28rem),
@@ -4333,30 +4333,10 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
     rgba(16, 23, 42, 0.84);
 }
 
-.roster-composition-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.roster-composition-heading h2,
-.roster-composition-heading p {
-  margin: 0;
-}
-
-.roster-composition-heading h2 {
-  margin-top: 5px;
-}
-
-.roster-composition-heading .muted {
-  margin-top: 7px;
-  font-size: 0.9rem;
-}
-
 .roster-composition-tabs {
   display: flex;
   flex-wrap: wrap;
+  justify-self: end;
   gap: 4px;
   padding: 4px;
   border: 1px solid rgba(44, 60, 104, 0.72);
@@ -4419,7 +4399,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 .roster-composition-column:focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--composition-color) 72%, white);
+  outline: 2px solid var(--composition-color);
   outline-offset: 7px;
 }
 
@@ -4437,51 +4417,31 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   height: 100%;
   align-items: flex-end;
   overflow: hidden;
-  border-radius: 8px 8px 3px 3px;
-  background: linear-gradient(180deg, rgba(44, 60, 104, 0.18), rgba(44, 60, 104, 0.42));
-  box-shadow:
-    inset 0 1px 3px rgba(0, 0, 0, 0.24),
-    inset 0 0 0 1px rgba(91, 124, 250, 0.04);
+  border-radius: 2px 2px 0 0;
+  background: rgba(32, 43, 70, 0.58);
 }
 
 .roster-composition-bar {
   position: relative;
   width: 100%;
   height: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--composition-color) 92%, white),
-    var(--composition-color) 42%,
-    color-mix(in srgb, var(--composition-color) 64%, #10172a)
-  );
-  box-shadow: 0 0 22px color-mix(in srgb, var(--composition-color) 28%, transparent);
+  border-radius: 2px 2px 0 0;
+  background: var(--composition-color);
   transition:
     height 260ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 160ms ease,
+    opacity 160ms ease,
     transform 160ms ease;
-}
-
-.roster-composition-bar::after {
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  left: 3px;
-  height: 4px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.54);
-  content: "";
 }
 
 .roster-composition-column:hover .roster-composition-bar,
 .roster-composition-column:focus .roster-composition-bar {
-  filter: saturate(1.16) brightness(1.12);
-  transform: translateY(-3px) scaleX(1.06);
+  opacity: 0.82;
+  transform: translateY(-2px);
 }
 
 .roster-composition-column:hover .roster-composition-count,
 .roster-composition-column:focus .roster-composition-count {
-  color: color-mix(in srgb, var(--composition-color) 78%, white);
+  color: var(--composition-color);
   transform: translateY(-2px);
 }
 
@@ -4494,8 +4454,8 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   width: max-content;
   max-width: min(280px, 70vw);
   gap: 7px;
-  border: 1px solid color-mix(in srgb, var(--composition-color) 42%, rgba(44, 60, 104, 0.9));
-  border-radius: 8px;
+  border: 1px solid rgba(72, 88, 132, 0.9);
+  border-radius: 5px;
   padding: 12px 14px;
   background: rgba(8, 12, 23, 0.97);
   box-shadow: 0 16px 42px rgba(0, 0, 0, 0.42);
@@ -4518,14 +4478,14 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   width: 10px;
   height: 10px;
   background: rgba(8, 12, 23, 0.97);
-  border-right: 1px solid color-mix(in srgb, var(--composition-color) 42%, rgba(44, 60, 104, 0.9));
-  border-bottom: 1px solid color-mix(in srgb, var(--composition-color) 42%, rgba(44, 60, 104, 0.9));
+  border-right: 1px solid rgba(72, 88, 132, 0.9);
+  border-bottom: 1px solid rgba(72, 88, 132, 0.9);
   content: "";
   transform: translate(-50%, -5px) rotate(45deg);
 }
 
 .roster-composition-tooltip strong {
-  color: color-mix(in srgb, var(--composition-color) 82%, white);
+  color: var(--composition-color);
   font-size: 0.88rem;
 }
 
@@ -4783,8 +4743,7 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   }
 
   .roster-identity-panel,
-  .roster-browser-heading,
-  .roster-composition-heading {
+  .roster-browser-heading {
     align-items: stretch;
     flex-direction: column;
   }
