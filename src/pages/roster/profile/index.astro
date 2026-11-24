@@ -1,0 +1,488 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageHeader from "../../../components/PageHeader.astro";
+---
+
+<Layout title="Character Profile | Might Forever">
+  <PageHeader
+    eyebrow="Roster · Character profile"
+    title="Character Profile"
+    description="Current Blizzard equipment with a guild-owned timeline that begins when this profile is first observed."
+  />
+
+  <p class="character-profile-back"><a href="/roster">Back to guild roster</a></p>
+
+  <section class="panel character-profile-loading" data-character-loading aria-live="polite">
+    <p class="eyebrow">Loading profile</p>
+    <h2>Connecting to Blizzard…</h2>
+    <div class="character-profile-loading-lines" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+  </section>
+
+  <section class="panel roster-error-state" data-character-error hidden>
+    <p class="eyebrow">Profile unavailable</p>
+    <h2>We could not load this character</h2>
+    <p data-character-error-message>The character profile is temporarily unavailable.</p>
+    <a class="filter-button" href="/roster">Return to roster</a>
+  </section>
+
+  <div class="character-profile" data-character-content hidden>
+    <section class="panel character-profile-hero" data-character-hero>
+      <div class="character-profile-identity">
+        <img class="character-profile-avatar" data-character-avatar alt="" hidden />
+        <div>
+          <p class="eyebrow" data-character-guild>Might</p>
+          <h2 data-character-name>Character</h2>
+          <p class="character-profile-subtitle" data-character-subtitle></p>
+          <div class="character-profile-actions">
+            <span class="character-profile-updated" data-character-updated></span>
+            <a class="filter-button is-subtle" data-character-armory target="_blank" rel="noreferrer">
+              Open Blizzard Armory
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="character-profile-highlights" aria-label="Character summary">
+        <div><span>Level</span><strong data-character-level>—</strong></div>
+        <div><span>Equipped iLvl</span><strong data-character-equipped-ilvl>—</strong></div>
+        <div><span>Average iLvl</span><strong data-character-average-ilvl>—</strong></div>
+        <div><span>Honorable kills</span><strong data-character-honorable-kills>—</strong></div>
+      </div>
+    </section>
+
+    <div class="character-profile-primary-grid">
+      <section class="panel character-equipment-panel" aria-labelledby="equipment-heading">
+        <div class="character-section-heading">
+          <div>
+            <p class="eyebrow">Armory</p>
+            <h2 id="equipment-heading">Current equipment</h2>
+          </div>
+          <p class="muted" data-equipment-count></p>
+        </div>
+        <div class="character-equipment-layout">
+          <div class="character-equipment-column" data-equipment-left></div>
+          <figure class="character-render-stage">
+            <img data-character-render alt="" hidden />
+            <figcaption data-character-render-caption></figcaption>
+          </figure>
+          <div class="character-equipment-column" data-equipment-right></div>
+        </div>
+      </section>
+
+      <aside class="panel character-history-panel" aria-labelledby="history-heading">
+        <div class="character-section-heading">
+          <div>
+            <p class="eyebrow">Gear history</p>
+            <h2 id="history-heading">Item timeline</h2>
+          </div>
+          <span class="character-history-count" data-history-count></span>
+        </div>
+        <p class="character-history-note" data-history-note></p>
+        <ol class="character-history-list" data-history-list></ol>
+      </aside>
+    </div>
+
+    <div class="character-profile-secondary-grid">
+      <section class="panel character-detail-panel" aria-labelledby="pvp-heading">
+        <div class="character-section-heading">
+          <div>
+            <p class="eyebrow">PvP</p>
+            <h2 id="pvp-heading">Battleground record</h2>
+          </div>
+        </div>
+        <div class="character-pvp-summary" data-pvp-summary></div>
+      </section>
+
+      <section class="panel character-detail-panel" aria-labelledby="stats-heading">
+        <div class="character-section-heading">
+          <div>
+            <p class="eyebrow">Character</p>
+            <h2 id="stats-heading">Core statistics</h2>
+          </div>
+        </div>
+        <dl class="character-stat-grid" data-character-statistics></dl>
+      </section>
+
+      <section class="panel character-detail-panel" aria-labelledby="reputation-heading">
+        <div class="character-section-heading">
+          <div>
+            <p class="eyebrow">Reputation</p>
+            <h2 id="reputation-heading">Highest standings</h2>
+          </div>
+        </div>
+        <div class="character-reputation-list" data-character-reputations></div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  type EquipmentItem = {
+    id: number;
+    slot: string;
+    slotLabel: string;
+    name: string;
+    itemLevel: number | null;
+    quality: string;
+    qualityLabel: string;
+    iconUrl: string | null;
+    enchantments: string[];
+    setName: string | null;
+  };
+
+  type CharacterPayload = {
+    ok: true;
+    syncedAt: string;
+    character: {
+      id: number;
+      slug: string;
+      name: string;
+      level: number;
+      className: string;
+      raceName: string;
+      faction: string;
+      guildName: string;
+      specialization: string;
+      role: string;
+      achievementPoints: number;
+      equippedItemLevel: number | null;
+      averageItemLevel: number | null;
+      lastLoginAt: string | null;
+      armoryUrl: string;
+    };
+    media: { avatarUrl: string | null; renderUrl: string | null };
+    equipment: EquipmentItem[];
+    pvp: {
+      honorableKills: number;
+      rank: number;
+      maps: Array<{ name: string; played: number; won: number; lost: number }>;
+    };
+    statistics: Array<{ key: string; label: string; value: number }>;
+    reputations: Array<{
+      id: number;
+      name: string;
+      standing: string;
+      value: number;
+      max: number;
+      tier: number;
+    }>;
+    history: {
+      available: boolean;
+      baselineAt: string | null;
+      latestSnapshotAt: string | null;
+      snapshotCount: number;
+      events: Array<{
+        id: number;
+        type: "GAINED";
+        itemId: number;
+        itemName: string;
+        itemLevel: number | null;
+        quality: string;
+        slot: string;
+        occurredAt: string;
+      }>;
+    };
+  };
+
+  const classColors: Record<string, string> = {
+    Druid: "#ff7c0a",
+    Hunter: "#aad372",
+    Mage: "#3fc7eb",
+    Paladin: "#f48cba",
+    Priest: "#ffffff",
+    Rogue: "#fff468",
+    Shaman: "#0070dd",
+    Warlock: "#8788ee",
+    Warrior: "#c69b6d",
+  };
+  const qualityColors: Record<string, string> = {
+    POOR: "#9d9d9d",
+    COMMON: "#ffffff",
+    UNCOMMON: "#1eff00",
+    RARE: "#0070dd",
+    EPIC: "#a335ee",
+    LEGENDARY: "#ff8000",
+  };
+  const leftSlots = new Set(["HEAD", "NECK", "SHOULDER", "BACK", "CHEST", "WRIST", "HANDS", "WAIST"]);
+  const loading = document.querySelector<HTMLElement>("[data-character-loading]");
+  const errorState = document.querySelector<HTMLElement>("[data-character-error]");
+  const errorMessage = document.querySelector<HTMLElement>("[data-character-error-message]");
+  const content = document.querySelector<HTMLElement>("[data-character-content]");
+  const leftEquipment = document.querySelector<HTMLElement>("[data-equipment-left]");
+  const rightEquipment = document.querySelector<HTMLElement>("[data-equipment-right]");
+  const historyList = document.querySelector<HTMLOListElement>("[data-history-list]");
+
+  const setText = (selector: string, value: string | number) => {
+    const element = document.querySelector<HTMLElement>(selector);
+    if (element) element.textContent = String(value);
+  };
+
+  const formatDate = (value: string | null, includeTime = true) => {
+    if (!value) return "Not available";
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return "Not available";
+    return new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      ...(includeTime ? { hour: "numeric", minute: "2-digit" } : {}),
+      timeZone: "America/Los_Angeles",
+      timeZoneName: includeTime ? "short" : undefined,
+    }).format(date);
+  };
+
+  const createEquipmentItem = (item: EquipmentItem) => {
+    const row = document.createElement("article");
+    const artwork = document.createElement("div");
+    const copy = document.createElement("div");
+    const heading = document.createElement("div");
+    const name = document.createElement("strong");
+    const slot = document.createElement("span");
+    const detail = document.createElement("small");
+    row.className = "character-equipment-item";
+    artwork.className = "character-item-artwork";
+    copy.className = "character-item-copy";
+    heading.className = "character-item-heading";
+    name.textContent = item.name;
+    name.style.setProperty("--item-quality", qualityColors[item.quality] ?? "#f2f0e8");
+    slot.textContent = item.slotLabel;
+    detail.textContent = [
+      item.itemLevel === null ? "" : `Item level ${item.itemLevel}`,
+      item.enchantments[0] ?? "",
+      item.setName ?? "",
+    ]
+      .filter(Boolean)
+      .join(" · ");
+
+    if (item.iconUrl) {
+      const image = document.createElement("img");
+      image.src = item.iconUrl;
+      image.alt = "";
+      image.loading = "lazy";
+      artwork.append(image);
+    } else {
+      artwork.textContent = item.slotLabel.slice(0, 1);
+    }
+
+    heading.append(name, slot);
+    copy.append(heading, detail);
+    row.append(artwork, copy);
+    return row;
+  };
+
+  const renderEquipment = (items: EquipmentItem[]) => {
+    if (!leftEquipment || !rightEquipment) return;
+    leftEquipment.replaceChildren();
+    rightEquipment.replaceChildren();
+
+    for (const item of items) {
+      (leftSlots.has(item.slot) ? leftEquipment : rightEquipment).append(createEquipmentItem(item));
+    }
+
+    setText("[data-equipment-count]", `${items.length} equipped items`);
+  };
+
+  const renderHistory = (payload: CharacterPayload) => {
+    if (!historyList) return;
+    historyList.replaceChildren();
+    setText("[data-history-count]", `${payload.history.snapshotCount} snapshot${payload.history.snapshotCount === 1 ? "" : "s"}`);
+
+    if (!payload.history.available) {
+      setText("[data-history-note]", "History storage is being connected. Current equipment is still live.");
+      return;
+    }
+
+    setText(
+      "[data-history-note]",
+      payload.history.events.length
+        ? "An item appears here the first time Blizzard shows it equipped. Re-equips do not create duplicate gains."
+        : "Tracking has started. Current gear is the baseline; future first-seen items will appear here as gains.",
+    );
+
+    for (const event of payload.history.events) {
+      const item = document.createElement("li");
+      const marker = document.createElement("span");
+      const copy = document.createElement("div");
+      const heading = document.createElement("strong");
+      const detail = document.createElement("small");
+      marker.className = "character-history-marker";
+      heading.textContent = `Gained ${event.itemName}`;
+      heading.style.setProperty("--item-quality", qualityColors[event.quality] ?? "#f2f0e8");
+      detail.textContent = [
+        event.itemLevel === null ? "" : `Item level ${event.itemLevel}`,
+        event.slot.replaceAll("_", " ").toLocaleLowerCase(),
+        formatDate(event.occurredAt),
+      ]
+        .filter(Boolean)
+        .join(" · ");
+      copy.append(heading, detail);
+      item.append(marker, copy);
+      historyList.append(item);
+    }
+
+    if (payload.history.baselineAt) {
+      const baseline = document.createElement("li");
+      const marker = document.createElement("span");
+      const copy = document.createElement("div");
+      const heading = document.createElement("strong");
+      const detail = document.createElement("small");
+      marker.className = "character-history-marker is-baseline";
+      heading.textContent = "Gear tracking baseline recorded";
+      detail.textContent = `${formatDate(payload.history.baselineAt)} · existing items were not marked as newly gained`;
+      copy.append(heading, detail);
+      baseline.append(marker, copy);
+      historyList.append(baseline);
+    }
+  };
+
+  const renderPvp = (payload: CharacterPayload) => {
+    const container = document.querySelector<HTMLElement>("[data-pvp-summary]");
+    if (!container) return;
+    container.replaceChildren();
+    const totalWins = payload.pvp.maps.reduce((total, map) => total + map.won, 0);
+    const totalLosses = payload.pvp.maps.reduce((total, map) => total + map.lost, 0);
+    const metrics = [
+      ["Honorable kills", payload.pvp.honorableKills],
+      ["Battleground wins", totalWins],
+      ["Battleground losses", totalLosses],
+    ] as const;
+
+    for (const [label, value] of metrics) {
+      const metric = document.createElement("div");
+      const term = document.createElement("span");
+      const number = document.createElement("strong");
+      term.textContent = label;
+      number.textContent = String(value);
+      metric.append(term, number);
+      container.append(metric);
+    }
+
+    for (const map of payload.pvp.maps) {
+      const row = document.createElement("p");
+      row.textContent = `${map.name}: ${map.won}–${map.lost} across ${map.played} matches`;
+      container.append(row);
+    }
+  };
+
+  const renderStatistics = (payload: CharacterPayload) => {
+    const list = document.querySelector<HTMLElement>("[data-character-statistics]");
+    if (!list) return;
+    list.replaceChildren();
+
+    for (const statistic of payload.statistics.slice(0, 10)) {
+      const wrapper = document.createElement("div");
+      const term = document.createElement("dt");
+      const description = document.createElement("dd");
+      term.textContent = statistic.label;
+      description.textContent = new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(statistic.value);
+      wrapper.append(term, description);
+      list.append(wrapper);
+    }
+  };
+
+  const renderReputations = (payload: CharacterPayload) => {
+    const list = document.querySelector<HTMLElement>("[data-character-reputations]");
+    if (!list) return;
+    list.replaceChildren();
+
+    for (const reputation of payload.reputations.slice(0, 8)) {
+      const row = document.createElement("div");
+      const heading = document.createElement("div");
+      const name = document.createElement("span");
+      const standing = document.createElement("span");
+      const track = document.createElement("div");
+      const bar = document.createElement("div");
+      row.className = "character-reputation-row";
+      heading.className = "character-reputation-heading";
+      name.textContent = reputation.name;
+      standing.textContent = reputation.standing;
+      track.className = "character-reputation-track";
+      bar.className = "character-reputation-bar";
+      bar.style.width = `${reputation.max > 0 ? Math.min(100, (reputation.value / reputation.max) * 100) : 100}%`;
+      track.setAttribute("role", "progressbar");
+      track.setAttribute("aria-label", `${reputation.name}: ${reputation.standing}`);
+      track.setAttribute("aria-valuemin", "0");
+      track.setAttribute("aria-valuemax", String(reputation.max));
+      track.setAttribute("aria-valuenow", String(reputation.value));
+      heading.append(name, standing);
+      track.append(bar);
+      row.append(heading, track);
+      list.append(row);
+    }
+  };
+
+  const renderCharacter = (payload: CharacterPayload) => {
+    document.title = `${payload.character.name} | Might Forever`;
+    setText("[data-character-guild]", payload.character.guildName);
+    setText("[data-character-name]", payload.character.name);
+    setText(
+      "[data-character-subtitle]",
+      `${payload.character.raceName} ${payload.character.className} · ${payload.character.specialization} · ${payload.character.role}`,
+    );
+    setText("[data-character-level]", payload.character.level);
+    setText("[data-character-equipped-ilvl]", payload.character.equippedItemLevel ?? "—");
+    setText("[data-character-average-ilvl]", payload.character.averageItemLevel ?? "—");
+    setText("[data-character-honorable-kills]", payload.pvp.honorableKills);
+    setText("[data-character-updated]", `Updated ${formatDate(payload.syncedAt)}`);
+    setText("[data-character-render-caption]", `${payload.character.specialization} ${payload.character.className}`);
+
+    const hero = document.querySelector<HTMLElement>("[data-character-hero]");
+    hero?.style.setProperty("--character-color", classColors[payload.character.className] ?? "#7c8cff");
+    const armoryLink = document.querySelector<HTMLAnchorElement>("[data-character-armory]");
+    if (armoryLink) armoryLink.href = payload.character.armoryUrl;
+    const avatar = document.querySelector<HTMLImageElement>("[data-character-avatar]");
+    if (avatar && payload.media.avatarUrl) {
+      avatar.src = payload.media.avatarUrl;
+      avatar.alt = `${payload.character.name} portrait`;
+      avatar.hidden = false;
+    }
+    const render = document.querySelector<HTMLImageElement>("[data-character-render]");
+    if (render && payload.media.renderUrl) {
+      render.src = payload.media.renderUrl;
+      render.alt = `${payload.character.name} character render`;
+      render.hidden = false;
+    }
+
+    renderEquipment(payload.equipment);
+    renderHistory(payload);
+    renderPvp(payload);
+    renderStatistics(payload);
+    renderReputations(payload);
+    if (loading) loading.hidden = true;
+    if (content) content.hidden = false;
+  };
+
+  const showError = (message: string) => {
+    if (loading) loading.hidden = true;
+    if (errorState) errorState.hidden = false;
+    if (errorMessage) errorMessage.textContent = message;
+  };
+
+  const loadCharacter = async () => {
+    const match = window.location.pathname.match(/^\/roster\/profile\/([^/]+)\/?$/);
+    const slug = match?.[1] ? decodeURIComponent(match[1]).toLocaleLowerCase() : "";
+
+    if (!slug || slug === "index.html") {
+      showError("Choose a character from the guild roster.");
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/forever-character/${encodeURIComponent(slug)}`, {
+        headers: { Accept: "application/json" },
+      });
+      const payload = (await response.json()) as CharacterPayload | { ok?: false; message?: string };
+
+      if (!response.ok || payload.ok !== true || !("character" in payload)) {
+        throw new Error("message" in payload && payload.message ? payload.message : "Unable to load this character.");
+      }
+
+      renderCharacter(payload);
+    } catch (error) {
+      showError(error instanceof Error ? error.message : "Unable to load this character.");
+    }
+  };
+
+  void loadCharacter();
+</script>

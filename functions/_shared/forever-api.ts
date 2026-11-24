@@ -21,6 +21,11 @@ export interface ForeverRosterMember {
   faction: string;
   rank: number;
   rankLabel: string;
+  equippedItemLevel: number | null;
+  averageItemLevel: number | null;
+  specialization: string;
+  role: string;
+  profileUrl: string;
   armoryUrl: string;
 }
 
@@ -40,10 +45,77 @@ export interface ForeverRosterPayload {
   summary: {
     memberCount: number;
     levelCapCount: number;
-    averageLevel: number;
+    levelCapProfileCount: number;
+    averageItemLevel: number | null;
     classCount: number;
   };
   members: ForeverRosterMember[];
+}
+
+export interface ForeverCharacterItem {
+  id: number;
+  slot: string;
+  slotLabel: string;
+  name: string;
+  itemLevel: number | null;
+  quality: string;
+  qualityLabel: string;
+  iconUrl: string | null;
+  enchantments: string[];
+  setName: string | null;
+}
+
+export interface ForeverCharacterPayload {
+  ok: true;
+  syncedAt: string;
+  character: {
+    id: number;
+    slug: string;
+    name: string;
+    firstName: string;
+    surname: string;
+    level: number;
+    className: string;
+    raceName: string;
+    faction: string;
+    guildName: string;
+    specialization: string;
+    role: string;
+    achievementPoints: number;
+    equippedItemLevel: number | null;
+    averageItemLevel: number | null;
+    lastLoginAt: string | null;
+    profileUrl: string;
+    armoryUrl: string;
+  };
+  media: {
+    avatarUrl: string | null;
+    renderUrl: string | null;
+  };
+  equipment: ForeverCharacterItem[];
+  pvp: {
+    honorableKills: number;
+    rank: number;
+    maps: Array<{
+      name: string;
+      played: number;
+      won: number;
+      lost: number;
+    }>;
+  };
+  statistics: Array<{
+    key: string;
+    label: string;
+    value: number;
+  }>;
+  reputations: Array<{
+    id: number;
+    name: string;
+    standing: string;
+    value: number;
+    max: number;
+    tier: number;
+  }>;
 }
 
 type JsonRecord = Record<string, unknown>;
@@ -243,6 +315,17 @@ const fetchApiJson = async (url: URL, token: string, label: string) => {
   }
 };
 
+const fetchOptionalApiJson = async (url: URL, token: string, label: string) => {
+  try {
+    return await fetchApiJson(url, token, label);
+  } catch (error) {
+    console.warn(`[forever-api] Optional ${label} lookup failed.`, {
+      message: error instanceof Error ? error.message : "Unknown error",
+    });
+    return {};
+  }
+};
+
 const getApiUrl = (region: string, locale: string, namespace: string, path: string) => {
   const url = new URL(`https://${region}.api.blizzard.com${path}`);
   url.searchParams.set("namespace", namespace);
@@ -311,6 +394,132 @@ const getFoundedAt = (guild: JsonRecord) => {
 
   const foundedAt = new Date(timestamp);
   return Number.isNaN(foundedAt.getTime()) ? null : foundedAt.toISOString();
+};
+
+const getNestedRecord = (value: unknown, key: string) => {
+  if (!isRecord(value)) {
+    return null;
+  }
+
+  const nested = value[key];
+  return isRecord(nested) ? nested : null;
+};
+
+const getNestedNumber = (value: unknown, key: string) => {
+  const nested = getNestedRecord(value, key);
+  return nested ? cleanNumber(nested.value) : null;
+};
+
+const getSafeBlizzardUrl = (value: unknown, region: string) => {
+  const href = cleanString(value);
+
+  if (!href) {
+    return null;
+  }
+
+  try {
+    const url = new URL(href);
+    return url.protocol === "https:" && url.hostname === `${region}.api.blizzard.com` ? url : null;
+  } catch {
+    return null;
+  }
+};
+
+const getActiveSpecialization = (value: unknown) => {
+  if (!isRecord(value) || !Array.isArray(value.specialization_groups)) {
+    return "Unknown";
+  }
+
+  const activeGroup = value.specialization_groups.find(
+    (group) => isRecord(group) && group.is_active === true && Array.isArray(group.specializations),
+  );
+
+  if (!isRecord(activeGroup) || !Array.isArray(activeGroup.specializations)) {
+    return "Unknown";
+  }
+
+  let selectedName = "Unknown";
+  let selectedPoints = -1;
+
+  for (const entry of activeGroup.specializations) {
+    if (!isRecord(entry)) {
+      continue;
+    }
+
+    const name = cleanString(entry.specialization_name) || getReferenceName(entry.specialization, DEFAULT_LOCALE);
+    const points = cleanNumber(entry.spent_points) ?? 0;
+
+    if (name && points > selectedPoints) {
+      selectedName = name;
+      selectedPoints = points;
+    }
+  }
+
+  return selectedName;
+};
+
+const getRole = (className: string, specialization: string) => {
+  const classKey = className.toLowerCase();
+  const specKey = specialization.toLowerCase();
+
+  if (specKey.includes("protection") || specKey.includes("guardian")) {
+    return "Tank";
+  }
+
+  if (specKey.includes("restoration") || specKey.includes("holy") || specKey.includes("discipline")) {
+    return "Healer";
+  }
+
+  if (["mage", "warlock", "hunter"].includes(classKey) || specKey.includes("shadow") || specKey.includes("elemental") || specKey.includes("balance")) {
+    return "Ranged DPS";
+  }
+
+  if (["warrior", "rogue", "paladin"].includes(classKey) || specKey.includes("feral") || specKey.includes("enhancement")) {
+    return "Melee DPS";
+  }
+
+  return specialization === "Unknown" ? "Unknown" : "DPS";
+};
+
+const mapWithConcurrency = async <Input, Output>(
+  values: Input[],
+  limit: number,
+  worker: (value: Input, index: number) => Promise<Output>,
+) => {
+  const results = new Array<Output>(values.length);
+  let nextIndex = 0;
+
+  const runners = Array.from({ length: Math.min(Math.max(limit, 1), values.length) }, async () => {
+    while (nextIndex < values.length) {
+      const index = nextIndex;
+      nextIndex += 1;
+      results[index] = await worker(values[index], index);
+    }
+  });
+
+  await Promise.all(runners);
+  return results;
+};
+
+const getSession = async (env: ForeverApiEnv) => {
+  const clientId = env.BLIZZARD_CLIENT_ID?.trim();
+  const clientSecret = env.BLIZZARD_CLIENT_SECRET?.trim();
+
+  if (!clientId || !clientSecret) {
+    throw new ForeverApiError("Blizzard API credentials are not configured.", 503);
+  }
+
+  const region = normalizeRegion(env.BLIZZARD_REGION);
+  const locale = normalizeLocale(env.BLIZZARD_LOCALE);
+
+  return {
+    region,
+    locale,
+    guildSlug: normalizeGuildSlug(env.FOREVER_GUILD_SLUG),
+    profileNamespace: `profile-forever-${region}`,
+    staticNamespace: `static-forever-${region}`,
+    token: await getAccessToken(clientId, clientSecret),
+  };
 };
 
 interface NormalizeForeverRosterInput {
@@ -385,15 +594,16 @@ export const normalizeForeverRoster = ({
       faction: getTypeName(character.faction) || guildFaction,
       rank,
       rankLabel: rankNames.get(rank) || `Rank ${rank}`,
+      equippedItemLevel: null,
+      averageItemLevel: null,
+      specialization: "Unknown",
+      role: "Unknown",
+      profileUrl: `/roster/profile/${encodeURIComponent(slug)}`,
       armoryUrl: `${armoryBase}/character/${encodeURIComponent(slug)}/`,
     } satisfies ForeverRosterMember;
   });
 
   members.sort((left, right) => right.level - left.level || left.rank - right.rank || left.name.localeCompare(right.name));
-
-  const averageLevel = members.length
-    ? Math.round((members.reduce((total, member) => total + member.level, 0) / members.length) * 10) / 10
-    : 0;
 
   return {
     ok: true,
@@ -411,7 +621,8 @@ export const normalizeForeverRoster = ({
     summary: {
       memberCount: members.length,
       levelCapCount: members.filter((member) => member.level >= LEVEL_CAP).length,
-      averageLevel,
+      levelCapProfileCount: 0,
+      averageItemLevel: null,
       classCount: new Set(members.map((member) => member.className).filter((name) => name !== "Unknown")).size,
     },
     members,
@@ -419,19 +630,7 @@ export const normalizeForeverRoster = ({
 };
 
 export const getForeverRoster = async (env: ForeverApiEnv): Promise<ForeverRosterPayload> => {
-  const clientId = env.BLIZZARD_CLIENT_ID?.trim();
-  const clientSecret = env.BLIZZARD_CLIENT_SECRET?.trim();
-
-  if (!clientId || !clientSecret) {
-    throw new ForeverApiError("Blizzard API credentials are not configured.", 503);
-  }
-
-  const region = normalizeRegion(env.BLIZZARD_REGION);
-  const locale = normalizeLocale(env.BLIZZARD_LOCALE);
-  const guildSlug = normalizeGuildSlug(env.FOREVER_GUILD_SLUG);
-  const profileNamespace = `profile-forever-${region}`;
-  const staticNamespace = `static-forever-${region}`;
-  const token = await getAccessToken(clientId, clientSecret);
+  const { region, locale, guildSlug, profileNamespace, staticNamespace, token } = await getSession(env);
 
   const [guildData, rosterData, classData, raceData] = await Promise.all([
     fetchApiJson(
@@ -456,7 +655,7 @@ export const getForeverRoster = async (env: ForeverApiEnv): Promise<ForeverRoste
     ),
   ]);
 
-  return normalizeForeverRoster({
+  const payload = normalizeForeverRoster({
     guildData,
     rosterData,
     classData,
@@ -466,4 +665,321 @@ export const getForeverRoster = async (env: ForeverApiEnv): Promise<ForeverRoste
     guildSlug,
     rankNamesJson: env.FOREVER_GUILD_RANK_NAMES_JSON,
   });
+
+  const levelCapMembers = payload.members.filter((member) => member.level >= LEVEL_CAP);
+  const enriched = await mapWithConcurrency(levelCapMembers, 8, async (member) => {
+    try {
+      const profileData = await fetchApiJson(
+        getApiUrl(region, locale, profileNamespace, `/profile/wow/character/${encodeURIComponent(member.slug)}`),
+        token,
+        `${member.name} profile`,
+      );
+      let specializationData: unknown = null;
+
+      try {
+        specializationData = await fetchApiJson(
+          getApiUrl(
+            region,
+            locale,
+            profileNamespace,
+            `/profile/wow/character/${encodeURIComponent(member.slug)}/specializations`,
+          ),
+          token,
+          `${member.name} specializations`,
+        );
+      } catch (error) {
+        console.warn("[forever-api] Character specialization lookup failed.", {
+          slug: member.slug,
+          message: error instanceof Error ? error.message : "Unknown error",
+        });
+      }
+
+      const profile = isRecord(profileData) ? profileData : {};
+      const specialization = getActiveSpecialization(specializationData);
+      return {
+        member,
+        equippedItemLevel: cleanNumber(profile.equipped_item_level),
+        averageItemLevel: cleanNumber(profile.average_item_level),
+        specialization,
+        role: getRole(member.className, specialization),
+      };
+    } catch (error) {
+      console.warn("[forever-api] Level 60 character profile lookup failed.", {
+        slug: member.slug,
+        message: error instanceof Error ? error.message : "Unknown error",
+      });
+      return null;
+    }
+  });
+
+  const itemLevels: number[] = [];
+
+  for (const result of enriched) {
+    if (!result) {
+      continue;
+    }
+
+    result.member.equippedItemLevel = result.equippedItemLevel;
+    result.member.averageItemLevel = result.averageItemLevel;
+    result.member.specialization = result.specialization;
+    result.member.role = result.role;
+
+    if (result.equippedItemLevel !== null) {
+      itemLevels.push(result.equippedItemLevel);
+    }
+  }
+
+  payload.summary.levelCapProfileCount = itemLevels.length;
+  payload.summary.averageItemLevel = itemLevels.length
+    ? Math.round((itemLevels.reduce((total, itemLevel) => total + itemLevel, 0) / itemLevels.length) * 10) / 10
+    : null;
+
+  return payload;
+};
+
+const getAsset = (value: unknown, keys: string[]) => {
+  if (!isRecord(value) || !Array.isArray(value.assets)) {
+    return null;
+  }
+
+  for (const key of keys) {
+    const asset = value.assets.find((entry) => isRecord(entry) && cleanString(entry.key) === key);
+
+    if (isRecord(asset)) {
+      const url = cleanString(asset.value);
+
+      if (url.startsWith("https://")) {
+        return url;
+      }
+    }
+  }
+
+  return null;
+};
+
+export const getForeverCharacter = async (env: ForeverApiEnv, requestedSlug: string): Promise<ForeverCharacterPayload> => {
+  const slug = requestedSlug.trim().toLowerCase();
+
+  if (!/^[a-z0-9-]{2,80}$/.test(slug)) {
+    throw new ForeverApiError("Character not found.", 404);
+  }
+
+  const { region, locale, profileNamespace, token } = await getSession(env);
+  const path = `/profile/wow/character/${encodeURIComponent(slug)}`;
+  const [profileData, equipmentData, mediaData, pvpData, reputationData, statisticsData, specializationData] =
+    await Promise.all([
+      fetchApiJson(getApiUrl(region, locale, profileNamespace, path), token, "character profile"),
+      fetchApiJson(getApiUrl(region, locale, profileNamespace, `${path}/equipment`), token, "character equipment"),
+      fetchOptionalApiJson(
+        getApiUrl(region, locale, profileNamespace, `${path}/character-media`),
+        token,
+        "character media",
+      ),
+      fetchOptionalApiJson(
+        getApiUrl(region, locale, profileNamespace, `${path}/pvp-summary`),
+        token,
+        "character PvP",
+      ),
+      fetchOptionalApiJson(
+        getApiUrl(region, locale, profileNamespace, `${path}/reputations`),
+        token,
+        "character reputations",
+      ),
+      fetchOptionalApiJson(
+        getApiUrl(region, locale, profileNamespace, `${path}/statistics`),
+        token,
+        "character statistics",
+      ),
+      fetchOptionalApiJson(
+        getApiUrl(region, locale, profileNamespace, `${path}/specializations`),
+        token,
+        "character specializations",
+      ),
+    ]);
+
+  if (
+    !isRecord(profileData) ||
+    !isRecord(equipmentData) ||
+    !isRecord(mediaData) ||
+    !isRecord(pvpData) ||
+    !isRecord(reputationData) ||
+    !isRecord(statisticsData)
+  ) {
+    throw new ForeverApiError("Blizzard returned an unsupported character response.");
+  }
+
+  const characterId = cleanNumber(profileData.id);
+  const firstName = cleanString(profileData.name);
+  const surname = cleanString(profileData.surname);
+  const level = cleanNumber(profileData.level);
+  const className = getReferenceName(profileData.character_class, locale) || "Unknown";
+  const raceName = getReferenceName(profileData.race, locale) || "Unknown";
+
+  if (characterId === null || !firstName || level === null) {
+    throw new ForeverApiError("Blizzard returned an incomplete character profile.");
+  }
+
+  const equipmentRows = Array.isArray(equipmentData.equipped_items) ? equipmentData.equipped_items : [];
+  const pendingItems = equipmentRows.flatMap((value) => {
+    if (!isRecord(value)) {
+      return [];
+    }
+
+    const itemId = getReferenceId(value.item);
+    const slot = getTypeName(value.slot);
+    const name = cleanString(value.name);
+    const media = getNestedRecord(value, "media");
+    const mediaKey = getNestedRecord(media, "key");
+
+    if (itemId === null || !slot || !name) {
+      return [];
+    }
+
+    const enchantments = Array.isArray(value.enchantments)
+      ? value.enchantments
+          .map((enchantment) =>
+            isRecord(enchantment)
+              ? cleanString(enchantment.display_string) || getReferenceName(enchantment.source_item, locale)
+              : "",
+          )
+          .filter(Boolean)
+      : [];
+    const set = getNestedRecord(value, "set");
+
+    return [
+      {
+        id: itemId,
+        slot,
+        slotLabel: getReferenceName(value.slot, locale) || slot,
+        name,
+        itemLevel: getNestedNumber(value, "level"),
+        quality: getTypeName(value.quality) || "UNKNOWN",
+        qualityLabel: getReferenceName(value.quality, locale) || "Unknown",
+        iconUrl: null,
+        enchantments,
+        setName: set ? getReferenceName(set.item_set, locale) || null : null,
+        mediaUrl: getSafeBlizzardUrl(mediaKey?.href, region),
+      },
+    ];
+  });
+
+  const equipment = await mapWithConcurrency(pendingItems, 6, async (item) => {
+    let iconUrl: string | null = null;
+
+    if (item.mediaUrl) {
+      try {
+        iconUrl = getAsset(await fetchApiJson(item.mediaUrl, token, `${item.name} media`), ["icon"]);
+      } catch (error) {
+        console.warn("[forever-api] Item artwork lookup failed.", {
+          itemId: item.id,
+          message: error instanceof Error ? error.message : "Unknown error",
+        });
+      }
+    }
+
+    const { mediaUrl: _mediaUrl, ...publicItem } = item;
+    return { ...publicItem, iconUrl } satisfies ForeverCharacterItem;
+  });
+
+  const specialization = getActiveSpecialization(specializationData);
+  const lastLoginTimestamp = cleanNumber(profileData.last_login_timestamp);
+  const lastLoginDate = lastLoginTimestamp ? new Date(lastLoginTimestamp) : null;
+  const guildName = getReferenceName(profileData.guild, locale) || "Might";
+  const characterName = [firstName, surname].filter(Boolean).join(" ");
+  const armoryBase = `https://worldofwarcraft.blizzard.com/en-us/forever/${region}/armory`;
+  const pvpMaps = Array.isArray(pvpData.pvp_map_statistics) ? pvpData.pvp_map_statistics : [];
+  const reputations = Array.isArray(reputationData.reputations) ? reputationData.reputations : [];
+  const statisticDefinitions = [
+    ["health", "Health"],
+    ["stamina", "Stamina"],
+    ["strength", "Strength"],
+    ["agility", "Agility"],
+    ["intellect", "Intellect"],
+    ["armor", "Armor"],
+    ["attack_power", "Attack power"],
+    ["spell_power", "Spell power"],
+    ["melee_crit", "Melee crit"],
+    ["spell_crit", "Spell crit"],
+    ["melee_hit", "Melee hit"],
+    ["spell_hit", "Spell hit"],
+  ] as const;
+
+  const statistics = statisticDefinitions.flatMap(([key, label]) => {
+    const raw = statisticsData[key];
+    const record = isRecord(raw) ? raw : null;
+    const value =
+      cleanNumber(raw) ??
+      (record ? cleanNumber(record.value) ?? cleanNumber(record.rating) ?? cleanNumber(record.percent) : null);
+    return value === null || value === 0 ? [] : [{ key, label, value }];
+  });
+
+  return {
+    ok: true,
+    syncedAt: new Date().toISOString(),
+    character: {
+      id: characterId,
+      slug,
+      name: characterName,
+      firstName,
+      surname,
+      level,
+      className,
+      raceName,
+      faction: getTypeName(profileData.faction) || "Alliance",
+      guildName,
+      specialization,
+      role: getRole(className, specialization),
+      achievementPoints: cleanNumber(profileData.achievement_points) ?? 0,
+      equippedItemLevel: cleanNumber(profileData.equipped_item_level),
+      averageItemLevel: cleanNumber(profileData.average_item_level),
+      lastLoginAt: lastLoginDate && !Number.isNaN(lastLoginDate.getTime()) ? lastLoginDate.toISOString() : null,
+      profileUrl: `/roster/profile/${encodeURIComponent(slug)}`,
+      armoryUrl: `${armoryBase}/character/${encodeURIComponent(slug)}/`,
+    },
+    media: {
+      avatarUrl: getAsset(mediaData, ["avatar", "avatar-sd"]),
+      renderUrl: getAsset(mediaData, ["main-raw", "main-sd-raw"]),
+    },
+    equipment,
+    pvp: {
+      honorableKills: cleanNumber(pvpData.honorable_kills) ?? 0,
+      rank: cleanNumber(pvpData.pvp_rank) ?? 0,
+      maps: pvpMaps.flatMap((entry) => {
+        if (!isRecord(entry) || !isRecord(entry.match_statistics)) {
+          return [];
+        }
+
+        const played = cleanNumber(entry.match_statistics.played) ?? 0;
+        const won = cleanNumber(entry.match_statistics.won) ?? 0;
+        const lost = cleanNumber(entry.match_statistics.lost) ?? 0;
+        return [{ name: getReferenceName(entry.world_map, locale) || "Battleground", played, won, lost }];
+      }),
+    },
+    statistics,
+    reputations: reputations
+      .flatMap((entry) => {
+        if (!isRecord(entry) || !isRecord(entry.standing)) {
+          return [];
+        }
+
+        const id = getReferenceId(entry.faction);
+        const name = getReferenceName(entry.faction, locale);
+
+        if (id === null || !name) {
+          return [];
+        }
+
+        return [
+          {
+            id,
+            name,
+            standing: cleanString(entry.standing.name) || "Unknown",
+            value: cleanNumber(entry.standing.value) ?? 0,
+            max: cleanNumber(entry.standing.max) ?? 0,
+            tier: cleanNumber(entry.standing.tier) ?? 0,
+          },
+        ];
+      })
+      .sort((left, right) => right.tier - left.tier || right.value - left.value || left.name.localeCompare(right.name)),
+  };
 };

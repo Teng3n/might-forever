@@ -7,16 +7,16 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
 
 <Layout title="Roster | Might Forever">
   <PageHeader
-    eyebrow="WoW Forever · Alliance · PvP"
+    eyebrow="WoW Forever · Alliance"
     title="Might Guild Roster"
-    description="A live view of Might in World of Warcraft: Forever. Character profiles are the next layer; this roster establishes the stable identities their gear history will follow."
+    description="A live view of Might in World of Warcraft: Forever, with level-60 composition, character profiles, equipment, and gear history."
   />
 
   <section class="panel roster-identity-panel" aria-labelledby="guild-roster-heading">
     <div>
       <p class="eyebrow">Live guild data</p>
       <h2 id="guild-roster-heading" data-guild-name>Might</h2>
-      <p class="roster-identity-meta" data-guild-meta>North America · Alliance · PvP</p>
+      <p class="roster-identity-meta" data-guild-meta>North America · Alliance</p>
     </div>
     <div class="roster-identity-actions">
       <span class="roster-sync-status" data-roster-sync-status aria-live="polite">Connecting to Blizzard…</span>
@@ -38,20 +38,37 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
       <small>At the current cap</small>
     </article>
     <article class="stat-card">
-      <span>Average level</span>
-      <strong data-roster-stat="average-level">—</strong>
-      <small>Across the roster</small>
+      <span>Average item level</span>
+      <strong data-roster-stat="average-item-level">—</strong>
+      <small>Level 60 characters only</small>
     </article>
     <article class="stat-card">
       <span>Classes</span>
       <strong data-roster-stat="classes">—</strong>
       <small>Represented</small>
     </article>
-    <article class="stat-card">
-      <span>Ruleset</span>
-      <strong data-roster-stat="ruleset">PvP</strong>
-      <small data-roster-faction>Alliance</small>
-    </article>
+  </section>
+
+  <section class="panel roster-composition" data-roster-composition hidden aria-labelledby="composition-heading">
+    <div class="roster-composition-heading">
+      <div>
+        <p class="eyebrow">Level 60 overview</p>
+        <h2 id="composition-heading">Roster composition</h2>
+        <p class="muted" data-composition-summary>Loading level-60 profiles…</p>
+      </div>
+      <div class="roster-composition-tabs" role="group" aria-label="Roster composition dimension">
+        <button class="filter-button is-subtle is-active" type="button" data-composition-dimension="class" aria-pressed="true">
+          Class
+        </button>
+        <button class="filter-button is-subtle" type="button" data-composition-dimension="role" aria-pressed="false">
+          Role
+        </button>
+        <button class="filter-button is-subtle" type="button" data-composition-dimension="spec" aria-pressed="false">
+          Spec
+        </button>
+      </div>
+    </div>
+    <div class="roster-composition-bars" data-composition-bars aria-live="polite"></div>
   </section>
 
   <section class="panel roster-browser" data-roster-root aria-busy="true">
@@ -118,7 +135,9 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
           <tr>
             <th scope="col">Character</th>
             <th scope="col">Level</th>
+            <th scope="col">iLvl</th>
             <th scope="col">Class</th>
+            <th scope="col">Spec</th>
             <th scope="col">Race</th>
             <th scope="col">Guild rank</th>
           </tr>
@@ -148,6 +167,11 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
     raceName: string;
     rank: number;
     rankLabel: string;
+    equippedItemLevel: number | null;
+    averageItemLevel: number | null;
+    specialization: string;
+    role: string;
+    profileUrl: string;
     armoryUrl: string;
   };
 
@@ -164,7 +188,8 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
     summary: {
       memberCount: number;
       levelCapCount: number;
-      averageLevel: number;
+      levelCapProfileCount: number;
+      averageItemLevel: number | null;
       classCount: number;
     };
     members: RosterMember[];
@@ -192,9 +217,14 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
   const emptyFilter = document.querySelector<HTMLElement>("[data-roster-empty-filter]");
   const resultCount = document.querySelector<HTMLElement>("[data-roster-result-count]");
   const syncStatus = document.querySelector<HTMLElement>("[data-roster-sync-status]");
+  const composition = document.querySelector<HTMLElement>("[data-roster-composition]");
+  const compositionBars = document.querySelector<HTMLElement>("[data-composition-bars]");
+  const compositionSummary = document.querySelector<HTMLElement>("[data-composition-summary]");
+  const compositionButtons = [...document.querySelectorAll<HTMLButtonElement>("[data-composition-dimension]")];
   const classSelect = filter?.elements.namedItem("class") as HTMLSelectElement | null;
   const rankSelect = filter?.elements.namedItem("rank") as HTMLSelectElement | null;
   let members: RosterMember[] = [];
+  let compositionDimension: "class" | "role" | "spec" = "class";
 
   const setText = (selector: string, value: string | number) => {
     const element = document.querySelector<HTMLElement>(selector);
@@ -241,6 +271,74 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
     return cell;
   };
 
+  const getCompositionValue = (member: RosterMember, dimension: "class" | "role" | "spec") => {
+    if (dimension === "role") return member.role || "Unknown";
+    if (dimension === "spec") return member.specialization || "Unknown";
+    return member.className || "Unknown";
+  };
+
+  const renderComposition = () => {
+    if (!composition || !compositionBars || !compositionSummary) {
+      return;
+    }
+
+    const levelCapMembers = members.filter((member) => member.level >= 60);
+    const counts = new Map<string, number>();
+
+    for (const member of levelCapMembers) {
+      const label = getCompositionValue(member, compositionDimension);
+      counts.set(label, (counts.get(label) ?? 0) + 1);
+    }
+
+    const sorted = [...counts.entries()].sort(
+      ([leftLabel, leftCount], [rightLabel, rightCount]) =>
+        rightCount - leftCount || leftLabel.localeCompare(rightLabel),
+    );
+    const visible = sorted.slice(0, 9);
+    const remainder = sorted.slice(9).reduce((total, [, count]) => total + count, 0);
+
+    if (remainder) {
+      visible.push(["Other", remainder]);
+    }
+
+    compositionBars.replaceChildren();
+
+    for (const [label, count] of visible) {
+      const percent = levelCapMembers.length ? (count / levelCapMembers.length) * 100 : 0;
+      const row = document.createElement("div");
+      const heading = document.createElement("div");
+      const name = document.createElement("span");
+      const value = document.createElement("span");
+      const track = document.createElement("div");
+      const bar = document.createElement("div");
+      row.className = "roster-composition-row";
+      heading.className = "roster-composition-label";
+      name.textContent = label;
+      value.textContent = `${count} · ${Math.round(percent)}%`;
+      track.className = "roster-composition-track";
+      track.setAttribute("role", "progressbar");
+      track.setAttribute("aria-label", `${label}: ${count} of ${levelCapMembers.length} level 60 characters`);
+      track.setAttribute("aria-valuemin", "0");
+      track.setAttribute("aria-valuemax", String(levelCapMembers.length));
+      track.setAttribute("aria-valuenow", String(count));
+      bar.className = "roster-composition-bar";
+      bar.style.width = `${percent}%`;
+
+      if (compositionDimension === "class") {
+        bar.style.setProperty("--composition-color", classColors[label] ?? "#7c8cff");
+      }
+
+      heading.append(name, value);
+      track.append(bar);
+      row.append(heading, track);
+      compositionBars.append(row);
+    }
+
+    const dimensionLabel = compositionDimension === "spec" ? "specialization" : compositionDimension;
+    compositionSummary.textContent = `${levelCapMembers.length} level 60 characters · grouped by ${dimensionLabel}`;
+    composition.hidden = false;
+  };
+
   const renderMembers = (visibleMembers: RosterMember[]) => {
     if (!body || !tableShell || !emptyFilter || !resultCount) {
       return;
@@ -254,17 +352,17 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
       const link = document.createElement("a");
       nameCell.dataset.label = "Character";
       link.className = "player-name roster-character-link";
-      link.href = member.armoryUrl;
-      link.target = "_blank";
-      link.rel = "noreferrer";
+      link.href = member.profileUrl;
       link.textContent = member.name;
       link.style.setProperty("--player-color", classColors[member.className] ?? "#f2f0e8");
-      link.setAttribute("aria-label", `${member.name} on the Blizzard Armory`);
+      link.setAttribute("aria-label", `Open ${member.name}'s guild profile`);
       nameCell.append(link);
       row.append(
         nameCell,
         createCell("Level", String(member.level)),
+        createCell("iLvl", member.level >= 60 && member.equippedItemLevel !== null ? String(member.equippedItemLevel) : "—"),
         createCell("Class", member.className),
+        createCell("Spec", member.level >= 60 ? member.specialization : "—"),
         createCell("Race", member.raceName),
         createCell("Guild rank", member.rankLabel),
       );
@@ -328,13 +426,14 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
 
       members = payload.members;
       setText("[data-guild-name]", payload.guild.name);
-      setText("[data-guild-meta]", `North America · ${payload.guild.faction} · ${payload.guild.ruleset}`);
+      setText("[data-guild-meta]", `North America · ${payload.guild.faction}`);
       setText('[data-roster-stat="members"]', payload.summary.memberCount);
       setText('[data-roster-stat="level-cap"]', payload.summary.levelCapCount);
-      setText('[data-roster-stat="average-level"]', payload.summary.averageLevel);
+      setText(
+        '[data-roster-stat="average-item-level"]',
+        payload.summary.averageItemLevel === null ? "—" : payload.summary.averageItemLevel.toFixed(1),
+      );
       setText('[data-roster-stat="classes"]', payload.summary.classCount);
-      setText('[data-roster-stat="ruleset"]', payload.guild.ruleset);
-      setText("[data-roster-faction]", payload.guild.faction);
 
       if (syncStatus) syncStatus.textContent = formatSyncTime(payload.syncedAt);
 
@@ -354,6 +453,7 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
       if (loading) loading.hidden = true;
       if (filter) filter.hidden = false;
       if (root) root.setAttribute("aria-busy", "false");
+      renderComposition();
       renderMembers(members);
     } catch {
       showError(failureMessage);
@@ -363,5 +463,24 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
   filter?.addEventListener("input", applyFilters);
   filter?.addEventListener("change", applyFilters);
   filter?.addEventListener("reset", () => window.setTimeout(applyFilters));
+  for (const button of compositionButtons) {
+    button.addEventListener("click", () => {
+      const dimension = button.dataset.compositionDimension;
+
+      if (dimension !== "class" && dimension !== "role" && dimension !== "spec") {
+        return;
+      }
+
+      compositionDimension = dimension;
+
+      for (const option of compositionButtons) {
+        const selected = option === button;
+        option.classList.toggle("is-active", selected);
+        option.setAttribute("aria-pressed", String(selected));
+      }
+
+      renderComposition();
+    });
+  }
   void loadRoster();
 </script>
