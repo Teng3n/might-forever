@@ -1,96 +1,221 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageHeader from "../components/PageHeader.astro";
-import surveyInsights from "../data/surveyInsights.json";
 
 const discordUrl = "https://discord.gg/Eg3UkkgcGj";
 ---
 
-<Layout title="Might Forever | Guild Development">
-  <PageHeader eyebrow="Pre-launch" title="Might Forever" />
+<Layout title="Might Forever | Guild Overview">
+  <PageHeader
+    eyebrow="World of Warcraft: Forever"
+    title="Might"
+    description="The live guild overview: roster growth, character progress, recent activity, and the people building our next chapter."
+  />
 
-  <section class="content-grid two-column">
-    <article class="panel copy-panel hero-panel">
+  <section class="overview-hero-grid">
+    <article class="panel overview-guild-card">
       <div class="section-heading">
-        <p class="eyebrow">A new chapter</p>
-        <h2>Building the guild foundation</h2>
+        <p class="eyebrow">Guild pulse</p>
+        <h2>Might at a glance</h2>
       </div>
-      <div class="info-copy">
-        <p>
-          Might Forever is the working home for our next World of Warcraft guild. This site is a
-          clean foundation for planning the launch, forming the roster, and building the systems
-          the team will use once the game is closer.
-        </p>
-        <p>
-          The old Mists of Pandaria data stays preserved in the Vitality MoP archive. Nothing from that
-          roster, calendar, or loot history carries into this site.
-        </p>
+      <div class="overview-stat-grid" aria-live="polite">
+        <div><span>Members</span><strong data-overview-members>—</strong></div>
+        <div><span>Level 60</span><strong data-overview-level-cap>—</strong></div>
+        <div><span>Average iLvl</span><strong data-overview-item-level>—</strong></div>
+      </div>
+      <p class="overview-sync-note" data-overview-sync>Connecting to Blizzard…</p>
+    </article>
+
+    <article class="panel overview-milestone-card">
+      <div>
+        <p class="eyebrow">Next chapter</p>
+        <h2>Raiding begins December 12</h2>
+        <p>The site is concentrating on the guild, its characters, professions, and history until raid operations begin.</p>
+      </div>
+      <a class="filter-button" href="/roster">Explore the roster</a>
+    </article>
+  </section>
+
+  <section class="overview-main-grid">
+    <article class="panel overview-activity-panel" aria-labelledby="activity-heading">
+      <div class="character-section-heading">
+        <div>
+          <p class="eyebrow">Since your last visit</p>
+          <h2 id="activity-heading">Recent guild activity</h2>
+        </div>
+        <span class="overview-live-label">Live</span>
+      </div>
+      <div class="overview-activity-list" data-overview-activity aria-live="polite">
+        <p class="muted">Loading recent activity…</p>
       </div>
     </article>
 
-    <div class="stack homepage-side-stack">
+    <aside class="overview-side-stack">
+      <article class="panel overview-level-cap-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Level 60 roster</p>
+          <h2>Characters to know</h2>
+        </div>
+        <div class="overview-character-list" data-overview-characters>
+          <p class="muted">Loading characters…</p>
+        </div>
+        <a class="overview-text-link" href="/roster">View the complete roster</a>
+      </article>
+
       <article class="panel resources-panel">
         <div class="section-heading">
-          <p class="eyebrow">Start here</p>
-          <h2>Guild Links</h2>
+          <p class="eyebrow">Guild resources</p>
+          <h2>Go deeper</h2>
         </div>
         <div class="resource-list compact">
+          <a class="resource-link" href="/roster">
+            <span>Character roster</span>
+            <small>Gear, profiles, ranks, and history</small>
+          </a>
+          <a class="resource-link" href="/crafting">
+            <span>Crafting directory</span>
+            <small>Find guild professions and skill levels</small>
+          </a>
           <a class="resource-link" href={discordUrl}>
             <span>Discord</span>
-            <small>Community and planning</small>
-          </a>
-          <a class="resource-link" href="/roster">
-            <span>Live Guild Roster</span>
-            <small>Characters from Blizzard's WoW Forever API</small>
+            <small>Community and guild coordination</small>
           </a>
         </div>
       </article>
-    </div>
-  </section>
-
-  <section class="dashboard-grid home-summary-grid">
-    <article class="stat-card">
-      <span>Roster</span>
-      <strong>Live</strong>
-      <small>Open the current guild roster</small>
-    </article>
-    <article class="stat-card">
-      <span>Loot system</span>
-      <strong>—</strong>
-      <small>Not configured</small>
-    </article>
-    <article class="stat-card">
-      <span>Survey responses</span>
-      <strong>{surveyInsights.responseCount}</strong>
-      <small>Officer analytics available</small>
-    </article>
-  </section>
-
-  <section class="content-grid two-column">
-    <article class="panel copy-panel">
-      <div class="section-heading">
-        <p class="eyebrow">Ready now</p>
-        <h2>Planning infrastructure</h2>
-      </div>
-      <ul class="clean-list expectation-list">
-        <li>Permanent Might Forever development deployment.</li>
-        <li>Blizzard-backed roster contract with stable character identities.</li>
-        <li>Officer-gated survey decision dashboard.</li>
-        <li>Manual-only data refresh path with no background polling.</li>
-      </ul>
-    </article>
-
-    <article class="panel copy-panel">
-      <div class="section-heading">
-        <p class="eyebrow">Later</p>
-        <h2>Systems to connect</h2>
-      </div>
-      <ul class="clean-list expectation-list">
-        <li>Full character pages with equipment and gear history.</li>
-        <li>Raid calendar and availability.</li>
-        <li>Loot policy and tracking, once the guild chooses a system.</li>
-        <li>Progression and Warcraft Logs after the game launches.</li>
-      </ul>
-    </article>
+    </aside>
   </section>
 </Layout>
+
+<script>
+  type RosterPayload = {
+    ok: true;
+    syncedAt: string;
+    summary: { memberCount: number; levelCapCount: number; averageItemLevel: number | null };
+    members: Array<{
+      slug: string;
+      name: string;
+      level: number;
+      className: string;
+      specialization: string;
+      role: string;
+      profileUrl: string;
+    }>;
+  };
+
+  type ActivityPayload = {
+    ok: true;
+    events: Array<{
+      id: string;
+      type: "achievement" | "encounter" | "gear";
+      characterName: string | null;
+      characterSlug: string | null;
+      title: string;
+      detail: string;
+      occurredAt: string;
+    }>;
+  };
+
+  const classColors: Record<string, string> = {
+    Druid: "#ff7c0a", Hunter: "#aad372", Mage: "#3fc7eb", Paladin: "#f48cba", Priest: "#ffffff",
+    Rogue: "#fff468", Shaman: "#0070dd", Warlock: "#8788ee", Warrior: "#c69b6d",
+  };
+
+  const setText = (selector: string, value: string | number) => {
+    const element = document.querySelector<HTMLElement>(selector);
+    if (element) element.textContent = String(value);
+  };
+
+  const formatDate = (value: string) => {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return "Recently";
+    return new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      timeZone: "America/Los_Angeles",
+    }).format(date);
+  };
+
+  const loadRoster = async () => {
+    const response = await fetch("/api/forever-roster", { headers: { Accept: "application/json" } });
+    const payload = (await response.json()) as RosterPayload;
+    if (!response.ok || payload.ok !== true) throw new Error("Roster unavailable");
+
+    setText("[data-overview-members]", payload.summary.memberCount);
+    setText("[data-overview-level-cap]", payload.summary.levelCapCount);
+    setText("[data-overview-item-level]", payload.summary.averageItemLevel ?? "—");
+    setText("[data-overview-sync]", `Updated ${formatDate(payload.syncedAt)} PT`);
+
+    const list = document.querySelector<HTMLElement>("[data-overview-characters]");
+    if (!list) return;
+    list.replaceChildren();
+    const members = payload.members.filter((member) => member.level >= 60).slice(0, 7);
+
+    for (const member of members) {
+      const link = document.createElement("a");
+      const marker = document.createElement("span");
+      const copy = document.createElement("span");
+      const name = document.createElement("strong");
+      const detail = document.createElement("small");
+      link.href = member.profileUrl;
+      marker.className = "overview-character-marker";
+      marker.style.setProperty("--class-color", classColors[member.className] ?? "#7c8cff");
+      copy.className = "overview-character-copy";
+      name.textContent = member.name;
+      detail.textContent = [member.className, member.specialization !== "Unknown" ? member.specialization : "", member.role !== "Unknown" ? member.role : ""]
+        .filter(Boolean)
+        .join(" · ");
+      copy.append(name, detail);
+      link.append(marker, copy);
+      list.append(link);
+    }
+  };
+
+  const loadActivity = async () => {
+    const response = await fetch("/api/forever-activity", { headers: { Accept: "application/json" } });
+    const payload = (await response.json()) as ActivityPayload;
+    if (!response.ok || payload.ok !== true) throw new Error("Activity unavailable");
+    const list = document.querySelector<HTMLElement>("[data-overview-activity]");
+    if (!list) return;
+    list.replaceChildren();
+
+    if (!payload.events.length) {
+      const empty = document.createElement("p");
+      empty.className = "muted";
+      empty.textContent = "Activity tracking is connected. New achievements and first-seen gear gains will appear here.";
+      list.append(empty);
+      return;
+    }
+
+    for (const event of payload.events.slice(0, 10)) {
+      const row = document.createElement(event.characterSlug ? "a" : "article");
+      const marker = document.createElement("span");
+      const copy = document.createElement("span");
+      const title = document.createElement("strong");
+      const detail = document.createElement("small");
+      const time = document.createElement("time");
+      row.className = "overview-activity-row";
+      if (row instanceof HTMLAnchorElement && event.characterSlug) row.href = `/roster/profile/${encodeURIComponent(event.characterSlug)}`;
+      marker.className = `overview-activity-marker is-${event.type}`;
+      marker.setAttribute("aria-hidden", "true");
+      marker.textContent = event.type === "gear" ? "+" : event.type === "encounter" ? "✓" : "★";
+      copy.className = "overview-activity-copy";
+      title.textContent = event.title;
+      detail.textContent = event.detail;
+      time.dateTime = event.occurredAt;
+      time.textContent = formatDate(event.occurredAt);
+      copy.append(title, detail);
+      row.append(marker, copy, time);
+      list.append(row);
+    }
+  };
+
+  void Promise.allSettled([loadRoster(), loadActivity()]).then((results) => {
+    if (results[0]?.status === "rejected") setText("[data-overview-sync]", "Live roster is temporarily unavailable.");
+    if (results[1]?.status === "rejected") {
+      const list = document.querySelector<HTMLElement>("[data-overview-activity]");
+      if (list) list.innerHTML = '<p class="muted">Recent activity is temporarily unavailable.</p>';
+    }
+  });
+</script>

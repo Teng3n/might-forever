@@ -76,12 +76,13 @@ import PageHeader from "../../../components/PageHeader.astro";
       <aside class="panel character-history-panel" aria-labelledby="history-heading">
         <div class="character-section-heading">
           <div>
-            <p class="eyebrow">Gear history</p>
-            <h2 id="history-heading">Item timeline</h2>
+            <p class="eyebrow">Character history</p>
+            <h2 id="history-heading">Progress timeline</h2>
           </div>
           <span class="character-history-count" data-history-count></span>
         </div>
         <p class="character-history-note" data-history-note></p>
+        <div class="character-item-level-history" data-item-level-history hidden></div>
         <ol class="character-history-list" data-history-list></ol>
       </aside>
 
@@ -112,6 +113,28 @@ import PageHeader from "../../../components/PageHeader.astro";
           </div>
           <div class="character-set-list" data-character-set-list></div>
         </section>
+      </section>
+
+      <section class="panel character-detail-panel" data-character-talents hidden aria-labelledby="talents-heading">
+        <div class="character-section-heading">
+          <div>
+            <p class="eyebrow">Build</p>
+            <h2 id="talents-heading">Talents</h2>
+          </div>
+          <span class="character-history-count" data-talent-summary></span>
+        </div>
+        <div class="character-talent-list" data-talent-list></div>
+      </section>
+
+      <section class="panel character-detail-panel" data-character-professions hidden aria-labelledby="professions-heading">
+        <div class="character-section-heading">
+          <div>
+            <p class="eyebrow">Skills</p>
+            <h2 id="professions-heading">Professions</h2>
+          </div>
+          <a class="overview-text-link" href="/crafting">Guild directory</a>
+        </div>
+        <div class="character-profession-list" data-profession-list></div>
       </section>
 
       <section class="panel character-detail-panel" aria-labelledby="reputation-heading">
@@ -176,12 +199,30 @@ import PageHeader from "../../../components/PageHeader.astro";
         active: boolean;
       }>;
     }>;
+    talentTrees?: Array<{
+      id: number | null;
+      name: string;
+      spentPoints: number;
+      talents: Array<{ id: number | null; name: string; rank: number }>;
+    }>;
+    professions?: Array<{
+      id: number | null;
+      name: string;
+      category: "Primary" | "Secondary";
+      skill: number;
+      maxSkill: number;
+    }>;
+    achievements?: Array<{
+      id: number | null;
+      name: string;
+      completedAt: string;
+    }>;
     pvp: {
       honorableKills: number;
       rank: number;
       maps: Array<{ name: string; played: number; won: number; lost: number }>;
     };
-    statistics: Array<{ key: string; label: string; value: number }>;
+    statistics: Array<{ key: string; label: string; value: number; format?: "number" | "percent" }>;
     reputations: Array<{
       id: number;
       name: string;
@@ -195,6 +236,12 @@ import PageHeader from "../../../components/PageHeader.astro";
       baselineAt: string | null;
       latestSnapshotAt: string | null;
       snapshotCount: number;
+      snapshots?: Array<{
+        capturedAt: string;
+        equippedItemLevel: number | null;
+        averageItemLevel: number | null;
+        honorableKills: number;
+      }>;
       events: Array<{
         id: number;
         type: "GAINED";
@@ -410,7 +457,32 @@ import PageHeader from "../../../components/PageHeader.astro";
   const renderHistory = (payload: CharacterPayload) => {
     if (!historyList) return;
     historyList.replaceChildren();
-    setText("[data-history-count]", `${payload.history.snapshotCount} snapshot${payload.history.snapshotCount === 1 ? "" : "s"}`);
+    const achievements = payload.achievements ?? [];
+    const snapshots = (payload.history.snapshots ?? []).filter((snapshot) => snapshot.equippedItemLevel !== null);
+    const timeline = [
+      ...payload.history.events.map((event) => ({
+        kind: "gear" as const,
+        occurredAt: event.occurredAt,
+        title: `Gained ${event.itemName}`,
+        detail: [event.itemLevel === null ? "" : `Item level ${event.itemLevel}`, event.slot.replaceAll("_", " ").toLocaleLowerCase()]
+          .filter(Boolean)
+          .join(" · "),
+        quality: event.quality,
+      })),
+      ...achievements.map((achievement) => ({
+        kind: "achievement" as const,
+        occurredAt: achievement.completedAt,
+        title: achievement.name,
+        detail: "Achievement completed",
+        quality: "",
+      })),
+    ]
+      .sort((left, right) => right.occurredAt.localeCompare(left.occurredAt))
+      .slice(0, 24);
+    setText(
+      "[data-history-count]",
+      `${timeline.length} event${timeline.length === 1 ? "" : "s"} · ${payload.history.snapshotCount} snapshot${payload.history.snapshotCount === 1 ? "" : "s"}`,
+    );
 
     if (!payload.history.available) {
       setText("[data-history-note]", "History storage is being connected. Current equipment is still live.");
@@ -419,27 +491,60 @@ import PageHeader from "../../../components/PageHeader.astro";
 
     setText(
       "[data-history-note]",
-      payload.history.events.length
-        ? "An item appears here the first time Blizzard shows it equipped. Re-equips do not create duplicate gains."
-        : "Tracking has started. Current gear is the baseline; future first-seen items will appear here as gains.",
+      timeline.length
+        ? "A combined history of first-seen gear and recent Blizzard achievements. Re-equips do not create duplicate gains."
+        : "Tracking has started. Future first-seen gear and achievements will appear here.",
     );
 
-    for (const event of payload.history.events) {
+    const chart = document.querySelector<HTMLElement>("[data-item-level-history]");
+    if (chart) {
+      chart.replaceChildren();
+      chart.hidden = snapshots.length === 0;
+
+      if (snapshots.length > 0) {
+        const heading = document.createElement("div");
+        const label = document.createElement("span");
+        const value = document.createElement("strong");
+        const levels = snapshots.map((snapshot) => snapshot.equippedItemLevel as number);
+        label.textContent = "Equipped item level";
+        value.textContent = snapshots.length > 1 ? `${levels[0]} → ${levels.at(-1)}` : `Baseline ${levels[0]}`;
+        heading.className = "character-item-level-history-heading";
+        heading.append(label, value);
+        chart.append(heading);
+
+        if (snapshots.length > 1) {
+          const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+          const line = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+          const min = Math.min(...levels);
+          const max = Math.max(...levels);
+          const range = Math.max(1, max - min);
+          const points = levels
+            .map((level, index) => {
+              const x = 4 + (index / Math.max(1, levels.length - 1)) * 92;
+              const y = 30 - ((level - min) / range) * 24;
+              return `${x},${y}`;
+            })
+            .join(" ");
+          svg.setAttribute("viewBox", "0 0 100 36");
+          svg.setAttribute("role", "img");
+          svg.setAttribute("aria-label", `Equipped item level changed from ${levels[0]} to ${levels.at(-1)}`);
+          line.setAttribute("points", points);
+          svg.append(line);
+          chart.append(svg);
+        }
+      }
+    }
+
+    for (const event of timeline) {
       const item = document.createElement("li");
       const marker = document.createElement("span");
       const copy = document.createElement("div");
       const heading = document.createElement("strong");
       const detail = document.createElement("small");
-      marker.className = "character-history-marker";
-      heading.textContent = `Gained ${event.itemName}`;
-      heading.style.setProperty("--item-quality", getQualityColor(event.quality));
-      detail.textContent = [
-        event.itemLevel === null ? "" : `Item level ${event.itemLevel}`,
-        event.slot.replaceAll("_", " ").toLocaleLowerCase(),
-        formatDate(event.occurredAt),
-      ]
-        .filter(Boolean)
-        .join(" · ");
+      marker.className = `character-history-marker is-${event.kind}`;
+      heading.textContent = event.title;
+      if (event.quality) heading.style.setProperty("--item-quality", getQualityColor(event.quality));
+      detail.textContent = [event.detail, formatDate(event.occurredAt)].filter(Boolean).join(" · ");
       copy.append(heading, detail);
       item.append(marker, copy);
       historyList.append(item);
@@ -493,13 +598,34 @@ import PageHeader from "../../../components/PageHeader.astro";
     const list = document.querySelector<HTMLElement>("[data-character-statistics]");
     if (!list) return;
     list.replaceChildren();
+    const statsByKey = new Map(payload.statistics.map((statistic) => [statistic.key, statistic]));
+    const isTank = payload.character.role === "Tank";
+    const isHealer = payload.character.role === "Healer";
+    const isHunter = payload.character.className === "Hunter";
+    const isCaster = ["Mage", "Priest", "Warlock"].includes(payload.character.className) || payload.character.role === "Ranged DPS";
+    const preferredKeys = isTank
+      ? ["health", "stamina", "strength", "armor", "dodge", "parry", "block", "defense", "attack_power", "melee_crit", "melee_hit"]
+      : isHealer
+        ? ["health", "power", "intellect", "stamina", "spirit", "spell_power", "bonus_healing", "mana_regen", "spell_crit", "spell_hit"]
+        : isHunter
+          ? ["health", "agility", "stamina", "attack_power", "main_hand_dps", "ranged_crit", "ranged_hit", "armor"]
+          : isCaster
+            ? ["health", "power", "intellect", "stamina", "spirit", "spell_power", "spell_crit", "spell_hit", "mana_regen"]
+            : ["health", "strength", "agility", "stamina", "attack_power", "main_hand_dps", "melee_crit", "melee_hit", "armor"];
+    const selected = [
+      ...preferredKeys.flatMap((key) => (statsByKey.has(key) ? [statsByKey.get(key)!] : [])),
+      ...payload.statistics.filter((statistic) => !preferredKeys.includes(statistic.key)),
+    ]
+      .filter((statistic, index, values) => values.findIndex((value) => value.key === statistic.key) === index)
+      .slice(0, 10);
 
-    for (const statistic of payload.statistics.slice(0, 10)) {
+    for (const statistic of selected) {
       const wrapper = document.createElement("div");
       const term = document.createElement("dt");
       const description = document.createElement("dd");
       term.textContent = statistic.label;
-      description.textContent = new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(statistic.value);
+      const formatted = new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(statistic.value);
+      description.textContent = statistic.format === "percent" ? `${formatted}%` : formatted;
       wrapper.append(term, description);
       list.append(wrapper);
     }
@@ -551,6 +677,84 @@ import PageHeader from "../../../components/PageHeader.astro";
       list.append(card);
     }
 
+    section.hidden = false;
+  };
+
+  const renderTalents = (payload: CharacterPayload) => {
+    const section = document.querySelector<HTMLElement>("[data-character-talents]");
+    const list = document.querySelector<HTMLElement>("[data-talent-list]");
+    const trees = payload.talentTrees ?? [];
+
+    if (!section || !list) return;
+    list.replaceChildren();
+
+    if (!trees.length) {
+      section.hidden = true;
+      return;
+    }
+
+    setText("[data-talent-summary]", trees.map((tree) => tree.spentPoints).join(" / "));
+    for (const tree of trees) {
+      const card = document.createElement("article");
+      const heading = document.createElement("div");
+      const name = document.createElement("strong");
+      const points = document.createElement("span");
+      const talents = document.createElement("div");
+      card.className = "character-talent-card";
+      heading.className = "character-talent-heading";
+      name.textContent = tree.name;
+      points.textContent = `${tree.spentPoints} points`;
+      talents.className = "character-talent-chips";
+      for (const talent of tree.talents.slice(0, 12)) {
+        const chip = document.createElement("span");
+        chip.textContent = `${talent.name}${talent.rank > 1 ? ` ${talent.rank}` : ""}`;
+        talents.append(chip);
+      }
+      heading.append(name, points);
+      card.append(heading);
+      if (tree.talents.length) card.append(talents);
+      list.append(card);
+    }
+    section.hidden = false;
+  };
+
+  const renderProfessions = (payload: CharacterPayload) => {
+    const section = document.querySelector<HTMLElement>("[data-character-professions]");
+    const list = document.querySelector<HTMLElement>("[data-profession-list]");
+    const professions = payload.professions ?? [];
+
+    if (!section || !list) return;
+    list.replaceChildren();
+
+    if (!professions.length) {
+      section.hidden = true;
+      return;
+    }
+
+    for (const profession of professions) {
+      const row = document.createElement("div");
+      const heading = document.createElement("div");
+      const name = document.createElement("span");
+      const value = document.createElement("strong");
+      const track = document.createElement("div");
+      const bar = document.createElement("div");
+      row.className = "character-profession-row";
+      heading.className = "character-profession-heading";
+      name.textContent = `${profession.name}${profession.category === "Secondary" ? " · Secondary" : ""}`;
+      value.textContent = profession.maxSkill > 0 ? `${profession.skill} / ${profession.maxSkill}` : String(profession.skill);
+      track.className = "character-profession-track";
+      bar.className = "character-profession-bar";
+      bar.style.width = `${profession.maxSkill > 0 ? Math.min(100, (profession.skill / profession.maxSkill) * 100) : 0}%`;
+      track.setAttribute("role", "progressbar");
+      track.setAttribute("aria-label", `${profession.name}: ${value.textContent}`);
+      track.setAttribute("aria-valuemin", "0");
+      track.setAttribute("aria-valuemax", String(profession.maxSkill));
+      track.setAttribute("aria-valuenow", String(profession.skill));
+      heading.append(name, value);
+      track.append(bar);
+      row.append(heading, track);
+      list.append(row);
+    }
     section.hidden = false;
   };
 
@@ -622,6 +826,8 @@ import PageHeader from "../../../components/PageHeader.astro";
     renderPvp(payload);
     renderStatistics(payload);
     renderEquipmentSets(payload);
+    renderTalents(payload);
+    renderProfessions(payload);
     renderReputations(payload);
     if (loading) loading.hidden = true;
     if (content) content.hidden = false;
@@ -643,7 +849,7 @@ import PageHeader from "../../../components/PageHeader.astro";
     }
 
     try {
-      const response = await fetch(`/api/forever-character/${encodeURIComponent(slug)}?v=3`, {
+      const response = await fetch(`/api/forever-character/${encodeURIComponent(slug)}?v=4`, {
         headers: { Accept: "application/json" },
       });
       const payload = (await response.json()) as CharacterPayload | { ok?: false; message?: string };

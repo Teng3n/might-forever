@@ -27,6 +27,12 @@ export interface CharacterHistoryPayload {
   baselineAt: string | null;
   latestSnapshotAt: string | null;
   snapshotCount: number;
+  snapshots: Array<{
+    capturedAt: string;
+    equippedItemLevel: number | null;
+    averageItemLevel: number | null;
+    honorableKills: number;
+  }>;
   events: Array<{
     id: number;
     type: "GAINED";
@@ -185,7 +191,7 @@ const insertFirstSeenItems = async (
 };
 
 const readHistory = async (db: D1Database, characterId: number): Promise<CharacterHistoryPayload> => {
-  const [summary, eventResult] = await Promise.all([
+  const [summary, snapshotResult, eventResult] = await Promise.all([
     db
       .prepare(
         `SELECT
@@ -197,6 +203,20 @@ const readHistory = async (db: D1Database, characterId: number): Promise<Charact
       )
       .bind(characterId)
       .first<{ baseline_at: string | null; latest_snapshot_at: string | null; snapshot_count: number }>(),
+    db
+      .prepare(
+        `SELECT
+          captured_at,
+          equipped_item_level,
+          average_item_level,
+          honorable_kills
+        FROM character_snapshots
+        WHERE character_id = ?
+        ORDER BY captured_at ASC, id ASC
+        LIMIT 60`,
+      )
+      .bind(characterId)
+      .all<SnapshotRow>(),
     db
       .prepare(
         `SELECT
@@ -222,6 +242,12 @@ const readHistory = async (db: D1Database, characterId: number): Promise<Charact
     baselineAt: summary?.baseline_at ?? null,
     latestSnapshotAt: summary?.latest_snapshot_at ?? null,
     snapshotCount: Number(summary?.snapshot_count ?? 0),
+    snapshots: (snapshotResult.results ?? []).map((snapshot) => ({
+      capturedAt: snapshot.captured_at,
+      equippedItemLevel: snapshot.equipped_item_level,
+      averageItemLevel: snapshot.average_item_level,
+      honorableKills: snapshot.honorable_kills,
+    })),
     events: (eventResult.results ?? []).map((event) => ({
       id: event.id,
       type: event.event_type,
@@ -283,10 +309,51 @@ export const recordCharacterSnapshot = async (
   return readHistory(db, payload.character.id);
 };
 
+export const readRecentGuildGearEvents = async (db: D1Database, limit = 20) => {
+  const result = await db
+    .prepare(
+      `SELECT
+        id,
+        character_slug,
+        item_id,
+        item_name,
+        item_level,
+        quality,
+        slot_type,
+        occurred_at
+      FROM character_gear_events
+      ORDER BY occurred_at DESC, id DESC
+      LIMIT ?`,
+    )
+    .bind(Math.max(1, Math.min(limit, 50)))
+    .all<{
+      id: number;
+      character_slug: string;
+      item_id: number;
+      item_name: string;
+      item_level: number | null;
+      quality: string;
+      slot_type: string;
+      occurred_at: string;
+    }>();
+
+  return (result.results ?? []).map((event) => ({
+    id: event.id,
+    characterSlug: event.character_slug,
+    itemId: event.item_id,
+    itemName: event.item_name,
+    itemLevel: event.item_level,
+    quality: event.quality,
+    slot: event.slot_type,
+    occurredAt: event.occurred_at,
+  }));
+};
+
 export const unavailableCharacterHistory = (): CharacterHistoryPayload => ({
   available: false,
   baselineAt: null,
   latestSnapshotAt: null,
   snapshotCount: 0,
+  snapshots: [],
   events: [],
 });

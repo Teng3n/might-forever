@@ -79,6 +79,31 @@ export interface ForeverEquipmentSet {
   }>;
 }
 
+export interface ForeverProfession {
+  id: number | null;
+  name: string;
+  category: "Primary" | "Secondary";
+  skill: number;
+  maxSkill: number;
+}
+
+export interface ForeverTalentTree {
+  id: number | null;
+  name: string;
+  spentPoints: number;
+  talents: Array<{
+    id: number | null;
+    name: string;
+    rank: number;
+  }>;
+}
+
+export interface ForeverAchievement {
+  id: number | null;
+  name: string;
+  completedAt: string;
+}
+
 export interface ForeverCharacterPayload {
   ok: true;
   syncedAt: string;
@@ -108,6 +133,9 @@ export interface ForeverCharacterPayload {
   };
   equipment: ForeverCharacterItem[];
   equipmentSets: ForeverEquipmentSet[];
+  talentTrees: ForeverTalentTree[];
+  professions: ForeverProfession[];
+  achievements: ForeverAchievement[];
   pvp: {
     honorableKills: number;
     rank: number;
@@ -122,6 +150,7 @@ export interface ForeverCharacterPayload {
     key: string;
     label: string;
     value: number;
+    format: "number" | "percent";
   }>;
   reputations: Array<{
     id: number;
@@ -131,6 +160,39 @@ export interface ForeverCharacterPayload {
     max: number;
     tier: number;
   }>;
+}
+
+export interface ForeverCraftingPayload {
+  ok: true;
+  syncedAt: string;
+  note: string;
+  summary: {
+    crafterCount: number;
+    professionCount: number;
+  };
+  crafters: Array<{
+    character: Pick<
+      ForeverRosterMember,
+      "slug" | "name" | "level" | "className" | "rankLabel" | "profileUrl"
+    >;
+    professions: ForeverProfession[];
+  }>;
+}
+
+export interface ForeverGuildActivityEvent {
+  id: string;
+  type: "achievement" | "encounter" | "gear";
+  characterName: string | null;
+  characterSlug: string | null;
+  title: string;
+  detail: string;
+  occurredAt: string;
+}
+
+export interface ForeverGuildActivityPayload {
+  ok: true;
+  syncedAt: string;
+  events: ForeverGuildActivityEvent[];
 }
 
 const MANUAL_CHARACTER_SPECIALIZATIONS: Record<string, { specialization: string; role: string }> = {
@@ -507,6 +569,182 @@ const getActiveSpecialization = (value: unknown) => {
   return selectedName;
 };
 
+const toIsoTimestamp = (value: unknown) => {
+  const timestamp = cleanNumber(value);
+
+  if (timestamp === null || timestamp <= 0) {
+    return null;
+  }
+
+  const date = new Date(timestamp < 10_000_000_000 ? timestamp * 1_000 : timestamp);
+  return Number.isNaN(date.getTime()) ? null : date.toISOString();
+};
+
+const parseProfessions = (value: unknown, locale: string): ForeverProfession[] => {
+  if (!isRecord(value)) {
+    return [];
+  }
+
+  const groups: Array<["Primary" | "Secondary", unknown]> = [
+    ["Primary", value.primaries],
+    ["Secondary", value.secondaries],
+  ];
+  const professions: ForeverProfession[] = [];
+
+  for (const [category, rows] of groups) {
+    if (!Array.isArray(rows)) {
+      continue;
+    }
+
+    for (const row of rows) {
+      if (!isRecord(row)) {
+        continue;
+      }
+
+      const reference = isRecord(row.profession) ? row.profession : row;
+      const name = getReferenceName(reference, locale);
+
+      if (!name) {
+        continue;
+      }
+
+      const tiers = Array.isArray(row.tiers) ? row.tiers.filter(isRecord) : [];
+      const bestTier = tiers.sort(
+        (left, right) =>
+          (cleanNumber(right.skill_points) ?? 0) - (cleanNumber(left.skill_points) ?? 0) ||
+          (cleanNumber(right.max_skill_points) ?? 0) - (cleanNumber(left.max_skill_points) ?? 0),
+      )[0];
+      const skill = bestTier ? cleanNumber(bestTier.skill_points) ?? 0 : cleanNumber(row.skill_points) ?? 0;
+      const maxSkill = bestTier
+        ? cleanNumber(bestTier.max_skill_points) ?? skill
+        : cleanNumber(row.max_skill_points) ?? skill;
+
+      professions.push({
+        id: getReferenceId(reference),
+        name,
+        category,
+        skill,
+        maxSkill,
+      });
+    }
+  }
+
+  return professions.sort(
+    (left, right) =>
+      (left.category === "Primary" ? 0 : 1) - (right.category === "Primary" ? 0 : 1) ||
+      left.name.localeCompare(right.name),
+  );
+};
+
+const parseTalentTrees = (value: unknown, locale: string): ForeverTalentTree[] => {
+  if (!isRecord(value) || !Array.isArray(value.specialization_groups)) {
+    return [];
+  }
+
+  const activeGroup = value.specialization_groups.find(
+    (group) => isRecord(group) && group.is_active === true && Array.isArray(group.specializations),
+  );
+
+  if (!isRecord(activeGroup) || !Array.isArray(activeGroup.specializations)) {
+    return [];
+  }
+
+  return activeGroup.specializations
+    .flatMap((entry): ForeverTalentTree[] => {
+      if (!isRecord(entry)) {
+        return [];
+      }
+
+      const reference = isRecord(entry.specialization) ? entry.specialization : null;
+      const name = cleanString(entry.specialization_name) || getReferenceName(reference, locale);
+
+      if (!name) {
+        return [];
+      }
+
+      const talentRows = Array.isArray(entry.talents)
+        ? entry.talents
+        : Array.isArray(entry.traits)
+          ? entry.traits
+          : [];
+      const talents = talentRows.flatMap((talent): ForeverTalentTree["talents"] => {
+        if (!isRecord(talent)) {
+          return [];
+        }
+
+        const talentReference = isRecord(talent.talent)
+          ? talent.talent
+          : isRecord(talent.trait)
+            ? talent.trait
+            : talent;
+        const talentName = getReferenceName(talentReference, locale);
+
+        if (!talentName) {
+          return [];
+        }
+
+        return [
+          {
+            id: getReferenceId(talentReference),
+            name: talentName,
+            rank: cleanNumber(talent.rank) ?? cleanNumber(talent.points) ?? 1,
+          },
+        ];
+      });
+
+      return [
+        {
+          id: getReferenceId(reference),
+          name,
+          spentPoints: cleanNumber(entry.spent_points) ?? talents.reduce((total, talent) => total + talent.rank, 0),
+          talents,
+        },
+      ];
+    });
+};
+
+const parseAchievements = (value: unknown, locale: string): ForeverAchievement[] => {
+  if (!isRecord(value) || !Array.isArray(value.achievements)) {
+    return [];
+  }
+
+  return value.achievements
+    .flatMap((row): ForeverAchievement[] => {
+      if (!isRecord(row)) {
+        return [];
+      }
+
+      const reference = isRecord(row.achievement) ? row.achievement : row;
+      const name = getReferenceName(reference, locale);
+      const completedAt =
+        toIsoTimestamp(row.completed_timestamp) ??
+        toIsoTimestamp(row.completed_at) ??
+        toIsoTimestamp(row.timestamp);
+
+      if (!name || !completedAt) {
+        return [];
+      }
+
+      return [{ id: getReferenceId(reference), name, completedAt }];
+    })
+    .sort((left, right) => right.completedAt.localeCompare(left.completedAt))
+    .slice(0, 12);
+};
+
+const getStatisticNumber = (value: unknown) => {
+  const record = isRecord(value) ? value : null;
+  return (
+    cleanNumber(value) ??
+    (record
+      ? cleanNumber(record.value) ??
+        cleanNumber(record.effective) ??
+        cleanNumber(record.rating) ??
+        cleanNumber(record.percent) ??
+        cleanNumber(record.base)
+      : null)
+  );
+};
+
 const getRole = (className: string, specialization: string) => {
   const classKey = className.toLowerCase();
   const specKey = specialization.toLowerCase();
@@ -678,7 +916,7 @@ export const normalizeForeverRoster = ({
   };
 };
 
-export const getForeverRoster = async (env: ForeverApiEnv): Promise<ForeverRosterPayload> => {
+const getForeverRosterBase = async (env: ForeverApiEnv) => {
   const { region, locale, guildSlug, profileNamespace, staticNamespace, token } = await getSession(env);
 
   const [guildData, rosterData, classData, raceData] = await Promise.all([
@@ -714,6 +952,12 @@ export const getForeverRoster = async (env: ForeverApiEnv): Promise<ForeverRoste
     guildSlug,
     rankNamesJson: env.FOREVER_GUILD_RANK_NAMES_JSON,
   });
+
+  return { payload, region, locale, guildSlug, profileNamespace, token };
+};
+
+export const getForeverRoster = async (env: ForeverApiEnv): Promise<ForeverRosterPayload> => {
+  const { payload, region, locale, profileNamespace, token } = await getForeverRosterBase(env);
 
   const levelCapMembers = payload.members.filter((member) => member.level >= LEVEL_CAP);
   const enriched = await mapWithConcurrency(levelCapMembers, 8, async (member) => {
@@ -795,6 +1039,146 @@ export const getForeverRoster = async (env: ForeverApiEnv): Promise<ForeverRoste
   return payload;
 };
 
+export const getForeverCraftingDirectory = async (env: ForeverApiEnv): Promise<ForeverCraftingPayload> => {
+  const { payload, region, locale, profileNamespace, token } = await getForeverRosterBase(env);
+  const eligibleMembers = payload.members
+    .filter((member) => member.level >= 10 && member.rank <= 6)
+    .slice(0, 120);
+  const results = await mapWithConcurrency(eligibleMembers, 8, async (member) => {
+    const professionData = await fetchOptionalApiJson(
+      getApiUrl(
+        region,
+        locale,
+        profileNamespace,
+        `/profile/wow/character/${encodeURIComponent(member.slug)}/professions`,
+      ),
+      token,
+      `${member.name} professions`,
+    );
+    const professions = parseProfessions(professionData, locale);
+
+    if (!professions.some((profession) => profession.category === "Primary")) {
+      return null;
+    }
+
+    return {
+      character: {
+        slug: member.slug,
+        name: member.name,
+        level: member.level,
+        className: member.className,
+        rankLabel: member.rankLabel,
+        profileUrl: member.profileUrl,
+      },
+      professions,
+    };
+  });
+  const crafters = results
+    .filter((result): result is NonNullable<typeof result> => result !== null)
+    .sort((left, right) => right.character.level - left.character.level || left.character.name.localeCompare(right.character.name));
+  const primaryProfessionNames = new Set(
+    crafters.flatMap((crafter) =>
+      crafter.professions
+        .filter((profession) => profession.category === "Primary")
+        .map((profession) => profession.name),
+    ),
+  );
+
+  return {
+    ok: true,
+    syncedAt: new Date().toISOString(),
+    note: "Blizzard reports profession skill levels, but not which individual recipes each character has learned.",
+    summary: {
+      crafterCount: crafters.length,
+      professionCount: primaryProfessionNames.size,
+    },
+    crafters,
+  };
+};
+
+export const getForeverGuildActivity = async (env: ForeverApiEnv): Promise<ForeverGuildActivityPayload> => {
+  const { region, locale, guildSlug, profileNamespace, token } = await getSession(env);
+  const activityData = await fetchOptionalApiJson(
+    getApiUrl(
+      region,
+      locale,
+      profileNamespace,
+      `/data/wow/guild/${encodeURIComponent(guildSlug)}/activity`,
+    ),
+    token,
+    "guild activity",
+  );
+  const rows = isRecord(activityData) && Array.isArray(activityData.activities) ? activityData.activities : [];
+  const events = rows.flatMap((row, index): ForeverGuildActivityEvent[] => {
+    if (!isRecord(row)) {
+      return [];
+    }
+
+    const occurredAt =
+      toIsoTimestamp(row.activity_timestamp) ??
+      toIsoTimestamp(row.created_timestamp) ??
+      toIsoTimestamp(row.timestamp);
+
+    if (!occurredAt) {
+      return [];
+    }
+
+    const achievementActivity = getNestedRecord(row, "character_achievement");
+    const encounterActivity = getNestedRecord(row, "encounter_completed");
+
+    if (achievementActivity) {
+      const character = getNestedRecord(achievementActivity, "character");
+      const achievement = getNestedRecord(achievementActivity, "achievement");
+      const firstName = cleanString(character?.name);
+      const surname = cleanString(character?.surname);
+      const characterName = [firstName, surname].filter(Boolean).join(" ") || null;
+      const characterSlug =
+        cleanString(character?.slug) ||
+        (characterName ? characterName.toLocaleLowerCase().replaceAll(/[^a-z0-9]+/g, "-").replaceAll(/^-|-$/g, "") : null);
+      const achievementName = getReferenceName(achievement, locale) || "an achievement";
+
+      return [
+        {
+          id: `achievement-${getReferenceId(achievement) ?? index}-${occurredAt}`,
+          type: "achievement",
+          characterName,
+          characterSlug,
+          title: achievementName,
+          detail: characterName ? `${characterName} completed an achievement.` : "Guild achievement completed.",
+          occurredAt,
+        },
+      ];
+    }
+
+    if (encounterActivity) {
+      const encounter = getNestedRecord(encounterActivity, "encounter");
+      const mode = getNestedRecord(encounterActivity, "mode");
+      const encounterName = getReferenceName(encounter, locale) || "Encounter completed";
+      const modeName = getReferenceName(mode, locale);
+
+      return [
+        {
+          id: `encounter-${getReferenceId(encounter) ?? index}-${occurredAt}`,
+          type: "encounter",
+          characterName: null,
+          characterSlug: null,
+          title: encounterName,
+          detail: modeName ? `${modeName} encounter completed by Might.` : "Encounter completed by Might.",
+          occurredAt,
+        },
+      ];
+    }
+
+    return [];
+  });
+
+  return {
+    ok: true,
+    syncedAt: new Date().toISOString(),
+    events: events.sort((left, right) => right.occurredAt.localeCompare(left.occurredAt)).slice(0, 30),
+  };
+};
+
 const getAsset = (value: unknown, keys: string[]) => {
   if (!isRecord(value) || !Array.isArray(value.assets)) {
     return null;
@@ -824,7 +1208,17 @@ export const getForeverCharacter = async (env: ForeverApiEnv, requestedSlug: str
 
   const { region, locale, profileNamespace, token } = await getSession(env);
   const path = `/profile/wow/character/${encodeURIComponent(slug)}`;
-  const [profileData, equipmentData, mediaData, pvpData, reputationData, statisticsData, specializationData] =
+  const [
+    profileData,
+    equipmentData,
+    mediaData,
+    pvpData,
+    reputationData,
+    statisticsData,
+    specializationData,
+    professionData,
+    achievementData,
+  ] =
     await Promise.all([
       fetchApiJson(getApiUrl(region, locale, profileNamespace, path), token, "character profile"),
       fetchApiJson(getApiUrl(region, locale, profileNamespace, `${path}/equipment`), token, "character equipment"),
@@ -852,6 +1246,16 @@ export const getForeverCharacter = async (env: ForeverApiEnv, requestedSlug: str
         getApiUrl(region, locale, profileNamespace, `${path}/specializations`),
         token,
         "character specializations",
+      ),
+      fetchOptionalApiJson(
+        getApiUrl(region, locale, profileNamespace, `${path}/professions`),
+        token,
+        "character professions",
+      ),
+      fetchOptionalApiJson(
+        getApiUrl(region, locale, profileNamespace, `${path}/achievements`),
+        token,
+        "character achievements",
       ),
     ]);
 
@@ -1024,28 +1428,37 @@ export const getForeverCharacter = async (env: ForeverApiEnv, requestedSlug: str
   const armoryBase = `https://worldofwarcraft.blizzard.com/en-us/forever/${region}/armory`;
   const pvpMaps = Array.isArray(pvpData.pvp_map_statistics) ? pvpData.pvp_map_statistics : [];
   const reputations = Array.isArray(reputationData.reputations) ? reputationData.reputations : [];
-  const statisticDefinitions = [
-    ["health", "Health"],
-    ["stamina", "Stamina"],
-    ["strength", "Strength"],
-    ["agility", "Agility"],
-    ["intellect", "Intellect"],
-    ["armor", "Armor"],
-    ["attack_power", "Attack power"],
-    ["spell_power", "Spell power"],
-    ["melee_crit", "Melee crit"],
-    ["spell_crit", "Spell crit"],
-    ["melee_hit", "Melee hit"],
-    ["spell_hit", "Spell hit"],
-  ] as const;
+  const powerLabel = getReferenceName(statisticsData.power_type, locale) || "Power";
+  const statisticDefinitions: Array<[string, string, "number" | "percent"]> = [
+    ["health", "Health", "number"],
+    ["power", powerLabel, "number"],
+    ["stamina", "Stamina", "number"],
+    ["strength", "Strength", "number"],
+    ["agility", "Agility", "number"],
+    ["intellect", "Intellect", "number"],
+    ["spirit", "Spirit", "number"],
+    ["armor", "Armor", "number"],
+    ["defense", "Defense", "number"],
+    ["dodge", "Dodge", "percent"],
+    ["parry", "Parry", "percent"],
+    ["block", "Block", "percent"],
+    ["attack_power", "Attack power", "number"],
+    ["main_hand_dps", "Weapon DPS", "number"],
+    ["main_hand_speed", "Attack speed", "number"],
+    ["spell_power", "Spell power", "number"],
+    ["bonus_healing", "Healing power", "number"],
+    ["mana_regen", "Mana regen", "number"],
+    ["melee_crit", "Melee crit", "percent"],
+    ["ranged_crit", "Ranged crit", "percent"],
+    ["spell_crit", "Spell crit", "percent"],
+    ["melee_hit", "Melee hit", "percent"],
+    ["ranged_hit", "Ranged hit", "percent"],
+    ["spell_hit", "Spell hit", "percent"],
+  ];
 
-  const statistics = statisticDefinitions.flatMap(([key, label]) => {
-    const raw = statisticsData[key];
-    const record = isRecord(raw) ? raw : null;
-    const value =
-      cleanNumber(raw) ??
-      (record ? cleanNumber(record.value) ?? cleanNumber(record.rating) ?? cleanNumber(record.percent) : null);
-    return value === null || value === 0 ? [] : [{ key, label, value }];
+  const statistics = statisticDefinitions.flatMap(([key, label, format]) => {
+    const value = getStatisticNumber(statisticsData[key]);
+    return value === null || value === 0 ? [] : [{ key, label, value, format }];
   });
 
   return {
@@ -1077,6 +1490,9 @@ export const getForeverCharacter = async (env: ForeverApiEnv, requestedSlug: str
     },
     equipment,
     equipmentSets: [...equipmentSets.values()].sort((left, right) => left.name.localeCompare(right.name)),
+    talentTrees: parseTalentTrees(specializationData, locale),
+    professions: parseProfessions(professionData, locale),
+    achievements: parseAchievements(achievementData, locale),
     pvp: {
       honorableKills: cleanNumber(pvpData.honorable_kills) ?? 0,
       rank: cleanNumber(pvpData.pvp_rank) ?? 0,

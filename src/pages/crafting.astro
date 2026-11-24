@@ -1,0 +1,198 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+---
+
+<Layout title="Guild Crafting | Might Forever">
+  <PageHeader
+    eyebrow="Guild directory"
+    title="Crafting"
+    description="Find Might members by profession and compare the skill levels Blizzard currently reports."
+  />
+
+  <section class="crafting-summary-grid" aria-live="polite">
+    <article class="stat-card">
+      <span>Crafters</span>
+      <strong data-crafting-count>—</strong>
+      <small>Members with a primary profession</small>
+    </article>
+    <article class="stat-card">
+      <span>Professions</span>
+      <strong data-profession-count>—</strong>
+      <small>Primary professions represented</small>
+    </article>
+    <article class="stat-card">
+      <span>Source</span>
+      <strong>Blizzard</strong>
+      <small data-crafting-synced>Connecting…</small>
+    </article>
+  </section>
+
+  <section class="panel crafting-directory-panel">
+    <div class="crafting-toolbar">
+      <label>
+        <span>Search</span>
+        <input type="search" placeholder="Character or profession" data-crafting-search />
+      </label>
+      <label>
+        <span>Primary profession</span>
+        <select data-crafting-filter>
+          <option value="all">All professions</option>
+        </select>
+      </label>
+    </div>
+
+    <p class="crafting-note" data-crafting-note>
+      Loading profession data from Blizzard…
+    </p>
+    <div class="crafting-card-grid" data-crafting-list aria-live="polite"></div>
+    <div class="roster-empty-state" data-crafting-empty hidden>
+      <strong>No matching crafters</strong>
+      <span>Try a different name or profession.</span>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  type Profession = {
+    id: number | null;
+    name: string;
+    category: "Primary" | "Secondary";
+    skill: number;
+    maxSkill: number;
+  };
+
+  type Crafter = {
+    character: {
+      slug: string;
+      name: string;
+      level: number;
+      className: string;
+      rankLabel: string;
+      profileUrl: string;
+    };
+    professions: Profession[];
+  };
+
+  type CraftingPayload = {
+    ok: true;
+    syncedAt: string;
+    note: string;
+    summary: { crafterCount: number; professionCount: number };
+    crafters: Crafter[];
+  };
+
+  const classColors: Record<string, string> = {
+    Druid: "#ff7c0a", Hunter: "#aad372", Mage: "#3fc7eb", Paladin: "#f48cba", Priest: "#ffffff",
+    Rogue: "#fff468", Shaman: "#0070dd", Warlock: "#8788ee", Warrior: "#c69b6d",
+  };
+  const list = document.querySelector<HTMLElement>("[data-crafting-list]");
+  const search = document.querySelector<HTMLInputElement>("[data-crafting-search]");
+  const filter = document.querySelector<HTMLSelectElement>("[data-crafting-filter]");
+  const empty = document.querySelector<HTMLElement>("[data-crafting-empty]");
+  let crafters: Crafter[] = [];
+
+  const setText = (selector: string, value: string | number) => {
+    const element = document.querySelector<HTMLElement>(selector);
+    if (element) element.textContent = String(value);
+  };
+
+  const formatDate = (value: string) => {
+    const date = new Date(value);
+    return new Intl.DateTimeFormat("en-US", {
+      month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Los_Angeles",
+    }).format(date);
+  };
+
+  const createProfession = (profession: Profession) => {
+    const row = document.createElement("div");
+    const heading = document.createElement("div");
+    const name = document.createElement("span");
+    const value = document.createElement("strong");
+    const track = document.createElement("div");
+    const bar = document.createElement("div");
+    row.className = "crafting-profession-row";
+    heading.className = "crafting-profession-heading";
+    name.textContent = profession.name;
+    value.textContent = profession.maxSkill > 0 ? `${profession.skill} / ${profession.maxSkill}` : String(profession.skill);
+    track.className = "crafting-profession-track";
+    bar.className = "crafting-profession-bar";
+    bar.style.width = `${profession.maxSkill > 0 ? Math.min(100, (profession.skill / profession.maxSkill) * 100) : 0}%`;
+    track.setAttribute("role", "progressbar");
+    track.setAttribute("aria-label", `${profession.name}: ${value.textContent}`);
+    track.setAttribute("aria-valuemin", "0");
+    track.setAttribute("aria-valuemax", String(profession.maxSkill));
+    track.setAttribute("aria-valuenow", String(profession.skill));
+    heading.append(name, value);
+    track.append(bar);
+    row.append(heading, track);
+    return row;
+  };
+
+  const render = () => {
+    if (!list) return;
+    const query = search?.value.trim().toLocaleLowerCase() ?? "";
+    const professionFilter = filter?.value ?? "all";
+    const visible = crafters.filter((crafter) => {
+      const primaryNames = crafter.professions.filter((profession) => profession.category === "Primary").map((profession) => profession.name);
+      const matchesFilter = professionFilter === "all" || primaryNames.includes(professionFilter);
+      const haystack = `${crafter.character.name} ${crafter.character.className} ${crafter.character.rankLabel} ${crafter.professions.map((profession) => profession.name).join(" ")}`.toLocaleLowerCase();
+      return matchesFilter && (!query || haystack.includes(query));
+    });
+    list.replaceChildren();
+
+    for (const crafter of visible) {
+      const card = document.createElement("article");
+      const heading = document.createElement("div");
+      const identity = document.createElement("div");
+      const marker = document.createElement("span");
+      const link = document.createElement("a");
+      const detail = document.createElement("small");
+      const professionList = document.createElement("div");
+      card.className = "crafting-card";
+      card.style.setProperty("--class-color", classColors[crafter.character.className] ?? "#7c8cff");
+      heading.className = "crafting-card-heading";
+      identity.className = "crafting-card-identity";
+      marker.className = "crafting-class-marker";
+      link.href = crafter.character.profileUrl;
+      link.textContent = crafter.character.name;
+      detail.textContent = `Level ${crafter.character.level} ${crafter.character.className} · ${crafter.character.rankLabel}`;
+      professionList.className = "crafting-profession-list";
+      identity.append(link, detail);
+      heading.append(marker, identity);
+      for (const profession of crafter.professions) professionList.append(createProfession(profession));
+      card.append(heading, professionList);
+      list.append(card);
+    }
+
+    if (empty) empty.hidden = visible.length > 0;
+  };
+
+  const load = async () => {
+    try {
+      const response = await fetch("/api/forever-crafting?v=1", { headers: { Accept: "application/json" } });
+      const payload = (await response.json()) as CraftingPayload | { ok?: false; message?: string };
+      if (!response.ok || payload.ok !== true || !("crafters" in payload)) throw new Error("message" in payload ? payload.message : "Crafting data unavailable");
+      crafters = payload.crafters;
+      setText("[data-crafting-count]", payload.summary.crafterCount);
+      setText("[data-profession-count]", payload.summary.professionCount);
+      setText("[data-crafting-synced]", `Updated ${formatDate(payload.syncedAt)} PT`);
+      setText("[data-crafting-note]", payload.note);
+      const professions = [...new Set(crafters.flatMap((crafter) => crafter.professions.filter((profession) => profession.category === "Primary").map((profession) => profession.name)))].sort();
+      for (const profession of professions) {
+        const option = document.createElement("option");
+        option.value = profession;
+        option.textContent = profession;
+        filter?.append(option);
+      }
+      render();
+    } catch (error) {
+      console.error("Unable to load guild crafting data.", error);
+      setText("[data-crafting-note]", "Crafting data is temporarily unavailable.");
+    }
+  };
+
+  search?.addEventListener("input", render);
+  filter?.addEventListener("change", render);
+  void load();
+</script>

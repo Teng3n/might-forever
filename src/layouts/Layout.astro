@@ -23,6 +23,7 @@ const navItems: NavItem[] = [
     matchPrefix: "/roster",
     children: [{ href: "/roster/guild-archive", label: "Guild Archive" }],
   },
+  { href: "/crafting", label: "Crafting" },
   {
     href: "/officer",
     label: "Officer",
@@ -46,7 +47,7 @@ const isExactActive = (href: string) => pathname === href;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Pre-launch planning hub for the Might Forever World of Warcraft guild."
+      content="Live roster, character history, professions, and guild activity for Might in World of Warcraft: Forever."
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
@@ -87,7 +88,7 @@ const isExactActive = (href: string) => pathname === href;
         </main>
         <footer class="site-footer">
           <span>Might Forever</span>
-          <span class="site-footer-sync">Pre-launch foundation</span>
+          <span class="site-footer-sync">Live guild foundation</span>
         </footer>
       </div>
     </div>
