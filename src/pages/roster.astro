@@ -410,7 +410,10 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
     let failureMessage = "Unable to load the live guild roster.";
 
     try {
-      const response = await fetch("/api/forever-roster", { headers: { Accept: "application/json" } });
+      const response = await fetch("/api/forever-roster?v=2", {
+        headers: { Accept: "application/json" },
+        cache: "no-store",
+      });
       const isJson = response.headers.get("Content-Type")?.toLowerCase().includes("application/json");
 
       if (!isJson) {
