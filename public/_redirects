@@ -1,5 +1,3 @@
-/roster/profile/* /roster/profile/index.html 200
-
 /legendary / 302
 /legendary/* / 302
 /guides/consumes / 302
@@ -22,3 +20,4 @@
 /officer/farm-bench-suggestions /officer 302
 /officer/bis-lists /officer 302
 /officer/gear-needs /officer 302
+/roster/profile/:slug /roster/profile/ 200
