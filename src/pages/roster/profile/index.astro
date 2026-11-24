@@ -164,7 +164,7 @@ import PageHeader from "../../../components/PageHeader.astro";
     };
     media: { avatarUrl: string | null; renderUrl: string | null };
     equipment: EquipmentItem[];
-    equipmentSets: Array<{
+    equipmentSets?: Array<{
       id: number | null;
       name: string;
       equippedCount: number;
@@ -467,13 +467,14 @@ import PageHeader from "../../../components/PageHeader.astro";
 
     if (!section || !list) return;
     list.replaceChildren();
+    const equipmentSets = payload.equipmentSets ?? [];
 
-    if (!payload.equipmentSets.length) {
+    if (!equipmentSets.length) {
       section.hidden = true;
       return;
     }
 
-    for (const equipmentSet of payload.equipmentSets) {
+    for (const equipmentSet of equipmentSets) {
       const card = document.createElement("article");
       const heading = document.createElement("div");
       const name = document.createElement("strong");
@@ -514,7 +515,7 @@ import PageHeader from "../../../components/PageHeader.astro";
 
     setText(
       "[data-character-set-count]",
-      `${payload.equipmentSets.length} set${payload.equipmentSets.length === 1 ? "" : "s"}`,
+      `${equipmentSets.length} set${equipmentSets.length === 1 ? "" : "s"}`,
     );
     section.hidden = false;
   };
@@ -608,7 +609,7 @@ import PageHeader from "../../../components/PageHeader.astro";
     }
 
     try {
-      const response = await fetch(`/api/forever-character/${encodeURIComponent(slug)}`, {
+      const response = await fetch(`/api/forever-character/${encodeURIComponent(slug)}?v=2`, {
         headers: { Accept: "application/json" },
       });
       const payload = (await response.json()) as CharacterPayload | { ok?: false; message?: string };
