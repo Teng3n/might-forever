@@ -65,6 +65,19 @@ export interface ForeverCharacterItem {
   setName: string | null;
 }
 
+export interface ForeverEquipmentSet {
+  id: number | null;
+  name: string;
+  equippedCount: number;
+  totalCount: number;
+  equippedItems: string[];
+  bonuses: Array<{
+    requiredCount: number;
+    description: string;
+    active: boolean;
+  }>;
+}
+
 export interface ForeverCharacterPayload {
   ok: true;
   syncedAt: string;
@@ -93,6 +106,7 @@ export interface ForeverCharacterPayload {
     renderUrl: string | null;
   };
   equipment: ForeverCharacterItem[];
+  equipmentSets: ForeverEquipmentSet[];
   pvp: {
     honorableKills: number;
     rank: number;
@@ -194,6 +208,34 @@ const getReferenceName = (value: unknown, locale: string) => {
       if (name) {
         return name;
       }
+    }
+  }
+
+  return "";
+};
+
+const getLocalizedString = (value: unknown, locale: string) => {
+  const direct = cleanString(value);
+
+  if (direct) {
+    return direct;
+  }
+
+  if (!isRecord(value)) {
+    return "";
+  }
+
+  const requested = cleanString(value[locale]);
+
+  if (requested) {
+    return requested;
+  }
+
+  for (const candidate of Object.values(value)) {
+    const localized = cleanString(candidate);
+
+    if (localized) {
+      return localized;
     }
   }
 
@@ -896,6 +938,81 @@ export const getForeverCharacter = async (env: ForeverApiEnv, requestedSlug: str
     return { ...publicItem, iconUrl } satisfies ForeverCharacterItem;
   });
 
+  const topLevelSetRows = Array.isArray(equipmentData.equipped_item_sets)
+    ? equipmentData.equipped_item_sets.filter(isRecord)
+    : [];
+  const itemSetRows = equipmentRows.flatMap((value) => {
+    if (!isRecord(value) || !isRecord(value.set)) {
+      return [];
+    }
+
+    return [value.set];
+  });
+  const equipmentSets = new Map<string, ForeverEquipmentSet>();
+
+  for (const setRow of [...topLevelSetRows, ...itemSetRows]) {
+    const setReference = isRecord(setRow.item_set) ? setRow.item_set : null;
+    const setName = getReferenceName(setReference, locale);
+
+    if (!setName) {
+      continue;
+    }
+
+    const setId = getReferenceId(setReference);
+    const setKey = setId === null ? setName.toLocaleLowerCase() : String(setId);
+
+    if (equipmentSets.has(setKey)) {
+      continue;
+    }
+
+    const setItems = Array.isArray(setRow.items) ? setRow.items.filter(isRecord) : [];
+    const explicitlyEquippedItems = setItems.flatMap((setItem) => {
+      if (setItem.is_equipped !== true) {
+        return [];
+      }
+
+      const itemName = getReferenceName(setItem.item, locale);
+      return itemName ? [itemName] : [];
+    });
+    const equippedItems = explicitlyEquippedItems.length
+      ? explicitlyEquippedItems
+      : equipment.filter((item) => item.setName === setName).map((item) => item.name);
+    const uniqueEquippedItems = [...new Set(equippedItems)].sort((left, right) => left.localeCompare(right));
+    const equippedCount = uniqueEquippedItems.length;
+    const bonuses = (Array.isArray(setRow.effects) ? setRow.effects : [])
+      .flatMap((effect) => {
+        if (!isRecord(effect)) {
+          return [];
+        }
+
+        const requiredCount = cleanNumber(effect.required_count);
+        const rawDescription = getLocalizedString(effect.display_string, locale);
+
+        if (requiredCount === null || !rawDescription) {
+          return [];
+        }
+
+        const description = rawDescription.replace(/^\(\d+\)\s*Set:\s*/i, "").replace(/^Set:\s*/i, "");
+        return [
+          {
+            requiredCount,
+            description,
+            active: effect.is_active === true || requiredCount <= equippedCount,
+          },
+        ];
+      })
+      .sort((left, right) => left.requiredCount - right.requiredCount);
+
+    equipmentSets.set(setKey, {
+      id: setId,
+      name: setName,
+      equippedCount,
+      totalCount: Math.max(setItems.length, equippedCount),
+      equippedItems: uniqueEquippedItems,
+      bonuses,
+    });
+  }
+
   const manualSpecialization = MANUAL_CHARACTER_SPECIALIZATIONS[slug];
   const specialization = manualSpecialization?.specialization ?? getActiveSpecialization(specializationData);
   const lastLoginTimestamp = cleanNumber(profileData.last_login_timestamp);
@@ -957,6 +1074,7 @@ export const getForeverCharacter = async (env: ForeverApiEnv, requestedSlug: str
       renderUrl: getAsset(mediaData, ["main-raw", "main-sd-raw"]),
     },
     equipment,
+    equipmentSets: [...equipmentSets.values()].sort((left, right) => left.name.localeCompare(right.name)),
     pvp: {
       honorableKills: cleanNumber(pvpData.honorable_kills) ?? 0,
       rank: cleanNumber(pvpData.pvp_rank) ?? 0,

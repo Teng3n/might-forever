@@ -103,6 +103,16 @@ import PageHeader from "../../../components/PageHeader.astro";
           </div>
         </div>
         <dl class="character-stat-grid" data-character-statistics></dl>
+        <section class="character-set-summary" data-character-sets hidden aria-labelledby="equipment-sets-heading">
+          <div class="character-set-summary-heading">
+            <div>
+              <p class="eyebrow">Equipment sets</p>
+              <h3 id="equipment-sets-heading">Set bonuses</h3>
+            </div>
+            <span data-character-set-count></span>
+          </div>
+          <div class="character-set-list" data-character-set-list></div>
+        </section>
       </section>
 
       <section class="panel character-detail-panel" aria-labelledby="reputation-heading">
@@ -154,6 +164,18 @@ import PageHeader from "../../../components/PageHeader.astro";
     };
     media: { avatarUrl: string | null; renderUrl: string | null };
     equipment: EquipmentItem[];
+    equipmentSets: Array<{
+      id: number | null;
+      name: string;
+      equippedCount: number;
+      totalCount: number;
+      equippedItems: string[];
+      bonuses: Array<{
+        requiredCount: number;
+        description: string;
+        active: boolean;
+      }>;
+    }>;
     pvp: {
       honorableKills: number;
       rank: number;
@@ -439,6 +461,64 @@ import PageHeader from "../../../components/PageHeader.astro";
     }
   };
 
+  const renderEquipmentSets = (payload: CharacterPayload) => {
+    const section = document.querySelector<HTMLElement>("[data-character-sets]");
+    const list = document.querySelector<HTMLElement>("[data-character-set-list]");
+
+    if (!section || !list) return;
+    list.replaceChildren();
+
+    if (!payload.equipmentSets.length) {
+      section.hidden = true;
+      return;
+    }
+
+    for (const equipmentSet of payload.equipmentSets) {
+      const card = document.createElement("article");
+      const heading = document.createElement("div");
+      const name = document.createElement("strong");
+      const count = document.createElement("span");
+      const items = document.createElement("p");
+      const bonuses = document.createElement("ul");
+      const totalLabel = equipmentSet.totalCount > 0 ? ` of ${equipmentSet.totalCount}` : "";
+      card.className = "character-set-card";
+      heading.className = "character-set-card-heading";
+      name.textContent = equipmentSet.name;
+      count.textContent = `${equipmentSet.equippedCount}${totalLabel} pieces`;
+      items.className = "character-set-items";
+      items.textContent = equipmentSet.equippedItems.join(" · ");
+      bonuses.className = "character-set-bonuses";
+
+      for (const bonus of equipmentSet.bonuses) {
+        const row = document.createElement("li");
+        const threshold = document.createElement("span");
+        const description = document.createElement("span");
+        row.className = bonus.active ? "is-active" : "is-inactive";
+        row.setAttribute(
+          "aria-label",
+          `${bonus.requiredCount}-piece bonus${bonus.active ? " active" : " inactive"}: ${bonus.description}`,
+        );
+        threshold.className = "character-set-threshold";
+        threshold.textContent = `${bonus.requiredCount}-piece`;
+        description.textContent = bonus.description;
+        row.append(threshold, description);
+        bonuses.append(row);
+      }
+
+      heading.append(name, count);
+      card.append(heading);
+      if (equipmentSet.equippedItems.length) card.append(items);
+      if (equipmentSet.bonuses.length) card.append(bonuses);
+      list.append(card);
+    }
+
+    setText(
+      "[data-character-set-count]",
+      `${payload.equipmentSets.length} set${payload.equipmentSets.length === 1 ? "" : "s"}`,
+    );
+    section.hidden = false;
+  };
+
   const renderReputations = (payload: CharacterPayload) => {
     const list = document.querySelector<HTMLElement>("[data-character-reputations]");
     if (!list) return;
@@ -506,6 +586,7 @@ import PageHeader from "../../../components/PageHeader.astro";
     renderHistory(payload);
     renderPvp(payload);
     renderStatistics(payload);
+    renderEquipmentSets(payload);
     renderReputations(payload);
     if (loading) loading.hidden = true;
     if (content) content.hidden = false;

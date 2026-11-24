@@ -5330,6 +5330,115 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
   font-variant-numeric: tabular-nums;
 }
 
+.character-set-summary {
+  display: grid;
+  gap: 12px;
+  border-top: 1px solid rgba(62, 82, 132, 0.54);
+  padding-top: 17px;
+}
+
+.character-set-summary[hidden] {
+  display: none;
+}
+
+.character-set-summary-heading,
+.character-set-card-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.character-set-summary-heading h3,
+.character-set-summary-heading p {
+  margin: 0;
+}
+
+.character-set-summary-heading h3 {
+  margin-top: 3px;
+  font-size: 1.1rem;
+}
+
+.character-set-summary-heading > span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.character-set-list {
+  display: grid;
+  gap: 10px;
+}
+
+.character-set-card {
+  display: grid;
+  gap: 10px;
+  border: 1px solid rgba(200, 155, 60, 0.38);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  padding: 13px 14px;
+  background:
+    linear-gradient(100deg, rgba(200, 155, 60, 0.08), transparent 42%),
+    rgba(9, 13, 24, 0.48);
+}
+
+.character-set-card-heading strong {
+  color: var(--accent-soft);
+  font-size: 1rem;
+}
+
+.character-set-card-heading span {
+  flex: 0 0 auto;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.character-set-items {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.character-set-bonuses {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.character-set-bonuses li {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.character-set-bonuses li.is-active {
+  color: #1eff00;
+}
+
+.character-set-bonuses li.is-inactive {
+  opacity: 0.58;
+}
+
+.character-set-threshold {
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 2px 5px;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .character-reputation-list {
   display: grid;
   gap: 11px;
