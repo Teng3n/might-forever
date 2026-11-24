@@ -4325,9 +4325,11 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 
 .roster-composition {
   display: grid;
-  gap: 22px;
+  gap: 26px;
+  overflow: hidden;
   background:
-    linear-gradient(120deg, rgba(91, 124, 250, 0.08), transparent 50%),
+    radial-gradient(circle at 92% 8%, rgba(91, 124, 250, 0.14), transparent 28rem),
+    linear-gradient(135deg, rgba(200, 155, 60, 0.055), transparent 42%),
     rgba(16, 23, 42, 0.84);
 }
 
@@ -4355,61 +4357,134 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 .roster-composition-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(44, 60, 104, 0.72);
+  border-radius: 999px;
+  background: rgba(9, 13, 24, 0.52);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+.roster-composition-tabs .filter-button {
+  min-height: 36px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 17px;
+  background: transparent;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .roster-composition-tabs .is-active {
-  border-color: rgba(200, 155, 60, 0.65);
-  background: rgba(200, 155, 60, 0.15);
-  color: var(--text);
+  background: linear-gradient(135deg, rgba(200, 155, 60, 0.3), rgba(200, 155, 60, 0.15));
+  color: #f3d98e;
+  box-shadow:
+    0 7px 18px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(224, 200, 135, 0.18);
 }
 
 .roster-composition-bars {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 15px 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px 34px;
+}
+
+.roster-composition-bars[data-dimension="role"] {
+  grid-template-columns: minmax(0, 820px);
 }
 
 .roster-composition-row {
   display: grid;
-  gap: 7px;
+  grid-template-columns: minmax(104px, 0.78fr) minmax(118px, 1.5fr) auto;
+  align-items: center;
+  gap: 12px;
   min-width: 0;
+  min-height: 38px;
 }
 
 .roster-composition-label {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  color: var(--muted);
-  font-size: 0.84rem;
-  font-weight: 750;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 800;
 }
 
-.roster-composition-label span:first-child {
+.roster-composition-label span:last-child {
   overflow: hidden;
-  color: var(--text);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.roster-composition-label span:last-child {
+.roster-composition-swatch {
+  width: 9px;
+  height: 9px;
   flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--composition-color);
+  box-shadow: 0 0 11px color-mix(in srgb, var(--composition-color) 62%, transparent);
+}
+
+.roster-composition-value {
+  display: grid;
+  grid-template-columns: 2ch 3ch;
+  align-items: baseline;
+  justify-content: end;
+  gap: 7px;
+  min-width: 62px;
   font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.roster-composition-value strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.roster-composition-value span {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 750;
 }
 
 .roster-composition-track {
-  height: 9px;
+  height: 11px;
   overflow: hidden;
   border-radius: 999px;
-  background: rgba(44, 60, 104, 0.46);
+  background: rgba(44, 60, 104, 0.38);
+  box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.36),
+    inset 0 0 0 1px rgba(91, 124, 250, 0.045);
 }
 
 .roster-composition-bar {
+  position: relative;
   width: 0;
   height: 100%;
   border-radius: inherit;
-  background: var(--composition-color, linear-gradient(90deg, #5b7cfa, #7c8cff));
-  transition: width 220ms ease;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--composition-color) 70%, #17213d),
+    var(--composition-color)
+  );
+  box-shadow: 0 0 18px color-mix(in srgb, var(--composition-color) 30%, transparent);
+  transition: width 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.roster-composition-bar::after {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 4px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.66);
+  content: "";
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -4604,10 +4679,6 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
 }
 
 @media (max-width: 1020px) {
-  .roster-composition-bars {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .roster-filter {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -4633,13 +4704,22 @@ th[data-sort-type="number"][aria-sort="descending"] .sort-indicator::after {
     align-items: flex-start;
     justify-content: flex-start;
   }
+
+  .roster-composition-bars,
+  .roster-composition-bars[data-dimension="role"] {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 520px) {
   .roster-summary-grid,
-  .roster-filter,
-  .roster-composition-bars {
+  .roster-filter {
     grid-template-columns: 1fr;
+  }
+
+  .roster-composition-row {
+    grid-template-columns: minmax(88px, 0.9fr) minmax(92px, 1.2fr) auto;
+    gap: 9px;
   }
 }
 

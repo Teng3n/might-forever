@@ -63,9 +63,6 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
         <button class="filter-button is-subtle" type="button" data-composition-dimension="role" aria-pressed="false">
           Role
         </button>
-        <button class="filter-button is-subtle" type="button" data-composition-dimension="spec" aria-pressed="false">
-          Spec
-        </button>
       </div>
     </div>
     <div class="roster-composition-bars" data-composition-bars aria-live="polite"></div>
@@ -206,6 +203,14 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
     Warlock: "#8788ee",
     Warrior: "#c69b6d",
   };
+  const roleColors: Record<string, string> = {
+    Tank: "#4f9cff",
+    Healer: "#52d38a",
+    "Melee DPS": "#f0b85a",
+    "Ranged DPS": "#9c83ff",
+    DPS: "#e07a9a",
+    Unassigned: "#8792aa",
+  };
 
   const root = document.querySelector<HTMLElement>("[data-roster-root]");
   const filter = document.querySelector<HTMLFormElement>("[data-roster-filter]");
@@ -224,7 +229,7 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
   const classSelect = filter?.elements.namedItem("class") as HTMLSelectElement | null;
   const rankSelect = filter?.elements.namedItem("rank") as HTMLSelectElement | null;
   let members: RosterMember[] = [];
-  let compositionDimension: "class" | "role" | "spec" = "class";
+  let compositionDimension: "class" | "role" = "class";
 
   const setText = (selector: string, value: string | number) => {
     const element = document.querySelector<HTMLElement>(selector);
@@ -271,9 +276,8 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
     return cell;
   };
 
-  const getCompositionValue = (member: RosterMember, dimension: "class" | "role" | "spec") => {
-    if (dimension === "role") return member.role || "Unknown";
-    if (dimension === "spec") return member.specialization || "Unknown";
+  const getCompositionValue = (member: RosterMember, dimension: "class" | "role") => {
+    if (dimension === "role") return !member.role || member.role === "Unknown" ? "Unassigned" : member.role;
     return member.className || "Unknown";
   };
 
@@ -292,29 +296,32 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
 
     const sorted = [...counts.entries()].sort(
       ([leftLabel, leftCount], [rightLabel, rightCount]) =>
-        rightCount - leftCount || leftLabel.localeCompare(rightLabel),
+        (leftLabel === "Unassigned" ? 1 : 0) - (rightLabel === "Unassigned" ? 1 : 0) ||
+        rightCount - leftCount ||
+        leftLabel.localeCompare(rightLabel),
     );
-    const visible = sorted.slice(0, 9);
-    const remainder = sorted.slice(9).reduce((total, [, count]) => total + count, 0);
-
-    if (remainder) {
-      visible.push(["Other", remainder]);
-    }
 
     compositionBars.replaceChildren();
+    compositionBars.dataset.dimension = compositionDimension;
 
-    for (const [label, count] of visible) {
+    for (const [label, count] of sorted) {
       const percent = levelCapMembers.length ? (count / levelCapMembers.length) * 100 : 0;
       const row = document.createElement("div");
-      const heading = document.createElement("div");
+      const nameGroup = document.createElement("div");
+      const swatch = document.createElement("span");
       const name = document.createElement("span");
-      const value = document.createElement("span");
+      const value = document.createElement("div");
+      const countValue = document.createElement("strong");
+      const percentValue = document.createElement("span");
       const track = document.createElement("div");
       const bar = document.createElement("div");
       row.className = "roster-composition-row";
-      heading.className = "roster-composition-label";
+      nameGroup.className = "roster-composition-label";
+      swatch.className = "roster-composition-swatch";
       name.textContent = label;
-      value.textContent = `${count} · ${Math.round(percent)}%`;
+      value.className = "roster-composition-value";
+      countValue.textContent = String(count);
+      percentValue.textContent = `${Math.round(percent)}%`;
       track.className = "roster-composition-track";
       track.setAttribute("role", "progressbar");
       track.setAttribute("aria-label", `${label}: ${count} of ${levelCapMembers.length} level 60 characters`);
@@ -323,19 +330,25 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
       track.setAttribute("aria-valuenow", String(count));
       bar.className = "roster-composition-bar";
       bar.style.width = `${percent}%`;
+      row.style.setProperty(
+        "--composition-color",
+        compositionDimension === "class"
+          ? classColors[label] ?? "#7c8cff"
+          : roleColors[label] ?? "#7c8cff",
+      );
 
-      if (compositionDimension === "class") {
-        bar.style.setProperty("--composition-color", classColors[label] ?? "#7c8cff");
-      }
-
-      heading.append(name, value);
+      nameGroup.append(swatch, name);
+      value.append(countValue, percentValue);
       track.append(bar);
-      row.append(heading, track);
+      row.append(nameGroup, track, value);
       compositionBars.append(row);
     }
 
-    const dimensionLabel = compositionDimension === "spec" ? "specialization" : compositionDimension;
-    compositionSummary.textContent = `${levelCapMembers.length} level 60 characters · grouped by ${dimensionLabel}`;
+    const unassignedCount = counts.get("Unassigned") ?? 0;
+    compositionSummary.textContent =
+      compositionDimension === "class"
+        ? `${levelCapMembers.length} level 60 characters · ${counts.size} classes represented`
+        : `${levelCapMembers.length} level 60 characters · ${unassignedCount ? `${unassignedCount} role${unassignedCount === 1 ? "" : "s"} unassigned` : "all roles assigned"}`;
     composition.hidden = false;
   };
 
@@ -470,7 +483,7 @@ const officialGuildUrl = "https://worldofwarcraft.blizzard.com/en-us/forever/us/
     button.addEventListener("click", () => {
       const dimension = button.dataset.compositionDimension;
 
-      if (dimension !== "class" && dimension !== "role" && dimension !== "spec") {
+      if (dimension !== "class" && dimension !== "role") {
         return;
       }
 
