@@ -2,6 +2,7 @@ import type { ForeverCharacterItem, ForeverCharacterPayload } from "./forever-ap
 
 interface D1ResultMeta {
   last_row_id?: number;
+  changes?: number;
 }
 
 interface D1Result<T = unknown> {

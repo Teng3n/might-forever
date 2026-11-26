@@ -1,0 +1,779 @@
+---
+import OfficerGate from "../../components/OfficerGate.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Raid Team Planner | Might Forever">
+  <OfficerGate>
+    <main class="raid-planner" data-raid-planner>
+      <section class="page-header officer-client-heading raid-planner-header">
+        <div>
+          <p class="eyebrow">Officer · Raid Operations</p>
+          <h1>Raid Team Planner</h1>
+          <p>Build two 20-player teams, plan their 10-player splits, and see role and Forever buff gaps before raid night.</p>
+        </div>
+        <div class="raid-planner-save-cluster">
+          <span class="raid-planner-save-status" data-plan-status aria-live="polite">Loading saved plan…</span>
+          <button class="filter-button is-subtle" type="button" data-reload-plan disabled>Reload</button>
+          <button class="filter-button" type="button" data-save-plan disabled>Save plan</button>
+        </div>
+      </section>
+
+      <section class="raid-planner-summary" aria-label="Raid planner summary">
+        <article class="stat-card">
+          <span>Level 60</span>
+          <strong data-level-cap-count>—</strong>
+          <small>Live Blizzard roster</small>
+        </article>
+        <article class="stat-card">
+          <span>Assigned</span>
+          <strong data-assigned-count>—</strong>
+          <small>Across both teams</small>
+        </article>
+        <article class="stat-card">
+          <span>Unassigned</span>
+          <strong data-unassigned-count>—</strong>
+          <small>Available in the pool</small>
+        </article>
+        <article class="stat-card">
+          <span>Split-ready tanks</span>
+          <strong data-tank-ready-count>—</strong>
+          <small>Tank or tank off-spec</small>
+        </article>
+      </section>
+
+      <section class="panel raid-planner-help">
+        <div>
+          <strong>Planning assumptions</strong>
+          <span>Each 20-player team targets 2 tanks, 4 healers, and 14 DPS. Each 10-player split targets 2 tank-capable and 2 healer-capable players.</span>
+        </div>
+        <p>
+          Buff checks use current class and selected-spec presence. They are planning signals, not a guarantee that a talent is learned or a spell is active.
+          <a href="https://worldofwarcraft.blizzard.com/en-us/news/24303313" target="_blank" rel="noreferrer">Forever class design notes</a>
+        </p>
+      </section>
+
+      <section class="raid-planner-loading panel" data-planner-loading>
+        Loading the live level-60 roster and saved raid plan…
+      </section>
+
+      <section class="raid-planner-workspace" data-planner-workspace hidden>
+        <aside class="panel raid-player-pool" data-player-pool-dropzone>
+          <div class="section-heading">
+            <p class="eyebrow">Live Roster</p>
+            <h2>Available players</h2>
+            <p class="info-note">Drag a character into a team or use the add buttons. Drag a team member back here to remove them.</p>
+          </div>
+          <label class="field raid-player-search">
+            <span>Search</span>
+            <input type="search" placeholder="Character, class, or role" data-player-search />
+          </label>
+          <label class="field">
+            <span>Role</span>
+            <select data-player-role-filter>
+              <option value="all">All roles</option>
+              <option value="Tank">Tank</option>
+              <option value="Healer">Healer</option>
+              <option value="Melee DPS">Melee DPS</option>
+              <option value="Ranged DPS">Ranged DPS</option>
+            </select>
+          </label>
+          <div class="raid-player-pool-list" data-player-pool-list></div>
+          <p class="raid-player-pool-empty" data-player-pool-empty hidden>No unassigned players match these filters.</p>
+        </aside>
+
+        <div class="raid-team-grid" data-team-grid></div>
+      </section>
+    </main>
+  </OfficerGate>
+</Layout>
+
+<script>
+  type RaidRole = "Tank" | "Healer" | "Melee DPS" | "Ranged DPS";
+  type Subgroup = "A" | "B";
+  type TeamId = "team-a" | "team-b";
+  type CoverageView = "20" | "A" | "B";
+
+  type RosterMember = {
+    slug: string;
+    name: string;
+    level: number;
+    className: string;
+    specialization: string;
+    role: string;
+    rankLabel: string;
+    profileUrl: string;
+  };
+
+  type RaidAssignment = {
+    characterSlug: string;
+    assignedRole: RaidRole;
+    assignedSpec: string;
+    offspecTank: boolean;
+    offspecHealer: boolean;
+    subgroup: Subgroup;
+  };
+
+  type RaidTeam = {
+    id: TeamId;
+    name: string;
+    locked: boolean;
+    assignments: RaidAssignment[];
+  };
+
+  type RaidPlan = { teams: RaidTeam[] };
+
+  type PlannerResponse = {
+    ok: true;
+    plan: RaidPlan;
+    version: number;
+    updatedAt: string | null;
+  };
+
+  type RosterResponse = {
+    ok: true;
+    members: RosterMember[];
+  };
+
+  const classColors: Record<string, string> = {
+    Druid: "#ff7c0a",
+    Hunter: "#aad372",
+    Mage: "#3fc7eb",
+    Paladin: "#f48cba",
+    Priest: "#ffffff",
+    Rogue: "#fff468",
+    Shaman: "#0070dd",
+    Warlock: "#8788ee",
+    Warrior: "#c69b6d",
+  };
+
+  const classSpecs: Record<string, string[]> = {
+    Druid: ["Balance", "Feral Combat", "Restoration"],
+    Hunter: ["Beast Mastery", "Marksmanship", "Survival"],
+    Mage: ["Arcane", "Fire", "Frost"],
+    Paladin: ["Holy", "Protection", "Retribution"],
+    Priest: ["Discipline", "Holy", "Shadow Magic"],
+    Rogue: ["Assassination", "Combat", "Subtlety"],
+    Shaman: ["Elemental Combat", "Enhancement", "Restoration"],
+    Warlock: ["Affliction", "Demonology", "Destruction"],
+    Warrior: ["Arms", "Fury", "Protection"],
+  };
+
+  const tankClasses = new Set(["Druid", "Paladin", "Warrior"]);
+  const healerClasses = new Set(["Druid", "Paladin", "Priest", "Shaman"]);
+
+  type CoveragePlayer = { member: RosterMember; assignment: RaidAssignment };
+  type BuffRule = {
+    name: string;
+    source: string;
+    kind: "core" | "specialist";
+    isCovered: (player: CoveragePlayer) => boolean;
+  };
+
+  const hasSpec = (player: CoveragePlayer, term: string) =>
+    player.assignment.assignedSpec.toLocaleLowerCase().includes(term.toLocaleLowerCase());
+
+  const buffRules: BuffRule[] = [
+    { name: "Mark of the Wild", source: "Druid", kind: "core", isCovered: ({ member }) => member.className === "Druid" },
+    { name: "Power Word: Fortitude", source: "Priest", kind: "core", isCovered: ({ member }) => member.className === "Priest" },
+    { name: "Divine Spirit", source: "Priest", kind: "core", isCovered: ({ member }) => member.className === "Priest" },
+    { name: "Arcane Intellect", source: "Mage", kind: "core", isCovered: ({ member }) => member.className === "Mage" },
+    { name: "Paladin Blessings", source: "Paladin", kind: "core", isCovered: ({ member }) => member.className === "Paladin" },
+    { name: "Battle Shout", source: "Warrior", kind: "core", isCovered: ({ member }) => member.className === "Warrior" },
+    { name: "Shaman Totems", source: "Shaman", kind: "core", isCovered: ({ member }) => member.className === "Shaman" },
+    { name: "Healthstones", source: "Warlock", kind: "core", isCovered: ({ member }) => member.className === "Warlock" },
+    { name: "Tranquilizing Shot", source: "Hunter", kind: "core", isCovered: ({ member }) => member.className === "Hunter" },
+    { name: "Leader of the Pack", source: "Feral Druid", kind: "specialist", isCovered: (player) => player.member.className === "Druid" && hasSpec(player, "Feral") },
+    { name: "Moonkin Aura", source: "Balance Druid", kind: "specialist", isCovered: (player) => player.member.className === "Druid" && hasSpec(player, "Balance") },
+    { name: "Trueshot Aura", source: "Marksmanship Hunter", kind: "specialist", isCovered: (player) => player.member.className === "Hunter" && hasSpec(player, "Marksmanship") },
+    { name: "Shadow Weaving", source: "Shadow Priest", kind: "specialist", isCovered: (player) => player.member.className === "Priest" && hasSpec(player, "Shadow") },
+  ];
+
+  const planner = document.querySelector<HTMLElement>("[data-raid-planner]");
+  const workspace = planner?.querySelector<HTMLElement>("[data-planner-workspace]");
+  const loading = planner?.querySelector<HTMLElement>("[data-planner-loading]");
+  const teamGrid = planner?.querySelector<HTMLElement>("[data-team-grid]");
+  const poolList = planner?.querySelector<HTMLElement>("[data-player-pool-list]");
+  const poolDropzone = planner?.querySelector<HTMLElement>("[data-player-pool-dropzone]");
+  const poolEmpty = planner?.querySelector<HTMLElement>("[data-player-pool-empty]");
+  const search = planner?.querySelector<HTMLInputElement>("[data-player-search]");
+  const roleFilter = planner?.querySelector<HTMLSelectElement>("[data-player-role-filter]");
+  const saveButton = planner?.querySelector<HTMLButtonElement>("[data-save-plan]");
+  const reloadButton = planner?.querySelector<HTMLButtonElement>("[data-reload-plan]");
+  const status = planner?.querySelector<HTMLElement>("[data-plan-status]");
+
+  let roster: RosterMember[] = [];
+  let plan: RaidPlan = { teams: [] };
+  let version = 0;
+  let updatedAt: string | null = null;
+  let dirty = false;
+  let saving = false;
+  let loaded = false;
+  let draggedSlug = "";
+  let statusMessage = "";
+  const coverageViews = new Map<TeamId, CoverageView>([
+    ["team-a", "20"],
+    ["team-b", "20"],
+  ]);
+
+  const setText = (selector: string, value: string | number) => {
+    const element = planner?.querySelector<HTMLElement>(selector);
+    if (element) element.textContent = String(value);
+  };
+
+  const formatTimestamp = (value: string | null) => {
+    if (!value) return "Not saved yet";
+    const date = new Date(value);
+    return `Saved ${new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      timeZone: "America/Los_Angeles",
+    }).format(date)} PT`;
+  };
+
+  const normalizeRole = (value: string): RaidRole => {
+    if (value === "Tank" || value === "Healer" || value === "Melee DPS" || value === "Ranged DPS") return value;
+    return "Ranged DPS";
+  };
+
+  const getMember = (slug: string) => roster.find((member) => member.slug === slug);
+  const getTeamForSlug = (slug: string) => plan.teams.find((team) => team.assignments.some((assignment) => assignment.characterSlug === slug));
+
+  const getSpecs = (member: RosterMember) => {
+    const values = [member.specialization, ...(classSpecs[member.className] ?? [])].filter(Boolean);
+    return [...new Set(values)];
+  };
+
+  const getCoveragePlayers = (team: RaidTeam, view: CoverageView) =>
+    team.assignments.flatMap((assignment) => {
+      if (view !== "20" && assignment.subgroup !== view) return [];
+      const member = getMember(assignment.characterSlug);
+      return member ? [{ member, assignment }] : [];
+    });
+
+  const isTankReady = (assignment: RaidAssignment) => assignment.assignedRole === "Tank" || assignment.offspecTank;
+  const isHealerReady = (assignment: RaidAssignment) => assignment.assignedRole === "Healer" || assignment.offspecHealer;
+
+  const updateStatus = () => {
+    if (!status || !saveButton || !reloadButton) return;
+    saveButton.disabled = !loaded || !dirty || saving;
+    reloadButton.disabled = !loaded || saving;
+
+    if (statusMessage) status.textContent = statusMessage;
+    else if (saving) status.textContent = "Saving raid plan…";
+    else if (dirty) status.textContent = "Unsaved changes";
+    else status.textContent = formatTimestamp(updatedAt);
+  };
+
+  const markDirty = () => {
+    statusMessage = "";
+    dirty = true;
+    updateStatus();
+  };
+
+  const createButton = (label: string, className: string, onClick: () => void) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = className;
+    button.textContent = label;
+    button.addEventListener("click", onClick);
+    return button;
+  };
+
+  const assignToTeam = (slug: string, teamId: TeamId) => {
+    const target = plan.teams.find((team) => team.id === teamId);
+    const member = getMember(slug);
+
+    if (!target || !member || target.locked || target.assignments.length >= 20) return;
+
+    const source = getTeamForSlug(slug);
+    if (source?.locked) return;
+    if (source) source.assignments = source.assignments.filter((assignment) => assignment.characterSlug !== slug);
+
+    if (!target.assignments.some((assignment) => assignment.characterSlug === slug)) {
+      const groupACount = target.assignments.filter((assignment) => assignment.subgroup === "A").length;
+      const groupBCount = target.assignments.length - groupACount;
+      target.assignments.push({
+        characterSlug: slug,
+        assignedRole: normalizeRole(member.role),
+        assignedSpec: member.specialization || getSpecs(member)[0] || member.className,
+        offspecTank: false,
+        offspecHealer: false,
+        subgroup: groupACount <= groupBCount ? "A" : "B",
+      });
+    }
+
+    markDirty();
+    render();
+  };
+
+  const removeAssignment = (slug: string) => {
+    const team = getTeamForSlug(slug);
+    if (!team || team.locked) return;
+    team.assignments = team.assignments.filter((assignment) => assignment.characterSlug !== slug);
+    markDirty();
+    render();
+  };
+
+  const renderPool = () => {
+    if (!poolList) return;
+    poolList.replaceChildren();
+    const assigned = new Set(plan.teams.flatMap((team) => team.assignments.map((assignment) => assignment.characterSlug)));
+    const query = search?.value.trim().toLocaleLowerCase() ?? "";
+    const selectedRole = roleFilter?.value ?? "all";
+    const available = roster.filter((member) => {
+      if (assigned.has(member.slug)) return false;
+      if (selectedRole !== "all" && normalizeRole(member.role) !== selectedRole) return false;
+      const haystack = `${member.name} ${member.className} ${member.specialization} ${member.role}`.toLocaleLowerCase();
+      return !query || haystack.includes(query);
+    });
+
+    for (const member of available) {
+      const card = document.createElement("article");
+      const marker = document.createElement("span");
+      const identity = document.createElement("div");
+      const name = document.createElement("strong");
+      const detail = document.createElement("small");
+      const actions = document.createElement("div");
+      card.className = "raid-player-card";
+      card.draggable = true;
+      card.style.setProperty("--class-color", classColors[member.className] ?? "#7c8cff");
+      marker.className = "raid-player-class-marker";
+      identity.className = "raid-player-card-identity";
+      name.textContent = member.name;
+      detail.textContent = `${member.className} · ${member.specialization} · ${member.role}`;
+      actions.className = "raid-player-card-actions";
+      actions.append(
+        createButton("A", "raid-player-add", () => assignToTeam(member.slug, "team-a")),
+        createButton("B", "raid-player-add", () => assignToTeam(member.slug, "team-b")),
+      );
+      identity.append(name, detail);
+      card.append(marker, identity, actions);
+      card.addEventListener("dragstart", () => {
+        draggedSlug = member.slug;
+        card.classList.add("is-dragging");
+      });
+      card.addEventListener("dragend", () => {
+        draggedSlug = "";
+        card.classList.remove("is-dragging");
+      });
+      poolList.append(card);
+    }
+
+    if (poolEmpty) poolEmpty.hidden = available.length > 0;
+  };
+
+  const createReadinessMetric = (label: string, value: number, target: number) => {
+    const item = document.createElement("div");
+    const count = document.createElement("strong");
+    const text = document.createElement("span");
+    item.className = `raid-readiness-metric ${value >= target ? "is-ready" : "is-missing"}`;
+    count.textContent = `${value} / ${target}`;
+    text.textContent = label;
+    item.append(count, text);
+    return item;
+  };
+
+  const createCoverage = (team: RaidTeam, view: CoverageView) => {
+    const section = document.createElement("section");
+    const heading = document.createElement("div");
+    const title = document.createElement("strong");
+    const summary = document.createElement("span");
+    const chips = document.createElement("div");
+    const players = getCoveragePlayers(team, view);
+    const coverage = buffRules.map((rule) => ({ rule, covered: players.some(rule.isCovered) }));
+    const coveredCount = coverage.filter((entry) => entry.covered).length;
+    section.className = "raid-buff-coverage";
+    heading.className = "raid-buff-heading";
+    title.textContent = view === "20" ? "20-player coverage" : `10-player ${view} coverage`;
+    summary.textContent = `${coveredCount} of ${buffRules.length} covered`;
+    chips.className = "raid-buff-chip-list";
+
+    for (const { rule, covered } of coverage) {
+      const chip = document.createElement("span");
+      chip.className = `raid-buff-chip ${covered ? "is-covered" : "is-missing"} ${rule.kind === "specialist" ? "is-specialist" : ""}`;
+      chip.textContent = rule.name;
+      chip.title = covered ? `Covered by ${rule.source}` : `Missing · bring ${rule.source}`;
+      chips.append(chip);
+    }
+
+    heading.append(title, summary);
+    section.append(heading, chips);
+    return section;
+  };
+
+  const createAssignmentRow = (team: RaidTeam, assignment: RaidAssignment) => {
+    const member = getMember(assignment.characterSlug);
+    const row = document.createElement("article");
+    const handle = document.createElement("span");
+    const identity = document.createElement("div");
+    const name = document.createElement(member ? "a" : "strong");
+    const detail = document.createElement("small");
+    const role = document.createElement("select");
+    const spec = document.createElement("select");
+    const subgroup = document.createElement("select");
+    const capabilities = document.createElement("div");
+    const remove = document.createElement("button");
+    row.className = "raid-assignment-row";
+    row.draggable = !team.locked;
+    row.style.setProperty("--class-color", classColors[member?.className ?? ""] ?? "#7c8cff");
+    handle.className = "raid-assignment-handle";
+    handle.textContent = "⋮⋮";
+    handle.setAttribute("aria-hidden", "true");
+    identity.className = "raid-assignment-identity";
+    name.textContent = member?.name ?? assignment.characterSlug;
+    if (member && name instanceof HTMLAnchorElement) name.href = member.profileUrl;
+    detail.textContent = member ? `${member.className} · ${member.rankLabel}` : "No longer in the live level-60 roster";
+
+    role.className = "raid-assignment-select";
+    role.setAttribute("aria-label", `${member?.name ?? assignment.characterSlug} assigned role`);
+    for (const value of ["Tank", "Healer", "Melee DPS", "Ranged DPS"] as RaidRole[]) {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = value;
+      option.selected = assignment.assignedRole === value;
+      role.append(option);
+    }
+
+    spec.className = "raid-assignment-select";
+    spec.setAttribute("aria-label", `${member?.name ?? assignment.characterSlug} assigned specialization`);
+    const specValues = member ? getSpecs(member) : [assignment.assignedSpec];
+    for (const value of specValues) {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = value;
+      option.selected = assignment.assignedSpec === value;
+      spec.append(option);
+    }
+
+    subgroup.className = "raid-assignment-select is-group";
+    subgroup.setAttribute("aria-label", `${member?.name ?? assignment.characterSlug} 10-player split`);
+    for (const value of ["A", "B"] as Subgroup[]) {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = `10-${value}`;
+      option.selected = assignment.subgroup === value;
+      subgroup.append(option);
+    }
+
+    capabilities.className = "raid-assignment-capabilities";
+    const addCapability = (labelText: string, checked: boolean, enabled: boolean, onChange: (checked: boolean) => void) => {
+      if (!enabled) return;
+      const label = document.createElement("label");
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = checked;
+      input.disabled = team.locked;
+      input.addEventListener("change", () => onChange(input.checked));
+      label.append(input, document.createTextNode(labelText));
+      capabilities.append(label);
+    };
+    addCapability("Tank OS", assignment.offspecTank, Boolean(member && tankClasses.has(member.className)), (checked) => {
+      assignment.offspecTank = checked;
+      markDirty();
+      render();
+    });
+    addCapability("Heal OS", assignment.offspecHealer, Boolean(member && healerClasses.has(member.className)), (checked) => {
+      assignment.offspecHealer = checked;
+      markDirty();
+      render();
+    });
+
+    remove.type = "button";
+    remove.className = "raid-assignment-remove";
+    remove.textContent = "Remove";
+    remove.disabled = team.locked;
+    remove.addEventListener("click", () => removeAssignment(assignment.characterSlug));
+    role.disabled = team.locked;
+    spec.disabled = team.locked;
+    subgroup.disabled = team.locked;
+    role.addEventListener("change", () => {
+      assignment.assignedRole = role.value as RaidRole;
+      markDirty();
+      render();
+    });
+    spec.addEventListener("change", () => {
+      assignment.assignedSpec = spec.value;
+      markDirty();
+      render();
+    });
+    subgroup.addEventListener("change", () => {
+      assignment.subgroup = subgroup.value as Subgroup;
+      markDirty();
+      render();
+    });
+    row.addEventListener("dragstart", () => {
+      if (team.locked) return;
+      draggedSlug = assignment.characterSlug;
+      row.classList.add("is-dragging");
+    });
+    row.addEventListener("dragend", () => {
+      draggedSlug = "";
+      row.classList.remove("is-dragging");
+    });
+
+    identity.append(name, detail);
+    row.append(handle, identity, role, spec, subgroup, capabilities, remove);
+    return row;
+  };
+
+  const autoSplit = (team: RaidTeam) => {
+    if (team.locked) return;
+    const ordered = [...team.assignments].sort((left, right) => {
+      const readiness = (assignment: RaidAssignment) => (isTankReady(assignment) ? 0 : isHealerReady(assignment) ? 1 : 2);
+      return readiness(left) - readiness(right) || left.characterSlug.localeCompare(right.characterSlug);
+    });
+    let aSize = 0;
+    let bSize = 0;
+    let aTanks = 0;
+    let bTanks = 0;
+    let aHealers = 0;
+    let bHealers = 0;
+
+    for (const assignment of ordered) {
+      let group: Subgroup;
+      if (isTankReady(assignment) && Math.min(aTanks, bTanks) < 2) group = aTanks <= bTanks ? "A" : "B";
+      else if (isHealerReady(assignment) && Math.min(aHealers, bHealers) < 2) group = aHealers <= bHealers ? "A" : "B";
+      else group = aSize <= bSize ? "A" : "B";
+      assignment.subgroup = group;
+      if (group === "A") {
+        aSize += 1;
+        if (isTankReady(assignment)) aTanks += 1;
+        if (isHealerReady(assignment)) aHealers += 1;
+      } else {
+        bSize += 1;
+        if (isTankReady(assignment)) bTanks += 1;
+        if (isHealerReady(assignment)) bHealers += 1;
+      }
+    }
+    markDirty();
+    render();
+  };
+
+  const createTeam = (team: RaidTeam) => {
+    const card = document.createElement("article");
+    const header = document.createElement("header");
+    const titleWrap = document.createElement("div");
+    const eyebrow = document.createElement("span");
+    const title = document.createElement("input");
+    const headerActions = document.createElement("div");
+    const summary = document.createElement("div");
+    const splitGrid = document.createElement("div");
+    const coverageNav = document.createElement("div");
+    const rosterHeading = document.createElement("div");
+    const dropzone = document.createElement("div");
+    card.className = `panel raid-team-card ${team.locked ? "is-locked" : ""}`;
+    card.style.setProperty("--team-color", team.id === "team-a" ? "#6fa8ff" : "#c58cff");
+    header.className = "raid-team-header";
+    titleWrap.className = "raid-team-title-wrap";
+    eyebrow.className = "eyebrow";
+    eyebrow.textContent = team.id === "team-a" ? "Team A" : "Team B";
+    title.className = "raid-team-name";
+    title.value = team.name;
+    title.maxLength = 60;
+    title.disabled = team.locked;
+    title.setAttribute("aria-label", `${eyebrow.textContent} name`);
+    title.addEventListener("change", () => {
+      const value = title.value.trim();
+      team.name = value || (team.id === "team-a" ? "Raid Team A" : "Raid Team B");
+      title.value = team.name;
+      markDirty();
+    });
+    titleWrap.append(eyebrow, title);
+    headerActions.className = "raid-team-header-actions";
+    headerActions.append(
+      createButton("Auto-split 10s", "filter-button is-subtle", () => autoSplit(team)),
+      createButton(team.locked ? "Unlock team" : "Lock team", `filter-button ${team.locked ? "is-locked" : "is-subtle"}`, () => {
+        team.locked = !team.locked;
+        markDirty();
+        render();
+      }),
+    );
+    if (team.locked) (headerActions.firstElementChild as HTMLButtonElement | null)?.setAttribute("disabled", "");
+    header.append(titleWrap, headerActions);
+
+    const activeTanks = team.assignments.filter((assignment) => assignment.assignedRole === "Tank").length;
+    const activeHealers = team.assignments.filter((assignment) => assignment.assignedRole === "Healer").length;
+    const activeDps = team.assignments.length - activeTanks - activeHealers;
+    summary.className = "raid-team-readiness";
+    summary.append(
+      createReadinessMetric("Players", team.assignments.length, 20),
+      createReadinessMetric("Tanks", activeTanks, 2),
+      createReadinessMetric("Healers", activeHealers, 4),
+      createReadinessMetric("DPS", activeDps, 14),
+    );
+
+    splitGrid.className = "raid-split-grid";
+    for (const subgroup of ["A", "B"] as Subgroup[]) {
+      const split = document.createElement("section");
+      const splitTitle = document.createElement("strong");
+      const splitMetrics = document.createElement("div");
+      const assignments = team.assignments.filter((assignment) => assignment.subgroup === subgroup);
+      split.className = "raid-split-card";
+      splitTitle.textContent = `10-${subgroup}`;
+      splitMetrics.className = "raid-split-metrics";
+      splitMetrics.append(
+        createReadinessMetric("Players", assignments.length, 10),
+        createReadinessMetric("Tank-ready", assignments.filter(isTankReady).length, 2),
+        createReadinessMetric("Heal-ready", assignments.filter(isHealerReady).length, 2),
+      );
+      split.append(splitTitle, splitMetrics);
+      splitGrid.append(split);
+    }
+
+    coverageNav.className = "raid-coverage-nav";
+    const activeCoverageView = coverageViews.get(team.id) ?? "20";
+    for (const view of ["20", "A", "B"] as CoverageView[]) {
+      const label = view === "20" ? "20-player buffs" : `10-${view} buffs`;
+      const button = createButton(label, `raid-coverage-tab ${activeCoverageView === view ? "is-active" : ""}`, () => {
+        coverageViews.set(team.id, view);
+        render();
+      });
+      button.setAttribute("aria-pressed", String(activeCoverageView === view));
+      coverageNav.append(button);
+    }
+
+    rosterHeading.className = "raid-team-roster-heading";
+    const rosterTitle = document.createElement("strong");
+    const rosterHint = document.createElement("span");
+    rosterTitle.textContent = "Roster assignments";
+    rosterHint.textContent = team.locked ? "Team locked" : "Drop level-60 characters here";
+    rosterHeading.append(rosterTitle, rosterHint);
+    dropzone.className = "raid-team-dropzone";
+    dropzone.dataset.teamId = team.id;
+    dropzone.addEventListener("dragover", (event) => {
+      if (!team.locked && team.assignments.length < 20) {
+        event.preventDefault();
+        dropzone.classList.add("is-drag-over");
+      }
+    });
+    dropzone.addEventListener("dragleave", () => dropzone.classList.remove("is-drag-over"));
+    dropzone.addEventListener("drop", (event) => {
+      event.preventDefault();
+      dropzone.classList.remove("is-drag-over");
+      if (draggedSlug) assignToTeam(draggedSlug, team.id);
+    });
+    for (const assignment of team.assignments) dropzone.append(createAssignmentRow(team, assignment));
+    if (team.assignments.length === 0) {
+      const empty = document.createElement("p");
+      empty.className = "raid-team-empty";
+      empty.textContent = "No players assigned yet.";
+      dropzone.append(empty);
+    }
+
+    card.append(header, summary, splitGrid, coverageNav, createCoverage(team, activeCoverageView), rosterHeading, dropzone);
+    return card;
+  };
+
+  const render = () => {
+    if (!loaded || !teamGrid) return;
+    teamGrid.replaceChildren();
+    for (const team of plan.teams) teamGrid.append(createTeam(team));
+    renderPool();
+    const allAssignments = plan.teams.flatMap((team) => team.assignments);
+    setText("[data-level-cap-count]", roster.length);
+    setText("[data-assigned-count]", allAssignments.length);
+    setText("[data-unassigned-count]", Math.max(0, roster.length - allAssignments.length));
+    setText("[data-tank-ready-count]", allAssignments.filter(isTankReady).length);
+    updateStatus();
+  };
+
+  const fetchJson = async <T,>(url: string, init?: RequestInit): Promise<T> => {
+    const response = await fetch(url, init);
+    const text = await response.text();
+    let result: (T & { message?: string }) | undefined;
+    try {
+      result = text ? (JSON.parse(text) as T & { message?: string }) : undefined;
+    } catch {
+      result = undefined;
+    }
+    if (!response.ok || !result) throw new Error(result?.message ?? "Unable to load raid planner data.");
+    return result;
+  };
+
+  const loadPlanner = async () => {
+    if (!loading || !workspace) return;
+    loading.hidden = false;
+    loading.textContent = "Loading the live level-60 roster and saved raid plan…";
+    workspace.hidden = true;
+    loaded = false;
+    dirty = false;
+    statusMessage = "";
+    updateStatus();
+    try {
+      const [plannerResult, rosterResult] = await Promise.all([
+        fetchJson<PlannerResponse>("/api/officer-raid-planner"),
+        fetchJson<RosterResponse>("/api/forever-roster"),
+      ]);
+      plan = plannerResult.plan;
+      version = plannerResult.version;
+      updatedAt = plannerResult.updatedAt;
+      roster = rosterResult.members
+        .filter((member) => member.level === 60)
+        .sort((left, right) => left.name.localeCompare(right.name));
+      loaded = true;
+      loading.hidden = true;
+      workspace.hidden = false;
+      render();
+    } catch (error) {
+      loading.hidden = false;
+      loading.textContent = error instanceof Error ? error.message : "Unable to load the raid planner.";
+      statusMessage = "Planner unavailable";
+      updateStatus();
+    }
+  };
+
+  const savePlan = async () => {
+    if (!dirty || saving) return;
+    saving = true;
+    statusMessage = "";
+    updateStatus();
+    try {
+      const result = await fetchJson<PlannerResponse>("/api/officer-raid-planner", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ version, plan }),
+      });
+      plan = result.plan;
+      version = result.version;
+      updatedAt = result.updatedAt;
+      dirty = false;
+      statusMessage = "";
+      render();
+    } catch (error) {
+      statusMessage = error instanceof Error ? error.message : "Unable to save the raid plan.";
+    } finally {
+      saving = false;
+      updateStatus();
+    }
+  };
+
+  search?.addEventListener("input", renderPool);
+  roleFilter?.addEventListener("change", renderPool);
+  saveButton?.addEventListener("click", savePlan);
+  reloadButton?.addEventListener("click", loadPlanner);
+  poolDropzone?.addEventListener("dragover", (event) => {
+    if (draggedSlug && getTeamForSlug(draggedSlug) && !getTeamForSlug(draggedSlug)?.locked) {
+      event.preventDefault();
+      poolDropzone.classList.add("is-drag-over");
+    }
+  });
+  poolDropzone?.addEventListener("dragleave", () => poolDropzone.classList.remove("is-drag-over"));
+  poolDropzone?.addEventListener("drop", (event) => {
+    event.preventDefault();
+    poolDropzone.classList.remove("is-drag-over");
+    if (draggedSlug) removeAssignment(draggedSlug);
+  });
+  window.addEventListener("beforeunload", (event) => {
+    if (!dirty) return;
+    event.preventDefault();
+  });
+  window.addEventListener("might:officer-unlocked", loadPlanner);
+  window.addEventListener("might:officer-locked", () => {
+    loaded = false;
+    dirty = false;
+    if (workspace) workspace.hidden = true;
+  });
+</script>
