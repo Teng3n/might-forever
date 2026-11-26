@@ -6190,13 +6190,18 @@ a.overview-activity-row:hover strong,
 }
 
 .raid-frame-pool-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: stretch;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   min-width: 0;
+  min-height: 36px;
+  padding: 4px 6px 4px 8px;
   border: 1px solid rgba(69, 83, 120, 0.52);
   border-left: 3px solid var(--class-color);
   background: rgba(5, 8, 15, 0.74);
+  font: inherit;
+  text-align: left;
+  cursor: grab;
 }
 
 .raid-frame-pool-row:hover,
@@ -6211,19 +6216,8 @@ a.overview-activity-row:hover strong,
   opacity: 0.42;
 }
 
-.raid-frame-pool-select {
-  display: grid;
-  gap: 1px;
-  min-width: 0;
-  border: 0;
-  padding: 7px 8px;
-  background: transparent;
-  color: inherit;
-  text-align: left;
-  cursor: grab;
-}
-
-.raid-frame-pool-select strong {
+.raid-frame-pool-row strong {
+  margin-inline-end: auto;
   overflow: hidden;
   color: var(--class-color);
   font-size: 0.86rem;
@@ -6231,28 +6225,38 @@ a.overview-activity-row:hover strong,
   white-space: nowrap;
 }
 
-.raid-frame-pool-select span {
-  overflow: hidden;
+.raid-frame-pool-level {
+  flex: none;
+  color: #ffd166;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.raid-frame-pool-role {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  padding: 3px;
+  border-radius: 4px;
+  background: color-mix(in srgb, currentColor 12%, transparent);
   color: var(--muted);
-  font-size: 0.72rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.raid-frame-pool-add {
-  border: 0;
-  border-left: 1px solid rgba(69, 83, 120, 0.52);
-  padding: 0 8px;
-  background: rgba(91, 124, 250, 0.09);
-  color: #aebcf5;
-  font-size: 0.72rem;
-  font-weight: 900;
-  cursor: pointer;
+.raid-frame-pool-role.is-tank {
+  color: #8ab7ff;
 }
 
-.raid-frame-pool-add:hover {
-  background: rgba(91, 124, 250, 0.24);
-  color: #ffffff;
+.raid-frame-pool-role.is-healer {
+  color: #81d7a0;
+}
+
+.raid-frame-pool-role.is-dps {
+  color: #ff9283;
 }
 
 .raid-frame-main {

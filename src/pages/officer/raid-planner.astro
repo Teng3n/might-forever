@@ -45,7 +45,7 @@ import Layout from "../../layouts/Layout.astro";
       <section class="panel raid-frame-guide">
         <span><strong>Groups 1–2</strong> become the first 10-player raid.</span>
         <span><strong>Groups 3–4</strong> become the second 10-player raid.</span>
-        <span>Drag a name into a group, or select a name and click an empty slot.</span>
+        <span>Drag to a group, double-click for the next open slot, or select a name and then a slot.</span>
       </section>
 
       <section class="raid-planner-loading panel" data-planner-loading>
@@ -152,6 +152,12 @@ import Layout from "../../layouts/Layout.astro";
   const minimumSearchLevel = 41;
   const groupNumbers: RaidGroup[] = [1, 2, 3, 4];
   const roleAbbreviations: Record<RaidRole, string> = { Tank: "T", Healer: "H", "Melee DPS": "M", "Ranged DPS": "R" };
+  const poolRoleIcons = {
+    tank: "M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z",
+    healer: "M12 5v14M5 12h14",
+    dps: "M9 14 19 4h3v3L12 17M7 12l7 7m-4-4-5 5m-2-1 2 2",
+    unknown: "M8.5 8a3.5 3.5 0 0 1 7 0c0 2.5-3.5 2.5-3.5 5m0 4h.01",
+  };
 
   type CoveragePlayer = { member: RosterMember; assignment: RaidAssignment };
   type BuffRule = { name: string; source: string; kind: "core" | "specialist"; isCovered: (player: CoveragePlayer) => boolean };
@@ -355,6 +361,20 @@ import Layout from "../../layouts/Layout.astro";
     }
   };
 
+  const createPoolRoleIcon = (role: string) => {
+    const kind = role === "Tank" ? "tank" : role === "Healer" ? "healer"
+      : role === "Melee DPS" || role === "Ranged DPS" ? "dps" : "unknown";
+    const namespace = "http://www.w3.org/2000/svg";
+    const icon = document.createElementNS(namespace, "svg");
+    const path = document.createElementNS(namespace, "path");
+    icon.setAttribute("class", `raid-frame-pool-role is-${kind}`);
+    icon.setAttribute("viewBox", "0 0 24 24");
+    icon.setAttribute("aria-hidden", "true");
+    path.setAttribute("d", poolRoleIcons[kind]);
+    icon.append(path);
+    return icon;
+  };
+
   const renderPool = () => {
     if (!poolList) return;
     poolList.replaceChildren();
@@ -372,32 +392,50 @@ import Layout from "../../layouts/Layout.astro";
     setText("[data-visible-pool-count]", `${visible.length} ${isSearching ? "matching" : "level 60"}`);
 
     for (const member of visible) {
-      const row = document.createElement("article");
-      const main = document.createElement("button");
+      const card = document.createElement("button");
       const name = document.createElement("strong");
-      const detail = document.createElement("span");
-      const add = createButton("Add", "raid-frame-pool-add", () => addToFirstOpenSlot(member.slug));
-      add.setAttribute("aria-label", `Add ${member.name} to the active raid team`);
-      row.className = `raid-frame-pool-row ${selectedPoolSlug === member.slug ? "is-selected" : ""}`;
-      row.draggable = true;
-      row.style.setProperty("--class-color", classColors[member.className] ?? "#7c8cff");
-      main.type = "button";
-      main.className = "raid-frame-pool-select";
-      main.setAttribute("aria-pressed", String(selectedPoolSlug === member.slug));
+      const roleLabel = member.role === "Unknown" ? "Role unknown" : member.role;
+      const description = `${member.name} · Level ${member.level} ${member.className} · ${roleLabel}`;
+      card.type = "button";
+      card.className = "raid-frame-pool-row";
+      card.draggable = true;
+      card.style.setProperty("--class-color", classColors[member.className] ?? "#7c8cff");
+      card.title = description;
+      card.setAttribute("aria-label", description);
+      const isSelected = selectedPoolSlug === member.slug;
+      card.classList.toggle("is-selected", isSelected);
+      card.setAttribute("aria-pressed", String(isSelected));
       name.textContent = member.name;
-      const role = member.role === "Unknown" ? member.className : member.role;
-      detail.textContent = member.level < levelCap ? `Lv ${member.level} · ${role}` : `${member.className} · ${member.role}`;
-      main.title = `${member.name} · ${detail.textContent}`;
-      main.append(name, detail);
-      main.addEventListener("click", () => {
-        selectedPoolSlug = selectedPoolSlug === member.slug ? "" : member.slug;
+      card.append(name);
+      if (member.level < levelCap) {
+        const level = document.createElement("span");
+        level.className = "raid-frame-pool-level";
+        level.textContent = String(member.level);
+        card.append(level);
+      }
+      card.append(createPoolRoleIcon(member.role));
+      card.addEventListener("click", (event) => {
+        if (event.detail > 1) return;
+        // Keep the same card in the DOM so the browser can recognize a double-click.
+        const previous = poolList.querySelector(".is-selected");
+        previous?.classList.remove("is-selected");
+        previous?.setAttribute("aria-pressed", "false");
+        const select = selectedPoolSlug !== member.slug;
+        selectedPoolSlug = select ? member.slug : "";
+        card.classList.toggle("is-selected", select);
+        card.setAttribute("aria-pressed", String(select));
         selectedAssignmentSlug = "";
-        render();
+        renderBoard();
+        renderInspector();
       });
-      row.addEventListener("dragstart", () => { draggedSlug = member.slug; row.classList.add("is-dragging"); });
-      row.addEventListener("dragend", () => { draggedSlug = ""; row.classList.remove("is-dragging"); });
-      row.append(main, add);
-      poolList.append(row);
+      card.addEventListener("dblclick", () => addToFirstOpenSlot(member.slug));
+      card.addEventListener("dragstart", (event) => {
+        event.dataTransfer?.setData("text/plain", member.slug);
+        draggedSlug = member.slug;
+        card.classList.add("is-dragging");
+      });
+      card.addEventListener("dragend", () => { draggedSlug = ""; card.classList.remove("is-dragging"); });
+      poolList.append(card);
     }
     if (poolEmpty) {
       poolEmpty.hidden = visible.length > 0;
