@@ -209,6 +209,7 @@ import Layout from "../../layouts/Layout.astro";
   let dirty = false;
   let saving = false;
   let loaded = false;
+  let loadInFlight = false;
   let draggedSlug = "";
   let statusMessage = "";
   const coverageViews = new Map<TeamId, CoverageView>([
@@ -694,7 +695,8 @@ import Layout from "../../layouts/Layout.astro";
   };
 
   const loadPlanner = async () => {
-    if (!loading || !workspace) return;
+    if (!loading || !workspace || loadInFlight) return;
+    loadInFlight = true;
     loading.hidden = false;
     loading.textContent = "Loading the live level-60 roster and saved raid plan…";
     workspace.hidden = true;
@@ -722,6 +724,8 @@ import Layout from "../../layouts/Layout.astro";
       loading.textContent = error instanceof Error ? error.message : "Unable to load the raid planner.";
       statusMessage = "Planner unavailable";
       updateStatus();
+    } finally {
+      loadInFlight = false;
     }
   };
 
@@ -776,4 +780,7 @@ import Layout from "../../layouts/Layout.astro";
     dirty = false;
     if (workspace) workspace.hidden = true;
   });
+
+  const officerContent = document.querySelector<HTMLElement>("[data-officer-gated-content]");
+  if (officerContent && !officerContent.hidden) void loadPlanner();
 </script>
