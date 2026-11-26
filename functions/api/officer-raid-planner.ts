@@ -18,6 +18,7 @@ interface PagesContext {
 
 type RaidRole = "Tank" | "Healer" | "Melee DPS" | "Ranged DPS";
 type Subgroup = "A" | "B";
+type RaidGroup = 1 | 2 | 3 | 4;
 
 interface RaidAssignment {
   characterSlug: string;
@@ -26,6 +27,7 @@ interface RaidAssignment {
   offspecTank: boolean;
   offspecHealer: boolean;
   subgroup: Subgroup;
+  raidGroup: RaidGroup;
 }
 
 interface RaidTeam {
@@ -48,6 +50,7 @@ interface PlanRow {
 const allowedRoles = new Set<RaidRole>(["Tank", "Healer", "Melee DPS", "Ranged DPS"]);
 const allowedTeamIds = new Set<RaidTeam["id"]>(["team-a", "team-b"]);
 const allowedSubgroups = new Set<Subgroup>(["A", "B"]);
+const allowedRaidGroups = new Set<RaidGroup>([1, 2, 3, 4]);
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 const emptyPlan = (): RaidPlan => ({
@@ -65,6 +68,12 @@ const parseAssignment = (value: unknown): RaidAssignment | null => {
   const assignedRole = row.assignedRole as RaidRole;
   const assignedSpec = typeof row.assignedSpec === "string" ? row.assignedSpec.trim().slice(0, 64) : "";
   const subgroup = row.subgroup as Subgroup;
+  const requestedRaidGroup = typeof row.raidGroup === "number" ? row.raidGroup : 0;
+  const raidGroup = allowedRaidGroups.has(requestedRaidGroup as RaidGroup)
+    ? (requestedRaidGroup as RaidGroup)
+    : subgroup === "B"
+      ? 3
+      : 1;
 
   if (
     !slugPattern.test(characterSlug) ||
@@ -81,7 +90,8 @@ const parseAssignment = (value: unknown): RaidAssignment | null => {
     assignedSpec,
     offspecTank: row.offspecTank === true,
     offspecHealer: row.offspecHealer === true,
-    subgroup,
+    subgroup: raidGroup <= 2 ? "A" : "B",
+    raidGroup,
   };
 };
 
@@ -109,13 +119,27 @@ const parsePlan = (value: unknown): RaidPlan | null => {
     if (!allowedTeamIds.has(id) || teamIds.has(id) || !name || rawAssignments.length > 20) return null;
 
     const assignments: RaidAssignment[] = [];
+    const groupCounts = new Map<RaidGroup, number>();
 
     for (const rawAssignment of rawAssignments) {
       const assignment = parseAssignment(rawAssignment);
 
       if (!assignment || assignedSlugs.has(assignment.characterSlug)) return null;
 
+      const rawRaidGroup =
+        rawAssignment && typeof rawAssignment === "object"
+          ? (rawAssignment as Record<string, unknown>).raidGroup
+          : undefined;
+      if (!allowedRaidGroups.has(rawRaidGroup as RaidGroup)) {
+        const compatibleGroups: RaidGroup[] = assignment.subgroup === "A" ? [1, 2] : [3, 4];
+        assignment.raidGroup = compatibleGroups.find((group) => (groupCounts.get(group) ?? 0) < 5) ?? compatibleGroups[1];
+        assignment.subgroup = assignment.raidGroup <= 2 ? "A" : "B";
+      }
+
       assignedSlugs.add(assignment.characterSlug);
+      const groupCount = (groupCounts.get(assignment.raidGroup) ?? 0) + 1;
+      if (groupCount > 5) return null;
+      groupCounts.set(assignment.raidGroup, groupCount);
       assignments.push(assignment);
     }
 
