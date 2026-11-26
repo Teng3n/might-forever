@@ -33,7 +33,7 @@ import Layout from "../../layouts/Layout.astro";
         <article class="stat-card">
           <span>Unassigned</span>
           <strong data-unassigned-count>—</strong>
-          <small>Available in the pool</small>
+          <small>Level 60 and available</small>
         </article>
         <article class="stat-card">
           <span>Split-ready tanks</span>
@@ -45,32 +45,26 @@ import Layout from "../../layouts/Layout.astro";
       <section class="panel raid-frame-guide">
         <span><strong>Groups 1–2</strong> become the first 10-player raid.</span>
         <span><strong>Groups 3–4</strong> become the second 10-player raid.</span>
-        <span>Click a raid member to edit role, spec, or off-specs without making every slot larger.</span>
+        <span>Drag a name into a group, or select a name and click an empty slot.</span>
       </section>
 
       <section class="raid-planner-loading panel" data-planner-loading>
-        Loading the live level-60 roster and saved raid plan…
+        Loading the guild roster and saved raid plan…
       </section>
 
       <section class="raid-frame-app" data-planner-workspace hidden>
-        <nav class="raid-team-switcher" data-team-switcher aria-label="Raid team"></nav>
-
-        <div class="raid-frame-workspace">
-          <aside class="panel raid-frame-pool" data-player-pool-dropzone>
+        <section class="panel raid-frame-pool" data-player-pool-dropzone aria-labelledby="raid-pool-title">
+          <div class="raid-frame-pool-toolbar">
             <div class="raid-frame-pool-heading">
-              <div>
-                <p class="eyebrow">Level 60</p>
-                <h2>Available</h2>
-              </div>
-              <strong data-visible-pool-count>0</strong>
+              <h2 id="raid-pool-title">Available players</h2>
+              <span data-visible-pool-count aria-live="polite"></span>
             </div>
-            <p class="info-note">Drag a name into a group. On touch devices, select a name and then tap an empty slot.</p>
             <label class="field raid-player-search">
-              <span>Search roster</span>
-              <input type="search" placeholder="Name, class, or role" data-player-search />
+              <span>Search by name</span>
+              <input type="search" placeholder="Search levels 41 and up" data-player-search />
             </label>
             <label class="field">
-              <span>Role</span>
+              <span>Browse level 60 roles</span>
               <select data-player-role-filter>
                 <option value="all">All roles</option>
                 <option value="Tank">Tank</option>
@@ -79,17 +73,17 @@ import Layout from "../../layouts/Layout.astro";
                 <option value="Ranged DPS">Ranged DPS</option>
               </select>
             </label>
-            <div class="raid-frame-pool-list" data-player-pool-list></div>
-            <p class="raid-player-pool-empty" data-player-pool-empty hidden>No unassigned players match these filters.</p>
-          </aside>
-
-          <section class="raid-frame-main">
-            <div class="panel raid-frame-board" data-raid-frame-board></div>
-            <div class="raid-frame-lower-grid">
-              <section class="panel raid-member-inspector" data-member-inspector></section>
-              <section class="panel raid-frame-buffs" data-buff-panel></section>
-            </div>
-          </section>
+          </div>
+          <div class="raid-frame-pool-list" data-player-pool-list></div>
+          <p class="raid-player-pool-empty" data-player-pool-empty hidden></p>
+        </section>
+        <nav class="raid-team-switcher" data-team-switcher aria-label="Raid team"></nav>
+        <div class="raid-frame-main">
+          <div class="panel raid-frame-board" data-raid-frame-board></div>
+          <div class="raid-frame-lower-grid">
+            <section class="panel raid-member-inspector" data-member-inspector></section>
+            <section class="panel raid-frame-buffs" data-buff-panel></section>
+          </div>
         </div>
       </section>
     </main>
@@ -154,6 +148,8 @@ import Layout from "../../layouts/Layout.astro";
 
   const tankClasses = new Set(["Druid", "Paladin", "Warrior"]);
   const healerClasses = new Set(["Druid", "Paladin", "Priest", "Shaman"]);
+  const levelCap = 60;
+  const minimumSearchLevel = 41;
   const groupNumbers: RaidGroup[] = [1, 2, 3, 4];
   const roleAbbreviations: Record<RaidRole, string> = { Tank: "T", Healer: "H", "Melee DPS": "M", "Ranged DPS": "R" };
 
@@ -365,11 +361,15 @@ import Layout from "../../layouts/Layout.astro";
     const assigned = new Set(plan.teams.flatMap((team) => team.assignments.map((assignment) => assignment.characterSlug)));
     const query = search?.value.trim().toLocaleLowerCase() ?? "";
     const selectedRole = roleFilter?.value ?? "all";
+    const isSearching = query.length > 0;
+    if (roleFilter) roleFilter.disabled = isSearching;
     const visible = roster.filter((member) => {
-      if (assigned.has(member.slug) || (selectedRole !== "all" && normalizeRole(member.role) !== selectedRole)) return false;
-      return !query || `${member.name} ${member.className} ${member.specialization} ${member.role}`.toLocaleLowerCase().includes(query);
+      if (assigned.has(member.slug)) return false;
+      if (isSearching) return member.level >= minimumSearchLevel && member.name.toLocaleLowerCase().includes(query);
+      return member.level === levelCap && (selectedRole === "all" || normalizeRole(member.role) === selectedRole);
     });
-    setText("[data-visible-pool-count]", visible.length);
+    if (!visible.some((member) => member.slug === selectedPoolSlug)) selectedPoolSlug = "";
+    setText("[data-visible-pool-count]", `${visible.length} ${isSearching ? "matching" : "level 60"}`);
 
     for (const member of visible) {
       const row = document.createElement("article");
@@ -377,13 +377,17 @@ import Layout from "../../layouts/Layout.astro";
       const name = document.createElement("strong");
       const detail = document.createElement("span");
       const add = createButton("Add", "raid-frame-pool-add", () => addToFirstOpenSlot(member.slug));
+      add.setAttribute("aria-label", `Add ${member.name} to the active raid team`);
       row.className = `raid-frame-pool-row ${selectedPoolSlug === member.slug ? "is-selected" : ""}`;
       row.draggable = true;
       row.style.setProperty("--class-color", classColors[member.className] ?? "#7c8cff");
       main.type = "button";
       main.className = "raid-frame-pool-select";
+      main.setAttribute("aria-pressed", String(selectedPoolSlug === member.slug));
       name.textContent = member.name;
-      detail.textContent = `${member.className} · ${member.role}`;
+      const role = member.role === "Unknown" ? member.className : member.role;
+      detail.textContent = member.level < levelCap ? `Lv ${member.level} · ${role}` : `${member.className} · ${member.role}`;
+      main.title = `${member.name} · ${detail.textContent}`;
       main.append(name, detail);
       main.addEventListener("click", () => {
         selectedPoolSlug = selectedPoolSlug === member.slug ? "" : member.slug;
@@ -395,7 +399,12 @@ import Layout from "../../layouts/Layout.astro";
       row.append(main, add);
       poolList.append(row);
     }
-    if (poolEmpty) poolEmpty.hidden = visible.length > 0;
+    if (poolEmpty) {
+      poolEmpty.hidden = visible.length > 0;
+      poolEmpty.textContent = isSearching
+        ? "No unassigned characters at level 41 or higher match that name."
+        : "No unassigned level 60 players match this role filter.";
+    }
   };
 
   const createRoleMetric = (label: string, value: number, target: number) => {
@@ -422,6 +431,7 @@ import Layout from "../../layouts/Layout.astro";
     const row = document.createElement("article");
     const select = document.createElement("button");
     const marker = document.createElement("span");
+    const identity = document.createElement("span");
     const name = document.createElement("strong");
     const level = document.createElement("span");
     const role = document.createElement("span");
@@ -434,14 +444,26 @@ import Layout from "../../layouts/Layout.astro";
     select.className = "raid-frame-slot-main";
     marker.className = "raid-frame-slot-marker";
     name.textContent = member?.name ?? assignment.characterSlug;
-    level.textContent = "60";
+    name.title = name.textContent;
+    identity.className = "raid-frame-slot-identity";
+    identity.append(name);
+    if (member && member.level < levelCap) {
+      const warning = document.createElement("span");
+      warning.className = "raid-frame-level-warning";
+      warning.textContent = "⚠︎";
+      warning.title = `Level ${member.level} · Below level ${levelCap}`;
+      warning.setAttribute("role", "img");
+      warning.setAttribute("aria-label", warning.title);
+      identity.append(warning);
+    }
+    level.textContent = member ? String(member.level) : "—";
     level.className = "raid-frame-slot-level";
     role.className = `raid-frame-slot-role is-${assignment.assignedRole.toLocaleLowerCase().replaceAll(" ", "-")}`;
     role.textContent = roleAbbreviations[assignment.assignedRole];
     role.title = assignment.assignedRole;
     offspec.className = "raid-frame-slot-offspec";
     offspec.textContent = [assignment.offspecTank ? "T-OS" : "", assignment.offspecHealer ? "H-OS" : ""].filter(Boolean).join(" ");
-    select.append(marker, name, level, role, offspec);
+    select.append(marker, identity, level, role, offspec);
     select.addEventListener("click", () => {
       selectedAssignmentSlug = selectedAssignmentSlug === assignment.characterSlug ? "" : assignment.characterSlug;
       selectedPoolSlug = "";
@@ -667,9 +689,11 @@ import Layout from "../../layouts/Layout.astro";
     renderInspector();
     renderBuffs();
     const assignments = plan.teams.flatMap((team) => team.assignments);
-    setText("[data-level-cap-count]", roster.length);
+    const assigned = new Set(assignments.map((assignment) => assignment.characterSlug));
+    const maxLevelMembers = roster.filter((member) => member.level === levelCap);
+    setText("[data-level-cap-count]", maxLevelMembers.length);
     setText("[data-assigned-count]", assignments.length);
-    setText("[data-unassigned-count]", Math.max(0, roster.length - assignments.length));
+    setText("[data-unassigned-count]", maxLevelMembers.filter((member) => !assigned.has(member.slug)).length);
     setText("[data-tank-ready-count]", assignments.filter(isTankReady).length);
     updateStatus();
   };
@@ -687,7 +711,7 @@ import Layout from "../../layouts/Layout.astro";
     if (!loading || !workspace || loadInFlight) return;
     loadInFlight = true;
     loading.hidden = false;
-    loading.textContent = "Loading the live level-60 roster and saved raid plan…";
+    loading.textContent = "Loading the guild roster and saved raid plan…";
     workspace.hidden = true;
     loaded = false;
     dirty = false;
@@ -701,7 +725,7 @@ import Layout from "../../layouts/Layout.astro";
       plan = plannerResult.plan;
       version = plannerResult.version;
       updatedAt = plannerResult.updatedAt;
-      roster = rosterResult.members.filter((member) => member.level === 60).sort((left, right) => left.name.localeCompare(right.name));
+      roster = rosterResult.members.sort((left, right) => left.name.localeCompare(right.name));
       normalizeGroups();
       loaded = true;
       loading.hidden = true;
@@ -740,8 +764,14 @@ import Layout from "../../layouts/Layout.astro";
     }
   };
 
-  search?.addEventListener("input", renderPool);
-  roleFilter?.addEventListener("change", renderPool);
+  const updatePoolFilter = () => {
+    const previousSelection = selectedPoolSlug;
+    renderPool();
+    if (selectedPoolSlug !== previousSelection) renderBoard();
+  };
+
+  search?.addEventListener("input", updatePoolFilter);
+  roleFilter?.addEventListener("change", updatePoolFilter);
   saveButton?.addEventListener("click", savePlan);
   reloadButton?.addEventListener("click", loadPlanner);
   poolDropzone?.addEventListener("dragover", (event) => {

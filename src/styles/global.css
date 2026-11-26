@@ -6117,19 +6117,10 @@ a.overview-activity-row:hover strong,
   color: #efd788;
 }
 
-.raid-frame-workspace {
-  display: grid;
-  grid-template-columns: 270px minmax(0, 1fr);
-  gap: 12px;
-  align-items: start;
-}
-
 .raid-frame-pool {
-  position: sticky;
-  top: 18px;
   display: grid;
   gap: 11px;
-  max-height: calc(100vh - 36px);
+  min-width: 0;
   padding: 14px;
   border-color: rgba(70, 88, 132, 0.52);
   background: linear-gradient(180deg, rgba(24, 31, 48, 0.98), rgba(10, 15, 27, 0.98));
@@ -6141,14 +6132,20 @@ a.overview-activity-row:hover strong,
   background: rgba(200, 155, 60, 0.12);
 }
 
-.raid-frame-pool-heading {
-  display: flex;
-  justify-content: space-between;
+.raid-frame-pool-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(13rem, 20rem) minmax(10rem, 12rem);
   gap: 12px;
   align-items: end;
 }
 
-.raid-frame-pool-heading > div {
+.raid-frame-pool-toolbar .field {
+  width: 100%;
+  min-width: 0;
+  gap: 4px;
+}
+
+.raid-frame-pool-heading {
   display: grid;
   gap: 2px;
 }
@@ -6158,15 +6155,9 @@ a.overview-activity-row:hover strong,
   font-size: 1.25rem;
 }
 
-.raid-frame-pool-heading > strong {
+.raid-frame-pool-heading > span {
   color: #efd788;
-  font-size: 1.35rem;
-}
-
-.raid-frame-pool .info-note {
-  margin: 0;
-  font-size: 0.78rem;
-  line-height: 1.45;
+  font-size: 0.85rem;
 }
 
 .raid-frame-pool select,
@@ -6180,12 +6171,22 @@ a.overview-activity-row:hover strong,
   font: inherit;
 }
 
+.raid-frame-pool select {
+  min-height: 40px;
+}
+
+.raid-frame-pool select:disabled {
+  opacity: 0.55;
+}
+
 .raid-frame-pool-list {
   display: grid;
-  gap: 3px;
-  min-height: 100px;
-  overflow: auto;
-  padding-right: 3px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 10rem), 1fr));
+  gap: 5px;
+}
+
+.raid-frame-pool-list:empty {
+  display: none;
 }
 
 .raid-frame-pool-row {
@@ -6452,12 +6453,27 @@ a.overview-activity-row:hover strong,
   background: var(--class-color);
 }
 
+.raid-frame-slot-identity {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
 .raid-frame-slot-main strong {
   overflow: hidden;
   color: var(--class-color);
   font-size: 0.88rem;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.raid-frame-level-warning {
+  flex: none;
+  color: #ffd166;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1;
 }
 
 .raid-frame-slot-level {
@@ -6588,10 +6604,6 @@ a.overview-activity-row:hover strong,
 }
 
 @media (max-width: 1080px) {
-  .raid-frame-workspace {
-    grid-template-columns: 230px minmax(0, 1fr);
-  }
-
   .raid-frame-slot-main {
     grid-template-columns: 4px minmax(0, 1fr) 26px 22px;
   }
@@ -6606,18 +6618,12 @@ a.overview-activity-row:hover strong,
 }
 
 @media (max-width: 820px) {
-  .raid-frame-workspace {
-    grid-template-columns: 1fr;
+  .raid-frame-pool-toolbar {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 
-  .raid-frame-pool {
-    position: static;
-    max-height: none;
-  }
-
-  .raid-frame-pool-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-height: 310px;
+  .raid-frame-pool-heading {
+    grid-column: 1 / -1;
   }
 
   .raid-frame-board-header {
@@ -6638,8 +6644,7 @@ a.overview-activity-row:hover strong,
 @media (max-width: 640px) {
   .raid-team-switcher,
   .raid-frame-group-grid,
-  .raid-member-inspector-controls,
-  .raid-frame-pool-list {
+  .raid-member-inspector-controls {
     grid-template-columns: 1fr;
   }
 
@@ -6666,6 +6671,10 @@ a.overview-activity-row:hover strong,
 }
 
 @media (max-width: 420px) {
+  .raid-frame-pool-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .raid-frame-slot-main {
     grid-template-columns: 4px minmax(0, 1fr) 26px 22px;
   }
